@@ -52,6 +52,15 @@ const P = {
   bookmark: 'M19 21l-7-5-7 5V5a2 2 0 012-2h10a2 2 0 012 2z',
   edit: 'M11 4H4v16h16v-7M18.5 2.5a2.1 2.1 0 013 3L12 15l-4 1 1-4z',
   more: 'M12 13a1 1 0 100-2 1 1 0 000 2zM19 13a1 1 0 100-2 1 1 0 000 2zM5 13a1 1 0 100-2 1 1 0 000 2z',
+  play: 'M7 4.5v15l12-7.5z',
+  pause: 'M7 4h3.5v16H7zM13.5 4H17v16h-3.5z',
+  skipF: 'M5 5l10 7-10 7zM19 5v14',
+  skipB: 'M19 19L9 12l10-7zM5 5v14',
+  rew: 'M11 17l-5-5 5-5M18 17l-5-5 5-5',
+  fwd: 'M13 17l5-5-5-5M6 17l5-5-5-5',
+  headphones: 'M3 18v-6a9 9 0 0118 0v6M21 19a2 2 0 01-2 2h-1a2 2 0 01-2-2v-3a2 2 0 012-2h3zM3 19a2 2 0 002 2h1a2 2 0 002-2v-3a2 2 0 00-2-2H3z',
+  library: 'M4 4h4v16H4zM10 4h4v16h-4zM16.5 4.6l3.8-1 3.2 15.5-3.8 1z',
+  chevU: 'M18 15l-6-6-6 6',
 };
 export function Icon({ name, size = 20, className = '', ...rest }) {
   return (

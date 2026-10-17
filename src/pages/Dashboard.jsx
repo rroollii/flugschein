@@ -5,6 +5,7 @@ import {
   toggleCheck, streak, dueCards, today, skriptById, kapitelKey, fachById, weekDates, daysBetween,
 } from '../store.js';
 import { startSession } from './Fragen.jsx';
+import { ttsSupported, lastListened, play, useTts } from '../tts.js';
 
 const TIPPS = [
   'Verständnis vor Auswendiglernen – rund die Hälfte der Prüfungsfragen kennst du vorher nicht.',
@@ -39,6 +40,8 @@ export default function Dashboard() {
   const fehler = C.fragen.filter((q) => s.fragen[q.id] && !s.fragen[q.id].lastOk);
   const next = nextChapter(s, woche?.faecher);
   const st = streak(s);
+  useTts();
+  const gehoert = ttsSupported ? lastListened() : null;
   const heute = s.aktivitaet[today()] || 0;
   const tipp = TIPPS[new Date().getDate() % TIPPS.length];
   const begriff = C.glossar.length ? C.glossar[(daysBetween('2026-01-01', today()) + C.glossar.length * 10) % C.glossar.length] : null;
@@ -108,6 +111,15 @@ export default function Dashboard() {
               <button className="action" onClick={() => navigate(`/skripte/${next.skript.id}/${next.kapitel.id}`)}>
                 <span className="action-icon green"><Icon name="book" /></span>
                 <span><strong>Weiterlesen: {next.skript.titel.replace(/\s*\(.*\)$/, '')}</strong><small>{next.kapitel.titel}</small></span>
+              </button>
+            )}
+            {ttsSupported && (gehoert || next) && (
+              <button className="action" onClick={() => (gehoert ? play(gehoert.type, gehoert.id) : play('skript', next.skript.id, next.skript.kapitel.indexOf(next.kapitel), 0))}>
+                <span className="action-icon blue"><Icon name="headphones" /></span>
+                <span>
+                  <strong>{gehoert ? 'Weiterhören' : 'Als Hörbuch anhören'}: {(gehoert ? gehoert.src.titel : next.skript.titel).replace(/\s*\(.*\)$/, '')}</strong>
+                  <small>{gehoert ? gehoert.src.parts[gehoert.pos.part]?.titel : next.kapitel.titel}</small>
+                </span>
               </button>
             )}
           </div>

@@ -13,9 +13,12 @@ import Glossar from './pages/Glossar.jsx';
 import Dokumente from './pages/Dokumente.jsx';
 import Daten from './pages/Daten.jsx';
 import Zusatz from './pages/Zusatz.jsx';
+import Bibliothek from './pages/Bibliothek.jsx';
+import Player from './Player.jsx';
 
 const NAV = [
   { id: '', label: 'Übersicht', icon: 'home' },
+  { id: 'bibliothek', label: 'Lernunterlagen', icon: 'library' },
   { id: 'ausbildung', label: 'Ausbildung', icon: 'plane' },
   { id: 'lernplan', label: 'Lernplan', icon: 'calendar' },
   { id: 'skripte', label: 'Skripte', icon: 'book' },
@@ -27,11 +30,13 @@ const NAV = [
   { id: 'dokumente', label: 'Dokumente', icon: 'doc' },
   { id: 'daten', label: 'Daten & Einstellungen', icon: 'settings' },
 ];
-const MOBILE = ['', 'ausbildung', 'skripte', 'fragen'];
+const MOBILE = ['', 'bibliothek', 'ausbildung', 'fragen'];
+const LERNEN = ['bibliothek', 'skripte', 'zusatz', 'dokumente', 'glossar'];
+const KURZ = { 'Übungsfragen': 'Fragen', Lernunterlagen: 'Lernen' };
 
 const PAGES = {
   '': Dashboard, ausbildung: Ausbildung, lernplan: Lernplan, skripte: Skripte, fragen: Fragen, karteikasten: Karteikasten,
-  statistik: Statistik, suche: Suche, glossar: Glossar, dokumente: Dokumente, daten: Daten, zusatz: Zusatz,
+  statistik: Statistik, suche: Suche, glossar: Glossar, dokumente: Dokumente, daten: Daten, zusatz: Zusatz, bibliothek: Bibliothek,
 };
 
 function useTheme(theme) {
@@ -112,14 +117,15 @@ export default function App() {
           <Page route={route} />
         </main>
       </div>
+      <Player />
       <nav className="bottom-nav">
         {NAV.filter((n) => MOBILE.includes(n.id)).map((n) => (
-          <a key={n.id} href={`#/${n.id}`} className={page === n.id ? 'active' : ''}>
+          <a key={n.id} href={`#/${n.id}`} className={page === n.id || (n.id === 'bibliothek' && LERNEN.includes(page)) ? 'active' : ''}>
             <Icon name={n.icon} />
-            <span>{n.label === 'Übungsfragen' ? 'Fragen' : n.label}</span>
+            <span>{KURZ[n.label] || n.label}</span>
           </a>
         ))}
-        <button onClick={() => setDrawer(true)} className={!MOBILE.includes(page) ? 'active' : ''}>
+        <button onClick={() => setDrawer(true)} className={!MOBILE.includes(page) && !LERNEN.includes(page) ? 'active' : ''}>
           <Icon name="more" />
           <span>Mehr</span>
         </button>

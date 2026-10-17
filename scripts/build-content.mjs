@@ -46,6 +46,9 @@ function routeFor(href, baseDir) {
   m = norm.match(/^zusatzausbildungen\/(.+)\.md$/);
   if (m) return `#/zusatz/z-${m[1]}${a}`;
   if (/^zusatzausbildungen\//.test(norm)) return '#/zusatz';
+  if (/^fragen\/(readme\.md)?$/i.test(norm)) return '#/dokumente/fragen-ueberblick';
+  m = norm.match(/^fragen\/\d+-(.+)\.md$/);
+  if (m) return `#/bibliothek/fragen/${m[1]}`;
   if (/^fragen/.test(norm) || /^pruefungssimulator/.test(norm)) return '#/fragen';
   if (/^ausbildungsplan\.md$/.test(norm)) return '#/ausbildung';
   if (/^lernplan\.md$/.test(norm)) return '#/lernplan';
@@ -309,15 +312,21 @@ const lpZiel = (lpMd.match(/^>\s*Ziel:\s*(.*)$/m) || [])[1];
 
 // ---------- Dokumente ----------
 const DOCS = ['ppl-ueberblick', 'flugschule-fuerstenfeld', 'ausbildungsplan', 'lernplan'];
-const extra = fs.existsSync(CONTENT_DIR) ? fs.readdirSync(CONTENT_DIR).filter((f) => /^(flugschule|pruefung|checkliste|fristen).*\.md$/i.test(f)).map((f) => f.replace(/\.md$/, '')) : [];
-const dokumente = [...new Set([...DOCS, ...extra])].map((id) => {
-  const md = read(`${id}.md`);
+// Alle Markdown-Dateien der obersten Ebene sind Dokumente; dazu die Übersicht der Übungsfragen.
+const extra = fs.existsSync(CONTENT_DIR) ? fs.readdirSync(CONTENT_DIR).filter((f) => f.endsWith('.md') && !/^(readme|index)\.md$/i.test(f)).sort().map((f) => f.replace(/\.md$/, '')) : [];
+const docFromMd = (id, rel, baseDir = '', titelFallback = id) => {
+  const md = read(rel);
   if (!md) return null;
-  const titel = cleanTitle((md.match(/^# (.*)$/m) || [, id])[1]);
-  const html = mdToHtml(md.replace(/^# .*\n/, ''));
+  const titel = cleanTitle((md.match(/^# (.*)$/m) || [, titelFallback])[1]);
+  const html = mdToHtml(md.replace(/^# .*\n/, ''), baseDir);
   const toc = [...md.matchAll(/^## (.*)$/gm)].map((m) => ({ id: slug(m[1]), titel: stripTags(mdInline(m[1])) }));
   return { id, titel, html, toc };
-}).filter(Boolean);
+};
+const dokumente = [
+  ...[...new Set([...DOCS, ...extra])].map((id) => docFromMd(id, `${id}.md`)),
+  docFromMd('fragen-ueberblick', 'fragen/README.md', 'fragen'),
+  docFromMd('skripte-ueberblick', 'skripte/index.md', 'skripte'),
+].filter(Boolean);
 
 // ---------- Glossar ----------
 let glossar = JSON.parse(fs.readFileSync(path.join(root, 'content/glossar.json'), 'utf8'));
@@ -404,6 +413,8 @@ if (fs.existsSync(zAbs)) {
     });
   }
   faecher.push(...zFaecher);
+  const zDoc = docFromMd('zusatzausbildungen-ueberblick', `${ZDIR}/index.md`, ZDIR);
+  if (zDoc) dokumente.push(zDoc);
 }
 
 // ---------- Ausgabe ----------

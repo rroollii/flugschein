@@ -31,11 +31,17 @@ In einem normalen Checkout geht auch: `npm ci && CONTENT_DIR=… OUT_DIR=… npm
 | `skripte/*.md` (+ `index.md`) | Skripte; jedes `##` = Kapitel, `###` = Abschnitt; Fachzuordnung über Dateiname/Titel; Lernreihenfolge aus `index.md` |
 | `ausbildungsplan.md` | Phasen (`## Phase N – …`), Checkboxen `- [ ]`, `**Ziel:**`, `**Meilenstein …:**`, Flugzeit aus Tabelle „auf einen Blick“, Fristen aus Tabelle „Fristen“, Mindestwerte aus der Zeile `**Mindestwerte …**` |
 | `lernplan.md` | Wochen (`**Woche N – Titel**` + Checkboxen), Blöcke (`###`), weitere Checklisten, Ziel (`> Ziel: …`) |
-| `ppl-ueberblick.md`, `flugschule-*.md` | Dokumente |
+| alle `*.md` der obersten Ebene, `fragen/README.md`, `skripte/index.md`, `zusatzausbildungen/index.md` | Dokumente (auch unter „Lernunterlagen“) |
 | `glossar.md` (optional) | ergänzt/überschreibt `content/glossar.json` (Tabelle `| Begriff | Erklärung |` oder `**Begriff**: Erklärung`) |
 | `zusatzausbildungen/` (optional) | Bereich „Zusatzausbildungen“: `index.md` (Einleitung, Reihenfolge der Links), weitere `*.md` als Module, `fragen-zusatz.json` (Schema wie `fragenbank.json`). Module sind Objekte in `content.zusatz.module` (`id, titel, fachId, kapitel, fragen, checklisten`); Checkboxen der Module werden abhakbar |
 
 Kapitel-Ebene: `##`; hat ein Dokument höchstens 4 `##`-Teile mit vielen `###`, wird auf `###` geteilt (Teil-Überschrift erscheint im Inhaltsverzeichnis).
+Fragenkataloge zum Lesen/Anhören (`#/bibliothek/fragen/<fach>`) entstehen in der App direkt aus den Fragen-JSONs; `fragen/0N-*.md` werden dafür nicht gelesen.
+
+**Lernunterlagen & Hörbuch:** Die Seite „Lernunterlagen“ (`#/bibliothek`) listet alles zum Lesen und Anhören. Das Hörbuch (`src/tts.js`, `src/Player.jsx`)
+nutzt die Sprachausgabe des Geräts (Web Speech API) – keine Audiodateien, funktioniert offline mit lokal installierten Stimmen (iOS/Android/Windows; „Google“-Stimmen in Chrome brauchen Internet).
+Gelesen wird satzweise mit Hervorhebung; Aussprache-Korrekturen (Abkürzungen, Einheiten) stehen in `ABK` in `src/tts.js`. Position und Einstellungen liegen in `localStorage` (`flugschein-hoerbuch-v1`).
+
 Checklisten-IDs werden aus dem Text gebildet: Wird ein Punkt umformuliert, gilt er als neu (Haken muss erneut gesetzt werden).
 
 ## Hosting (GitHub Pages: https://rroollii.github.io/flugschein/)
@@ -72,7 +78,8 @@ scripts/build-content.mjs   Inhalte → src/generated/content.json
 scripts/postbuild.mjs       dist/index.html → OUT_DIR, Manifest, Service Worker
 content/glossar.json        kuratiertes Glossar
 src/store.js                Fortschritt (localStorage), Karteikasten (Leitner 1/2/4/8/16 Tage), Kennzahlen
-src/pages/*.jsx             Übersicht, Ausbildung (Phasen, Flugbuch, Fristen), Lernplan, Skripte, Fragen (Lern-/Prüfungsmodus),
+src/tts.js, src/Player.jsx  Hörbuch (Sprachausgabe, Player, Hervorhebung)
+src/pages/*.jsx             Lernunterlagen, Übersicht, Ausbildung (Phasen, Flugbuch, Fristen), Lernplan, Skripte, Fragen (Lern-/Prüfungsmodus),
                             Karteikasten, Zusatzausbildungen, Statistik, Suche, Glossar, Dokumente, Daten (Export/Import)
 ```
 

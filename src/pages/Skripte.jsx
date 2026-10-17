@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { PageHead, Ring, Icon, Html, navigate, Bar, Collapse } from '../ui.jsx';
+import { ListenButton, useTtsHighlight } from '../Player.jsx';
 import { useAppState, C, skriptById, fachById, skriptProgress, kapitelKey, toggleGelesen, allSkriptProgress } from '../store.js';
 import { startSession } from './Fragen.jsx';
 
@@ -55,6 +56,8 @@ export function Reader({ skript, kapId, abschnitt, base }) {
   const go = (i) => navigate(`/${base}/${skript.id}/${skript.kapitel[i].id}`);
   const key = k ? kapitelKey(skript.id, k.id) : null;
   const read = key && s.gelesen[key];
+  const textRef = useRef(null);
+  useTtsHighlight(textRef, 'skript', skript.id, k ? idx : -1);
 
   const markAndNext = () => {
     if (!read) toggleGelesen(key);
@@ -93,6 +96,7 @@ export function Reader({ skript, kapId, abschnitt, base }) {
         <div className="reader-bar">
           <button className="btn ghost sm only-mobile" onClick={() => setToc(!toc)}><Icon name="menu" size={16} /> Kapitel</button>
           <span className="muted small grow">{k ? `Kapitel ${idx + 1} von ${skript.kapitel.length}` : 'Einleitung'}</span>
+          {k && <ListenButton type="skript" id={skript.id} part={idx} />}
           {f && <button className="btn ghost sm" onClick={() => startSession({ titel: f.name, ids: C.fragen.filter((q) => q.fachId === f.id).map((q) => q.id), modus: 'lernen', anzahl: 15, zufall: true })}><Icon name="quiz" size={16} /> Fragen üben</button>}
         </div>
         {!k ? (
@@ -102,9 +106,9 @@ export function Reader({ skript, kapId, abschnitt, base }) {
             <button className="btn primary" onClick={() => go(0)}>Mit Kapitel 1 beginnen <Icon name="chevR" size={16} /></button>
           </div>
         ) : (
-          <div className="card reading">
+          <div className="card reading" ref={textRef}>
             <Html html={k.html} scrollTo={abschnitt} key={key} />
-            <p className="muted small">ca. {Math.max(1, Math.round(k.woerter / 180))} min Lesezeit</p>
+            <p className="muted small">ca. {Math.max(1, Math.round(k.woerter / 180))} min Lesezeit · ca. {Math.max(1, Math.round(k.woerter / 140))} min zum Anhören</p>
           </div>
         )}
         {k && (
