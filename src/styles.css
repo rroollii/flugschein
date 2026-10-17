@@ -695,3 +695,4 @@ tr.tts-cur { box-shadow: none; }
   .cl-abschnitt { break-inside: avoid-page; }
   .cl-abschnitt h3 { color: #000 !important; border-bottom: 1px solid #000; }
 }
+.sync-link { width: 100%; margin-top: 10px; font: 12px/1.4 ui-monospace, monospace; padding: 8px; border: 1px solid var(--line, #dde3ea); border-radius: 8px; resize: vertical; word-break: break-all; background: transparent; color: inherit; }

@@ -123,9 +123,10 @@ export default function Sync({ route }) {
             <div className="mt">
               {link.length <= QR_MAX ? <Qr text={link} /> : <p className="muted small">Dein Fortschritt ist zu groß für einen QR-Code ({Math.round(link.length / 1000)} kB) – nutze „Teilen“ (z. B. per Messenger an dich selbst) oder den Gist-Sync.</p>}
               <div className="row gap wrap mt">
-                <button className="btn ghost" onClick={share}><Icon name="upload" size={16} /> {navigator.share ? 'Teilen …' : 'Link kopieren'}</button>
-                <button className="btn ghost" onClick={async () => { await navigator.clipboard?.writeText(link); setMsg({ ok: true, text: 'Link kopiert.' }); }}>Kopieren</button>
+                {navigator.share && <button className="btn ghost" onClick={share}><Icon name="upload" size={16} /> Teilen …</button>}
+                <button className="btn ghost" onClick={async () => { try { await navigator.clipboard.writeText(link); setMsg({ ok: true, text: 'Link kopiert.' }); } catch { setMsg({ ok: false, text: 'Kopieren nicht möglich – Link unten markieren und kopieren.' }); } }}>Link kopieren</button>
               </div>
+              <textarea className="sync-link" readOnly rows={2} value={link} onFocus={(e) => e.target.select()} aria-label="Übertragungslink" />
               <p className="muted small">Linklänge: {link.length.toLocaleString('de-AT')} Zeichen. Der Link enthält deinen Fortschritt – nur an dich selbst schicken.</p>
             </div>
           )}
