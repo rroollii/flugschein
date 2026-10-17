@@ -44,6 +44,22 @@ Checklisten-IDs werden aus dem Text gebildet: Wird ein Punkt umformuliert, gilt 
 - **Variante B – Repo mit Build-Workflow:** `bash build.sh --repo /pfad/zum/repo` kopiert Quellen + Inhalte (`inhalte/`) dorthin.
   Dort baut `bash build.sh` lokal aus `inhalte/` nach `_site/`; `.github/workflows/pages.yml` baut bei jedem Push auf `main` und veröffentlicht (Settings → Pages → Source: „GitHub Actions“).
 
+### Inhalte aktualisieren und neu deployen
+
+1. Inhalte in `docs/` (Projekt-Store) ändern – siehe „Inhaltsquellen“.
+2. Repo neu zusammenstellen und pushen:
+   ```bash
+   git clone https://github.com/rroollii/flugschein /tmp/flugschein   # oder vorhandenen Checkout nutzen
+   bash internal/plattform-quellen/build.sh --repo /tmp/flugschein   # baut docs/plattform/ und kopiert Quellen + inhalte/
+   cd /tmp/flugschein && git add -A && git commit -m "Inhalte aktualisiert" && git push origin main
+   ```
+3. Der Push auf `main` startet `.github/workflows/pages.yml` (Status: `gh run list -R rroollii/flugschein`); nach ~1 min ist die neue Version live.
+   Direkt im Repo geht auch: Dateien unter `inhalte/` bearbeiten und pushen.
+4. Nur falls Pages auf „Deploy from branch“ (`gh-pages`) steht: Inhalt von `docs/plattform/` (ohne `BUILD-INFO.txt`) in die Wurzel des Branches `gh-pages` committen und pushen.
+
+Voraussetzung für Pages: Repo **öffentlich** (Free-Konto) und einmalig Settings → Pages → Build and deployment → Source „GitHub Actions“.
+Bereits installierte PWAs holen die neue Version beim nächsten Online-Start (Service-Worker-Version ändert sich mit jedem Build).
+
 `BASE_PATH` (Standard `/flugschein/`) setzt `start_url`/`scope` im Manifest. Die App selbst verwendet nur relative Pfade und Hash-Routing (`#/skripte/…`),
 läuft also auch unter anderen Pfaden. Für Netlify o. Ä. in der Domain-Wurzel: `BASE_PATH=/ bash build.sh` (oder `./` für relativ).
 
