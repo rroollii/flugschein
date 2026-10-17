@@ -40,9 +40,10 @@ Checklisten-IDs werden aus dem Text gebildet: Wird ein Punkt umformuliert, gilt 
 
 ## Hosting (GitHub Pages: https://rroollii.github.io/flugschein/)
 
-- **Variante A – fertige Seite pushen:** Inhalt von `docs/plattform/` in die Wurzel eines Branches von `rroollii/flugschein` legen, Pages auf „Deploy from branch“ stellen.
-- **Variante B – Repo mit Build-Workflow:** `bash build.sh --repo /pfad/zum/repo` kopiert Quellen + Inhalte (`inhalte/`) dorthin.
-  Dort baut `bash build.sh` lokal aus `inhalte/` nach `_site/`; `.github/workflows/pages.yml` baut bei jedem Push auf `main` und veröffentlicht (Settings → Pages → Source: „GitHub Actions“).
+Aktuelle Einrichtung: Repo öffentlich, Settings → Pages → „Deploy from a branch“: **`gh-pages` / (root)**.
+`main` enthält Quellen + Inhalte (`inhalte/`); `.github/workflows/pages.yml` baut bei jedem Push auf `main` nach `_site/`
+und committet das Ergebnis in den Branch `gh-pages` (nur wenn sich der Build geändert hat). Danach veröffentlicht GitHub
+Pages automatisch („pages build and deployment“). Lokal baut `bash build.sh` im Repo aus `inhalte/` nach `_site/`.
 
 ### Inhalte aktualisieren und neu deployen
 
@@ -53,11 +54,12 @@ Checklisten-IDs werden aus dem Text gebildet: Wird ein Punkt umformuliert, gilt 
    bash internal/plattform-quellen/build.sh --repo /tmp/flugschein   # baut docs/plattform/ und kopiert Quellen + inhalte/
    cd /tmp/flugschein && git add -A && git commit -m "Inhalte aktualisiert" && git push origin main
    ```
-3. Der Push auf `main` startet `.github/workflows/pages.yml` (Status: `gh run list -R rroollii/flugschein`); nach ~1 min ist die neue Version live.
-   Direkt im Repo geht auch: Dateien unter `inhalte/` bearbeiten und pushen.
-4. Nur falls Pages auf „Deploy from branch“ (`gh-pages`) steht: Inhalt von `docs/plattform/` (ohne `BUILD-INFO.txt`) in die Wurzel des Branches `gh-pages` committen und pushen.
+3. Der Push auf `main` startet „Plattform bauen (gh-pages)“, das nach `gh-pages` pusht; anschließend läuft „pages build and deployment“
+   (Status: `gh run list -R rroollii/flugschein`). Nach 1–2 min ist die neue Version live. Direkt im Repo geht auch: Dateien unter `inhalte/` bearbeiten und pushen.
+4. Ohne Actions (Notfall): Inhalt von `docs/plattform/` (ohne `BUILD-INFO.txt`) in die Wurzel des Branches `gh-pages` committen und pushen.
+   Nicht von Hand auf `gh-pages` arbeiten, wenn gleichzeitig `main` geändert wird – der Workflow überschreibt den Branch-Inhalt.
 
-Voraussetzung für Pages: Repo **öffentlich** (Free-Konto) und einmalig Settings → Pages → Build and deployment → Source „GitHub Actions“.
+Pages-Quelle nicht auf „GitHub Actions“ umstellen, ohne den Workflow wieder auf `upload-pages-artifact`/`deploy-pages` zurückzubauen.
 Bereits installierte PWAs holen die neue Version beim nächsten Online-Start (Service-Worker-Version ändert sich mit jedem Build).
 
 `BASE_PATH` (Standard `/flugschein/`) setzt `start_url`/`scope` im Manifest. Die App selbst verwendet nur relative Pfade und Hash-Routing (`#/skripte/…`),
