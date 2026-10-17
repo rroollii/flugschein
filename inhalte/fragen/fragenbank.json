@@ -1,0 +1,4905 @@
+{
+ "titel": "Übungsfragen PPL(A) – EASA, Österreich (Austro Control)",
+ "version": "2.0",
+ "stand": "2026-10",
+ "hinweis": "Eigene, im Stil des ECQB formulierte Übungsfragen. Keine Originalfragen des ECQB. Prüfungsumfang je Fach nach Austro Control (DC_LFA_ACW_034: 132 Fragen, 290 min, alle Fächer an einem Prüfungstag), Bestehensgrenze 75 %. Österreich-spezifische Inhalte (LVR 2014, LFG, Fürstenfeld/LOGF) mit Stand 10/2026.",
+ "bestehensgrenze_prozent": 75,
+ "faecher": [
+  {
+   "nr": 1,
+   "id": "luftrecht",
+   "name": "Luftrecht",
+   "kuerzel": "LR",
+   "pruefung": {
+    "fragen": 20,
+    "minuten": 40
+   },
+   "fragen": [
+    {
+     "id": "LR-001",
+     "frage": "Welche EU-Verordnung enthält die einheitlichen europäischen Luftverkehrsregeln (SERA)?",
+     "antworten": [
+      "DVO (EU) Nr. 923/2012",
+      "VO (EU) Nr. 965/2012",
+      "VO (EU) Nr. 1178/2011",
+      "VO (EU) Nr. 2018/1139"
+     ],
+     "richtig": 0,
+     "erklaerung": "SERA = Standardised European Rules of the Air, DVO (EU) 923/2012. 1178/2011 regelt das Luftpersonal (Part-FCL, Part-MED), 965/2012 den Flugbetrieb."
+    },
+    {
+     "id": "LR-002",
+     "frage": "In welcher Verordnung sind die Anforderungen an Pilotenlizenzen (Part-FCL) festgelegt?",
+     "antworten": [
+      "Verordnung (EU) Nr. 2018/395",
+      "Verordnung (EU) Nr. 1178/2011",
+      "Durchführungsverordnung (EU) Nr. 923/2012",
+      "Luftverkehrsregeln 2014 (LVR)"
+     ],
+     "richtig": 1,
+     "erklaerung": "Die Aircrew-Verordnung 1178/2011 enthält u. a. Part-FCL (Lizenzen) und Part-MED (Tauglichkeit). Die österreichischen LVR 2014 ergänzen SERA."
+    },
+    {
+     "id": "LR-003",
+     "frage": "Welcher Anhang (Annex) zum ICAO-Abkommen behandelt die Luftverkehrsregeln?",
+     "antworten": [
+      "Annex 2",
+      "Annex 6",
+      "Annex 11",
+      "Annex 1"
+     ],
+     "richtig": 0,
+     "erklaerung": "Annex 1: Lizenzierung, Annex 2: Rules of the Air, Annex 6: Betrieb von Luftfahrzeugen, Annex 11: Flugverkehrsdienste."
+    },
+    {
+     "id": "LR-004",
+     "frage": "Welcher ICAO-Anhang regelt die Lizenzierung von Luftfahrtpersonal?",
+     "antworten": [
+      "Annex 14",
+      "Annex 8",
+      "Annex 1",
+      "Annex 2"
+     ],
+     "richtig": 2,
+     "erklaerung": "Annex 1 = Personnel Licensing. Annex 8 = Lufttüchtigkeit, Annex 14 = Flugplätze."
+    },
+    {
+     "id": "LR-005",
+     "frage": "Wie viele Flugstunden Ausbildung sind für die PPL(A) nach FCL.210.A mindestens erforderlich?",
+     "antworten": [
+      "30 Stunden",
+      "40 Stunden",
+      "35 Stunden",
+      "45 Stunden"
+     ],
+     "richtig": 3,
+     "erklaerung": "Mindestens 45 h Flugausbildung auf Flugzeugen/TMG, davon bis zu 5 h im FSTD, mindestens 25 h mit Lehrberechtigtem und 10 h überwachter Alleinflug."
+    },
+    {
+     "id": "LR-006",
+     "frage": "Welche Alleinflugzeit muss ein PPL(A)-Bewerber mindestens nachweisen?",
+     "antworten": [
+      "5 h, davon 2 h Überland mit einem Flug ≥ 270 km und zwei Zwischenlandungen",
+      "10 h, davon 5 h Überland mit einem Flug ≥ 270 km und zwei Zwischenlandungen",
+      "10 h, davon 3 h Überland mit einem Flug ≥ 150 km und einer Zwischenlandung",
+      "15 h, davon 5 h Überland mit einem Flug ≥ 200 km ohne Zwischenlandung"
+     ],
+     "richtig": 1,
+     "erklaerung": "FCL.210.A(a)(2): 10 h überwachter Alleinflug, davon mind. 5 h Alleinüberlandflug mit einem Flug ≥ 270 km (150 NM) und Landungen bis zum vollständigen Stillstand auf zwei vom Startflugplatz verschiedenen Flugplätzen."
+    },
+    {
+     "id": "LR-007",
+     "frage": "Welches Mindestalter gilt für die Erteilung einer PPL(A)?",
+     "antworten": [
+      "16 Jahre",
+      "21 Jahre",
+      "18 Jahre",
+      "17 Jahre"
+     ],
+     "richtig": 3,
+     "erklaerung": "FCL.200: Bewerber um eine PPL müssen mindestens 17 Jahre alt sein."
+    },
+    {
+     "id": "LR-008",
+     "frage": "Ab welchem Alter darf ein Flugschüler im Flugzeug den ersten Alleinflug durchführen?",
+     "antworten": [
+      "17 Jahre",
+      "16 Jahre",
+      "14 Jahre",
+      "18 Jahre"
+     ],
+     "richtig": 1,
+     "erklaerung": "FCL.020: Flugschüler dürfen allein nur fliegen, wenn sie mindestens 16 Jahre alt sind (Segelflug/Ballon: 14)."
+    },
+    {
+     "id": "LR-009",
+     "frage": "Was ist Voraussetzung, um als PIC Passagiere befördern zu dürfen (Flugzeug, Tag)?",
+     "antworten": [
+      "3 Starts, Anflüge und Landungen in den letzten 90 Tagen",
+      "5 Starts, Anflüge und Landungen in den letzten 90 Tagen",
+      "1 Platzrunde mit Lehrberechtigtem in den letzten 60 Tagen",
+      "3 Starts, Anflüge und Landungen in den letzten 30 Tagen"
+     ],
+     "richtig": 0,
+     "erklaerung": "FCL.060(b)(1): 3 Starts, Anflüge und Landungen als steuernder Pilot in den vorangegangenen 90 Tagen."
+    },
+    {
+     "id": "LR-010",
+     "frage": "Was ist zusätzlich nötig, um nachts als PIC Passagiere zu befördern (ohne Instrumentenflugberechtigung)?",
+     "antworten": [
+      "3 Starts und Landungen bei Nacht in den letzten 30 Tagen",
+      "1 Start, Anflug und Landung bei Nacht in den letzten 90 Tagen",
+      "5 Nachtflugstunden als PIC in den letzten 12 Monaten",
+      "Keine – es gelten die gleichen Bedingungen wie am Tag"
+     ],
+     "richtig": 1,
+     "erklaerung": "FCL.060(b)(2): mindestens ein Start, Anflug und eine Landung bei Nacht in den vorangegangenen 90 Tagen oder eine IR."
+    },
+    {
+     "id": "LR-011",
+     "frage": "Wie lange ist eine Klassenberechtigung SEP (Land) gültig?",
+     "antworten": [
+      "24 Monate",
+      "60 Monate",
+      "12 Monate",
+      "36 Monate"
+     ],
+     "richtig": 0,
+     "erklaerung": "FCL.740.A: Klassenberechtigungen für einmotorige Kolbenmotorflugzeuge gelten 24 Monate."
+    },
+    {
+     "id": "LR-012",
+     "frage": "Wie kann eine SEP-Klassenberechtigung durch Flugerfahrung verlängert werden?",
+     "antworten": [
+      "In den 6 Monaten vor Ablauf 6 h Flugzeit (3 h PIC), 6 Landungen und 1 h Übungsflug mit Lehrberechtigtem",
+      "Nur durch eine Befähigungsüberprüfung mit einem Prüfer innerhalb von 3 Monaten vor Ablauf",
+      "In den 24 Monaten vor Ablauf 20 h Flugzeit als PIC und 20 Landungen, ohne Übungsflug",
+      "In den 12 Monaten vor Ablauf 12 h Flugzeit (6 h PIC), 12 Landungen und 1 h Übungsflug mit Lehrberechtigtem"
+     ],
+     "richtig": 3,
+     "erklaerung": "FCL.740.A(b)(1): alternativ zur Befähigungsüberprüfung genügt diese Flugerfahrung in den letzten 12 Monaten vor Ablauf."
+    },
+    {
+     "id": "LR-013",
+     "frage": "Wie lange ist ein Tauglichkeitszeugnis der Klasse 2 für einen 30-jährigen Piloten gültig?",
+     "antworten": [
+      "60 Monate, längstens bis zum 42. Geburtstag",
+      "36 Monate, längstens bis zum 40. Geburtstag",
+      "12 Monate, längstens bis zum 40. Geburtstag",
+      "24 Monate, längstens bis zum 42. Geburtstag"
+     ],
+     "richtig": 0,
+     "erklaerung": "MED.A.045: Klasse 2 bis 40 Jahre 60 Monate; ein vor dem 40. Geburtstag ausgestelltes Zeugnis verliert mit 42 seine Gültigkeit."
+    },
+    {
+     "id": "LR-014",
+     "frage": "Wie lange gilt ein Medical Klasse 2 für einen 45-jährigen Piloten?",
+     "antworten": [
+      "12 Monate",
+      "24 Monate",
+      "6 Monate",
+      "60 Monate"
+     ],
+     "richtig": 1,
+     "erklaerung": "MED.A.045: zwischen 40 und 50 Jahren 24 Monate (spätestens bis zur Vollendung des 51. Lebensjahres)."
+    },
+    {
+     "id": "LR-015",
+     "frage": "Wie lange gilt ein Medical Klasse 2 für einen 55-jährigen Piloten?",
+     "antworten": [
+      "24 Monate",
+      "6 Monate",
+      "60 Monate",
+      "12 Monate"
+     ],
+     "richtig": 3,
+     "erklaerung": "MED.A.045: über 50 Jahre gilt das Klasse-2-Zeugnis 12 Monate."
+    },
+    {
+     "id": "LR-016",
+     "frage": "Wie lange ist ein Sprachvermerk der Stufe 4 (Operational) gültig?",
+     "antworten": [
+      "Unbefristet",
+      "4 Jahre",
+      "6 Jahre",
+      "2 Jahre"
+     ],
+     "richtig": 1,
+     "erklaerung": "FCL.055: Stufe 4 gilt 4 Jahre, Stufe 5 gilt 6 Jahre, Stufe 6 (Expert) ist unbefristet."
+    },
+    {
+     "id": "LR-017",
+     "frage": "Zwei Motorflugzeuge nähern sich in annähernd gleicher Höhe auf kreuzenden Kursen. Wer muss ausweichen?",
+     "antworten": [
+      "Das schnellere der beiden Luftfahrzeuge",
+      "Das Luftfahrzeug, das das andere links von sich sieht",
+      "Das Luftfahrzeug, das das andere rechts von sich sieht",
+      "Das höher fliegende der beiden Luftfahrzeuge"
+     ],
+     "richtig": 2,
+     "erklaerung": "SERA.3210: Bei kreuzenden Kursen weicht aus, wer das andere Luftfahrzeug rechts von sich hat (Rechts vor Links)."
+    },
+    {
+     "id": "LR-018",
+     "frage": "Zwei Luftfahrzeuge nähern sich frontal oder nahezu frontal. Wie ist auszuweichen?",
+     "antworten": [
+      "Beide ändern ihren Kurs nach rechts",
+      "Beide ändern ihren Kurs nach links",
+      "Das tiefere sinkt, das höhere steigt",
+      "Das kleinere Luftfahrzeug weicht nach links aus"
+     ],
+     "richtig": 0,
+     "erklaerung": "SERA.3210: Bei Gegenkurs ändern beide ihren Steuerkurs nach rechts."
+    },
+    {
+     "id": "LR-019",
+     "frage": "Wie hat ein überholendes Luftfahrzeug im Flug auszuweichen?",
+     "antworten": [
+      "Durch Sinken unter das andere Luftfahrzeug",
+      "Durch Kursänderung nach rechts",
+      "Durch Steigen über das andere Luftfahrzeug",
+      "Durch Kursänderung nach links"
+     ],
+     "richtig": 1,
+     "erklaerung": "SERA.3210: Das überholte Luftfahrzeug hat Vorflugrecht; der Überholende weicht nach rechts aus."
+    },
+    {
+     "id": "LR-020",
+     "frage": "Ein Motorflugzeug und ein Segelflugzeug befinden sich auf kreuzenden Kursen in gleicher Höhe. Wer weicht aus?",
+     "antworten": [
+      "Das Motorflugzeug",
+      "Das Luftfahrzeug, das das andere links sieht",
+      "Das langsamere Luftfahrzeug",
+      "Das Segelflugzeug"
+     ],
+     "richtig": 0,
+     "erklaerung": "Motorgetriebene Luftfahrzeuge schwerer als Luft weichen Luftschiffen, Segelflugzeugen und Ballonen aus."
+    },
+    {
+     "id": "LR-021",
+     "frage": "Welches Luftfahrzeug hat beim Landeanflug Vorrang, wenn sich zwei Flugzeuge gleichzeitig zur Landung nähern?",
+     "antworten": [
+      "Das höher fliegende",
+      "Das schnellere",
+      "Das von links kommende",
+      "Das tiefer fliegende"
+     ],
+     "richtig": 3,
+     "erklaerung": "SERA.3210: Das tiefer fliegende Luftfahrzeug hat Vorrang; es darf dies aber nicht ausnutzen, um sich vor ein anderes im Endanflug zu setzen."
+    },
+    {
+     "id": "LR-022",
+     "frage": "Was bedeutet ein grünes Dauerlicht, das vom Turm auf ein Luftfahrzeug im Flug gerichtet wird?",
+     "antworten": [
+      "Zurückkehren zur Landung",
+      "Landung frei",
+      "Anderen Luftfahrzeugen Vorrang geben und weiter kreisen",
+      "Flugplatz unsicher, nicht landen"
+     ],
+     "richtig": 1,
+     "erklaerung": "SERA Anlage 1: grünes Dauerlicht im Flug = Landeerlaubnis; grünes Blinklicht = zur Landung zurückkehren."
+    },
+    {
+     "id": "LR-023",
+     "frage": "Was bedeutet ein rotes Blinklicht vom Turm an ein Luftfahrzeug im Flug?",
+     "antworten": [
+      "Auf diesem Flugplatz landen und zum Vorfeld rollen",
+      "Anderen Luftfahrzeugen Vorrang geben und weiter kreisen",
+      "Landung frei",
+      "Flugplatz unsicher, nicht landen"
+     ],
+     "richtig": 3,
+     "erklaerung": "Rotes Blinklicht im Flug: Flugplatz nicht sicher, nicht landen."
+    },
+    {
+     "id": "LR-024",
+     "frage": "Was bedeutet ein rotes Dauerlicht vom Turm an ein Luftfahrzeug im Flug?",
+     "antworten": [
+      "Anderen Luftfahrzeugen Vorrang geben und weiter kreisen",
+      "Zum Ausgangspunkt zurückkehren und dort landen",
+      "Flugplatz unsicher, nicht landen und ausweichen",
+      "Sofort landen, die Piste ist für Sie frei"
+     ],
+     "richtig": 0,
+     "erklaerung": "Rotes Dauerlicht im Flug: anderen Luftfahrzeugen ausweichen und weiter kreisen."
+    },
+    {
+     "id": "LR-025",
+     "frage": "Was bedeutet ein grünes Blinklicht vom Turm an ein Luftfahrzeug am Boden?",
+     "antworten": [
+      "Zum Ausgangspunkt zurückrollen",
+      "Start frei",
+      "Rollen frei",
+      "Halt"
+     ],
+     "richtig": 2,
+     "erklaerung": "Am Boden: grünes Blinklicht = Rollerlaubnis, grünes Dauerlicht = Starterlaubnis, rotes Dauerlicht = Halt."
+    },
+    {
+     "id": "LR-026",
+     "frage": "Welche Sicherheitsmindesthöhe gilt bei VFR-Flügen über Städten und dicht besiedelten Gebieten?",
+     "antworten": [
+      "500 ft über dem höchsten Hindernis im Umkreis von 150 m",
+      "2000 ft über Grund, unabhängig von Hindernissen",
+      "1000 ft über dem höchsten Hindernis im Umkreis von 600 m",
+      "1000 ft über Grund, ohne Berücksichtigung von Hindernissen"
+     ],
+     "richtig": 2,
+     "erklaerung": "SERA.5005(f)(1): mindestens 300 m (1000 ft) über dem höchsten Hindernis innerhalb von 600 m um das Luftfahrzeug."
+    },
+    {
+     "id": "LR-027",
+     "frage": "Welche Mindesthöhe gilt bei VFR-Flügen außerhalb dicht besiedelter Gebiete (außer bei Start und Landung)?",
+     "antworten": [
+      "1000 ft über Grund oder Wasser",
+      "2000 ft über Grund oder Wasser",
+      "300 ft über Grund oder Wasser",
+      "500 ft über Grund oder Wasser"
+     ],
+     "richtig": 3,
+     "erklaerung": "SERA.5005(f)(2): 500 ft über Grund/Wasser bzw. dem höchsten Hindernis im Umkreis von 150 m. Im Gebirge sind deutlich größere Abstände dringend zu empfehlen."
+    },
+    {
+     "id": "LR-028",
+     "frage": "Welche VMC-Mindestbedingungen gelten im Luftraum E unterhalb FL 100?",
+     "antworten": [
+      "5 km Flugsicht, Wolkenabstand 1500 m horizontal, 1000 ft vertikal",
+      "1,5 km Flugsicht, frei von Wolken und mit ständiger Erdsicht",
+      "8 km Flugsicht, Wolkenabstand 1500 m horizontal, 1000 ft vertikal",
+      "5 km Flugsicht, Wolkenabstand 1000 m horizontal, 500 ft vertikal"
+     ],
+     "richtig": 0,
+     "erklaerung": "SERA.5001 Tabelle S5-1: unterhalb 10.000 ft AMSL 5 km Flugsicht, Wolkenabstand 1500 m / 1000 ft."
+    },
+    {
+     "id": "LR-029",
+     "frage": "Welche Mindestflugsicht gilt für VFR-Flüge in und oberhalb FL 100 (Luftraum E)?",
+     "antworten": [
+      "10 km",
+      "1,5 km",
+      "8 km",
+      "5 km"
+     ],
+     "richtig": 2,
+     "erklaerung": "SERA.5001: ab 3050 m (10.000 ft) AMSL beträgt die Mindestflugsicht 8 km."
+    },
+    {
+     "id": "LR-030",
+     "frage": "Welche Sichtflugbedingungen gelten in Österreich im Luftraum G in und unter 3000 ft MSL bzw. 1000 ft GND für Flugzeuge mit höchstens 140 kt?",
+     "antworten": [
+      "5 km Flugsicht, 1500 m horizontal Wolkenabstand",
+      "1,5 km Flugsicht, frei von Wolken, Erdsicht",
+      "3 km Flugsicht, 1000 ft vertikal Wolkenabstand",
+      "800 m Flugsicht, frei von Wolken"
+     ],
+     "richtig": 1,
+     "erklaerung": "SERA.5001 in Verbindung mit § 23 LVR 2014: 1500 m Flugsicht bei ≤ 140 kt IAS; frei von Wolken und mit Erdsicht (800 m gilt nur für Hubschrauber)."
+    },
+    {
+     "id": "LR-031",
+     "frage": "Welche Reiseflughöhe ist nach der Halbkreisflugregel bei einem missweisenden Kurs von 090° (oberhalb 3000 ft GND) zu wählen?",
+     "antworten": [
+      "FL 55",
+      "FL 60",
+      "FL 50",
+      "FL 65"
+     ],
+     "richtig": 0,
+     "erklaerung": "Missweisender Kurs 000°–179°: ungerade Tausender + 500 ft (FL 35, 55, 75 …); 180°–359°: gerade Tausender + 500 ft (FL 45, 65 …)."
+    },
+    {
+     "id": "LR-032",
+     "frage": "Welche Reiseflughöhe ist bei einem missweisenden Kurs von 270° (oberhalb 3000 ft GND) korrekt?",
+     "antworten": [
+      "FL 55",
+      "FL 70",
+      "FL 75",
+      "FL 65"
+     ],
+     "richtig": 3,
+     "erklaerung": "180°–359° missweisend: gerade Tausender plus 500 ft, z. B. FL 45, FL 65, FL 85."
+    },
+    {
+     "id": "LR-033",
+     "frage": "Welche Höhenmessereinstellung ist unterhalb der Übergangshöhe zu verwenden?",
+     "antworten": [
+      "QNH",
+      "QFF",
+      "Standard 1013,25 hPa",
+      "QFE"
+     ],
+     "richtig": 0,
+     "erklaerung": "Unterhalb der Übergangshöhe (Österreich/FIR Wien: 10 000 ft AMSL) wird mit QNH geflogen, darüber in Flugflächen mit 1013,25 hPa."
+    },
+    {
+     "id": "LR-034",
+     "frage": "Welchen Transpondercode schaltet ein VFR-Flug in Österreich, sofern kein anderer zugewiesen wurde?",
+     "antworten": [
+      "7000",
+      "0021",
+      "7600",
+      "2000"
+     ],
+     "richtig": 0,
+     "erklaerung": "7000 ist der allgemeine VFR-Code in Europa (§ 30 LVR 2014). 7600 bedeutet Funkausfall, 7700 Notfall, 7500 widerrechtlicher Eingriff."
+    },
+    {
+     "id": "LR-035",
+     "frage": "Welcher Transpondercode zeigt einen Funkausfall an?",
+     "antworten": [
+      "7700",
+      "7600",
+      "7500",
+      "7000"
+     ],
+     "richtig": 1,
+     "erklaerung": "7600 = Funkausfall (Radio failure), 7700 = Luftnot, 7500 = Entführung."
+    },
+    {
+     "id": "LR-036",
+     "frage": "In welchen Lufträumen muss ein Motorflugzeug bei VFR-Flügen am Tag in Österreich einen Mode-S-Transponder mit Höhenübermittlung betreiben?",
+     "antworten": [
+      "In C, D, E und in TMZ",
+      "Nur in C und D sowie in TMZ",
+      "In allen Lufträumen einschließlich G",
+      "Nur oberhalb 5000 ft MSL oder 3500 ft GND"
+     ],
+     "richtig": 0,
+     "erklaerung": "§ 30 LVR 2014: Mode S mit Höhenübermittlung in TMZ, C, D und E (für motorgetriebene Flächenflugzeuge auch am Tag), in G nur bei Nacht. Die 5000-ft-Regel ist deutsches Recht (FSAV)."
+    },
+    {
+     "id": "LR-037",
+     "frage": "Wie ist „Nacht“ nach SERA definiert?",
+     "antworten": [
+      "Ende der bürgerlichen Abend- bis Beginn der bürgerlichen Morgendämmerung",
+      "Ende der nautischen Abend- bis Beginn der nautischen Morgendämmerung",
+      "Zeit zwischen Sonnenuntergang und Sonnenaufgang am Startflugplatz",
+      "Sonnenuntergang + 60 min bis Sonnenaufgang − 60 min (Ortszeit)"
+     ],
+     "richtig": 0,
+     "erklaerung": "Die bürgerliche Dämmerung endet, wenn die Sonnenmitte 6° unter dem Horizont steht."
+    },
+    {
+     "id": "LR-038",
+     "frage": "Was benötigt ein VFR-Flug zum Einflug in eine Kontrollzone (Luftraum D, CTR)?",
+     "antworten": [
+      "Eine Flugverkehrskontrollfreigabe",
+      "Nur eine Anmeldung per Telefon",
+      "Keine Freigabe, nur Hörbereitschaft",
+      "Einen IFR-Flugplan"
+     ],
+     "richtig": 0,
+     "erklaerung": "Kontrollzonen (z. B. CTR Graz) sind in Österreich Luftraum D; VFR-Flüge benötigen eine Freigabe, Funkverbindung und einen Flugplan."
+    },
+    {
+     "id": "LR-039",
+     "frage": "Was ist in einer RMZ (Radio Mandatory Zone) vorgeschrieben?",
+     "antworten": [
+      "Eine Flugverkehrskontrollfreigabe vor dem Einflug",
+      "Ein Mode-S-Transponder mit ADS-B und Code 7000",
+      "Ein aufgegebener Flugplan und Freigabe durch FIS",
+      "Erstmeldung vor Einflug und dauernde Hörbereitschaft"
+     ],
+     "richtig": 3,
+     "erklaerung": "SERA.6005(a): In der RMZ ist vor Einflug eine Meldung abzusetzen und Hörbereitschaft zu halten; eine Freigabe ist nicht erforderlich."
+    },
+    {
+     "id": "LR-040",
+     "frage": "Für welchen VFR-Flug ist nach SERA.4001 ein Flugplan erforderlich?",
+     "antworten": [
+      "Für jeden Flug am Tag im Luftraum E unterhalb FL 100",
+      "Für einen Nachtflug, der die Umgebung des Flugplatzes verlässt",
+      "Für jeden Flug am Tag mit Passagieren an Bord",
+      "Für jeden Überlandflug am Tag von mehr als 100 km Länge"
+     ],
+     "richtig": 1,
+     "erklaerung": "SERA.4001(b)(6): VFR-Nachtflüge außerhalb der Flugplatzumgebung brauchen einen Flugplan, ebenso Flüge mit Flugverkehrskontrolldienst. In Österreich sind grenzüberschreitende VFR-Tagflüge in G und E seit 15.05.2025 flugplanfrei (§ 21 LVR 2014)."
+    },
+    {
+     "id": "LR-041",
+     "frage": "Welche Höchstgeschwindigkeit gilt für VFR-Flüge im Luftraum E unterhalb FL 100?",
+     "antworten": [
+      "250 kt IAS",
+      "Keine Begrenzung",
+      "200 kt IAS",
+      "180 kt TAS"
+     ],
+     "richtig": 0,
+     "erklaerung": "SERA Tabelle S6-1: in den Lufträumen C (VFR), D, E, F und G unterhalb 10.000 ft AMSL 250 kt IAS."
+    },
+    {
+     "id": "LR-042",
+     "frage": "Welches Nationalitätszeichen tragen in Österreich registrierte Luftfahrzeuge?",
+     "antworten": [
+      "OE-",
+      "OS-",
+      "A-",
+      "AU-"
+     ],
+     "richtig": 0,
+     "erklaerung": "Österreichische Luftfahrzeuge tragen „OE“ (z. B. OE-DTT, Cessna 172 in Fürstenfeld) und sind im Luftfahrzeugregister der Austro Control eingetragen. D = Deutschland, HB = Schweiz."
+    },
+    {
+     "id": "LR-043",
+     "frage": "Wem ist in Österreich ein Flugunfall unverzüglich zu melden?",
+     "antworten": [
+      "Dem Landeshauptmann des betroffenen Bundeslandes",
+      "Der Bundesstelle für Flugunfalluntersuchung in Braunschweig",
+      "Der SUB über die Meldestelle der Austro Control",
+      "Dem Fernmeldebüro der zuständigen Landeshauptstadt"
+     ],
+     "richtig": 2,
+     "erklaerung": "Unfälle und schwere Störungen untersucht die Sicherheitsuntersuchungsstelle des Bundes (SUB); gemeldet wird über die rund um die Uhr besetzte zentrale Meldestelle der Austro Control (UUG 2005, VO (EU) 996/2010). Die BFU ist die deutsche Stelle."
+    },
+    {
+     "id": "LR-044",
+     "frage": "Ein Abfangjäger wackelt vor Ihnen mit den Tragflächen und dreht langsam ab. Was bedeutet das?",
+     "antworten": [
+      "Sie wurden abgefangen – folgen Sie mir",
+      "Schalten Sie den Transponder aus",
+      "Sie dürfen weiterfliegen",
+      "Landen Sie sofort auf dem nächsten Feld"
+     ],
+     "richtig": 0,
+     "erklaerung": "SERA Anlage 1: Tragflächenwackeln des Abfangenden = „Sie wurden abgefangen, folgen Sie mir“. Antwort: ebenfalls mit den Flächen wackeln und folgen; 7700 schalten und 121,5 MHz rufen."
+    },
+    {
+     "id": "LR-045",
+     "frage": "Welches Dokument muss gemäß NCO.GEN.135 NICHT an Bord eines Flugzeugs mitgeführt werden?",
+     "antworten": [
+      "Das Wartungsprogramm",
+      "Das Lufttüchtigkeitszeugnis",
+      "Der Eintragungsschein",
+      "Der Versicherungsnachweis"
+     ],
+     "richtig": 0,
+     "erklaerung": "Mitzuführen sind u. a. Flughandbuch, Eintragungsschein, Lufttüchtigkeitszeugnis, ARC, Lärmzeugnis, Funkgenehmigung und Versicherungsnachweis – nicht das Wartungsprogramm."
+    },
+    {
+     "id": "LR-046",
+     "frage": "Welche Übergangshöhe (Transition Altitude) gilt im Allgemeinen in der FIR Wien?",
+     "antworten": [
+      "10 000 ft AMSL",
+      "5000 ft MSL bzw. 2000 ft GND",
+      "3000 ft AMSL",
+      "13 000 ft AMSL"
+     ],
+     "richtig": 0,
+     "erklaerung": "In Österreich liegt die Übergangshöhe wegen der Alpen bei 10 000 ft AMSL (Ausnahme im Raum Innsbruck lt. AIP). Darunter QNH, darüber Flugflächen. 5000 ft/2000 ft GND gilt in Deutschland."
+    },
+    {
+     "id": "LR-047",
+     "frage": "Wer erteilt in Österreich die Bewilligung für eine Außenlandung (§ 9 LFG)?",
+     "antworten": [
+      "Die Bezirkshauptmannschaft des Landeorts",
+      "Der Landeshauptmann",
+      "Der Halter des nächstgelegenen Flugplatzes",
+      "Die Austro Control GmbH"
+     ],
+     "richtig": 1,
+     "erklaerung": "§ 9 Luftfahrtgesetz: Außenlandungen und Außenabflüge bedürfen einer Bewilligung des Landeshauptmanns. Notlandungen sind ausgenommen (§ 10 LFG)."
+    },
+    {
+     "id": "LR-048",
+     "frage": "Welche Luftraumklassen werden in Österreich verwendet?",
+     "antworten": [
+      "C, D, E, F und G",
+      "A, C, D, E und G",
+      "B, C, D und G",
+      "C, D, E und G"
+     ],
+     "richtig": 3,
+     "erklaerung": "§ 25 und Anhang A LVR 2014: C (oberer Luftraum ab FL 195), D (CTA/TMA/CTR), E und G. A, B und F werden nicht verwendet; nicht klassifizierter Luftraum ist G."
+    },
+    {
+     "id": "LR-049",
+     "frage": "Was gilt für grenzüberschreitende VFR-Flüge bei Tag in den Lufträumen G und E nach § 21 LVR 2014 (seit 15.05.2025)?",
+     "antworten": [
+      "Sie sind nur mit Freigabe durch Wien Information erlaubt",
+      "Sie sind flugplanfrei, Mode-S-Transponder muss aktiv sein",
+      "Sie sind nur innerhalb des Schengen-Raums flugplanfrei",
+      "Ein Flugplan ist immer mindestens 60 min vorher aufzugeben"
+     ],
+     "richtig": 1,
+     "erklaerung": "§ 21 LVR 2014 befreit grenzüberschreitende VFR-Tagflüge in G und E von der Flugplanpflicht; für den Einflug nach Österreich ist ein aktiver Mode-S-Transponder Voraussetzung. Vorschriften des Nachbarstaats gelten zusätzlich."
+    },
+    {
+     "id": "LR-050",
+     "frage": "Welche Stelle nimmt in Österreich die theoretische PPL-Prüfung ab und erteilt die Lizenz?",
+     "antworten": [
+      "Der Österreichische Aero Club",
+      "Das Fernmeldebüro in Wien",
+      "Die Austro Control GmbH",
+      "Der Landeshauptmann des Wohnsitzlandes"
+     ],
+     "richtig": 2,
+     "erklaerung": "Die Austro Control ist in Österreich Behörde für das Luftfahrtpersonal: Theorieprüfung (Wien oder externe Prüfungszentren), Lizenz, Sprachvermerk und Flugmedizin."
+    },
+    {
+     "id": "LR-051",
+     "frage": "Ab welcher Mindesthöhe über Grund darf in Österreich nach § 15 LVR 2014 Kunstflug durchgeführt werden?",
+     "antworten": [
+      "1000 ft GND",
+      "1700 ft GND",
+      "2500 ft GND",
+      "500 ft GND"
+     ],
+     "richtig": 1,
+     "erklaerung": "§ 15 LVR 2014: Kunstflüge nicht unter 1700 ft über Grund (zusätzlich Bewilligungen bzw. Beschränkungen beachten)."
+    },
+    {
+     "id": "LR-052",
+     "frage": "Wer haftet nach § 146 LFG verschuldensunabhängig für Schäden Dritter beim Betrieb eines Luftfahrzeugs?",
+     "antworten": [
+      "Ausschließlich der verantwortliche Pilot",
+      "Der Halter des Luftfahrzeugs",
+      "Der Hersteller des Luftfahrzeugs",
+      "Der Flugplatzbetreiber am Startort"
+     ],
+     "richtig": 1,
+     "erklaerung": "Halterhaftung nach § 146 Luftfahrtgesetz (Gefährdungshaftung); abgesichert durch die Pflicht-Haftpflichtversicherung nach § 164 LFG und VO (EG) 785/2004."
+    },
+    {
+     "id": "LR-053",
+     "frage": "Ein VFR-Flug soll von Fürstenfeld (LOGF) nach Graz (LOWG) führen und dort landen. Was gilt für den Flugplan?",
+     "antworten": [
+      "Flugplan nur bei mehr als 2 Personen an Bord",
+      "Flugplan nötig, da Graz kontrolliert ist",
+      "Flugplan nur, wenn der Flug über 100 km lang ist",
+      "Kein Flugplan, da der Flug im Inland bleibt"
+     ],
+     "richtig": 1,
+     "erklaerung": "Für Flüge mit Landung auf einem kontrollierten Flugplatz bzw. Einflug in eine CTR verlangt Österreich einen Flugplan (AIP ENR 1.10); dazu kommt die Einflugfreigabe von Graz."
+    },
+    {
+     "id": "LR-054",
+     "frage": "Was gilt in Österreich für den Transponder bei VFR-Flügen im Luftraum G bei Nacht?",
+     "antworten": [
+      "Nur Mode A ohne Höhenübermittlung erforderlich",
+      "Mode S mit Höhenübermittlung ist Pflicht",
+      "Transponder darf ausgeschaltet bleiben",
+      "Transponder nur oberhalb 5000 ft MSL nötig"
+     ],
+     "richtig": 1,
+     "erklaerung": "§ 30 LVR 2014: Im Luftraum G ist bei Nacht ein Mode-S-Transponder mit Höhenübermittlung zu betreiben; am Tag in G nur in TMZ."
+    }
+   ]
+  },
+  {
+   "nr": 2,
+   "id": "menschliches-leistungsvermoegen",
+   "name": "Menschliches Leistungsvermögen",
+   "kuerzel": "ML",
+   "pruefung": {
+    "fragen": 12,
+    "minuten": 25
+   },
+   "fragen": [
+    {
+     "id": "ML-001",
+     "frage": "Wie hoch ist der Volumenanteil von Sauerstoff in der Atmosphäre?",
+     "antworten": [
+      "Etwa 35 %",
+      "Etwa 21 %",
+      "Etwa 1 %",
+      "Etwa 78 %"
+     ],
+     "richtig": 1,
+     "erklaerung": "Luft besteht zu ca. 78 % aus Stickstoff, 21 % Sauerstoff und 1 % anderen Gasen. Der Anteil bleibt mit der Höhe konstant, nur der Partialdruck sinkt."
+    },
+    {
+     "id": "ML-002",
+     "frage": "Warum ist Hypoxie für Piloten besonders gefährlich?",
+     "antworten": [
+      "Sie tritt erst oberhalb von 25.000 ft überhaupt auf",
+      "Sie tritt immer schlagartig mit starken Schmerzen auf",
+      "Sie verursacht Euphorie und wird oft nicht bemerkt",
+      "Sie betrifft nur Raucher und Menschen mit Vorerkrankung"
+     ],
+     "richtig": 2,
+     "erklaerung": "Typisch sind schleichender Beginn, Euphorie, Selbstüberschätzung und nachlassende Urteilskraft."
+    },
+    {
+     "id": "ML-003",
+     "frage": "Ab welcher Höhe wird bei gesunden Menschen das Nachtsehvermögen durch Sauerstoffmangel bereits merklich beeinträchtigt?",
+     "antworten": [
+      "Erst ab etwa 15.000 ft",
+      "Nachtsehen wird nicht durch Sauerstoffmangel beeinflusst",
+      "Erst ab etwa 20.000 ft",
+      "Ab etwa 5000 ft"
+     ],
+     "richtig": 3,
+     "erklaerung": "Die Stäbchen der Netzhaut reagieren empfindlich auf Sauerstoffmangel; Einbußen beim Nachtsehen beginnen schon ab ca. 5000 ft."
+    },
+    {
+     "id": "ML-004",
+     "frage": "In welcher Höhe beträgt der Luftdruck – und damit der Sauerstoffpartialdruck – etwa die Hälfte des Wertes in Meereshöhe?",
+     "antworten": [
+      "Etwa 10.000 ft",
+      "Etwa 8000 ft",
+      "Etwa 18.000 ft",
+      "Etwa 30.000 ft"
+     ],
+     "richtig": 2,
+     "erklaerung": "In ISA herrschen in ca. 18.000 ft (5500 m) etwa 500 hPa – die Hälfte des Bodendrucks."
+    },
+    {
+     "id": "ML-005",
+     "frage": "Welches Symptom ist typisch für Hyperventilation?",
+     "antworten": [
+      "Blaufärbung der Lippen, starke Kopfschmerzen",
+      "Starke Ohrenschmerzen beim Sinkflug",
+      "Verlangsamte Atmung und Pulsabfall",
+      "Kribbeln in Händen und Lippen, Schwindel"
+     ],
+     "richtig": 3,
+     "erklaerung": "Durch zu schnelles/tiefes Atmen wird zu viel CO₂ abgeatmet. Gegenmaßnahme: Atmung bewusst verlangsamen, laut sprechen."
+    },
+    {
+     "id": "ML-006",
+     "frage": "Was ist die richtige Maßnahme bei Verdacht auf Kohlenmonoxid in der Kabine?",
+     "antworten": [
+      "Heizung schließen, Frischluft zuführen, bald landen",
+      "Gemisch anreichern und Motorleistung erhöhen",
+      "Heizung voll öffnen, um die Kabine gut zu belüften",
+      "Fenster geschlossen halten und zügig steigen"
+     ],
+     "richtig": 0,
+     "erklaerung": "CO gelangt meist über ein Leck am Abgaswärmetauscher der Kabinenheizung in die Kabine."
+    },
+    {
+     "id": "ML-007",
+     "frage": "Warum ist Kohlenmonoxid so gefährlich?",
+     "antworten": [
+      "Es bindet etwa 200- bis 250-mal stärker an Hämoglobin als O₂",
+      "Es wirkt nur in großen Höhen oberhalb von etwa 10.000 ft",
+      "Es riecht stechend und reizt Augen und Atemwege sehr stark",
+      "Es verdrängt Stickstoff aus dem Blut und führt zu Embolien"
+     ],
+     "richtig": 0,
+     "erklaerung": "CO ist farb-, geruch- und geschmacklos und blockiert den Sauerstofftransport des Hämoglobins."
+    },
+    {
+     "id": "ML-008",
+     "frage": "Welche Funktion hat die Eustachische Röhre (Ohrtrompete)?",
+     "antworten": [
+      "Druckausgleich zwischen Mittelohr und Rachenraum",
+      "Wahrnehmung von Drehbeschleunigungen des Kopfes",
+      "Produktion der Flüssigkeit in den Bogengängen",
+      "Weiterleitung von Schallwellen an das Innenohr"
+     ],
+     "richtig": 0,
+     "erklaerung": "Ist sie z. B. bei Erkältung zugeschwollen, kann beim Sinkflug kein Druckausgleich erfolgen (Barotrauma)."
+    },
+    {
+     "id": "ML-009",
+     "frage": "In welcher Flugphase treten bei Erkältung typischerweise Ohrenschmerzen auf?",
+     "antworten": [
+      "Im Steigflug",
+      "Beim Rollen",
+      "Im Horizontalflug",
+      "Im Sinkflug"
+     ],
+     "richtig": 3,
+     "erklaerung": "Beim Sinken steigt der Außendruck; die Luft muss ins Mittelohr gelangen, was bei geschwollener Ohrtrompete schwierig ist."
+    },
+    {
+     "id": "ML-010",
+     "frage": "Welche Sinnesorgane im Innenohr registrieren Drehbeschleunigungen?",
+     "antworten": [
+      "Die Otolithenorgane",
+      "Die Gehörknöchelchen",
+      "Das Trommelfell",
+      "Die Bogengänge"
+     ],
+     "richtig": 3,
+     "erklaerung": "Die drei Bogengänge erfassen Winkelbeschleunigungen, die Otolithen lineare Beschleunigungen und die Schwerkraft."
+    },
+    {
+     "id": "ML-011",
+     "frage": "Was versteht man unter „the leans“ (Neigungsillusion)?",
+     "antworten": [
+      "Nach starker Beschleunigung entsteht das deutliche Gefühl eines Steigflugs",
+      "Bei Nacht scheinen feststehende Lichter sich langsam zu bewegen",
+      "Nach unbemerktem Einrollen wirkt das Ausleiten wie eine Gegenkurve",
+      "Bei breiter Piste entsteht das Gefühl, zu tief anzufliegen"
+     ],
+     "richtig": 2,
+     "erklaerung": "Langsame Drehbewegungen unterhalb der Wahrnehmungsschwelle werden nicht bemerkt; die Korrektur wird dann als Schräglage empfunden."
+    },
+    {
+     "id": "ML-012",
+     "frage": "Welche Illusion kann eine starke Beschleunigung beim Durchstarten in Wolken oder bei Nacht hervorrufen?",
+     "antworten": [
+      "Das Gefühl eines Steigflugs – Gefahr des Nachdrückens",
+      "Das Gefühl einer Rechtskurve – Gefahr des Gegensteuerns",
+      "Das Gefühl eines Sinkflugs – Gefahr des Ziehens",
+      "Keine, da die Otolithen Beschleunigung sicher erkennen"
+     ],
+     "richtig": 0,
+     "erklaerung": "Somatogravische Illusion: Die Otolithen interpretieren Beschleunigung als Neigung nach hinten."
+    },
+    {
+     "id": "ML-013",
+     "frage": "Wodurch wird die Coriolis-Illusion ausgelöst?",
+     "antworten": [
+      "Durch Kopfbewegungen während einer Kurve",
+      "Durch Blick auf eine schräge Wolkenschicht",
+      "Durch Flackerlicht des drehenden Propellers",
+      "Durch Sauerstoffmangel in großer Höhe"
+     ],
+     "richtig": 0,
+     "erklaerung": "Bewegungen des Kopfes in einer anderen Ebene während einer Drehung reizen mehrere Bogengänge gleichzeitig – starker Schwindel."
+    },
+    {
+     "id": "ML-014",
+     "frage": "Eine Landebahn ist breiter als gewohnt. Welche Täuschung kann entstehen?",
+     "antworten": [
+      "Man glaubt, zu schnell zu sein, und wird zu langsam",
+      "Man glaubt, zu weit weg zu sein, und landet zu früh",
+      "Man glaubt, zu hoch zu sein, und fliegt zu tief an",
+      "Man glaubt, zu tief zu sein, und fliegt zu hoch an"
+     ],
+     "richtig": 3,
+     "erklaerung": "Breite Bahn → wirkt näher/tiefer → Anflug zu hoch. Schmale Bahn → Anflug zu tief."
+    },
+    {
+     "id": "ML-015",
+     "frage": "Eine Landebahn steigt zum Bahnende hin an. Welche Täuschung entsteht im Anflug?",
+     "antworten": [
+      "Man schätzt die Bahn kürzer ein und landet zu weit",
+      "Man glaubt, zu langsam zu sein",
+      "Man glaubt, zu tief zu sein, und fliegt zu hoch an",
+      "Man glaubt, zu hoch zu sein, und fliegt zu tief an"
+     ],
+     "richtig": 3,
+     "erklaerung": "Eine ansteigende Bahn wirkt wie ein steiler Anflugwinkel; Piloten neigen dazu, zu flach/tief anzufliegen."
+    },
+    {
+     "id": "ML-016",
+     "frage": "Warum gibt es im Auge einen „blinden Fleck“?",
+     "antworten": [
+      "Dort ist die Linse dauerhaft unscharf eingestellt",
+      "Dort tritt der Sehnerv aus; es gibt keine Sehzellen",
+      "Dort enthält die Netzhaut ausschließlich Stäbchen",
+      "Dort ist die Hornhaut durch Ablagerungen getrübt"
+     ],
+     "richtig": 1,
+     "erklaerung": "Mit beiden Augen und durch Augenbewegung wird der blinde Fleck normalerweise kompensiert."
+    },
+    {
+     "id": "ML-017",
+     "frage": "Welche Sehzellen sind für das Farbsehen und scharfe Sehen bei Tag zuständig?",
+     "antworten": [
+      "Die Ganglienzellen",
+      "Die Zapfen",
+      "Die Iriszellen",
+      "Die Stäbchen"
+     ],
+     "richtig": 1,
+     "erklaerung": "Zapfen sitzen konzentriert in der Fovea; Stäbchen am Rand der Netzhaut ermöglichen das Dämmerungs- und Nachtsehen."
+    },
+    {
+     "id": "ML-018",
+     "frage": "Wie lange dauert die vollständige Dunkeladaptation des Auges ungefähr?",
+     "antworten": [
+      "Etwa 3 Stunden",
+      "Etwa 2 Minuten",
+      "Etwa 30 Minuten",
+      "Etwa 5 Minuten"
+     ],
+     "richtig": 2,
+     "erklaerung": "Die Stäbchen benötigen ca. 30 min; helles weißes Licht macht die Adaptation schnell wieder zunichte."
+    },
+    {
+     "id": "ML-019",
+     "frage": "Wie erkennt man nachts ein schwach beleuchtetes Objekt am besten?",
+     "antworten": [
+      "Mit grellem Cockpitlicht arbeiten",
+      "Direkt und lange auf das Objekt starren",
+      "Die Augen zusammenkneifen",
+      "Leicht neben das Objekt schauen"
+     ],
+     "richtig": 3,
+     "erklaerung": "Die Fovea enthält keine Stäbchen; beim Danebenschauen fällt das Bild auf stäbchenreiche Netzhautbereiche."
+    },
+    {
+     "id": "ML-020",
+     "frage": "Was ist „Leerfeldkurzsichtigkeit“ (Empty field myopia)?",
+     "antworten": [
+      "Das Verschwimmen der Instrumente durch Vibration",
+      "Eine Sehschwäche infolge von Sauerstoffmangel",
+      "Das Auge stellt ohne Konturen auf etwa 1–2 m scharf",
+      "Eine angeborene Kurzsichtigkeit bei jungen Piloten"
+     ],
+     "richtig": 2,
+     "erklaerung": "Ohne Fixpunkte stellt sich das Auge auf kurze Distanz ein; ferne Flugzeuge werden übersehen. Abhilfe: gezielt auf ferne Objekte fokussieren."
+    },
+    {
+     "id": "ML-021",
+     "frage": "Woran erkennt man ein Luftfahrzeug auf Kollisionskurs?",
+     "antworten": [
+      "Es ändert ständig seine Position nach oben und unten",
+      "Es bewegt sich schnell über die Windschutzscheibe",
+      "Es ist immer zuerst als heller Lichtblitz sichtbar",
+      "Es bleibt an derselben Stelle im Sichtfeld"
+     ],
+     "richtig": 3,
+     "erklaerung": "Ein Objekt ohne relative Bewegung ist schwer zu erkennen – erst kurz vor dem Zusammenstoß wächst es schnell („Blossom-Effekt“)."
+    },
+    {
+     "id": "ML-022",
+     "frage": "Wie sollte der Luftraum systematisch beobachtet werden?",
+     "antworten": [
+      "Mit einem ständig gleitenden Blick ohne Pausen",
+      "In Sektoren von ca. 90°, je etwa 10 s fixieren",
+      "Vorwiegend nach vorne in Flugrichtung, selten seitlich",
+      "In Sektoren von ca. 10–15°, je etwa 1 s fixieren"
+     ],
+     "richtig": 3,
+     "erklaerung": "Das Auge braucht kurze Fixationen, um Objekte zu erkennen; gleitende Blicke übersehen Verkehr."
+    },
+    {
+     "id": "ML-023",
+     "frage": "Welche Aussage beschreibt das Yerkes-Dodson-Gesetz?",
+     "antworten": [
+      "Die Leistung steigt immer weiter, je höher der Stress",
+      "Die beste Leistung gibt es ganz ohne Erregung",
+      "Die beste Leistung gibt es bei mittlerem Stressniveau",
+      "Stress und Leistung hängen nicht miteinander zusammen"
+     ],
+     "richtig": 2,
+     "erklaerung": "Zu geringe Erregung (Langeweile) und zu hohe Erregung (Überforderung) verschlechtern die Leistung."
+    },
+    {
+     "id": "ML-024",
+     "frage": "Welches Gegenmittel passt zur gefährlichen Einstellung „Unverwundbarkeit“?",
+     "antworten": [
+      "„Nicht so schnell – erst denken.“",
+      "„Das kann auch mir passieren.“",
+      "„Regeln sind meistens richtig.“",
+      "„Ich bin nicht hilflos.“"
+     ],
+     "richtig": 1,
+     "erklaerung": "Die fünf gefährlichen Einstellungen: Antiautorität, Impulsivität, Unverwundbarkeit, Machogehabe, Resignation – je mit eigenem Gegenmittel."
+    },
+    {
+     "id": "ML-025",
+     "frage": "Was versteht man unter „Get-home-itis“?",
+     "antworten": [
+      "Die Müdigkeit, die nach langen Nachtflügen auftritt",
+      "Den Drang, den Flug trotz Warnsignalen planmäßig zu beenden",
+      "Das Heimweh von Piloten bei mehrtägigen Reiseflügen ins Ausland",
+      "Eine Form der Flugangst, die bei Passagieren auftritt"
+     ],
+     "richtig": 1,
+     "erklaerung": "Der Termindruck führt dazu, Warnsignale (z. B. Wetter) zu ignorieren – eine häufige Unfallursache."
+    },
+    {
+     "id": "ML-026",
+     "frage": "Wofür steht die Selbstcheck-Merkhilfe „IMSAFE“?",
+     "antworten": [
+      "Inspect, Monitor, Scan, Avoid, Fly, Evaluate",
+      "Icing, Mist, Snow, Altitude, Fog, Elevation",
+      "Illness, Medication, Stress, Alcohol, Fatigue, Eating",
+      "Instruments, Mixture, Switches, Altimeter, Fuel, Engine"
+     ],
+     "richtig": 2,
+     "erklaerung": "Vor jedem Flug sollte der Pilot seine eigene Flugtauglichkeit nach diesen Punkten überprüfen."
+    },
+    {
+     "id": "ML-027",
+     "frage": "Wie viele Informationseinheiten kann das Kurzzeitgedächtnis etwa gleichzeitig speichern?",
+     "antworten": [
+      "Etwa 2 ± 1",
+      "Etwa 7 ± 2",
+      "Unbegrenzt viele",
+      "Etwa 20 ± 5"
+     ],
+     "richtig": 1,
+     "erklaerung": "Deshalb sollte man Freigaben sofort notieren; ohne Wiederholung geht die Information nach ca. 10–20 Sekunden verloren."
+    },
+    {
+     "id": "ML-028",
+     "frage": "Was beschreibt das „Swiss-Cheese-Modell“ nach James Reason?",
+     "antworten": [
+      "Unfälle entstehen ausschließlich durch Technikfehler",
+      "Die Fehlerquote sinkt mit jeder Flugstunde linear",
+      "Mehrere Sicherheitslücken treffen zufällig zusammen",
+      "Ein Unfall hat immer genau eine einzige Ursache"
+     ],
+     "richtig": 2,
+     "erklaerung": "Latente Fehler (Organisation, Technik) und aktive Fehler (Pilot) wirken zusammen."
+    },
+    {
+     "id": "ML-029",
+     "frage": "Wie wird Alkohol im Körper etwa abgebaut?",
+     "antworten": [
+      "Mit ca. 0,5 ‰ pro Stunde, nicht beschleunigbar",
+      "Mit ca. 0,3 ‰ pro Stunde, durch Sport schneller",
+      "Mit ca. 0,1 ‰ pro Stunde, mit Kaffee doppelt so schnell",
+      "Mit ca. 0,1 ‰ pro Stunde, nicht beschleunigbar"
+     ],
+     "richtig": 3,
+     "erklaerung": "Die Leber baut Alkohol mit nahezu konstanter Rate ab. Empfehlung: mindestens 8 Stunden zwischen Alkohol und Flug, oft mehr."
+    },
+    {
+     "id": "ML-030",
+     "frage": "Welche Empfehlung gilt für das Fliegen nach Gerätetauchgängen mit Dekompressionsstopps?",
+     "antworten": [
+      "Mindestens 24 Stunden nicht fliegen",
+      "Fliegen ist sofort möglich",
+      "Eine Stunde Wartezeit genügt",
+      "Nur unterhalb 10.000 ft sofort fliegen"
+     ],
+     "richtig": 0,
+     "erklaerung": "Im Gewebe gelöster Stickstoff kann bei Druckabfall Blasen bilden (Dekompressionskrankheit). Viele Lehrbücher nennen 12 h ohne und 24 h mit Dekompressionsstopps; der EASA-Leitfaden empfiehlt generell 24 h."
+    },
+    {
+     "id": "ML-031",
+     "frage": "Welche Nebenwirkung vieler Antihistaminika (Allergiemittel) ist für Piloten kritisch?",
+     "antworten": [
+      "Keine – sie sind immer unbedenklich",
+      "Erhöhte Sauerstoffaufnahme",
+      "Verbesserte Nachtsicht",
+      "Müdigkeit und verlangsamte Reaktion"
+     ],
+     "richtig": 3,
+     "erklaerung": "Vor Medikamenteneinnahme sollte immer ein Fliegerarzt (AME) befragt werden."
+    },
+    {
+     "id": "ML-032",
+     "frage": "Welche Reihenfolge der Symptome tritt bei zunehmender positiver g-Belastung typischerweise auf?",
+     "antworten": [
+      "Black-out, Grey-out, Tunnelblick, G-LOC",
+      "Tunnelblick, G-LOC, Grey-out, Black-out",
+      "Grey-out, Tunnelblick, Black-out, G-LOC",
+      "Red-out, Grey-out, Black-out, G-LOC"
+     ],
+     "richtig": 2,
+     "erklaerung": "Das Blut sackt in die Beine; zuerst lässt das Farbsehen nach (Grey-out), dann das periphere Sehen."
+    },
+    {
+     "id": "ML-033",
+     "frage": "Zu welcher Tageszeit ist die Leistungsfähigkeit aufgrund des Biorhythmus typischerweise am geringsten?",
+     "antworten": [
+      "Direkt nach dem Aufwachen um 7 Uhr",
+      "Etwa zwischen 17 und 19 Uhr",
+      "Etwa zwischen 10 und 12 Uhr",
+      "Etwa zwischen 3 und 5 Uhr nachts"
+     ],
+     "richtig": 3,
+     "erklaerung": "Der circadiane Rhythmus hat sein Leistungstief in den frühen Morgenstunden."
+    },
+    {
+     "id": "ML-034",
+     "frage": "Was ist ein „Slip“ im Sinne der Fehlerlehre?",
+     "antworten": [
+      "Ein falscher Plan wird korrekt ausgeführt",
+      "Ein technischer Defekt löst den Fehler aus",
+      "Eine Regel wird absichtlich übertreten",
+      "Eine richtige Absicht wird falsch ausgeführt"
+     ],
+     "richtig": 3,
+     "erklaerung": "Slips/Lapses = Ausführungs- bzw. Gedächtnisfehler; Mistakes = Planungs-/Entscheidungsfehler; Violations = bewusste Verstöße."
+    },
+    {
+     "id": "ML-035",
+     "frage": "Was versteht man unter dem Bestätigungsfehler (Confirmation bias)?",
+     "antworten": [
+      "Bestätigende Informationen werden bevorzugt wahrgenommen",
+      "Das wörtliche Zurücklesen einer erhaltenen ATC-Freigabe",
+      "Das Abhaken eines Punktes auf der Checkliste",
+      "Die Bestätigung der eigenen Position durch GPS"
+     ],
+     "richtig": 0,
+     "erklaerung": "Beispiel: Ein falsch identifizierter Orientierungspunkt wird trotz widersprechender Hinweise als richtig angesehen."
+    },
+    {
+     "id": "ML-036",
+     "frage": "Warum dehnen sich Gase im Darm beim Steigflug aus?",
+     "antworten": [
+      "Weil sich Stickstoff im Blut chemisch bindet",
+      "Weil die Temperatur im Körper ansteigt",
+      "Weil der Sauerstoffanteil der Luft deutlich zunimmt",
+      "Weil der Umgebungsdruck sinkt (Boyle-Mariotte)"
+     ],
+     "richtig": 3,
+     "erklaerung": "Bei konstanter Temperatur ist das Produkt aus Druck und Volumen konstant: sinkender Druck → größeres Volumen."
+    },
+    {
+     "id": "ML-037",
+     "frage": "Welche Aufgabe hat das Hämoglobin?",
+     "antworten": [
+      "Transport von Sauerstoff im Blut",
+      "Abwehr von Krankheitserregern",
+      "Regulierung des Blutzuckerspiegels",
+      "Gerinnung des Blutes bei Verletzungen"
+     ],
+     "richtig": 0,
+     "erklaerung": "Hämoglobin in den roten Blutkörperchen bindet Sauerstoff; CO blockiert diese Bindungsstellen."
+    },
+    {
+     "id": "ML-038",
+     "frage": "Was beschreibt der Begriff „Situationsbewusstsein“ (Situational Awareness)?",
+     "antworten": [
+      "Die Fähigkeit, alle Instrumente schnell abzulesen",
+      "Wahrnehmen, Verstehen und Vorausdenken der aktuellen Lage",
+      "Die gesammelte Erfahrung in Flugstunden und Landungen",
+      "Die vollständige Kenntnis aller geltenden Luftrechtsvorschriften"
+     ],
+     "richtig": 1,
+     "erklaerung": "Situationsbewusstsein umfasst drei Stufen: Wahrnehmen, Verstehen, Vorausdenken."
+    },
+    {
+     "id": "ML-039",
+     "frage": "Ab welchem Dauerschallpegel muss man mit bleibenden Gehörschäden rechnen?",
+     "antworten": [
+      "Ab etwa 40 dB(A) bei längerer Einwirkung",
+      "Erst ab etwa 150 dB(A) bei kurzer Einwirkung",
+      "Ab etwa 85–90 dB(A) bei längerer Einwirkung",
+      "Gar nicht, Lärm schädigt das Gehör nur kurzzeitig"
+     ],
+     "richtig": 2,
+     "erklaerung": "Kolbenmotorflugzeuge erreichen im Cockpit oft über 90 dB – ein Headset mit Gehörschutz ist wichtig."
+    },
+    {
+     "id": "ML-040",
+     "frage": "Warum sind Raucher in der Höhe stärker durch Hypoxie gefährdet?",
+     "antworten": [
+      "Nikotin beschleunigt die Atmung zu stark",
+      "Teer verstopft die Eustachische Röhre",
+      "Raucher atmen grundsätzlich mehr Sauerstoff ein",
+      "CO blockiert einen Teil ihres Hämoglobins"
+     ],
+     "richtig": 3,
+     "erklaerung": "Das CO aus dem Rauch verringert die Sauerstofftransportkapazität – die „physiologische Höhe“ liegt höher als die tatsächliche."
+    }
+   ]
+  },
+  {
+   "nr": 3,
+   "id": "meteorologie",
+   "name": "Meteorologie",
+   "kuerzel": "MET",
+   "pruefung": {
+    "fragen": 20,
+    "minuten": 40
+   },
+   "fragen": [
+    {
+     "id": "MET-001",
+     "frage": "Welche Werte gelten in Meereshöhe für die ICAO-Standardatmosphäre (ISA)?",
+     "antworten": [
+      "15 °C und 1000 hPa",
+      "20 °C und 1013,25 hPa",
+      "15 °C und 1013,25 hPa",
+      "0 °C und 1013,25 hPa"
+     ],
+     "richtig": 2,
+     "erklaerung": "ISA: MSL-Temperatur 15 °C, Druck 1013,25 hPa, Dichte 1,225 kg/m³."
+    },
+    {
+     "id": "MET-002",
+     "frage": "Wie groß ist der Temperaturgradient in der ISA in der Troposphäre?",
+     "antworten": [
+      "Etwa 2 °C pro 1000 ft",
+      "Etwa 0,5 °C pro 1000 ft",
+      "Etwa 3 °C pro 1000 ft",
+      "Etwa 1 °C pro 1000 ft"
+     ],
+     "richtig": 0,
+     "erklaerung": "Genau: 1,98 °C/1000 ft bzw. 6,5 °C/km bis zur Tropopause."
+    },
+    {
+     "id": "MET-003",
+     "frage": "In welcher Höhe liegt die Tropopause in der ISA und welche Temperatur herrscht dort?",
+     "antworten": [
+      "8 km, −40,0 °C",
+      "11 km, −56,5 °C",
+      "5,5 km, −20,5 °C",
+      "18 km, −80,0 °C"
+     ],
+     "richtig": 1,
+     "erklaerung": "In der ISA liegt die Tropopause bei 11.000 m; darüber bleibt die Temperatur zunächst konstant."
+    },
+    {
+     "id": "MET-004",
+     "frage": "Um wie viel kühlt sich ungesättigte Luft beim Aufsteigen ab (trockenadiabatisch)?",
+     "antworten": [
+      "Etwa 1 °C pro 100 m",
+      "Etwa 2 °C pro 100 m",
+      "Etwa 0,2 °C pro 100 m",
+      "Etwa 0,6 °C pro 100 m"
+     ],
+     "richtig": 0,
+     "erklaerung": "Gesättigte Luft kühlt wegen freiwerdender Kondensationswärme langsamer ab (feuchtadiabatisch ca. 0,6 °C/100 m)."
+    },
+    {
+     "id": "MET-005",
+     "frage": "Warum kühlt gesättigte Luft beim Aufsteigen langsamer ab als ungesättigte?",
+     "antworten": [
+      "Weil der Luftdruck in Wolken höher ist",
+      "Weil feuchte Luft schwerer ist",
+      "Weil die Sonneneinstrahlung in Wolken stärker ist",
+      "Weil bei der Kondensation latente Wärme frei wird"
+     ],
+     "richtig": 3,
+     "erklaerung": "Die bei der Kondensation freiwerdende Verdampfungswärme heizt das aufsteigende Luftpaket auf."
+    },
+    {
+     "id": "MET-006",
+     "frage": "Temperatur 20 °C, Taupunkt 12 °C am Boden. Wo liegt etwa die Basis der Cumuluswolken?",
+     "antworten": [
+      "Etwa 3200 ft über Grund",
+      "Etwa 800 ft über Grund",
+      "Etwa 1600 ft über Grund",
+      "Etwa 8000 ft über Grund"
+     ],
+     "richtig": 0,
+     "erklaerung": "Faustformel: (T − Td) × 400 ft = 8 × 400 ft = 3200 ft (bzw. × 125 m ≈ 1000 m)."
+    },
+    {
+     "id": "MET-007",
+     "frage": "Welcher Höhenänderung entspricht in Bodennähe ein Druckunterschied von 1 hPa ungefähr?",
+     "antworten": [
+      "Etwa 30 ft",
+      "Etwa 100 ft",
+      "Etwa 3 ft",
+      "Etwa 300 ft"
+     ],
+     "richtig": 0,
+     "erklaerung": "In Bodennähe gilt die Faustregel 1 hPa ≈ 27–30 ft; mit zunehmender Höhe wird die Höhenstufe größer."
+    },
+    {
+     "id": "MET-008",
+     "frage": "Was zeigt ein auf QNH eingestellter Höhenmesser nach der Landung an?",
+     "antworten": [
+      "Die Flugplatzhöhe über MSL",
+      "Die Dichtehöhe des Flugplatzes",
+      "Den Wert null (Höhe über Platz)",
+      "Die Druckhöhe des Flugplatzes"
+     ],
+     "richtig": 0,
+     "erklaerung": "QNH = auf Meereshöhe reduzierter Luftdruck nach ISA; mit QFE würde der Höhenmesser am Platz 0 anzeigen."
+    },
+    {
+     "id": "MET-009",
+     "frage": "Sie fliegen mit unveränderter Höhenmessereinstellung von einem Hoch in ein Tief. Was passiert?",
+     "antworten": [
+      "Sie fliegen tiefer als angezeigt",
+      "Sie fliegen höher als angezeigt",
+      "Der Höhenmesser zeigt dann null",
+      "Die Anzeige bleibt immer korrekt"
+     ],
+     "richtig": 0,
+     "erklaerung": "Merksatz: „Vom Hoch ins Tief – geht's schief.“ Der Höhenmesser zeigt zu viel an."
+    },
+    {
+     "id": "MET-010",
+     "frage": "Wie wirkt sich sehr kalte Luft (kälter als ISA) auf die Höhenmesseranzeige aus?",
+     "antworten": [
+      "Die wahre Höhe ist größer als angezeigt",
+      "Die wahre Höhe ist geringer als angezeigt",
+      "Die wahre Höhe entspricht der Anzeige",
+      "Die Anzeige springt sprunghaft auf null"
+     ],
+     "richtig": 1,
+     "erklaerung": "Kalte Luft ist dichter; die Druckflächen liegen enger beieinander. Gefahr bei Hindernisfreiheit."
+    },
+    {
+     "id": "MET-011",
+     "frage": "Barisches Windgesetz (Buys-Ballot), Nordhalbkugel: Sie stehen mit dem Rücken zum Wind. Wo liegt das Tief?",
+     "antworten": [
+      "Links vorne",
+      "Direkt vor Ihnen",
+      "Direkt hinter Ihnen",
+      "Rechts hinten"
+     ],
+     "richtig": 0,
+     "erklaerung": "Auf der Nordhalbkugel liegt das Tief links (etwas vorn), das Hoch rechts."
+    },
+    {
+     "id": "MET-012",
+     "frage": "In welche Richtung strömt der Wind um ein Tiefdruckgebiet auf der Nordhalbkugel?",
+     "antworten": [
+      "Gegen den Uhrzeigersinn",
+      "Direkt radial nach außen",
+      "Direkt radial in das Zentrum",
+      "Im Uhrzeigersinn"
+     ],
+     "richtig": 0,
+     "erklaerung": "Durch die Corioliskraft wird die Strömung um ein Tief auf der Nordhalbkugel zyklonal (gegen den Uhrzeigersinn) abgelenkt."
+    },
+    {
+     "id": "MET-013",
+     "frage": "Wie unterscheidet sich der Bodenwind über Land vom Gradientwind (ca. 2000 ft)?",
+     "antworten": [
+      "Schwächer und nach rechts gedreht",
+      "Stärker und nach rechts gedreht",
+      "Schwächer und nach links gedreht",
+      "Stärker und nach links gedreht"
+     ],
+     "richtig": 2,
+     "erklaerung": "Die Bodenreibung verringert die Geschwindigkeit und damit die Corioliskraft; der Wind weht stärker zum Tief hin (Nordhalbkugel: Rückdrehung)."
+    },
+    {
+     "id": "MET-014",
+     "frage": "Welche Eigenschaft hat die Corioliskraft?",
+     "antworten": [
+      "Ist auf der ganzen Erde gleich groß",
+      "Wirkt nur auf ruhende, nicht bewegte Luft",
+      "Am Äquator am größten, an den Polen null",
+      "Am Äquator null, an den Polen am größten"
+     ],
+     "richtig": 3,
+     "erklaerung": "Deshalb gibt es in Äquatornähe kaum ausgeprägte Tiefdruckwirbel."
+    },
+    {
+     "id": "MET-015",
+     "frage": "Welches Wetter ist typisch für den Durchgang einer aktiven Kaltfront?",
+     "antworten": [
+      "Wolkenloser Himmel, Windstille und Temperaturanstieg",
+      "Lang anhaltender Landregen, Nebel und schlechte Sicht",
+      "Schauer, Böen, Winddrehung nach rechts, danach gute Sicht",
+      "Langsam absinkende Wolken und Winddrehung nach links"
+     ],
+     "richtig": 2,
+     "erklaerung": "Hinter der Kaltfront folgt häufig labile, klare Kaltluft mit Schauern und guter Sicht."
+    },
+    {
+     "id": "MET-016",
+     "frage": "Welche Wolkenfolge ist typisch für eine aufziehende Warmfront?",
+     "antworten": [
+      "Cb, Cu, St, Sc",
+      "St, Cu, Ac, Ci",
+      "Ci, Cs, As, Ns",
+      "Ac lent, Ci, Cu"
+     ],
+     "richtig": 2,
+     "erklaerung": "Die Warmluft gleitet flach auf die Kaltluft auf; die Wolken werden zunehmend tiefer und dichter."
+    },
+    {
+     "id": "MET-017",
+     "frage": "Welche Bedingungen begünstigen die Bildung von Strahlungsnebel?",
+     "antworten": [
+      "Klare Nacht, schwacher Wind, hohe Feuchte",
+      "Bedeckter Himmel, starker Wind, hohe Feuchte",
+      "Klare Nacht, starker Wind, trockene Luft",
+      "Sonniger Nachmittag, schwacher Wind, trocken"
+     ],
+     "richtig": 0,
+     "erklaerung": "Der Boden kühlt durch Ausstrahlung ab, die bodennahe Luft erreicht den Taupunkt. Bei starkem Wind entsteht eher Hochnebel."
+    },
+    {
+     "id": "MET-018",
+     "frage": "Wie entsteht Advektionsnebel?",
+     "antworten": [
+      "Nächtliche Ausstrahlung bei klarem Himmel und Windstille",
+      "Warme, feuchte Luft strömt über kälteren Boden",
+      "Feuchte Luft wird an einem Hang zum Aufsteigen gezwungen",
+      "Kalte Luft strömt über eine wärmere Wasseroberfläche"
+     ],
+     "richtig": 1,
+     "erklaerung": "Typisch im Winter an Küsten oder über kalten Landflächen; Advektionsnebel kann auch bei Wind bestehen bleiben."
+    },
+    {
+     "id": "MET-019",
+     "frage": "Was ist im Reifestadium eines Gewitters typisch?",
+     "antworten": [
+      "Nur schwache Abwinde, kein Blitz",
+      "Nur Aufwinde, noch kein Niederschlag",
+      "Auflösung der Wolke von unten her",
+      "Auf- und Abwinde sowie Niederschlag"
+     ],
+     "richtig": 3,
+     "erklaerung": "Stadien: Cumulus-Stadium (Aufwind), Reifestadium (Auf- und Abwind, Niederschlag, Blitz), Auflösungsstadium (Abwinde)."
+    },
+    {
+     "id": "MET-020",
+     "frage": "Welche drei Voraussetzungen sind für die Entstehung eines Gewitters notwendig?",
+     "antworten": [
+      "Stabile Schichtung, Trockenheit, Hoch",
+      "Labile Schichtung, Trockenheit, Föhn",
+      "Inversion, Windstille, hohe Feuchte",
+      "Labile Schichtung, Feuchte, Auslöser"
+     ],
+     "richtig": 3,
+     "erklaerung": "Auslöser können Erwärmung des Bodens, Hebung an Fronten oder an Gebirgen sein."
+    },
+    {
+     "id": "MET-021",
+     "frage": "Was versteht man unter einer Inversion?",
+     "antworten": [
+      "Besonders starke Temperaturabnahme",
+      "Windrichtungswechsel um 180°",
+      "Zone mit gehäuften Gewittern",
+      "Temperaturzunahme mit der Höhe"
+     ],
+     "richtig": 3,
+     "erklaerung": "Inversionen sind sehr stabil; darunter sammeln sich Dunst und Schadstoffe – oft schlechte Sicht."
+    },
+    {
+     "id": "MET-022",
+     "frage": "Bei welchen Bedingungen entsteht bevorzugt Klareis an der Zelle?",
+     "antworten": [
+      "Trockene, wolkenfreie Luft bei etwa +5 °C",
+      "Eiskristalle in Cirruswolken bei unter −40 °C",
+      "Große unterkühlte Tropfen bei 0 bis etwa −10 °C",
+      "Kleine unterkühlte Tropfen bei etwa −30 bis −40 °C"
+     ],
+     "richtig": 2,
+     "erklaerung": "Große Tropfen gefrieren langsam und breiten sich vor dem Gefrieren aus – es entsteht schweres, klares Eis."
+    },
+    {
+     "id": "MET-023",
+     "frage": "In welcher Wetterlage besteht besonders hohe Gefahr durch gefrierenden Regen?",
+     "antworten": [
+      "Regen fällt aus warmer Luft in Kaltluft unter 0 °C",
+      "Hochdrucklage im Sommer mit Hitzegewittern",
+      "Flug in Cirruswolken oberhalb von FL 300",
+      "Föhnlage auf der Leeseite eines Gebirges"
+     ],
+     "richtig": 0,
+     "erklaerung": "Typisch vor Warmfronten im Winter (Warmluft über bodennaher Kaltluft)."
+    },
+    {
+     "id": "MET-024",
+     "frage": "Was bedeutet die Wolkenbedeckungsangabe „BKN“ im METAR?",
+     "antworten": [
+      "5–7 Achtel",
+      "8 Achtel",
+      "3–4 Achtel",
+      "1–2 Achtel"
+     ],
+     "richtig": 0,
+     "erklaerung": "FEW = 1–2/8, SCT = 3–4/8, BKN = 5–7/8, OVC = 8/8."
+    },
+    {
+     "id": "MET-025",
+     "frage": "Was bedeutet „CAVOK“?",
+     "antworten": [
+      "Sicht ≥ 10 km, wolkenlos, Wind unter 10 kt, kein Niederschlag",
+      "Sicht ≥ 10 km, keine Wolken unter 5000 ft, kein CB/TCU, kein Wetter",
+      "Sicht ≥ 5 km, keine Wolken unter 1500 ft, kein CB, kein Niederschlag",
+      "Sicht ≥ 8 km, keine Wolken unter 3000 ft, keine Gewitter in 50 km"
+     ],
+     "richtig": 1,
+     "erklaerung": "Es gilt der jeweils höhere Wert aus 5000 ft und höchster Sektormindesthöhe."
+    },
+    {
+     "id": "MET-026",
+     "frage": "Was bedeutet die Windangabe „27015G25KT“ im METAR?",
+     "antworten": [
+      "Aus 150° rechtweisend, 27 kt, Böen 25 kt",
+      "Nach 270° rechtweisend, 15 kt, Böen 25 kt",
+      "Aus 270° rechtweisend, 15 kt, Böen 25 kt",
+      "Aus 270° missweisend, 25 kt, Böen 15 kt"
+     ],
+     "richtig": 2,
+     "erklaerung": "In METAR/TAF sind Windrichtungen rechtweisend; vom Turm per Funk übermittelte Windangaben sind missweisend."
+    },
+    {
+     "id": "MET-027",
+     "frage": "Was bedeutet die Sichtangabe „9999“ im METAR?",
+     "antworten": [
+      "Sicht unter 1000 m",
+      "Sicht genau 9999 m",
+      "Sicht 10 km oder mehr",
+      "Sicht nicht gemeldet"
+     ],
+     "richtig": 2,
+     "erklaerung": "Die Sicht wird in Metern angegeben; 9999 steht für ≥ 10 km."
+    },
+    {
+     "id": "MET-028",
+     "frage": "Was bedeutet „TEMPO“ in einem TAF?",
+     "antworten": [
+      "Angabe der Temperatur am Flugplatz",
+      "Dauerhafte, allmähliche Wetteränderung",
+      "Vorübergehende Schwankungen, je unter 1 h",
+      "Eintrittswahrscheinlichkeit von 30 %"
+     ],
+     "richtig": 2,
+     "erklaerung": "BECMG beschreibt eine allmähliche dauerhafte Änderung, PROB30/40 eine Eintrittswahrscheinlichkeit."
+    },
+    {
+     "id": "MET-029",
+     "frage": "Welche Abkürzung steht im METAR für Nebel mit Sicht unter 1000 m?",
+     "antworten": [
+      "FU",
+      "BR",
+      "HZ",
+      "FG"
+     ],
+     "richtig": 3,
+     "erklaerung": "FG = Nebel (< 1000 m), BR = feuchter Dunst (1000–5000 m), HZ = trockener Dunst, FU = Rauch."
+    },
+    {
+     "id": "MET-030",
+     "frage": "Was bedeutet „+TSRA“ im METAR?",
+     "antworten": [
+      "Gewitter in der Umgebung ohne Niederschlag",
+      "Leichter Regenschauer",
+      "Starkes Gewitter mit Regen",
+      "Starker Schneefall"
+     ],
+     "richtig": 2,
+     "erklaerung": "+ = stark, TS = Gewitter, RA = Regen. VCTS hieße Gewitter in der Umgebung."
+    },
+    {
+     "id": "MET-031",
+     "frage": "Woraus bestehen Cirruswolken?",
+     "antworten": [
+      "Aus Eiskristallen",
+      "Aus Hagel",
+      "Aus unterkühlten Wassertropfen",
+      "Aus Staub"
+     ],
+     "richtig": 0,
+     "erklaerung": "Hohe Wolken (Ci, Cc, Cs) liegen in Mitteleuropa meist oberhalb von ca. 5–6 km und bestehen aus Eis."
+    },
+    {
+     "id": "MET-032",
+     "frage": "Welche Wolke ist typisch für lang anhaltenden, gleichmäßigen Niederschlag (Landregen)?",
+     "antworten": [
+      "Cumulus humilis",
+      "Cirrocumulus",
+      "Nimbostratus",
+      "Altocumulus lenticularis"
+     ],
+     "richtig": 2,
+     "erklaerung": "Nimbostratus ist eine dichte, graue Schichtwolke, oft an Warmfronten."
+    },
+    {
+     "id": "MET-033",
+     "frage": "Worauf weisen linsenförmige Altocumulus lenticularis hin?",
+     "antworten": [
+      "Auf Nebelbildung in den Tälern am Morgen",
+      "Auf ein aufziehendes Hoch ohne Turbulenz",
+      "Auf eine Kaltfront mit Gewittern und Hagel",
+      "Auf Leewellen und mögliche Rotoren darunter"
+     ],
+     "richtig": 3,
+     "erklaerung": "Unter den Wellen können sich Rotoren mit starker Turbulenz bilden (oft durch Rotorwolken erkennbar)."
+    },
+    {
+     "id": "MET-034",
+     "frage": "Welche Eigenschaften hat Föhn auf der Leeseite eines Gebirges?",
+     "antworten": [
+      "Windstill und neblig",
+      "Gleichmäßig und laminar ohne Turbulenz",
+      "Warm, trocken und böig",
+      "Kalt und feucht"
+     ],
+     "richtig": 2,
+     "erklaerung": "Die Luft steigt im Luv feuchtadiabatisch auf und sinkt im Lee trockenadiabatisch ab – sie kommt wärmer und trockener an."
+    },
+    {
+     "id": "MET-035",
+     "frage": "Welcher Wind weht an einer Küste typischerweise am Tag bei Sonneneinstrahlung?",
+     "antworten": [
+      "Windstille über der Küste",
+      "Föhnwind von den Bergen",
+      "Seewind vom Meer zum Land",
+      "Landwind vom Land zum Meer"
+     ],
+     "richtig": 2,
+     "erklaerung": "Das Land erwärmt sich schneller; über Land steigt Luft auf, am Boden strömt Luft vom Meer nach."
+    },
+    {
+     "id": "MET-036",
+     "frage": "Was passiert mit der relativen Luftfeuchtigkeit, wenn sich Luft ohne Feuchteänderung abkühlt?",
+     "antworten": [
+      "Sie bleibt gleich",
+      "Sie sinkt",
+      "Sie wird negativ",
+      "Sie steigt"
+     ],
+     "richtig": 3,
+     "erklaerung": "Kalte Luft kann weniger Wasserdampf aufnehmen; am Taupunkt erreicht die relative Feuchte 100 %."
+    },
+    {
+     "id": "MET-037",
+     "frage": "Welches Wetter ist im Sommer in einem Hochdruckgebiet typisch?",
+     "antworten": [
+      "Ständiger Starkwind mit Sturmböen",
+      "Kräftige Fronten mit Gewitterlinien",
+      "Großflächiger Dauerregen aus Nimbostratus",
+      "Absinkende Luft, wenig Wolken, oft Dunst"
+     ],
+     "richtig": 3,
+     "erklaerung": "Absinkbewegungen erwärmen die Luft und lösen Wolken auf; unter einer Absinkinversion sammelt sich Dunst."
+    },
+    {
+     "id": "MET-038",
+     "frage": "Was ist ein Microburst?",
+     "antworten": [
+      "Ein eng begrenzter, sehr starker Fallwind",
+      "Eine kleinräumige, schwache Warmfront",
+      "Ein kleines Nebelfeld unter 100 m Durchmesser",
+      "Ein schwacher, gleichmäßiger Seewind"
+     ],
+     "richtig": 0,
+     "erklaerung": "Microbursts verursachen heftige Windscherungen – besonders gefährlich im Anflug."
+    },
+    {
+     "id": "MET-039",
+     "frage": "Was bedeutet der Status „X“ in einer GAFOR-Vorhersage?",
+     "antworten": [
+      "Strecke für Sichtflug geschlossen",
+      "Strecke ohne Einschränkung offen",
+      "Keine Daten für die Strecke verfügbar",
+      "Sichtflug schwierig, aber möglich"
+     ],
+     "richtig": 0,
+     "erklaerung": "GAFOR Österreich (Austro Control): O ≥ 8 km / 2000 ft, D ≥ 5 km / 1500 ft, M ≥ 2 km / 1000 ft, X darunter (geschlossen) – Wolkenuntergrenze jeweils über der Bezugshöhe der Route."
+    },
+    {
+     "id": "MET-040",
+     "frage": "Worauf weist ein geringer Spread (Differenz Temperatur – Taupunkt) am Abend hin?",
+     "antworten": [
+      "Auf sehr gute Nachtsicht",
+      "Auf erhöhte Nebelgefahr",
+      "Auf einsetzenden Föhn",
+      "Auf erhöhte Gewittergefahr"
+     ],
+     "richtig": 1,
+     "erklaerung": "Bei geringem Spread genügt eine leichte Abkühlung, um die Sättigung zu erreichen."
+    },
+    {
+     "id": "MET-041",
+     "frage": "Was ist ALPFOR der Austro Control?",
+     "antworten": [
+      "Ein Warndienst für Lawinen an Gebirgsflugplätzen",
+      "Eine grafische Wettervorhersage für den Alpenraum",
+      "Eine Funkfrequenz für Wetterberatung im Gebirge",
+      "Eine Flugplatzvorhersage für alpine Flugplätze"
+     ],
+     "richtig": 1,
+     "erklaerung": "ALPFOR ist eine grafische Alpenwettervorhersage (Wolken, Sicht, Nullgradgrenze, Wind, Turbulenz, Vereisung), die zweimal täglich erscheint – zentral für die Planung von Gebirgsflügen."
+    },
+    {
+     "id": "MET-042",
+     "frage": "Welche Mindestwerte gelten im österreichischen GAFOR für die Einstufung „O“ (Oscar)?",
+     "antworten": [
+      "Sicht ≥ 8 km, Wolkenuntergrenze ≥ 2000 ft",
+      "Sicht ≥ 5 km, Wolkenuntergrenze ≥ 1500 ft",
+      "Sicht ≥ 2 km, Wolkenuntergrenze ≥ 1000 ft",
+      "Sicht ≥ 10 km, Wolkenuntergrenze ≥ 5000 ft"
+     ],
+     "richtig": 0,
+     "erklaerung": "GAFOR Österreich: O ≥ 8 km / 2000 ft, D ≥ 5 km / 1500 ft, M ≥ 2 km / 1000 ft, X darunter; Untergrenzen über der Bezugshöhe der Route. Eine Stufe „C“ (10 km/5000 ft) gibt es nur im deutschen GAFOR."
+    },
+    {
+     "id": "MET-043",
+     "frage": "Welchen Höhenbereich deckt die Low-Level-SWC Alps (Austro Control/MeteoSchweiz) ab?",
+     "antworten": [
+      "FL 100 bis FL 450",
+      "SFC bis FL 250",
+      "FL 245 bis FL 630",
+      "GND bis FL 100"
+     ],
+     "richtig": 1,
+     "erklaerung": "Die Low-Level-SWC Alps zeigt signifikante Wettererscheinungen für die untere Luftfahrt im Alpenraum (Fronten, Vereisung, Turbulenz, Wolken, verdeckte Berge) vom Boden bis FL 250."
+    },
+    {
+     "id": "MET-044",
+     "frage": "Welche Mindestwerte gelten im österreichischen GAFOR für die Einstufung „D“ (Delta)?",
+     "antworten": [
+      "Sicht ≥ 8 km, Wolkenuntergrenze ≥ 2000 ft",
+      "Sicht ≥ 5 km, Wolkenuntergrenze ≥ 1500 ft",
+      "Sicht ≥ 1,5 km, Wolkenuntergrenze ≥ 500 ft",
+      "Sicht ≥ 2 km, Wolkenuntergrenze ≥ 1000 ft"
+     ],
+     "richtig": 1,
+     "erklaerung": "GAFOR Österreich: O ≥ 8 km / 2000 ft, D ≥ 5 km / 1500 ft, M ≥ 2 km / 1000 ft, X darunter."
+    },
+    {
+     "id": "MET-045",
+     "frage": "Worauf bezieht sich die Wolkenuntergrenze im österreichischen GAFOR?",
+     "antworten": [
+      "Auf die Höhe des Talbodens am Startplatz",
+      "Auf Meereshöhe (MSL) als einheitliche Basis",
+      "Auf die Flugfläche FL 100 über der Route",
+      "Auf die Bezugshöhe der jeweiligen Route"
+     ],
+     "richtig": 3,
+     "erklaerung": "Jede GAFOR-Route hat eine Bezugshöhe (z. B. Passhöhe). „O“ heißt also mindestens 2000 ft über dieser Bezugshöhe – nicht über dem Tal."
+    },
+    {
+     "id": "MET-046",
+     "frage": "Welche Wetterlage ist im Herbst und Winter im Grazer Becken besonders typisch?",
+     "antworten": [
+      "Dauerhafter Starkregen",
+      "Hochnebel bei Inversion",
+      "Föhnsturm aus Nordwest",
+      "Tropische Gewitterlinien"
+     ],
+     "richtig": 1,
+     "erklaerung": "Bei Hochdrucklagen bildet sich unter einer Inversion oft tagelang Hochnebel; darüber ist es klar. Ein VFR-Abstieg durch die Nebeldecke ist nicht möglich."
+    },
+    {
+     "id": "MET-047",
+     "frage": "Bei Südföhn: Auf welcher Seite des Alpenhauptkamms ist mit Föhn (warm, trocken, turbulent) zu rechnen?",
+     "antworten": [
+      "Auf der Südseite (Luv)",
+      "Nur über den Gipfeln, nicht in Tälern",
+      "Auf der Nordseite (Lee)",
+      "Auf beiden Seiten gleich stark"
+     ],
+     "richtig": 2,
+     "erklaerung": "Bei Südströmung staut sich die Luft auf der Südseite (Luv: Wolken, Niederschlag); auf der Nordseite (Lee, z. B. Innsbruck) weht Föhn mit Rotoren und Leewellen."
+    }
+   ]
+  },
+  {
+   "nr": 4,
+   "id": "kommunikation",
+   "name": "Kommunikation",
+   "kuerzel": "KOM",
+   "pruefung": {
+    "fragen": 12,
+    "minuten": 25
+   },
+   "fragen": [
+    {
+     "id": "KOM-001",
+     "frage": "Wie wird der Buchstabe „Y“ im ICAO-Buchstabieralphabet ausgesprochen?",
+     "antworten": [
+      "YPSILON",
+      "YOKOHAMA",
+      "YANKEE",
+      "YELLOW"
+     ],
+     "richtig": 2,
+     "erklaerung": "ICAO-Alphabet: … WHISKEY, X-RAY, YANKEE, ZULU."
+    },
+    {
+     "id": "KOM-002",
+     "frage": "Wie wird die Ziffer 9 im Sprechfunk ausgesprochen?",
+     "antworten": [
+      "NINER",
+      "NINE",
+      "NOVEMBER",
+      "NEUN-ER"
+     ],
+     "richtig": 0,
+     "erklaerung": "„Niner“ verhindert die Verwechslung mit dem deutschen „nein“."
+    },
+    {
+     "id": "KOM-003",
+     "frage": "Wie beginnt eine Notmeldung (Luftnot)?",
+     "antworten": [
+      "PAN PAN, PAN PAN, PAN PAN",
+      "MAYDAY MAYDAY MAYDAY",
+      "SECURITE SECURITE SECURITE",
+      "HELP HELP HELP"
+     ],
+     "richtig": 1,
+     "erklaerung": "Notverkehr: dreimal MAYDAY. Dringlichkeitsverkehr: dreimal PAN PAN."
+    },
+    {
+     "id": "KOM-004",
+     "frage": "Mit welchem Signal beginnt eine Dringlichkeitsmeldung?",
+     "antworten": [
+      "URGENT (dreimal)",
+      "ATTENTION (dreimal)",
+      "PAN PAN (dreimal)",
+      "MAYDAY (dreimal)"
+     ],
+     "richtig": 2,
+     "erklaerung": "Dringlichkeit: Gefahr für Luftfahrzeug oder Personen, aber keine unmittelbare Hilfe nötig (z. B. erkrankter Passagier)."
+    },
+    {
+     "id": "KOM-005",
+     "frage": "Welche Frequenz ist die internationale Notfrequenz im Flugfunk (VHF)?",
+     "antworten": [
+      "118,000 MHz",
+      "406,000 MHz",
+      "121,500 MHz",
+      "123,450 MHz"
+     ],
+     "richtig": 2,
+     "erklaerung": "121,5 MHz wird ständig überwacht. 406 MHz ist die Satellitenfrequenz von Notsendern (ELT)."
+    },
+    {
+     "id": "KOM-006",
+     "frage": "Was gehört in eine Notmeldung, soweit möglich?",
+     "antworten": [
+      "Rufzeichen, Lizenznummer, Halter, Versicherungsnummer",
+      "Rufzeichen, Kraftstoffvorrat, Muster, Name des Piloten",
+      "Rufzeichen, Startflugplatz, Zielflugplatz, Abflugzeit",
+      "Rufzeichen, Art des Notfalls, Absicht, Position, Höhe, Kurs"
+     ],
+     "richtig": 3,
+     "erklaerung": "Weitere hilfreiche Angaben: Anzahl Personen an Bord, Restkraftstoff."
+    },
+    {
+     "id": "KOM-007",
+     "frage": "Was bedeutet „ROGER“?",
+     "antworten": [
+      "Ja, Ihre Aussage ist richtig",
+      "Bitte wiederholen Sie Ihre letzte Übermittlung",
+      "Ich habe Ihre Übermittlung vollständig erhalten",
+      "Ich habe verstanden und werde die Anweisung befolgen"
+     ],
+     "richtig": 2,
+     "erklaerung": "ROGER ist keine Antwort auf eine Frage und ersetzt keine vorgeschriebene Rücklesung."
+    },
+    {
+     "id": "KOM-008",
+     "frage": "Was bedeutet „WILCO“?",
+     "antworten": [
+      "Ich habe Ihre Nachricht vollständig erhalten",
+      "Verstanden, ich werde die Anweisung befolgen",
+      "Warten Sie bitte, ich rufe Sie gleich zurück",
+      "Die Verbindung ist hiermit beendet"
+     ],
+     "richtig": 1,
+     "erklaerung": "WILCO = will comply."
+    },
+    {
+     "id": "KOM-009",
+     "frage": "Welche Bedeutung hat „AFFIRM“?",
+     "antworten": [
+      "Bestätigen Sie",
+      "Ja",
+      "Nein",
+      "Wiederholen Sie"
+     ],
+     "richtig": 1,
+     "erklaerung": "AFFIRM = ja; NEGATIVE = nein bzw. nicht genehmigt; CONFIRM = Bitte bestätigen Sie."
+    },
+    {
+     "id": "KOM-010",
+     "frage": "Was bedeutet „STANDBY“?",
+     "antworten": [
+      "Schalten Sie das Funkgerät auf Standby",
+      "Bleiben Sie bis auf Weiteres am Boden",
+      "Halten Sie vor der Piste und warten Sie",
+      "Warten Sie, ich rufe Sie zurück"
+     ],
+     "richtig": 3,
+     "erklaerung": "STANDBY ist weder Zustimmung noch Ablehnung."
+    },
+    {
+     "id": "KOM-011",
+     "frage": "Was bedeutet die Lesbarkeit „5“ auf der Lesbarkeitsskala?",
+     "antworten": [
+      "Lesbar, aber mit Schwierigkeiten",
+      "Unlesbar",
+      "Vollkommen lesbar",
+      "Zeitweise lesbar"
+     ],
+     "richtig": 2,
+     "erklaerung": "1 = unlesbar, 2 = zeitweise lesbar, 3 = mit Schwierigkeiten lesbar, 4 = lesbar, 5 = vollkommen lesbar."
+    },
+    {
+     "id": "KOM-012",
+     "frage": "Wie breiten sich UKW-Funkwellen (VHF) im Flugfunk aus?",
+     "antworten": [
+      "Als Bodenwelle entlang der Erdkrümmung sehr weit",
+      "Quasi-optisch, etwa geradlinig mit Sichtverbindung",
+      "Unabhängig von der Flughöhe mit konstanter Reichweite",
+      "Durch Reflexion an der Ionosphäre über große Distanz"
+     ],
+     "richtig": 1,
+     "erklaerung": "Deshalb nimmt die Reichweite mit der Flughöhe zu; Gebirge schatten ab."
+    },
+    {
+     "id": "KOM-013",
+     "frage": "Welche theoretische VHF-Reichweite ergibt sich in 4900 ft über Grund (Faustformel 1,23 × √Höhe in ft)?",
+     "antworten": [
+      "Etwa 86 NM",
+      "Etwa 25 NM",
+      "Etwa 49 NM",
+      "Etwa 150 NM"
+     ],
+     "richtig": 0,
+     "erklaerung": "√4900 = 70; 70 × 1,23 ≈ 86 NM (bei ebenem Gelände und Bodenstation in Meereshöhe)."
+    },
+    {
+     "id": "KOM-014",
+     "frage": "In welchem Frequenzbereich liegt der VHF-Flugfunk für den Sprechfunk?",
+     "antworten": [
+      "118,000 – 136,975 MHz",
+      "108,000 – 117,950 MHz",
+      "960,000 – 1215,000 MHz",
+      "190,000 – 1750,000 kHz"
+     ],
+     "richtig": 0,
+     "erklaerung": "108–117,95 MHz sind VOR/ILS-Frequenzen, 190–1750 kHz NDB, 960–1215 MHz DME."
+    },
+    {
+     "id": "KOM-015",
+     "frage": "Welche Funkmeldungen müssen zurückgelesen werden?",
+     "antworten": [
+      "Verkehrsinformationen, Wetterberichte und ATIS-Inhalte vollständig",
+      "Freigaben, Höhen, Kurse, Geschwindigkeiten, QNH, Squawk, Frequenzen",
+      "Nur Lande- und Startfreigaben, alle übrigen Meldungen mit ROGER bestätigen",
+      "Alle Meldungen der Bodenstelle ohne jede Ausnahme wörtlich"
+     ],
+     "richtig": 1,
+     "erklaerung": "Sicherheitsrelevante Anweisungen müssen wörtlich zurückgelesen werden; Verkehrsinformationen werden nur bestätigt."
+    },
+    {
+     "id": "KOM-016",
+     "frage": "Welche der folgenden Mitteilungen muss NICHT zurückgelesen werden?",
+     "antworten": [
+      "Ein Transpondercode",
+      "Eine Verkehrsinformation",
+      "Eine Freigabe zum Aufrollen auf die Piste",
+      "Eine QNH-Angabe"
+     ],
+     "richtig": 1,
+     "erklaerung": "Eine Verkehrsinformation bestätigt man z. B. mit „Traffic in sight“ oder „Looking out“."
+    },
+    {
+     "id": "KOM-017",
+     "frage": "Wann darf ein Pilot sein Rufzeichen OE-DTT in Kurzform „O-TT“ verwenden?",
+     "antworten": [
+      "Schon beim ersten Anruf einer neuen Bodenstelle",
+      "Erst wenn die Bodenstelle es so abgekürzt hat",
+      "Nur im Not- und Dringlichkeitsverkehr",
+      "Immer, um die Frequenz zu entlasten"
+     ],
+     "richtig": 1,
+     "erklaerung": "Kurzform: erstes Zeichen und mindestens die letzten zwei Zeichen („OSCAR TANGO TANGO“) – aber erst, wenn die Bodenstelle damit begonnen hat."
+    },
+    {
+     "id": "KOM-018",
+     "frage": "Wie wird das Rufzeichen OE-DTT buchstabiert?",
+     "antworten": [
+      "OSCAR ECHO DELTA TANGO TANGO",
+      "OSCAR EASY DOG TARE TARE",
+      "OCEAN ECHO DAVID TANGO TANGO",
+      "OTTO EMIL DORA THEODOR THEODOR"
+     ],
+     "richtig": 0,
+     "erklaerung": "Im Flugfunk gilt ausschließlich das ICAO-Buchstabieralphabet."
+    },
+    {
+     "id": "KOM-019",
+     "frage": "Was bedeutet „SAY AGAIN“?",
+     "antworten": [
+      "Bestätigen Sie, dass Sie mich gehört haben",
+      "Wiederholen Sie Ihre letzte Übermittlung",
+      "Ich wiederhole meine letzte Übermittlung",
+      "Sprechen Sie bitte langsamer und deutlicher"
+     ],
+     "richtig": 1,
+     "erklaerung": "„SPEAK SLOWER“ heißt langsamer sprechen, „I SAY AGAIN“ = ich wiederhole."
+    },
+    {
+     "id": "KOM-020",
+     "frage": "Welche Information enthält eine ATIS-Sendung typischerweise?",
+     "antworten": [
+      "Start- und Landezeiten aller Luftfahrzeuge am Flugplatz",
+      "Rufzeichen und Positionen der anfliegenden Luftfahrzeuge",
+      "Persönliche Freigaben für einzelne VFR-Luftfahrzeuge",
+      "Kennbuchstabe, Piste, Wind, Sicht, Wolken, Temperatur, QNH"
+     ],
+     "richtig": 3,
+     "erklaerung": "Beim Erstanruf sollte der empfangene ATIS-Kennbuchstabe genannt werden."
+    },
+    {
+     "id": "KOM-021",
+     "frage": "Was erhält ein VFR-Pilot vom Fluginformationsdienst (FIS)?",
+     "antworten": [
+      "Landefreigaben an unkontrollierten Plätzen",
+      "Freigaben für den Einflug in den Luftraum C und D",
+      "Staffelung zu allen anderen Luftfahrzeugen",
+      "Informationen und Hinweise, aber keine Freigaben"
+     ],
+     "richtig": 3,
+     "erklaerung": "FIS (in Österreich „Wien Information“) erteilt Verkehrs- und Wetterinformationen, aber keine Freigaben."
+    },
+    {
+     "id": "KOM-022",
+     "frage": "Mit welcher Kennung meldet sich in Österreich seit 28.12.2023 der Flugplatzbetriebsleiter eines unkontrollierten Flugplatzes?",
+     "antworten": [
+      "„(Ort) Turm“",
+      "„(Ort) Flugplatz“",
+      "„(Ort) Radio“",
+      "„(Ort) Information“"
+     ],
+     "richtig": 2,
+     "erklaerung": "Seit 28.12.2023 heißt die Bodenfunkstelle an unkontrollierten Plätzen in Österreich „Radio“ (vorher „Flugplatz“), z. B. „Fürstenfeld Radio“. „Information“ steht für FIS („Wien Information“), „Turm“/„Tower“ für die Flugplatzkontrolle. AFIS gibt es in Österreich nicht."
+    },
+    {
+     "id": "KOM-023",
+     "frage": "Welche Zeit wird im Flugfunk verwendet?",
+     "antworten": [
+      "Ortszeit (MEZ/MESZ)",
+      "Zeit des Abflugortes",
+      "UTC",
+      "Zeit des Zielortes"
+     ],
+     "richtig": 2,
+     "erklaerung": "Im Funkverkehr wird die koordinierte Weltzeit verwendet; meist werden nur die Minuten genannt."
+    },
+    {
+     "id": "KOM-024",
+     "frage": "Wie werden Windrichtungen vom Turm für Start und Landung angegeben?",
+     "antworten": [
+      "Relativ zur Pistenrichtung",
+      "Rechtweisend",
+      "Als Kompasskurs mit Deviation",
+      "Missweisend (magnetisch)"
+     ],
+     "richtig": 3,
+     "erklaerung": "Sie passen so direkt zu den Pistenbezeichnungen und zum Kompass. METAR/TAF geben Wind rechtweisend an."
+    },
+    {
+     "id": "KOM-025",
+     "frage": "Was bedeutet „SQUAWK IDENT“?",
+     "antworten": [
+      "Den Transponder auf Code 7700 schalten",
+      "Das eigene Rufzeichen buchstabieren",
+      "Den Transponder auf Standby schalten",
+      "Die IDENT-Taste des Transponders drücken"
+     ],
+     "richtig": 3,
+     "erklaerung": "Die Taste IDENT hebt das Ziel auf dem Radarschirm hervor."
+    },
+    {
+     "id": "KOM-026",
+     "frage": "Was bedeutet „QDM“?",
+     "antworten": [
+      "Missweisender Kurs zur Station",
+      "Missweisende Peilung von der Station",
+      "Rechtweisende Peilung von der Station",
+      "Rechtweisender Kurs zur Station"
+     ],
+     "richtig": 0,
+     "erklaerung": "QDM = magnetic heading to the station; QDR = magnetic bearing from the station; QTE = true bearing from the station."
+    },
+    {
+     "id": "KOM-027",
+     "frage": "Was bedeutet „QDR“?",
+     "antworten": [
+      "Rechtweisende Peilung von der Station",
+      "Missweisende Peilung von der Station",
+      "Rechtweisende Peilung zur Station",
+      "Missweisender Kurs zur Station"
+     ],
+     "richtig": 1,
+     "erklaerung": "QDR = QDM ± 180°."
+    },
+    {
+     "id": "KOM-028",
+     "frage": "Was bedeutet „QFE“?",
+     "antworten": [
+      "Standarddruck 1013,25 hPa – Höhenmesser zeigt Druckhöhe",
+      "Luftdruck in Platzhöhe – Höhenmesser zeigt am Boden 0",
+      "Auf MSL reduzierter Druck mit aktueller Temperaturkorrektur",
+      "Auf MSL reduzierter Druck – Höhenmesser zeigt Platzhöhe"
+     ],
+     "richtig": 1,
+     "erklaerung": "QNH zeigt am Boden die Platzhöhe an; QFE die Höhe über dem Platz."
+    },
+    {
+     "id": "KOM-029",
+     "frage": "Welche Meldung ist bei Funkausfall eines VFR-Fluges abzusetzen, wenn der Empfänger möglicherweise noch funktioniert?",
+     "antworten": [
+      "Dringlichkeitsmeldung nur auf 123,450 MHz",
+      "Ständig MAYDAY auf allen verfügbaren Frequenzen senden",
+      "Blindsendung, eingeleitet mit „TRANSMITTING BLIND“",
+      "Keine Meldung, Funkgerät sofort ausschalten"
+     ],
+     "richtig": 2,
+     "erklaerung": "Blindsendungen werden zweimal auf der aktuellen Frequenz gesendet; Transponder 7600."
+    },
+    {
+     "id": "KOM-030",
+     "frage": "Was sollte ein VFR-Pilot bei Funkausfall grundsätzlich tun?",
+     "antworten": [
+      "7600 schalten, in VMC bleiben, am nächsten geeigneten Platz landen",
+      "7600 schalten, in Wolken steigen, um den Empfang zu verbessern",
+      "7700 schalten, sofort in die nächste Kontrollzone einfliegen",
+      "7000 belassen, kreisen, bis die Funkverbindung wieder steht"
+     ],
+     "richtig": 0,
+     "erklaerung": "SERA.14083: VMC beibehalten, am nächsten geeigneten Flugplatz landen und die Ankunft unverzüglich melden."
+    },
+    {
+     "id": "KOM-031",
+     "frage": "Wie wird die Höhe „2500 ft“ unterhalb der Übergangshöhe im Funk angegeben?",
+     "antworten": [
+      "FLIGHT LEVEL TWO FIVE ZERO",
+      "HEIGHT TWO FIVE ZERO ZERO FEET",
+      "ALTITUDE TWO THOUSAND FIVE HUNDRED FEET",
+      "ALTITUDE TWENTY-FIVE HUNDRED FEET ON QNH"
+     ],
+     "richtig": 2,
+     "erklaerung": "Tausender und Hunderter werden als THOUSAND bzw. HUNDRED gesprochen; Flugflächen ziffernweise (FLIGHT LEVEL FIVE FIVE)."
+    },
+    {
+     "id": "KOM-032",
+     "frage": "Wie wird die Flugfläche FL 55 gesprochen?",
+     "antworten": [
+      "FLIGHT LEVEL FIVE FIVE",
+      "FLIGHT LEVEL FIFTY-FIVE",
+      "LEVEL FIVE FIVE ZERO",
+      "FIVE THOUSAND FIVE HUNDRED FEET"
+     ],
+     "richtig": 0,
+     "erklaerung": "Flugflächen werden Ziffer für Ziffer ausgesprochen."
+    },
+    {
+     "id": "KOM-033",
+     "frage": "Womit wird ein Notverkehr auf einer Frequenz beendet?",
+     "antworten": [
+      "DISTRESS TRAFFIC ENDED",
+      "STOP TRANSMITTING MAYDAY",
+      "MAYDAY TRAFFIC CANCELLED",
+      "EMERGENCY OVER AND OUT"
+     ],
+     "richtig": 0,
+     "erklaerung": "Die Bodenstelle beendet den Notverkehr; zuvor kann sie mit „STOP TRANSMITTING – MAYDAY“ Funkstille verhängen."
+    },
+    {
+     "id": "KOM-034",
+     "frage": "Was bedeutet die Anweisung „GO AROUND“?",
+     "antworten": [
+      "Auf der Piste wenden",
+      "Durchstarten",
+      "Die Platzrunde verlängern",
+      "Um das Hindernis herumfliegen"
+     ],
+     "richtig": 1,
+     "erklaerung": "Bei GO AROUND ist sofort durchzustarten und dies zu bestätigen."
+    },
+    {
+     "id": "KOM-035",
+     "frage": "Was bedeutet „LINE UP AND WAIT“?",
+     "antworten": [
+      "Vor der Piste am Rollhalt warten",
+      "Auf dem Rollweg hinten einreihen",
+      "Auf die Piste rollen und dort warten",
+      "Starten, sobald die Piste frei ist"
+     ],
+     "richtig": 2,
+     "erklaerung": "Ohne „CLEARED FOR TAKE-OFF“ darf nicht gestartet werden."
+    },
+    {
+     "id": "KOM-036",
+     "frage": "Was ist vor jedem Erstanruf auf einer neuen Frequenz zu tun?",
+     "antworten": [
+      "Kurz mithören, um niemanden zu stören",
+      "Sofort senden, um Zeit zu sparen",
+      "Den Transponder auf Standby schalten",
+      "Einen Testruf mit „TEST“ absetzen"
+     ],
+     "richtig": 0,
+     "erklaerung": "So wird vermieden, dass man in laufende Übermittlungen hineinspricht."
+    },
+    {
+     "id": "KOM-037",
+     "frage": "Was bedeutet „UNABLE“?",
+     "antworten": [
+      "Ich kann der Anweisung nicht nachkommen",
+      "Bitte wiederholen Sie die ganze Anweisung",
+      "Ich bin über meine Position unsicher",
+      "Mein Funkgerät ist gestört"
+     ],
+     "richtig": 0,
+     "erklaerung": "Nach „UNABLE“ sollte der Grund genannt werden."
+    },
+    {
+     "id": "KOM-038",
+     "frage": "Welches Flugfunk-Zeugnis erlaubt in Österreich VFR-Sprechfunk nur in deutscher Sprache und nur innerhalb Österreichs?",
+     "antworten": [
+      "Keines – Funk ist nur in Englisch erlaubt",
+      "EFZ",
+      "AFZ",
+      "BFZ"
+     ],
+     "richtig": 3,
+     "erklaerung": "Fernmeldebüro: BFZ = beschränkt (nur Deutsch, nur Österreich, VFR), EFZ = VFR in Deutsch und Englisch, AFZ = zusätzlich IFR."
+    },
+    {
+     "id": "KOM-039",
+     "frage": "Was bedeutet „CORRECTION“ im Sprechfunk?",
+     "antworten": [
+      "Ihre Rücklesung ist korrekt",
+      "Ich breche die Verbindung jetzt ab",
+      "Ich habe mich versprochen, richtig ist …",
+      "Bitte korrigieren Sie Ihren Kurs nach rechts"
+     ],
+     "richtig": 2,
+     "erklaerung": "Danach folgt die korrigierte Fassung."
+    },
+    {
+     "id": "KOM-040",
+     "frage": "Welche Angaben gehören zu einer typischen Positionsmeldung?",
+     "antworten": [
+      "Rufzeichen, Position, Zeit, Höhe, nächster Punkt",
+      "Rufzeichen, Zielflugplatz, Abflugzeit und Muster",
+      "Rufzeichen, Kraftstoffvorrat und Personen",
+      "Rufzeichen, Name des Piloten und Lizenz"
+     ],
+     "richtig": 0,
+     "erklaerung": "Kurz und vollständig – so kann die Bodenstelle den Flug nachvollziehen."
+    },
+    {
+     "id": "KOM-041",
+     "frage": "Darf der Flugplatzbetriebsleiter „(Ort) Radio“ an einem unkontrollierten Platz eine Landefreigabe erteilen?",
+     "antworten": [
+      "Ja, aber nur für Luftfahrzeuge mit gültigem Flugplan",
+      "Ja, er erteilt Lande- und Startfreigaben genau wie ein Tower",
+      "Nein, er darf überhaupt keinen Funkverkehr führen",
+      "Nein, er gibt nur Informationen wie Piste, Wind und Verkehr"
+     ],
+     "richtig": 3,
+     "erklaerung": "„Radio“ ist kein Flugverkehrsdienst. Der Pilot entscheidet selbst über Start und Landung und meldet seine Absicht (z. B. „Fürstenfeld Radio“)."
+    },
+    {
+     "id": "KOM-042",
+     "frage": "Wofür steht in Österreich die Kennung „Wien Information“?",
+     "antworten": [
+      "Für die Anflugkontrolle (Radar) Wien",
+      "Für die Rollkontrolle des Flughafens Wien",
+      "Für den Flugplatzbetriebsleiter in Wien",
+      "Für den Fluginformationsdienst (FIS)"
+     ],
+     "richtig": 3,
+     "erklaerung": "Wien Information ist der FIS für ganz Österreich (z. B. 124,400 Süd, 134,625 Nord). Flugplatzbetriebsleiter an unkontrollierten Plätzen melden sich mit „Radio“."
+    },
+    {
+     "id": "KOM-043",
+     "frage": "Welche Frequenz hat „Fürstenfeld Radio“ (LOGF) laut AIP Austria?",
+     "antworten": [
+      "124,400 MHz",
+      "122,705 MHz",
+      "123,450 MHz",
+      "121,500 MHz"
+     ],
+     "richtig": 1,
+     "erklaerung": "AIP AD 2 LOGF: Fürstenfeld Radio 122,705 (8,33-kHz-Kanal). 123,450 = Luft-Luft, 121,500 = Notfrequenz, 124,400 = Wien Information Süd."
+    },
+    {
+     "id": "KOM-044",
+     "frage": "Was meldet man beim Erstanruf bei Wien Information, wenn kein Flugplan aufgegeben wurde?",
+     "antworten": [
+      "„VFR ohne Freigabe“ und den Squawk 7700",
+      "„Flugplan folgt“ mit voraussichtlicher Zeit",
+      "„Kein Flugplan“ bzw. „negative flight plan“",
+      "„Operations normal“ in regelmäßigen Abständen"
+     ],
+     "richtig": 2,
+     "erklaerung": "Ohne Flugplan meldet man das ausdrücklich; die frühere Routinemeldung „operations normal“ ist in Österreich entfallen (§ 27a LVR 2014)."
+    },
+    {
+     "id": "KOM-045",
+     "frage": "Bei welcher Stelle legt man in Österreich die Prüfung für das Flugfunk-Zeugnis ab?",
+     "antworten": [
+      "Bei der Flugschule (ATO)",
+      "Beim Fernmeldebüro",
+      "Beim Österreichischen Aero Club",
+      "Bei der Austro Control"
+     ],
+     "richtig": 1,
+     "erklaerung": "Flugfunk-Zeugnisse (BFZ, EFZ, AFZ) prüft und erteilt das Fernmeldebüro (z. B. in Graz, Wien, Innsbruck) nach dem Funker-Zeugnisgesetz."
+    },
+    {
+     "id": "KOM-046",
+     "frage": "Welches Flugfunk-Zeugnis berechtigt in Österreich zum VFR-Sprechfunk in Deutsch und Englisch, ohne IFR?",
+     "antworten": [
+      "EFZ",
+      "BFZ",
+      "Keines – dafür ist kein Zeugnis nötig",
+      "BZF II"
+     ],
+     "richtig": 0,
+     "erklaerung": "EFZ = Allgemeines Flugfunk-Zeugnis für VFR (Deutsch und Englisch). BFZ nur Deutsch/nur Österreich; BZF II ist ein deutsches Zeugnis."
+    }
+   ]
+  },
+  {
+   "nr": 5,
+   "id": "grundlagen-des-fliegens",
+   "name": "Grundlagen des Fliegens",
+   "kuerzel": "GDF",
+   "pruefung": {
+    "fragen": 12,
+    "minuten": 25
+   },
+   "fragen": [
+    {
+     "id": "GDF-001",
+     "frage": "Wie lautet die Auftriebsformel?",
+     "antworten": [
+      "A = cA · ρ/2 · v · S²",
+      "A = cA · ρ · v · S/2",
+      "A = cA · ρ/2 · v² · S",
+      "A = cW · ρ/2 · v² · S"
+     ],
+     "richtig": 2,
+     "erklaerung": "Auftrieb hängt vom Auftriebsbeiwert, der Luftdichte, dem Quadrat der Geschwindigkeit und der Flügelfläche ab."
+    },
+    {
+     "id": "GDF-002",
+     "frage": "Wie ändert sich der Auftrieb, wenn sich die Geschwindigkeit bei gleichem Anstellwinkel verdoppelt?",
+     "antworten": [
+      "Er verdoppelt sich",
+      "Er bleibt unverändert",
+      "Er verdreifacht sich",
+      "Er vervierfacht sich"
+     ],
+     "richtig": 3,
+     "erklaerung": "Der Auftrieb wächst mit v²: 2² = 4."
+    },
+    {
+     "id": "GDF-003",
+     "frage": "Was versteht man unter dem Anstellwinkel?",
+     "antworten": [
+      "Winkel zwischen Tragfläche und Horizontalebene von vorne gesehen",
+      "Winkel zwischen Profilsehne und Anströmrichtung",
+      "Winkel zwischen Längsachse und Horizont",
+      "Winkel zwischen Profilsehne und Rumpflängsachse"
+     ],
+     "richtig": 1,
+     "erklaerung": "Der Winkel zwischen Profilsehne und Rumpflängsachse ist der (feste) Einstellwinkel; von vorne gesehen spricht man von V-Stellung."
+    },
+    {
+     "id": "GDF-004",
+     "frage": "Wann reißt die Strömung an einem Tragflügel ab?",
+     "antworten": [
+      "Beim Überschreiten des kritischen Anstellwinkels",
+      "Nur bei vollständig ausgefahrenen Klappen",
+      "Beim Unterschreiten einer festen Mindestfahrt",
+      "Nur im Steigflug mit hoher Motorleistung"
+     ],
+     "richtig": 0,
+     "erklaerung": "Die Überziehgeschwindigkeit ändert sich mit Masse und Lastvielfachem, der kritische Anstellwinkel (ca. 15–18°) bleibt gleich."
+    },
+    {
+     "id": "GDF-005",
+     "frage": "Was besagt das Gesetz von Bernoulli für eine Strömung?",
+     "antworten": [
+      "Statischer plus dynamischer Druck bleibt konstant",
+      "Druck und Temperatur bleiben immer konstant",
+      "Der statische Druck steigt mit der Geschwindigkeit",
+      "Der dynamische Druck bleibt immer konstant"
+     ],
+     "richtig": 0,
+     "erklaerung": "Wo die Strömung schneller ist (Flügeloberseite), sinkt der statische Druck."
+    },
+    {
+     "id": "GDF-006",
+     "frage": "Wie wandert der Druckpunkt eines gewölbten Profils bei zunehmendem Anstellwinkel (unterhalb des Abrisses)?",
+     "antworten": [
+      "Er bleibt fest",
+      "Zur Flügelspitze",
+      "Nach vorne",
+      "Nach hinten"
+     ],
+     "richtig": 2,
+     "erklaerung": "Beim Normalprofil wandert der Druckpunkt mit steigendem Anstellwinkel nach vorne, beim Abriss wieder nach hinten."
+    },
+    {
+     "id": "GDF-007",
+     "frage": "Wodurch entsteht der induzierte Widerstand?",
+     "antworten": [
+      "Durch Reibung der Luft an der Oberfläche",
+      "Durch Druckausgleich an den Flügelenden",
+      "Durch den Propellerstrahl am Rumpf",
+      "Durch Antennen, Fahrwerk und Streben"
+     ],
+     "richtig": 1,
+     "erklaerung": "Die Luft strömt an den Flügelenden von der Unter- zur Oberseite und bildet Wirbelzöpfe."
+    },
+    {
+     "id": "GDF-008",
+     "frage": "Wie ändert sich der induzierte Widerstand mit zunehmender Geschwindigkeit im Horizontalflug?",
+     "antworten": [
+      "Er nimmt quadratisch zu",
+      "Er bleibt gleich",
+      "Er nimmt ab",
+      "Er nimmt zu"
+     ],
+     "richtig": 2,
+     "erklaerung": "Bei höherer Geschwindigkeit ist ein kleinerer Anstellwinkel nötig; der induzierte Widerstand sinkt etwa mit 1/v²."
+    },
+    {
+     "id": "GDF-009",
+     "frage": "Wie ändert sich der schädliche (parasitäre) Widerstand mit der Geschwindigkeit?",
+     "antworten": [
+      "Er bleibt konstant",
+      "Er wächst etwa mit v²",
+      "Er nimmt mit v² ab",
+      "Er wächst etwa mit v³"
+     ],
+     "richtig": 1,
+     "erklaerung": "Form-, Reibungs- und Interferenzwiderstand wachsen mit v²."
+    },
+    {
+     "id": "GDF-010",
+     "frage": "Bei welcher Geschwindigkeit ist der Gesamtwiderstand am kleinsten?",
+     "antworten": [
+      "Wo induzierter = schädlicher Widerstand",
+      "Bei der Höchstgeschwindigkeit im Horizontalflug",
+      "Bei der Höchstgeschwindigkeit Vne",
+      "Knapp oberhalb der Überziehgeschwindigkeit"
+     ],
+     "richtig": 0,
+     "erklaerung": "Diese Geschwindigkeit entspricht dem besten Gleiten (beste Gleitzahl)."
+    },
+    {
+     "id": "GDF-011",
+     "frage": "Ein Flugzeug mit Gleitzahl 1:10 befindet sich 3000 ft über Grund. Wie weit kann es bei Windstille gleiten?",
+     "antworten": [
+      "Etwa 10.000 ft (≈ 1,6 NM)",
+      "Etwa 30.000 ft (≈ 5 NM)",
+      "Etwa 300.000 ft (≈ 50 NM)",
+      "Etwa 3000 ft (≈ 0,5 NM)"
+     ],
+     "richtig": 1,
+     "erklaerung": "Gleitstrecke = Höhe × Gleitzahl = 3000 ft × 10 = 30.000 ft ≈ 9,1 km ≈ 4,9 NM."
+    },
+    {
+     "id": "GDF-012",
+     "frage": "Wie wirkt sich eine größere Flügelstreckung aus?",
+     "antworten": [
+      "Die Querstabilität geht verloren",
+      "Die Überziehgeschwindigkeit steigt stark",
+      "Der induzierte Widerstand wird größer",
+      "Der induzierte Widerstand wird geringer"
+     ],
+     "richtig": 3,
+     "erklaerung": "Streckung = Spannweite² / Flügelfläche. Segelflugzeuge haben daher sehr schlanke Flügel."
+    },
+    {
+     "id": "GDF-013",
+     "frage": "Welchen Effekt hat der Bodeneffekt bei der Landung?",
+     "antworten": [
+      "Er erhöht die Überziehgeschwindigkeit",
+      "Er erhöht den induzierten Widerstand",
+      "Er verringert den induzierten Widerstand",
+      "Er verringert den Auftrieb deutlich"
+     ],
+     "richtig": 2,
+     "erklaerung": "In weniger als etwa einer Spannweite Höhe werden die Randwirbel behindert."
+    },
+    {
+     "id": "GDF-014",
+     "frage": "Wie groß ist das Lastvielfache in einer horizontalen Kurve mit 60° Querneigung?",
+     "antworten": [
+      "3",
+      "1,41",
+      "2",
+      "1,15"
+     ],
+     "richtig": 2,
+     "erklaerung": "n = 1/cos(Querneigung) = 1/cos 60° = 2."
+    },
+    {
+     "id": "GDF-015",
+     "frage": "Um wie viel steigt die Überziehgeschwindigkeit in einer horizontalen 60°-Kurve?",
+     "antworten": [
+      "Um etwa 100 %",
+      "Um etwa 41 %",
+      "Um etwa 15 %",
+      "Um etwa 73 %"
+     ],
+     "richtig": 1,
+     "erklaerung": "vs steigt mit der Wurzel des Lastvielfachen: √2 ≈ 1,41."
+    },
+    {
+     "id": "GDF-016",
+     "frage": "Welche Grenzlastvielfache gelten für die Normalkategorie (CS-23)?",
+     "antworten": [
+      "+2,5 g und −1,0 g",
+      "+3,8 g und −1,52 g",
+      "+4,4 g und −1,76 g",
+      "+6,0 g und −3,0 g"
+     ],
+     "richtig": 1,
+     "erklaerung": "Nutzkategorie (Utility): +4,4 / −1,76 g; Kunstflugkategorie: +6,0 / −3,0 g."
+    },
+    {
+     "id": "GDF-017",
+     "frage": "Was bewirken ausgefahrene Landeklappen?",
+     "antworten": [
+      "Weniger Auftrieb und Widerstand, größere Überziehgeschwindigkeit",
+      "Weniger Widerstand, höhere Geschwindigkeit, gleiche Überziehgeschwindigkeit",
+      "Größerer kritischer Anstellwinkel bei deutlich weniger Widerstand",
+      "Mehr Auftrieb und Widerstand, kleinere Überziehgeschwindigkeit"
+     ],
+     "richtig": 3,
+     "erklaerung": "Klappen erhöhen die Wölbung (Fowlerklappen auch die Fläche); der kritische Anstellwinkel sinkt eher leicht."
+    },
+    {
+     "id": "GDF-018",
+     "frage": "Was bewirken Vorflügel (Slats)?",
+     "antworten": [
+      "Sie dienen als Querruder",
+      "Sie erhöhen den kritischen Anstellwinkel",
+      "Sie verringern den Auftrieb",
+      "Sie verringern den Widerstand im Reiseflug"
+     ],
+     "richtig": 1,
+     "erklaerung": "Energiereiche Luft wird durch den Spalt auf die Oberseite geleitet und verzögert den Strömungsabriss."
+    },
+    {
+     "id": "GDF-019",
+     "frage": "Was ist das negative Wendemoment beim Querruderausschlag?",
+     "antworten": [
+      "Das Flugzeug giert entgegen der Kurvenrichtung",
+      "Das Flugzeug rollt entgegen der Kurvenrichtung",
+      "Das Flugzeug giert verstärkt in die Kurve hinein",
+      "Das Flugzeug nickt deutlich mit der Nase nach unten"
+     ],
+     "richtig": 0,
+     "erklaerung": "Das nach unten ausgeschlagene Querruder (steigender Flügel) erzeugt mehr induzierten Widerstand. Abhilfe: Differenzierung, Seitenruder."
+    },
+    {
+     "id": "GDF-020",
+     "frage": "Um welche Achse bewegt sich das Flugzeug beim Betätigen des Höhenruders?",
+     "antworten": [
+      "Um die Hochachse (Gieren)",
+      "Um die Querachse (Nicken)",
+      "Um die Längsachse (Rollen)",
+      "Um alle drei Achsen gleichzeitig"
+     ],
+     "richtig": 1,
+     "erklaerung": "Querruder → Längsachse, Höhenruder → Querachse, Seitenruder → Hochachse."
+    },
+    {
+     "id": "GDF-021",
+     "frage": "Welche Voraussetzung muss für statische Längsstabilität erfüllt sein?",
+     "antworten": [
+      "Der Schwerpunkt liegt vor dem Neutralpunkt",
+      "Schwerpunkt und Neutralpunkt fallen zusammen",
+      "Der Schwerpunkt liegt an der Flügelspitze",
+      "Der Schwerpunkt liegt hinter dem Neutralpunkt"
+     ],
+     "richtig": 0,
+     "erklaerung": "Der Abstand zwischen Schwerpunkt und Neutralpunkt ist das Stabilitätsmaß."
+    },
+    {
+     "id": "GDF-022",
+     "frage": "Welche Folge hat eine Schwerpunktlage hinter der hinteren Grenze?",
+     "antworten": [
+      "Bessere Längsstabilität und ruhigeres Flugverhalten",
+      "Geringere Längsstabilität, schwieriges Trudelausleiten",
+      "Größere Höhenruderkräfte beim Abfangen zur Landung",
+      "Höhere Überziehgeschwindigkeit, größere Steuerkräfte"
+     ],
+     "richtig": 1,
+     "erklaerung": "Ein hinterer Schwerpunkt macht das Flugzeug „nervös“ und kann im Extremfall unbeherrschbar werden."
+    },
+    {
+     "id": "GDF-023",
+     "frage": "Welche Folge hat eine weit vordere Schwerpunktlage?",
+     "antworten": [
+      "Geringere Längsstabilität und nervöses Flugverhalten",
+      "Kein spürbarer Einfluss auf das Flugverhalten",
+      "Höhere Überziehgeschwindigkeit und größere Steuerkräfte",
+      "Bessere Trudeleigenschaften und kürzere Startstrecke"
+     ],
+     "richtig": 2,
+     "erklaerung": "Das Höhenleitwerk muss mehr Abtrieb erzeugen; das wirkt wie zusätzliches Gewicht."
+    },
+    {
+     "id": "GDF-024",
+     "frage": "Wozu dient die V-Stellung der Tragflächen?",
+     "antworten": [
+      "Zur Querstabilität (um die Längsachse)",
+      "Zur Verringerung des induzierten Widerstands",
+      "Zur Richtungsstabilität (um die Hochachse)",
+      "Zur Längsstabilität (um die Querachse)"
+     ],
+     "richtig": 0,
+     "erklaerung": "Beim Schieben erhält der hängende Flügel einen größeren Anstellwinkel und richtet das Flugzeug wieder auf."
+    },
+    {
+     "id": "GDF-025",
+     "frage": "Wie bewegt sich ein Trimmruder (Trimmklappe) im Verhältnis zum Hauptruder?",
+     "antworten": [
+      "Immer nach oben, unabhängig vom Ruder",
+      "Gar nicht, sie ist fest montiert",
+      "Entgegengesetzt zum Ruderausschlag",
+      "In dieselbe Richtung wie das Ruder"
+     ],
+     "richtig": 2,
+     "erklaerung": "Die Trimmklappe erzeugt eine Gegenkraft, die das Ruder in der gewünschten Stellung hält und die Steuerkraft entlastet."
+    },
+    {
+     "id": "GDF-026",
+     "frage": "Welchem Zweck dient ein Massenausgleich am Ruder?",
+     "antworten": [
+      "Er reduziert den Widerstand",
+      "Er verhindert Ruderflattern",
+      "Er erhöht den Auftrieb",
+      "Er ersetzt die Trimmung"
+     ],
+     "richtig": 1,
+     "erklaerung": "Ein Gewicht vor der Drehachse verschiebt den Ruderschwerpunkt nach vorn."
+    },
+    {
+     "id": "GDF-027",
+     "frage": "Welche Standardmaßnahme leitet man beim Trudeln ein (wenn das Flughandbuch nichts anderes vorsieht)?",
+     "antworten": [
+      "Vollgas, Querruder neutral, Seitenruder in die Drehung, Höhenruder voll drücken",
+      "Gas Leerlauf, Querruder neutral, Seitenruder gegen die Drehung, Höhenruder nachlassen",
+      "Gas Leerlauf, Querruder gegen die Drehung, Seitenruder in die Drehung, Klappen aus",
+      "Vollgas, Querruder gegen die Drehung, Seitenruder neutral, Höhenruder voll ziehen"
+     ],
+     "richtig": 1,
+     "erklaerung": "Merkhilfe PARE: Power idle, Ailerons neutral, Rudder opposite, Elevator forward. Nach Ende der Drehung Seitenruder neutral und abfangen."
+    },
+    {
+     "id": "GDF-028",
+     "frage": "Welches Kräftegleichgewicht gilt im stationären Horizontalflug?",
+     "antworten": [
+      "Auftrieb = Widerstand und Schub = Gewicht",
+      "Auftrieb > Gewicht und Schub < Widerstand",
+      "Auftrieb < Gewicht",
+      "Auftrieb = Gewicht und Schub = Widerstand"
+     ],
+     "richtig": 3,
+     "erklaerung": "Im unbeschleunigten Flug heben sich alle Kräfte auf."
+    },
+    {
+     "id": "GDF-029",
+     "frage": "Wie verhält sich der Auftrieb im stationären Steigflug im Vergleich zum Gewicht?",
+     "antworten": [
+      "Etwas kleiner als das Gewicht",
+      "Etwas größer als das Gewicht",
+      "Genau gleich dem Gewicht",
+      "Gleich dem Widerstand"
+     ],
+     "richtig": 0,
+     "erklaerung": "Ein Teil der Gewichtskraft wirkt entlang der Flugbahn und wird vom Schub getragen; A = G · cos γ."
+    },
+    {
+     "id": "GDF-030",
+     "frage": "Was ist die Geschwindigkeit Vx?",
+     "antworten": [
+      "Geschwindigkeit der besten Steigrate",
+      "Geschwindigkeit des besten Steigwinkels",
+      "Höchstgeschwindigkeit mit Landeklappen",
+      "Geschwindigkeit des besten Gleitwinkels"
+     ],
+     "richtig": 1,
+     "erklaerung": "Vx wird zum Überfliegen von Hindernissen nach dem Start genutzt; Vy (beste Steigrate) ist größer als Vx."
+    },
+    {
+     "id": "GDF-031",
+     "frage": "Was ist die Manövergeschwindigkeit Va?",
+     "antworten": [
+      "Die Geschwindigkeit, die niemals überschritten werden darf",
+      "Bis zu ihr sind volle Ruderausschläge strukturell zulässig",
+      "Die Geschwindigkeit des besten Gleitens bei Motorausfall",
+      "Die höchste zulässige Geschwindigkeit mit Landeklappen"
+     ],
+     "richtig": 1,
+     "erklaerung": "Va nimmt mit abnehmender Masse ab, da das leichtere Flugzeug schneller ein hohes Lastvielfaches erreicht."
+    },
+    {
+     "id": "GDF-032",
+     "frage": "Wie verändert sich die Überziehgeschwindigkeit bei höherer Flugzeugmasse?",
+     "antworten": [
+      "Sie ist nur vom Luftdruck abhängig",
+      "Sie sinkt",
+      "Sie bleibt gleich",
+      "Sie steigt"
+     ],
+     "richtig": 3,
+     "erklaerung": "vs ist proportional zu √Masse."
+    },
+    {
+     "id": "GDF-033",
+     "frage": "In welche Richtung giert ein Flugzeug mit (vom Piloten aus gesehen) rechtsdrehendem Propeller beim Startlauf typischerweise?",
+     "antworten": [
+      "Nach links",
+      "Nach rechts",
+      "Gar nicht",
+      "Nach unten"
+     ],
+     "richtig": 0,
+     "erklaerung": "Propellerdrall (Wendelstrom auf das Seitenleitwerk), Reaktionsmoment und P-Faktor bewirken eine Linkstendenz – mit rechtem Seitenruder ausgleichen."
+    },
+    {
+     "id": "GDF-034",
+     "frage": "Was bewirkt eine Flügelschränkung (Washout)?",
+     "antworten": [
+      "Der Abriss beginnt an der Spitze, Querruder bleiben wirksam",
+      "Der Abriss beginnt an der Wurzel, Höhenruder wird unwirksam",
+      "Der Widerstand im Reiseflug sinkt auf annähernd null",
+      "Der Abriss beginnt an der Wurzel, Querruder bleiben wirksam"
+     ],
+     "richtig": 3,
+     "erklaerung": "Die Flügelspitze hat einen kleineren Einstellwinkel als die Wurzel."
+    },
+    {
+     "id": "GDF-035",
+     "frage": "Wie verhalten sich IAS und TAS mit zunehmender Höhe bei konstanter IAS?",
+     "antworten": [
+      "Die IAS nimmt automatisch zu",
+      "IAS und TAS bleiben gleich",
+      "Die TAS nimmt zu",
+      "Die TAS nimmt ab"
+     ],
+     "richtig": 2,
+     "erklaerung": "Mit abnehmender Luftdichte muss das Flugzeug für denselben Staudruck schneller fliegen; Faustregel: +2 % je 1000 ft."
+    },
+    {
+     "id": "GDF-036",
+     "frage": "Wofür ist die Grenzschicht verantwortlich?",
+     "antworten": [
+      "Für den Propellerschub",
+      "Für den induzierten Widerstand",
+      "Für den Reibungswiderstand",
+      "Für den Bodeneffekt"
+     ],
+     "richtig": 2,
+     "erklaerung": "Die Grenzschicht ist die dünne Luftschicht, in der die Geschwindigkeit von null auf die freie Strömung ansteigt; turbulent hat sie mehr Reibung, haftet aber besser."
+    },
+    {
+     "id": "GDF-037",
+     "frage": "Wie wirkt sich Vereisung der Tragflächen auf die Flugeigenschaften aus?",
+     "antworten": [
+      "Mehr Auftrieb, aber etwas mehr Widerstand",
+      "Nur höheres Gewicht, die Aerodynamik bleibt gleich",
+      "Höhere Überziehgeschwindigkeit und mehr Widerstand",
+      "Geringere Überziehgeschwindigkeit und mehr Auftrieb"
+     ],
+     "richtig": 2,
+     "erklaerung": "Schon geringe Ablagerungen stören die Profilumströmung erheblich."
+    },
+    {
+     "id": "GDF-038",
+     "frage": "Wozu dient das Seitenleitwerk (Seitenflosse)?",
+     "antworten": [
+      "Zur Auftriebserhöhung",
+      "Zur Querstabilität",
+      "Zur Längsstabilität",
+      "Zur Richtungsstabilität"
+     ],
+     "richtig": 3,
+     "erklaerung": "Es wirkt wie eine Wetterfahne und richtet das Flugzeug in die Anströmung aus."
+    },
+    {
+     "id": "GDF-039",
+     "frage": "Was zeigt ein Steigflug mit zu geringer Geschwindigkeit und hohem Anstellwinkel nahe dem Überziehen typischerweise an?",
+     "antworten": [
+      "Zunehmende, härtere Ruderwirkung",
+      "Keine wahrnehmbaren Anzeichen",
+      "Schütteln und Überziehwarnung",
+      "Steigende Fahrt bei gleicher Lage"
+     ],
+     "richtig": 2,
+     "erklaerung": "Die ablösende Strömung trifft auf das Leitwerk; die Steuerwirkung wird schwammig."
+    },
+    {
+     "id": "GDF-040",
+     "frage": "Welcher Zusammenhang besteht zwischen Gleitzahl und Flugzeugmasse (bei Windstille)?",
+     "antworten": [
+      "Gleitzahl besser, beste Gleitfahrt gleich",
+      "Gleitzahl schlechter, beste Gleitfahrt höher",
+      "Gleitzahl gleich, beste Gleitfahrt niedriger",
+      "Gleitzahl gleich, beste Gleitfahrt höher"
+     ],
+     "richtig": 3,
+     "erklaerung": "Die Gleitzahl ist ein Verhältnis von Auftrieb zu Widerstand und hängt vom Anstellwinkel ab, nicht von der Masse."
+    }
+   ]
+  },
+  {
+   "nr": 6,
+   "id": "betriebliche-verfahren",
+   "name": "Betriebliche Verfahren",
+   "kuerzel": "BV",
+   "pruefung": {
+    "fragen": 12,
+    "minuten": 25
+   },
+   "fragen": [
+    {
+     "id": "BV-001",
+     "frage": "Wann sind Wirbelschleppen eines Flugzeugs am stärksten?",
+     "antworten": [
+      "Leicht, langsam, Klappen ausgefahren",
+      "Leicht, schnell, Klappen eingefahren",
+      "Schwer, schnell, im Reiseflug",
+      "Schwer, langsam, Klappen eingefahren"
+     ],
+     "richtig": 3,
+     "erklaerung": "Wirbelstärke steigt mit Masse und Anstellwinkel – also besonders bei Start und Landung schwerer Luftfahrzeuge."
+    },
+    {
+     "id": "BV-002",
+     "frage": "Wie verhalten sich Wirbelschleppen nach ihrer Entstehung?",
+     "antworten": [
+      "Sie lösen sich sofort hinter dem Flugzeug auf",
+      "Sie steigen auf und driften gegen den Wind",
+      "Sie bleiben ortsfest in der Flughöhe stehen",
+      "Sie sinken ab und driften mit dem Wind"
+     ],
+     "richtig": 3,
+     "erklaerung": "Wirbel sinken einige hundert ft unter die Flugbahn und breiten sich in Bodennähe seitlich aus."
+    },
+    {
+     "id": "BV-003",
+     "frage": "Sie landen hinter einem schweren Flugzeug auf derselben Piste. Was ist zu empfehlen?",
+     "antworten": [
+      "Über dessen Anflugweg bleiben, vor dessen Aufsetzpunkt landen",
+      "Unter dessen Anflugweg bleiben, vor dessen Aufsetzpunkt landen",
+      "Unter dessen Anflugweg bleiben, hinter dessen Aufsetzpunkt landen",
+      "Über dessen Anflugweg bleiben, hinter dessen Aufsetzpunkt landen"
+     ],
+     "richtig": 3,
+     "erklaerung": "Unterhalb und hinter dem schweren Flugzeug befinden sich die absinkenden Wirbel."
+    },
+    {
+     "id": "BV-004",
+     "frage": "Sie starten hinter einem schweren Flugzeug. Was ist zu empfehlen?",
+     "antworten": [
+      "Vor dessen Abhebepunkt abheben, über dessen Bahn steigen",
+      "Hinter dessen Abhebepunkt abheben, in dessen Bahn steigen",
+      "Hinter dessen Abhebepunkt abheben, unter dessen Bahn steigen",
+      "Vor dessen Abhebepunkt abheben, unter dessen Bahn steigen"
+     ],
+     "richtig": 0,
+     "erklaerung": "Wirbel entstehen ab dem Abheben (Rotation); ausreichend Zeitabstand einhalten."
+    },
+    {
+     "id": "BV-005",
+     "frage": "Bei welchem Wind ist die Gefahr von Wirbelschleppen auf der Piste besonders groß?",
+     "antworten": [
+      "Bei starkem Wind von über 25 kt",
+      "Bei Rückenwind von mehr als 15 kt",
+      "Bei leichtem Seitenwind von etwa 3–5 kt",
+      "Bei böigem Wind aus wechselnder Richtung"
+     ],
+     "richtig": 2,
+     "erklaerung": "Leichter Seitenwind kann die Bewegung des luvseitigen Wirbels aufheben."
+    },
+    {
+     "id": "BV-006",
+     "frage": "Zu welcher Brandklasse gehört ein Benzinbrand?",
+     "antworten": [
+      "Brandklasse D",
+      "Brandklasse A",
+      "Brandklasse C",
+      "Brandklasse B"
+     ],
+     "richtig": 3,
+     "erklaerung": "A = feste Stoffe, B = flüssige oder flüssig werdende Stoffe, C = Gase, D = Metalle."
+    },
+    {
+     "id": "BV-007",
+     "frage": "Was ist die erste Maßnahme bei einem Triebwerksbrand im Flug (sofern das Flughandbuch nichts anderes vorschreibt)?",
+     "antworten": [
+      "Steigflug einleiten",
+      "Fenster öffnen",
+      "Vergaservorwärmung ziehen",
+      "Brandhahn schließen"
+     ],
+     "richtig": 3,
+     "erklaerung": "Typische Folge: Kraftstoff aus, Gas voll (Restkraftstoff verbrauchen), Gemisch arm, Zündung und Master aus, Notlandung."
+    },
+    {
+     "id": "BV-008",
+     "frage": "Was ist bei einem elektrischen Brand bzw. Kabelbrand an Bord zu tun?",
+     "antworten": [
+      "Master aus, Heizung zu, bald landen",
+      "Motor abstellen, Fenster schließen",
+      "Alle Verbraucher einschalten, weiterfliegen",
+      "Kabinenheizung öffnen, Master an lassen"
+     ],
+     "richtig": 0,
+     "erklaerung": "Rauch in der Kabine: Frischluftzufuhr nach Flughandbuch, Feuerlöscher ggf. einsetzen, danach lüften."
+    },
+    {
+     "id": "BV-009",
+     "frage": "Welche Mindestkraftstoffreserve ist für einen VFR-Flug am Tag mit Flugzeugen (Nicht-Lokalflug) einzuplanen?",
+     "antworten": [
+      "10 Minuten Reiseflug",
+      "30 Minuten Reiseflug",
+      "45 Minuten Reiseflug",
+      "60 Minuten Reiseflug"
+     ],
+     "richtig": 1,
+     "erklaerung": "Part-NCO: am Tag 30 min (10 min bei Flügen in Sichtweite des Startflugplatzes), bei Nacht 45 min Reserve."
+    },
+    {
+     "id": "BV-010",
+     "frage": "Welche Kraftstoffreserve gilt für VFR-Flüge mit Flugzeugen bei Nacht?",
+     "antworten": [
+      "30 Minuten",
+      "10 Minuten",
+      "45 Minuten",
+      "20 Minuten"
+     ],
+     "richtig": 2,
+     "erklaerung": "Für VFR-Nachtflüge ist eine Endreserve von 45 Minuten Reiseflug vorgeschrieben."
+    },
+    {
+     "id": "BV-011",
+     "frage": "Eine Piste hat die missweisende Richtung 263°. Welche Bezeichnung trägt sie?",
+     "antworten": [
+      "26",
+      "08",
+      "27",
+      "263"
+     ],
+     "richtig": 0,
+     "erklaerung": "Die missweisende Richtung wird auf die nächsten 10° gerundet und durch 10 geteilt. Die Gegenrichtung ist 08."
+    },
+    {
+     "id": "BV-012",
+     "frage": "Was bedeuten weiße Pfeile auf der Piste vor einer versetzten Schwelle?",
+     "antworten": [
+      "Rollen, Starten und Ausrollen erlaubt, aber nicht Aufsetzen",
+      "Vollständig gesperrt für jeden Flug- und Rollbetrieb",
+      "Nur für Hubschrauber und Segelflugzeuge zugelassen",
+      "Aufsetzen erlaubt, aber weder Rollen noch Starten"
+     ],
+     "richtig": 0,
+     "erklaerung": "Bei einer versetzten Schwelle beginnt die Landestrecke erst an der weißen Querlinie."
+    },
+    {
+     "id": "BV-013",
+     "frage": "Was bedeutet ein großes Kreuz (X) auf einer Piste oder einem Rollweg?",
+     "antworten": [
+      "Die Fläche ist gesperrt",
+      "Hier ist der Aufsetzpunkt",
+      "Hier ist der Notlandeplatz",
+      "Segelflug in Betrieb"
+     ],
+     "richtig": 0,
+     "erklaerung": "Weiße Kreuze auf Pisten, gelbe auf Rollwegen kennzeichnen gesperrte Flächen."
+    },
+    {
+     "id": "BV-014",
+     "frage": "Wie ist bei einem Lande-T im Signalfeld zu starten und zu landen?",
+     "antworten": [
+      "Parallel zum Querbalken, vom Längsbalken weg",
+      "Parallel zum Längsbalken, zum Querbalken hin",
+      "Beliebig, das T zeigt nur die Pistenlage an",
+      "Parallel zum Längsbalken, vom Querbalken weg"
+     ],
+     "richtig": 1,
+     "erklaerung": "SERA Anlage 1: Start und Landung parallel zum Schaft des T in Richtung auf den Querbalken (also gegen den Wind)."
+    },
+    {
+     "id": "BV-015",
+     "frage": "Was bedeutet ein rotes Quadrat mit zwei gelben Diagonalen im Signalfeld?",
+     "antworten": [
+      "Segelflugbetrieb im Gange",
+      "Vorsicht, schlechter Zustand",
+      "Landeverbot für längere Zeit",
+      "Rollen nur auf Rollwegen"
+     ],
+     "richtig": 2,
+     "erklaerung": "Ein rotes Quadrat mit nur einer gelben Diagonale bedeutet: besondere Vorsicht bei Anflug und Landung."
+    },
+    {
+     "id": "BV-016",
+     "frage": "Was bedeutet ein weißes Doppelkreuz im Signalfeld?",
+     "antworten": [
+      "Segelflugbetrieb",
+      "Landeverbot",
+      "Hubschrauberbetrieb",
+      "Pistenwechsel"
+     ],
+     "richtig": 0,
+     "erklaerung": "Das weiße Doppelkreuz (waagerecht) zeigt Segelflugbetrieb an."
+    },
+    {
+     "id": "BV-017",
+     "frage": "Was bedeutet ein weißes Hantelzeichen im Signalfeld?",
+     "antworten": [
+      "Es gilt eine Rechtsplatzrunde für alle Luftfahrzeuge",
+      "Segelflugbetrieb findet auf der Graspiste statt",
+      "Starten, landen und rollen nur auf Pisten und Rollwegen",
+      "Der Flugplatz ist für jeden Flugbetrieb gesperrt"
+     ],
+     "richtig": 2,
+     "erklaerung": "Mit zusätzlichen schwarzen Querstreifen: Start/Landung nur auf Pisten, Rollen auch außerhalb erlaubt."
+    },
+    {
+     "id": "BV-018",
+     "frage": "Wie verhalten Sie sich an einer Rollhaltemarkierung (durchgezogene und unterbrochene gelbe Linien)?",
+     "antworten": [
+      "Die Markierung gilt nur nachts und bei schlechter Sicht",
+      "Von der unterbrochenen Seite nur mit Freigabe kreuzen",
+      "Von beiden Seiten jederzeit ohne Freigabe kreuzen",
+      "Von der durchgezogenen Seite nur mit Freigabe kreuzen"
+     ],
+     "richtig": 3,
+     "erklaerung": "Die durchgezogenen Linien liegen auf der Rollweg-Seite (Halt!), die unterbrochenen auf der Pistenseite."
+    },
+    {
+     "id": "BV-019",
+     "frage": "Welche Farbe haben Markierungen auf Rollwegen?",
+     "antworten": [
+      "Weiß",
+      "Blau",
+      "Gelb",
+      "Rot"
+     ],
+     "richtig": 2,
+     "erklaerung": "Pistenmarkierungen sind weiß, Rollwegmarkierungen gelb."
+    },
+    {
+     "id": "BV-020",
+     "frage": "In welche Richtung wird eine Platzrunde standardmäßig geflogen, wenn nichts anderes veröffentlicht ist?",
+     "antworten": [
+      "Linksplatzrunde",
+      "Abwechselnd links/rechts",
+      "Rechtsplatzrunde",
+      "Nach Wahl des Piloten"
+     ],
+     "richtig": 0,
+     "erklaerung": "Abweichende Platzrunden sind der Flugplatzkarte (AIP Austria AD 2) zu entnehmen – in Fürstenfeld liegt die Platzrunde z. B. immer nördlich des Platzes."
+    },
+    {
+     "id": "BV-021",
+     "frage": "Was zeigt eine PAPI-Anlage mit zwei roten und zwei weißen Lichtern an?",
+     "antworten": [
+      "Etwas zu tief unter dem Gleitpfad",
+      "Auf dem korrekten Gleitpfad",
+      "Etwas zu hoch über dem Gleitpfad",
+      "Deutlich zu tief unter dem Gleitpfad"
+     ],
+     "richtig": 1,
+     "erklaerung": "4 × weiß = viel zu hoch, 3 weiß/1 rot = etwas zu hoch, 2/2 = richtig, 1 weiß/3 rot = etwas zu tief, 4 × rot = viel zu tief."
+    },
+    {
+     "id": "BV-022",
+     "frage": "Wie sind die Ruder beim Rollen mit Wind schräg von vorne links zu halten (Bugradflugzeug)?",
+     "antworten": [
+      "Steuer nach links, Höhenruder neutral",
+      "Steuer neutral, Höhenruder voll gedrückt",
+      "Steuer nach rechts, Höhenruder gezogen",
+      "Steuer nach rechts, Höhenruder gedrückt"
+     ],
+     "richtig": 0,
+     "erklaerung": "Wind von vorne: Steuer in den Wind. Wind von hinten: Steuer vom Wind weg und Höhenruder gedrückt („dive away from the wind“)."
+    },
+    {
+     "id": "BV-023",
+     "frage": "Der Motor fällt unmittelbar nach dem Start in geringer Höhe aus. Was ist in der Regel richtig?",
+     "antworten": [
+      "Vollgas geben und die Klappen einfahren",
+      "Fahrt halten und etwa geradeaus landen",
+      "Sofort umkehren und zur Piste zurückfliegen",
+      "Ziehen, um Höhe zu halten, dann umkehren"
+     ],
+     "richtig": 1,
+     "erklaerung": "Eine Umkehrkurve in geringer Höhe führt häufig zum Strömungsabriss mit Trudeln."
+    },
+    {
+     "id": "BV-024",
+     "frage": "Nach welchen Kriterien wird ein Feld für eine Notlandung ausgewählt?",
+     "antworten": [
+      "Nähe zu Straße, Ortschaft und Telefonleitung",
+      "Wind, Länge, Oberfläche, Hindernisse, Gefälle",
+      "Entfernung zum Start- und zum Zielflugplatz",
+      "Farbe, Form und Bewuchs des Feldes allein"
+     ],
+     "richtig": 1,
+     "erklaerung": "Gelandet wird möglichst gegen den Wind, auf ebener, fester Fläche ohne Hindernisse im Anflug."
+    },
+    {
+     "id": "BV-025",
+     "frage": "Wann sollten Schwimmwesten bei einer Notwasserung aufgeblasen werden?",
+     "antworten": [
+      "Gar nicht, nur festhalten",
+      "Erst nach dem Verlassen des Flugzeugs",
+      "Unmittelbar nach dem Aufsetzen in der Kabine",
+      "Bereits vor dem Aufsetzen"
+     ],
+     "richtig": 1,
+     "erklaerung": "Eine aufgeblasene Weste in der Kabine kann das Aussteigen verhindern, wenn Wasser eindringt."
+    },
+    {
+     "id": "BV-026",
+     "frage": "Was sollte vor einer Notwasserung mit den Türen geschehen?",
+     "antworten": [
+      "Vor dem Aufsetzen entriegeln",
+      "Bereits im Reiseflug aushängen",
+      "Erst unter Wasser langsam öffnen",
+      "Vor dem Aufsetzen fest verriegeln"
+     ],
+     "richtig": 0,
+     "erklaerung": "Durch Verformung beim Aufprall und Wasserdruck lassen sich Türen später oft nicht mehr öffnen."
+    },
+    {
+     "id": "BV-027",
+     "frage": "Wann müssen nach Part-NCO Schwimmwesten in einem einmotorigen Landflugzeug mitgeführt werden?",
+     "antworten": [
+      "Über Wasser jenseits der Gleitreichweite zum Land",
+      "Nur bei Flügen von mehr als 500 km Länge",
+      "Nur bei Nacht oder bei Flügen über Gebirge",
+      "Bei jedem Flug unabhängig von der Strecke"
+     ],
+     "richtig": 0,
+     "erklaerung": "NCO.IDE.A.175: Schwimmwesten für jede Person an Bord, sobald die Gleitreichweite zum Land überschritten wird."
+    },
+    {
+     "id": "BV-028",
+     "frage": "Welche Mindestinformation muss der Pilot den Passagieren vor dem Flug geben (Passagierbriefing)?",
+     "antworten": [
+      "Flugzeit, Flughöhe, Strecke und Wetter am Ziel",
+      "Gurte, Notausgänge, Notverhalten, Ausrüstung",
+      "Wartungshistorie und Alter des Flugzeugs",
+      "Kraftstoffpreis und Kostenaufteilung"
+     ],
+     "richtig": 1,
+     "erklaerung": "NCO.OP.130: Passagiere sind mit Notausgängen, Sicherheitsausrüstung und Verhaltensregeln vertraut zu machen."
+    },
+    {
+     "id": "BV-029",
+     "frage": "Was ist bei Windscherung im Endanflug mit plötzlichem Fahrtverlust zu tun?",
+     "antworten": [
+      "Sofort Leistung erhöhen, ggf. durchstarten",
+      "Klappen sofort vollständig ausfahren",
+      "Weiterfliegen wie geplant und abwarten",
+      "Leistung reduzieren und die Nase senken"
+     ],
+     "richtig": 0,
+     "erklaerung": "Bei böigen Bedingungen sollte zusätzlich ein Geschwindigkeitszuschlag im Anflug verwendet werden."
+    },
+    {
+     "id": "BV-030",
+     "frage": "Ab welcher Geschwindigkeit muss etwa mit dynamischem Aquaplaning gerechnet werden (Faustformel, p in psi)?",
+     "antworten": [
+      "Etwa 100 kt unabhängig vom Reifendruck",
+      "Etwa 9 × √p (kt)",
+      "Etwa p × 2 (kt)",
+      "Etwa 3 × p (kt)"
+     ],
+     "richtig": 1,
+     "erklaerung": "Bei 25 psi Reifendruck ergibt sich ca. 9 × 5 = 45 kt."
+    },
+    {
+     "id": "BV-031",
+     "frage": "Welches Boden-Luft-Sichtzeichen bedeutet „Benötige Hilfe“?",
+     "antworten": [
+      "V",
+      "N",
+      "Y",
+      "X"
+     ],
+     "richtig": 0,
+     "erklaerung": "V = Hilfe benötigt, X = ärztliche Hilfe benötigt, N = Nein, Y = Ja, Pfeil = ich gehe in diese Richtung."
+    },
+    {
+     "id": "BV-032",
+     "frage": "Welches Boden-Luft-Sichtzeichen bedeutet „Benötige ärztliche Hilfe“?",
+     "antworten": [
+      "X",
+      "N",
+      "V",
+      "Y"
+     ],
+     "richtig": 0,
+     "erklaerung": "Die Zeichen sollten möglichst groß (mindestens 2,5 m) und kontrastreich ausgelegt werden."
+    },
+    {
+     "id": "BV-033",
+     "frage": "Wie sollte bei hohem Seegang mit ausgeprägter Dünung möglichst gewassert werden?",
+     "antworten": [
+      "Schräg gegen die Dünung",
+      "Senkrecht gegen die Dünung",
+      "Mit maximaler Geschwindigkeit",
+      "Parallel zur Dünung"
+     ],
+     "richtig": 3,
+     "erklaerung": "Gegen die Dünung würde das Flugzeug gegen eine Wellenwand prallen."
+    },
+    {
+     "id": "BV-034",
+     "frage": "Worauf ist beim Drainieren des Kraftstoffs vor dem Flug besonders zu achten?",
+     "antworten": [
+      "Ölgeruch und Ölfarbe im Probenbecher",
+      "Wasser, Schmutz und Kraftstofffarbe",
+      "Füllstand des Hydrauliköls der Bremsen",
+      "Kraftstofftemperatur und Kraftstoffdruck"
+     ],
+     "richtig": 1,
+     "erklaerung": "Wasser sammelt sich als Tropfen am Boden des Probenbechers, da es schwerer ist als Benzin."
+    },
+    {
+     "id": "BV-035",
+     "frage": "Welches Löschmittel ist in einer engen Cockpitkabine wegen Sichtbehinderung problematisch?",
+     "antworten": [
+      "CO₂-Löscher in kleinen Mengen",
+      "Wasser im Notfall",
+      "Pulverlöscher",
+      "Halon- bzw. Halon-Ersatz-Löscher"
+     ],
+     "richtig": 2,
+     "erklaerung": "Pulver bildet eine dichte Wolke, die die Sicht und Atmung behindert; außerdem wirkt es korrosiv."
+    },
+    {
+     "id": "BV-036",
+     "frage": "Was ist eine typische Maßnahme bei Vogelschlaggefahr in Flugplatznähe?",
+     "antworten": [
+      "NOTAM und Platzinfos beachten, Tiefflug meiden",
+      "Mit Höchstgeschwindigkeit durch Schwärme fliegen",
+      "Landescheinwerfer aus, um Vögel nicht anzulocken",
+      "Transponder auf 7700 schalten, um zu warnen"
+     ],
+     "richtig": 0,
+     "erklaerung": "Die meisten Vogelschläge ereignen sich unterhalb 3000 ft in Flugplatznähe."
+    },
+    {
+     "id": "BV-037",
+     "frage": "Welches Verhalten ist beim Lärmschutz an Flugplätzen richtig?",
+     "antworten": [
+      "Platzrunden nach Belieben abkürzen und verlegen",
+      "Steigflüge grundsätzlich mit reduzierter Leistung",
+      "Platzrunden und Lärmschutzverfahren einhalten",
+      "Ortschaften möglichst tief und schnell überfliegen"
+     ],
+     "richtig": 2,
+     "erklaerung": "Lärmschutzverfahren sind in der AIP Austria (AD 2) bzw. Flugplatzkarte veröffentlicht."
+    },
+    {
+     "id": "BV-038",
+     "frage": "Welche Frequenz sendet ein moderner Notsender (ELT) für die satellitengestützte Erfassung?",
+     "antworten": [
+      "406 MHz",
+      "121,5 MHz",
+      "243 MHz",
+      "118 MHz"
+     ],
+     "richtig": 0,
+     "erklaerung": "121,5 MHz dient zusätzlich als Peilsignal (Homing) für Suchkräfte."
+    },
+    {
+     "id": "BV-039",
+     "frage": "Was ist bei einem Motorausfall im Reiseflug die erste Maßnahme?",
+     "antworten": [
+      "Sofort den Notsender manuell aktivieren",
+      "Steil sinken, um schnell am Boden zu sein",
+      "Beste Gleitfahrt einnehmen, Landefeld wählen",
+      "Klappen voll ausfahren und Fahrt verringern"
+     ],
+     "richtig": 2,
+     "erklaerung": "Danach: Ursachensuche (Kraftstoffhahn, Gemisch, Vergaservorwärmung, Magnete), Notruf, Landevorbereitung."
+    },
+    {
+     "id": "BV-040",
+     "frage": "Sie haben auf einem Überlandflug die Orientierung verloren. Was ist sinnvoll?",
+     "antworten": [
+      "Tief sinken, um Ortsschilder lesen zu können",
+      "Kreisen, bis die Kraftstoffreserve erreicht ist",
+      "Kurs halten, ggf. steigen, FIS um Hilfe bitten",
+      "Transponder ausschalten und Funkstille halten"
+     ],
+     "richtig": 2,
+     "erklaerung": "Merkhilfe der 4 C: Climb, Communicate, Confess, Comply. FIS kann mit Radar oder Peilung helfen."
+    },
+    {
+     "id": "BV-041",
+     "frage": "Die Sicht verschlechtert sich auf einem VFR-Überlandflug zunehmend. Was ist richtig?",
+     "antworten": [
+      "In die Wolken steigen und nach Instrumenten fliegen",
+      "Unter die Sicherheitsmindesthöhe sinken und weiter",
+      "Weiterfliegen und auf baldige Besserung hoffen",
+      "Rechtzeitig umkehren oder ausweichen, solange VMC"
+     ],
+     "richtig": 3,
+     "erklaerung": "Der Einflug in IMC ohne Instrumentenflugausbildung ist eine der häufigsten tödlichen Unfallursachen."
+    },
+    {
+     "id": "BV-042",
+     "frage": "Was bedeuten gelbe Winkelmarkierungen (Chevrons) auf einer befestigten Fläche vor der Pistenschwelle?",
+     "antworten": [
+      "Hier beginnt die Aufsetzzone der Piste",
+      "Aufsetzpunkt für Hubschrauber",
+      "Parkfläche für Kleinflugzeuge und UL",
+      "Fläche nicht für normalen Flugbetrieb nutzbar"
+     ],
+     "richtig": 3,
+     "erklaerung": "Gelbe Winkel (Chevrons) kennzeichnen eine Fläche vor der Schwelle, die nicht als Piste genutzt werden darf."
+    },
+    {
+     "id": "BV-043",
+     "frage": "Was ist bei einem Talflug im Gebirge zu empfehlen?",
+     "antworten": [
+      "Möglichst tief fliegen, um unter den Wolken zu bleiben",
+      "Am Schattenhang fliegen, um Turbulenz zu meiden",
+      "Talseite so wählen, dass eine Umkehrkurve möglich ist",
+      "In Talmitte fliegen, um beiden Hängen auszuweichen"
+     ],
+     "richtig": 2,
+     "erklaerung": "Man fliegt seitlich versetzt (meist auf der Sonnen-/Luvseite mit Aufwind), damit jederzeit eine Umkehrkurve ins freie Tal möglich ist."
+    },
+    {
+     "id": "BV-044",
+     "frage": "Wie sollte ein Gebirgspass im Sichtflug angeflogen werden?",
+     "antworten": [
+      "Im Sinkflug knapp über dem Gelände",
+      "Mit Überhöhung schräg (ca. 45°)",
+      "Im Steigflug genau mittig mit Vollgas",
+      "Genau senkrecht in Passhöhe"
+     ],
+     "richtig": 1,
+     "erklaerung": "Mit ausreichender Überhöhung (ca. 1000 ft) und schräg anfliegen, damit man bei Fallwinden oder Wolken jederzeit abdrehen kann."
+    },
+    {
+     "id": "BV-045",
+     "frage": "Welche Lärmschutzauflage gilt am Flugplatz Fürstenfeld (LOGF) laut AIP?",
+     "antworten": [
+      "Ortsgebiete wie Rudersdorf umfliegen",
+      "Starts nur auf Piste 30, Landungen nur auf 12",
+      "Flugbetrieb nur zwischen 10 und 12 Uhr Ortszeit",
+      "Platzrunde nur südlich in 500 ft AGL fliegen"
+     ],
+     "richtig": 0,
+     "erklaerung": "AIP AD 2 LOGF: Die Ortsgebiete Fürstenfeld, Rudersdorf, Deutsch-Kaltenbrunn und Altenmarkt sind zu meiden; Platzrunde nördlich in 1000 ft AGL."
+    }
+   ]
+  },
+  {
+   "nr": 7,
+   "id": "flugleistung-und-flugplanung",
+   "name": "Flugleistung und Flugplanung",
+   "kuerzel": "FLP",
+   "pruefung": {
+    "fragen": 12,
+    "minuten": 25
+   },
+   "fragen": [
+    {
+     "id": "FLP-001",
+     "frage": "Wie berechnet man das Moment einer Masse in der Schwerpunktberechnung?",
+     "antworten": [
+      "Masse × Hebelarm",
+      "Hebelarm ÷ Masse",
+      "Masse ÷ Hebelarm",
+      "Masse + Hebelarm"
+     ],
+     "richtig": 0,
+     "erklaerung": "Moment (kg·m) = Masse (kg) × Hebelarm (m) zur Bezugsebene."
+    },
+    {
+     "id": "FLP-002",
+     "frage": "Wie berechnet man die Schwerpunktlage?",
+     "antworten": [
+      "Summe aller Hebelarme ÷ Anzahl der Posten",
+      "Gesamtmasse × mittlerer Hebelarm",
+      "Summe aller Momente ÷ Gesamtmasse",
+      "Gesamtmasse ÷ Summe aller Momente"
+     ],
+     "richtig": 2,
+     "erklaerung": "Der Schwerpunkt ist der Hebelarm der Gesamtmasse."
+    },
+    {
+     "id": "FLP-003",
+     "frage": "Leermasse 700 kg (Hebelarm 2,0 m), Insassen 160 kg (2,1 m), Kraftstoff 80 kg (2,4 m). Wo liegt der Schwerpunkt?",
+     "antworten": [
+      "Bei etwa 2,40 m",
+      "Bei etwa 1,95 m",
+      "Bei etwa 2,17 m",
+      "Bei etwa 2,05 m"
+     ],
+     "richtig": 3,
+     "erklaerung": "Momente: 1400 + 336 + 192 = 1928 kg·m; Gesamtmasse 940 kg; 1928 ÷ 940 ≈ 2,05 m."
+    },
+    {
+     "id": "FLP-004",
+     "frage": "Welche Masse haben 100 Liter AVGAS 100LL (Dichte ca. 0,72 kg/l)?",
+     "antworten": [
+      "Etwa 100 kg",
+      "Etwa 138 kg",
+      "Etwa 52 kg",
+      "Etwa 72 kg"
+     ],
+     "richtig": 3,
+     "erklaerung": "100 l × 0,72 kg/l = 72 kg."
+    },
+    {
+     "id": "FLP-005",
+     "frage": "Wie viele Liter entsprechen etwa einer US-Gallone?",
+     "antworten": [
+      "3,785 l",
+      "4,546 l",
+      "2,500 l",
+      "1,000 l"
+     ],
+     "richtig": 0,
+     "erklaerung": "Die imperiale Gallone (UK) hat 4,546 l."
+    },
+    {
+     "id": "FLP-006",
+     "frage": "Ein Flugzeug verbraucht 30 l/h. Wie viel Kraftstoff wird für 2 h 15 min Flugzeit benötigt (ohne Reserve)?",
+     "antworten": [
+      "67,5 l",
+      "45,0 l",
+      "75,0 l",
+      "60,0 l"
+     ],
+     "richtig": 0,
+     "erklaerung": "2,25 h × 30 l/h = 67,5 l."
+    },
+    {
+     "id": "FLP-007",
+     "frage": "Gesamtmasse 1000 kg. Der Schwerpunkt soll um 0,05 m nach vorne. Gepäck wird von 3,0 m auf 2,0 m umgeladen. Wie viel?",
+     "antworten": [
+      "20 kg",
+      "100 kg",
+      "50 kg",
+      "5 kg"
+     ],
+     "richtig": 2,
+     "erklaerung": "Δm = Gesamtmasse × ΔSP ÷ Verschiebeweg = 1000 × 0,05 ÷ 1,0 = 50 kg."
+    },
+    {
+     "id": "FLP-008",
+     "frage": "Was versteht man unter der höchstzulässigen Startmasse (MTOM)?",
+     "antworten": [
+      "Höchste zulässige Masse ohne Insassen",
+      "Höchste zulässige Masse beim Aufsetzen",
+      "Leermasse einschließlich vollem Kraftstoff",
+      "Höchste zulässige Masse zu Beginn des Startlaufs"
+     ],
+     "richtig": 3,
+     "erklaerung": "Die MTOM ist eine strukturelle bzw. leistungsbedingte Grenze aus dem Flughandbuch."
+    },
+    {
+     "id": "FLP-009",
+     "frage": "Welche Folge hat eine Überschreitung der höchstzulässigen Masse?",
+     "antworten": [
+      "Keine, solange der Schwerpunkt innerhalb der Grenzen liegt",
+      "Längere Startstrecke, niedrigere Überziehfahrt, mehr Steigen",
+      "Kürzere Startstrecke, niedrigere Überziehfahrt, mehr Steigen",
+      "Längere Startstrecke, höhere Überziehfahrt, weniger Steigen"
+     ],
+     "richtig": 3,
+     "erklaerung": "Zudem verlieren die Werte im Flughandbuch ihre Gültigkeit."
+    },
+    {
+     "id": "FLP-010",
+     "frage": "Um wie viel verlängert sich die Startstrecke nach der Faustregel (UK CAA) auf trockenem, kurzem Gras gegenüber Asphalt?",
+     "antworten": [
+      "Um etwa 20 %",
+      "Gar nicht",
+      "Um etwa 5 %",
+      "Um etwa 50 %"
+     ],
+     "richtig": 0,
+     "erklaerung": "Trockenes Gras bis 20 cm: Faktor 1,20; nasses Gras: Faktor 1,30."
+    },
+    {
+     "id": "FLP-011",
+     "frage": "Um wie viel verlängert sich die Startstrecke auf nassem Gras nach der Faustregel?",
+     "antworten": [
+      "Um etwa 10 %",
+      "Um etwa 30 %",
+      "Um etwa 60 %",
+      "Um etwa 100 %"
+     ],
+     "richtig": 1,
+     "erklaerung": "Faktor 1,30 (sehr kurzes nasses Gras auf festem Grund kann bis zu 60 % mehr bedeuten)."
+    },
+    {
+     "id": "FLP-012",
+     "frage": "Wie wirkt sich eine um 1000 ft höhere Platzhöhe nach der Faustregel auf die Startstrecke aus?",
+     "antworten": [
+      "Kein Einfluss",
+      "Verlängerung um etwa 10 %",
+      "Verlängerung um etwa 50 %",
+      "Verkürzung um etwa 10 %"
+     ],
+     "richtig": 1,
+     "erklaerung": "Geringere Luftdichte verringert Motorleistung und erfordert höhere TAS beim Abheben."
+    },
+    {
+     "id": "FLP-013",
+     "frage": "Die Startstrecke auf Asphalt beträgt 400 m. Wie lang ist sie auf trockenem Gras (×1,2) auf einem 1000 ft höher gelegenen Platz (×1,1)?",
+     "antworten": [
+      "Etwa 480 m",
+      "Etwa 528 m",
+      "Etwa 440 m",
+      "Etwa 520 m"
+     ],
+     "richtig": 1,
+     "erklaerung": "Faktoren werden multipliziert: 400 m × 1,2 × 1,1 = 528 m."
+    },
+    {
+     "id": "FLP-014",
+     "frage": "Welcher Sicherheitsfaktor wird für die Startstrecke von der UK CAA zusätzlich empfohlen?",
+     "antworten": [
+      "2,00",
+      "1,33",
+      "1,43",
+      "1,10"
+     ],
+     "richtig": 1,
+     "erklaerung": "Für die Landestrecke empfiehlt die UK CAA einen Faktor von 1,43."
+    },
+    {
+     "id": "FLP-015",
+     "frage": "Welcher Einfluss erhöht die Startstrecke?",
+     "antworten": [
+      "Geringe Platzhöhe",
+      "Geringere Masse",
+      "Gegenwind",
+      "Hohe Temperatur"
+     ],
+     "richtig": 3,
+     "erklaerung": "Hohe Temperatur → geringere Dichte → größere Dichtehöhe → längere Startstrecke (Faustregel +10 % je +10 °C)."
+    },
+    {
+     "id": "FLP-016",
+     "frage": "Ein Flugplatz liegt 1000 ft hoch, das QNH beträgt 1003 hPa. Wie groß ist die Druckhöhe (1 hPa ≈ 30 ft)?",
+     "antworten": [
+      "Etwa 1300 ft",
+      "Etwa 1030 ft",
+      "Etwa 1000 ft",
+      "Etwa 700 ft"
+     ],
+     "richtig": 0,
+     "erklaerung": "Druckhöhe = Platzhöhe + (1013 − QNH) × 30 ft = 1000 + 10 × 30 = 1300 ft."
+    },
+    {
+     "id": "FLP-017",
+     "frage": "Druckhöhe 2000 ft, Außentemperatur 21 °C. Wie groß ist die Dichtehöhe etwa (Faustregel 120 ft je °C Abweichung von ISA)?",
+     "antworten": [
+      "Etwa 2000 ft",
+      "Etwa 800 ft",
+      "Etwa 4400 ft",
+      "Etwa 3200 ft"
+     ],
+     "richtig": 3,
+     "erklaerung": "ISA in 2000 ft: 15 − 4 = 11 °C. Abweichung +10 °C → +1200 ft → ca. 3200 ft."
+    },
+    {
+     "id": "FLP-018",
+     "frage": "Piste 27, Wind 300°/20 kt. Wie groß ist die Seitenwindkomponente?",
+     "antworten": [
+      "Etwa 5 kt",
+      "Etwa 10 kt",
+      "Etwa 20 kt",
+      "Etwa 17 kt"
+     ],
+     "richtig": 1,
+     "erklaerung": "Winkel 30°: Seitenwind = 20 × sin 30° = 10 kt; Gegenwind = 20 × cos 30° ≈ 17 kt."
+    },
+    {
+     "id": "FLP-019",
+     "frage": "Piste 09, Wind 150°/20 kt. Wie groß ist die Seitenwindkomponente?",
+     "antworten": [
+      "Etwa 10 kt",
+      "Etwa 20 kt",
+      "Etwa 14 kt",
+      "Etwa 17 kt"
+     ],
+     "richtig": 3,
+     "erklaerung": "Winkel 60°: 20 × sin 60° ≈ 17 kt Seitenwind; Gegenwind 20 × cos 60° = 10 kt."
+    },
+    {
+     "id": "FLP-020",
+     "frage": "Was bedeutet die im Flughandbuch angegebene „demonstrierte Seitenwindkomponente“?",
+     "antworten": [
+      "Der maximal zulässige Rückenwind",
+      "Ein erprobter Wert, kein strukturelles Limit",
+      "Eine absolute, strukturelle Betriebsgrenze",
+      "Die Höchstgeschwindigkeit beim Rollen"
+     ],
+     "richtig": 1,
+     "erklaerung": "Sie zeigt, was nachweislich beherrschbar war; Pilotenerfahrung und persönliche Minima sind entscheidend."
+    },
+    {
+     "id": "FLP-021",
+     "frage": "Ein Flugzeug steigt mit 500 ft/min bei 100 kt Grundgeschwindigkeit. Wie groß ist der Steiggradient etwa?",
+     "antworten": [
+      "Etwa 300 ft/NM (ca. 5 %)",
+      "Etwa 500 ft/NM (ca. 8 %)",
+      "Etwa 1000 ft/NM",
+      "Etwa 50 ft/NM (ca. 1 %)"
+     ],
+     "richtig": 0,
+     "erklaerung": "Gradient (ft/NM) = Steigrate × 60 ÷ GS = 500 × 60 ÷ 100 = 300 ft/NM; 300 ÷ 6076 ≈ 4,9 %."
+    },
+    {
+     "id": "FLP-022",
+     "frage": "Welche Geschwindigkeit ist für die größte Flugdauer (Endurance) zu wählen?",
+     "antworten": [
+      "Fahrt für bestes Gleiten plus 30 %",
+      "Höchste Dauerreisegeschwindigkeit",
+      "Fahrt für minimalen Leistungsbedarf",
+      "Fahrt für größte Reichweite plus 20 %"
+     ],
+     "richtig": 2,
+     "erklaerung": "Größte Flugdauer = geringster Kraftstoffverbrauch pro Zeit; größte Reichweite = geringster Verbrauch pro Strecke."
+    },
+    {
+     "id": "FLP-023",
+     "frage": "Wie sollte die Reisegeschwindigkeit bei starkem Gegenwind für maximale Reichweite angepasst werden?",
+     "antworten": [
+      "Deutlich verringert werden",
+      "Etwas erhöht werden",
+      "Unverändert bleiben",
+      "Auf Überziehgeschwindigkeit reduziert werden"
+     ],
+     "richtig": 1,
+     "erklaerung": "Bei Gegenwind verkürzt eine etwas höhere Fahrt die Zeit, in der der Wind gegen das Flugzeug wirkt."
+    },
+    {
+     "id": "FLP-024",
+     "frage": "Wie ist die Dienstgipfelhöhe eines Kolbenmotorflugzeugs definiert?",
+     "antworten": [
+      "Höhe, ab der Sauerstoff Pflicht ist",
+      "Höhe mit noch 500 ft/min Steigrate",
+      "Höhe mit Steigrate null (0 ft/min)",
+      "Höhe mit noch 100 ft/min Steigrate"
+     ],
+     "richtig": 3,
+     "erklaerung": "Die absolute Gipfelhöhe ist die Höhe mit Steigrate null."
+    },
+    {
+     "id": "FLP-025",
+     "frage": "Welche Grundgeschwindigkeit ergibt sich, wenn 120 NM in 1 h 12 min zurückgelegt werden?",
+     "antworten": [
+      "90 kt",
+      "120 kt",
+      "100 kt",
+      "110 kt"
+     ],
+     "richtig": 2,
+     "erklaerung": "1 h 12 min = 1,2 h; 120 NM ÷ 1,2 h = 100 kt."
+    },
+    {
+     "id": "FLP-026",
+     "frage": "Wie viel Kraftstoff wird für 1 h 12 min bei 36 l/h verbraucht?",
+     "antworten": [
+      "48,0 l",
+      "40,8 l",
+      "43,2 l",
+      "36,0 l"
+     ],
+     "richtig": 2,
+     "erklaerung": "1,2 h × 36 l/h = 43,2 l."
+    },
+    {
+     "id": "FLP-027",
+     "frage": "Welche Angabe trägt man in Feld 8 eines VFR-Flugplans für die Flugregeln ein?",
+     "antworten": [
+      "Y",
+      "I",
+      "V",
+      "G"
+     ],
+     "richtig": 2,
+     "erklaerung": "Flugregeln: I = IFR, V = VFR, Y = erst IFR dann VFR, Z = erst VFR dann IFR. „G“ steht für Art des Fluges: General Aviation."
+    },
+    {
+     "id": "FLP-028",
+     "frage": "Was bedeutet die Angabe „N0105“ in Feld 15 des Flugplans?",
+     "antworten": [
+      "Streckenlänge 105 NM gesamt",
+      "Reisegeschwindigkeit 105 km/h",
+      "Reiseflughöhe 10.500 ft MSL",
+      "Reisegeschwindigkeit 105 kt TAS"
+     ],
+     "richtig": 3,
+     "erklaerung": "N = Knoten (TAS), K = km/h, M = Machzahl."
+    },
+    {
+     "id": "FLP-029",
+     "frage": "Wie lange vor der voraussichtlichen Abblockzeit soll ein Flugplan nach SERA spätestens aufgegeben werden?",
+     "antworten": [
+      "10 Minuten",
+      "3 Stunden",
+      "60 Minuten",
+      "24 Stunden"
+     ],
+     "richtig": 2,
+     "erklaerung": "SERA.4005: mindestens 60 Minuten vor Abflug; bei Aufgabe im Flug so rechtzeitig, dass die ATS-Stelle ihn mindestens 10 min vor Erreichen des Punktes erhält."
+    },
+    {
+     "id": "FLP-030",
+     "frage": "Was muss ein Pilot nach der Landung tun, wenn er mit einem Flugplan geflogen ist?",
+     "antworten": [
+      "Die Austro Control schriftlich informieren",
+      "Landemeldung abgeben (Flugplan schließen)",
+      "Einen neuen Flugplan für den Rückflug aufgeben",
+      "Nichts – der Flugplan erlischt automatisch"
+     ],
+     "richtig": 1,
+     "erklaerung": "Bleibt die Landemeldung aus, kann nach Ablauf der Frist ein Such- und Rettungseinsatz ausgelöst werden."
+    },
+    {
+     "id": "FLP-031",
+     "frage": "In welchem Abschnitt eines typischen Flughandbuchs (GAMA-Format) stehen die Leistungsdaten?",
+     "antworten": [
+      "Abschnitt 5 (Performance)",
+      "Abschnitt 9 (Supplements)",
+      "Abschnitt 7 (Systems)",
+      "Abschnitt 2 (Limitations)"
+     ],
+     "richtig": 0,
+     "erklaerung": "1 Allgemeines, 2 Betriebsgrenzen, 3 Notverfahren, 4 Normalverfahren, 5 Flugleistungen, 6 Masse und Schwerpunkt, 7 Systembeschreibung, 8 Wartung, 9 Ergänzungen."
+    },
+    {
+     "id": "FLP-032",
+     "frage": "Welche Quelle enthält in Österreich die Flugplatzkarten und VFR-Verfahren?",
+     "antworten": [
+      "Das Bordbuch",
+      "Das Flughandbuch",
+      "Die AIC-Sammlung",
+      "Die AIP Austria"
+     ],
+     "richtig": 3,
+     "erklaerung": "Die AIP Austria (eAIP, eaip.austrocontrol.at) enthält u. a. in AD 2 die Flugplatzdaten und Sichtanflugkarten; kurzfristige Änderungen per NOTAM."
+    },
+    {
+     "id": "FLP-033",
+     "frage": "Was ist ein NOTAM?",
+     "antworten": [
+      "Eine amtliche Bekanntmachung zur Lizenzierung",
+      "Ein Formular zur Aufgabe eines Flugplans",
+      "Eine Nachricht für Luftfahrer zu Änderungen und Gefahren",
+      "Eine Wettervorhersage für die untere Luftfahrt"
+     ],
+     "richtig": 2,
+     "erklaerung": "NOTAMs sind Teil der Flugvorbereitung nach SERA.2010 bzw. NCO.OP."
+    },
+    {
+     "id": "FLP-034",
+     "frage": "Wie wirkt sich Rückenwind auf die Startstrecke aus?",
+     "antworten": [
+      "Sie bleibt unverändert",
+      "Sie wird deutlich länger",
+      "Sie wird deutlich kürzer",
+      "Sie wird nur auf Gras länger"
+     ],
+     "richtig": 1,
+     "erklaerung": "Gegenwind verkürzt, Rückenwind verlängert die Start- und Landestrecke erheblich."
+    },
+    {
+     "id": "FLP-035",
+     "frage": "Wie wirkt sich eine 2 % aufwärts geneigte Piste nach der Faustregel auf die Startstrecke aus?",
+     "antworten": [
+      "Verkürzung um etwa 10 %",
+      "Verlängerung um etwa 10 %",
+      "Kein Einfluss",
+      "Verlängerung um etwa 50 %"
+     ],
+     "richtig": 1,
+     "erklaerung": "Bei der Landung verlängert umgekehrt ein Gefälle von 2 % die Landestrecke um ca. 10 %."
+    },
+    {
+     "id": "FLP-036",
+     "frage": "Welche Masse ist in der Schwerpunktberechnung für den Kraftstoff bei der Landung anzusetzen?",
+     "antworten": [
+      "Startkraftstoff minus geplanter Verbrauch",
+      "Startkraftstoff plus Rollkraftstoff",
+      "Nur der Reservekraftstoff von 30 min",
+      "Immer die volle Tankmasse bei Start"
+     ],
+     "richtig": 0,
+     "erklaerung": "Der Schwerpunkt muss sowohl bei Start als auch bei Landung innerhalb der Grenzen liegen."
+    },
+    {
+     "id": "FLP-037",
+     "frage": "Was versteht man unter der Zuladung (Nutzlast im weiteren Sinne)?",
+     "antworten": [
+      "Höchstzulässige Masse minus Kraftstoff",
+      "Höchstzulässige Masse minus Leermasse",
+      "Masse von Pilot, Passagieren und Gepäck",
+      "Leermasse plus ausfliegbarer Kraftstoff"
+     ],
+     "richtig": 1,
+     "erklaerung": "Sie umfasst Besatzung, Passagiere, Gepäck und ausfliegbaren Kraftstoff."
+    },
+    {
+     "id": "FLP-038",
+     "frage": "Wie verändert sich die Gleitstrecke bei Rückenwind?",
+     "antworten": [
+      "Sie halbiert sich",
+      "Sie wird länger",
+      "Sie bleibt gleich",
+      "Sie wird kürzer"
+     ],
+     "richtig": 1,
+     "erklaerung": "Die Sinkzeit bleibt gleich, die Grundgeschwindigkeit steigt."
+    },
+    {
+     "id": "FLP-039",
+     "frage": "Wie wirkt sich eine hohe Dichtehöhe auf einen Saugmotor aus?",
+     "antworten": [
+      "Kein Einfluss",
+      "Die Leistung steigt",
+      "Die verfügbare Leistung sinkt",
+      "Der Kraftstoffverbrauch verdoppelt sich"
+     ],
+     "richtig": 2,
+     "erklaerung": "Weniger Luftmasse pro Arbeitstakt bedeutet weniger Leistung; zusätzlich sinkt der Propellerwirkungsgrad."
+    },
+    {
+     "id": "FLP-040",
+     "frage": "Wie wirkt sich eine höhere Landemasse nach der Faustregel (+10 % Masse) auf die Landestrecke aus?",
+     "antworten": [
+      "Verlängerung um etwa 50 %",
+      "Verlängerung um etwa 10 %",
+      "Verlängerung um etwa 20 %",
+      "Verkürzung um etwa 10 %"
+     ],
+     "richtig": 1,
+     "erklaerung": "Für den Start gilt: +10 % Masse → ca. +20 % Startstrecke."
+    },
+    {
+     "id": "FLP-041",
+     "frage": "Wo gibt man in Österreich üblicherweise einen VFR-Flugplan auf und holt NOTAM und Wetter ein?",
+     "antworten": [
+      "Ausschließlich bei FIS nach dem Start",
+      "Beim Fernmeldebüro der Landeshauptstadt",
+      "Über Homebriefing der Austro Control",
+      "Beim Landeshauptmann per E-Mail"
+     ],
+     "richtig": 2,
+     "erklaerung": "homebriefing.com (Austro Control) bündelt Flugplanaufgabe, NOTAM und Flugwetter; alternativ AIS/ARO Wien telefonisch."
+    },
+    {
+     "id": "FLP-042",
+     "frage": "Wie lang ist laut AIP Austria (Stand 12/2025) die verfügbare Landestrecke (LDA) der Piste 12 in Fürstenfeld (LOGF)?",
+     "antworten": [
+      "950 m",
+      "450 m",
+      "700 m",
+      "655 m"
+     ],
+     "richtig": 3,
+     "erklaerung": "Die Asphaltpiste ist laut AIP 700 m lang; wegen der um 45 m versetzten Schwelle RWY 12 beträgt die LDA 655 m. Laut Verein wurde die Piste 2022 verlängert – immer die aktuelle AIP prüfen."
+    }
+   ]
+  },
+  {
+   "nr": 8,
+   "id": "allgemeine-luftfahrzeugkenntnisse",
+   "name": "Allgemeine Luftfahrzeugkenntnisse",
+   "kuerzel": "AGK",
+   "pruefung": {
+    "fragen": 12,
+    "minuten": 25
+   },
+   "fragen": [
+    {
+     "id": "AGK-001",
+     "frage": "In welcher Reihenfolge laufen die Takte eines Viertakt-Ottomotors ab?",
+     "antworten": [
+      "Arbeiten – Ansaugen – Ausstoßen – Verdichten",
+      "Ansaugen – Arbeiten – Verdichten – Ausstoßen",
+      "Ansaugen – Verdichten – Arbeiten – Ausstoßen",
+      "Verdichten – Ansaugen – Ausstoßen – Arbeiten"
+     ],
+     "richtig": 2,
+     "erklaerung": "Eine Kurbelwellenumdrehung umfasst zwei Takte; ein Arbeitsspiel braucht zwei Umdrehungen."
+    },
+    {
+     "id": "AGK-002",
+     "frage": "Warum haben Flugmotoren zwei Magnetzünder und zwei Zündkerzen je Zylinder?",
+     "antworten": [
+      "Redundanz und bessere Verbrennung",
+      "Geringeres Gewicht und weniger Teile",
+      "Vorwärmung des Kraftstoffs",
+      "Laden der Batterie im Flug"
+     ],
+     "richtig": 0,
+     "erklaerung": "Die Magnetzünder arbeiten unabhängig vom Bordnetz."
+    },
+    {
+     "id": "AGK-003",
+     "frage": "Beim Magnetcheck tritt beim Umschalten auf einen Magneten keinerlei Drehzahlabfall auf. Was kann das bedeuten?",
+     "antworten": [
+      "Gemisch zu mager – sofort anreichern",
+      "Alles in Ordnung – beide Magnete arbeiten gut",
+      "Masseleitung unterbrochen – Magnet ist „heiß“",
+      "Zündkerzen verölt – Drehzahl kurz erhöhen"
+     ],
+     "richtig": 2,
+     "erklaerung": "Gefahr: Der Motor könnte beim Durchdrehen des Propellers auch bei Zündung AUS anspringen."
+    },
+    {
+     "id": "AGK-004",
+     "frage": "Bei welchen Bedingungen ist Vergaservereisung besonders wahrscheinlich?",
+     "antworten": [
+      "Hohe Feuchte, ca. −10 bis +30 °C, Teillast",
+      "Nur in Wolken, unter 0 °C, Vollgas",
+      "Trockene Luft, unter −20 °C, Volllast",
+      "Niedrige Feuchte, über +30 °C, Leerlauf"
+     ],
+     "richtig": 0,
+     "erklaerung": "Durch Druckabfall im Venturi und Verdunstungskälte kann die Temperatur im Vergaser um bis zu ca. 30 °C sinken."
+    },
+    {
+     "id": "AGK-005",
+     "frage": "Wie zeigt sich Vergaservereisung bei einem Flugzeug mit Festpropeller?",
+     "antworten": [
+      "Durch steigenden Öldruck",
+      "Durch steigende Drehzahl",
+      "Durch Anzeige am Ladedruckmesser über 30 inHg",
+      "Durch einen langsamen Drehzahlabfall"
+     ],
+     "richtig": 3,
+     "erklaerung": "Bei Verstellpropeller zeigt sich Vereisung durch sinkenden Ladedruck."
+    },
+    {
+     "id": "AGK-006",
+     "frage": "Was passiert unmittelbar nach dem Ziehen der Vergaservorwärmung bei vorhandener Vereisung?",
+     "antworten": [
+      "Drehzahl sinkt dauerhaft weiter ab",
+      "Drehzahl bleibt völlig unverändert",
+      "Drehzahl sinkt erst, steigt dann wieder",
+      "Drehzahl steigt sofort deutlich an"
+     ],
+     "richtig": 2,
+     "erklaerung": "Warme Luft ist weniger dicht (Leistungsverlust) und schmelzendes Eis wird angesaugt; danach erholt sich die Drehzahl."
+    },
+    {
+     "id": "AGK-007",
+     "frage": "Wie verändert sich das Gemisch bei eingeschalteter Vergaservorwärmung?",
+     "antworten": [
+      "Es wird magerer",
+      "Es bleibt gleich",
+      "Es wird abgeschaltet",
+      "Es wird reicher"
+     ],
+     "richtig": 3,
+     "erklaerung": "Warme Luft hat eine geringere Dichte; bei gleicher Kraftstoffmenge entsteht ein reicheres Gemisch."
+    },
+    {
+     "id": "AGK-008",
+     "frage": "Warum muss das Gemisch beim Steigen in größere Höhen abgemagert werden?",
+     "antworten": [
+      "Die Luftdichte sinkt, das Gemisch wird zu mager",
+      "Der Kraftstoff kühlt ab und verdampft schlechter",
+      "Die Luftdichte sinkt, das Gemisch wird zu reich",
+      "Der Zündzeitpunkt verschiebt sich nach früh"
+     ],
+     "richtig": 2,
+     "erklaerung": "Ein zu reiches Gemisch führt zu Leistungsverlust, Verbrennungsrückständen und höherem Verbrauch."
+    },
+    {
+     "id": "AGK-009",
+     "frage": "Was begünstigt klopfende Verbrennung (Detonation)?",
+     "antworten": [
+      "Niedrige Leistung, reiches Gemisch, Kälte",
+      "Hohe Oktanzahl, reiches Gemisch, Kälte",
+      "Hohe Oktanzahl, kalte Ansaugluft, Leerlauf",
+      "Niedrige Oktanzahl, mageres Gemisch, Hitze"
+     ],
+     "richtig": 3,
+     "erklaerung": "Detonation kann Kolben und Zylinder schwer beschädigen."
+    },
+    {
+     "id": "AGK-010",
+     "frage": "Welche Farbe hat AVGAS 100LL?",
+     "antworten": [
+      "Farblos",
+      "Grün",
+      "Rot",
+      "Blau"
+     ],
+     "richtig": 3,
+     "erklaerung": "100LL ist blau eingefärbt; Jet A-1 (Kerosin) ist farblos bis strohgelb."
+    },
+    {
+     "id": "AGK-011",
+     "frage": "Welche Aufgaben hat das Motoröl?",
+     "antworten": [
+      "Kühlen und Vorwärmen des Kraftstoffs",
+      "Schmieren, Kühlen, Abdichten, Reinigen",
+      "Nur Schmieren der Kurbelwelle",
+      "Schmieren und Zünden des Gemischs"
+     ],
+     "richtig": 1,
+     "erklaerung": "Öl führt einen erheblichen Teil der Wärme ab und transportiert Schmutzpartikel zum Filter."
+    },
+    {
+     "id": "AGK-012",
+     "frage": "Was ist zu tun, wenn nach dem Anlassen innerhalb von ca. 30 Sekunden kein Öldruck angezeigt wird?",
+     "antworten": [
+      "Drehzahl erhöhen",
+      "Motor sofort abstellen",
+      "Weiterrollen und beobachten",
+      "Gemisch anreichern"
+     ],
+     "richtig": 1,
+     "erklaerung": "Ohne Öldruck droht innerhalb kurzer Zeit ein Motorschaden (im Winter kann die Frist länger sein, Flughandbuch beachten)."
+    },
+    {
+     "id": "AGK-013",
+     "frage": "Was ist bei hoher Zylinderkopftemperatur im Steigflug eine geeignete Maßnahme?",
+     "antworten": [
+      "Vergaservorwärmung ziehen",
+      "Auf einen Magneten umschalten",
+      "Steiler steigen, Gemisch abmagern",
+      "Fahrt erhöhen, Gemisch anreichern"
+     ],
+     "richtig": 3,
+     "erklaerung": "Höhere Fahrt verbessert die Kühlluftströmung; reicheres Gemisch kühlt durch Kraftstoffverdunstung."
+    },
+    {
+     "id": "AGK-014",
+     "frage": "Welche Instrumente werden bei einem Verstellpropeller zur Leistungseinstellung genutzt?",
+     "antworten": [
+      "Fahrt und Steigrate",
+      "Nur die Drehzahl",
+      "Ladedruck und Drehzahl",
+      "Öldruck und Öltemperatur"
+     ],
+     "richtig": 2,
+     "erklaerung": "Der Gashebel regelt den Ladedruck, der Propellerverstellhebel die Drehzahl."
+    },
+    {
+     "id": "AGK-015",
+     "frage": "Welchen Vorteil hat ein Einspritzmotor gegenüber einem Vergasermotor?",
+     "antworten": [
+      "Kein Kraftstoffbedarf",
+      "Keine Zündung nötig",
+      "Kein Öl erforderlich",
+      "Keine Vergaservereisung"
+     ],
+     "richtig": 3,
+     "erklaerung": "Ansaugsystemvereisung (z. B. Luftfilter) bleibt jedoch möglich."
+    },
+    {
+     "id": "AGK-016",
+     "frage": "Was zeigt ein negativer Ausschlag des Amperemeters im Flug an?",
+     "antworten": [
+      "Batterie wird geladen – alles ist in Ordnung",
+      "Batterie entlädt sich – Lichtmaschine ausgefallen?",
+      "Kraftstoffdruck zu hoch – Pumpe abschalten",
+      "Motor ist überhitzt – Leistung reduzieren"
+     ],
+     "richtig": 1,
+     "erklaerung": "Bei Lichtmaschinenausfall unnötige Verbraucher abschalten und baldmöglichst landen."
+    },
+    {
+     "id": "AGK-017",
+     "frage": "Wie sollte man mit einem herausgesprungenen Sicherungsautomaten (Circuit Breaker) umgehen?",
+     "antworten": [
+      "Ignorieren und alle Verbraucher eingeschaltet lassen",
+      "Nach Abkühlen höchstens einmal hineindrücken",
+      "Sofort mehrfach hintereinander hineindrücken",
+      "Mit Klebeband in gedrückter Stellung fixieren"
+     ],
+     "richtig": 1,
+     "erklaerung": "Springt er erneut heraus, liegt ein Fehler vor; Brandgefahr."
+    },
+    {
+     "id": "AGK-018",
+     "frage": "Welche Instrumente sind ausschließlich an den statischen Druck angeschlossen?",
+     "antworten": [
+      "Wendezeiger und Kompass",
+      "Künstlicher Horizont und Kurskreisel",
+      "Fahrtmesser und Höhenmesser",
+      "Höhenmesser und Variometer"
+     ],
+     "richtig": 3,
+     "erklaerung": "Der Fahrtmesser benötigt zusätzlich den Gesamtdruck aus dem Pitotrohr."
+    },
+    {
+     "id": "AGK-019",
+     "frage": "Pitotrohr und dessen Drainageöffnung sind verstopft, die statische Öffnung ist frei. Was zeigt der Fahrtmesser im Steigflug?",
+     "antworten": [
+      "Konstant null Fahrt",
+      "Eine abnehmende Fahrt",
+      "Eine zunehmende Fahrt",
+      "Die korrekte Fahrt"
+     ],
+     "richtig": 2,
+     "erklaerung": "Der eingeschlossene Gesamtdruck bleibt konstant, während der statische Druck sinkt."
+    },
+    {
+     "id": "AGK-020",
+     "frage": "Die statische Druckentnahme ist verstopft. Wie verhält sich der Höhenmesser?",
+     "antworten": [
+      "Er fällt auf null bzw. auf die Platzhöhe zurück",
+      "Er zeigt beim Steigen die doppelte Höhe an",
+      "Er bleibt auf der zuletzt angezeigten Höhe stehen",
+      "Er funktioniert normal, nur mit Verzögerung"
+     ],
+     "richtig": 2,
+     "erklaerung": "Das Variometer zeigt null; der Fahrtmesser zeigt im Steigflug zu wenig, im Sinkflug zu viel an."
+    },
+    {
+     "id": "AGK-021",
+     "frage": "Was zeigt der Höhenmesser bei Nutzung der alternativen statischen Druckentnahme in der Kabine meist an?",
+     "antworten": [
+      "Genau richtig",
+      "Etwas zu viel",
+      "Etwas zu wenig",
+      "Konstant null"
+     ],
+     "richtig": 1,
+     "erklaerung": "Der Druck in der Kabine ist meist etwas geringer als außen; auch Fahrt und Steigrate werden leicht zu hoch angezeigt."
+    },
+    {
+     "id": "AGK-022",
+     "frage": "Welcher Geschwindigkeitsbereich wird auf dem Fahrtmesser durch den weißen Bogen gekennzeichnet?",
+     "antworten": [
+      "Normalbereich (Vs1 bis Vno)",
+      "Klappenbereich (Vso bis Vfe)",
+      "Bereich unterhalb von Vso",
+      "Vorsichtsbereich (Vno bis Vne)"
+     ],
+     "richtig": 1,
+     "erklaerung": "Grüner Bogen: Vs1 bis Vno; gelber Bogen: Vno bis Vne; rote Linie: Vne."
+    },
+    {
+     "id": "AGK-023",
+     "frage": "Was bedeutet der gelbe Bogen auf dem Fahrtmesser?",
+     "antworten": [
+      "Bereich für ausgefahrene Klappen",
+      "Normaler Betriebsbereich",
+      "Bereich für Langsamflug",
+      "Vorsicht, nur in ruhiger Luft"
+     ],
+     "richtig": 3,
+     "erklaerung": "Der gelbe Bogen beginnt bei Vno und endet bei Vne."
+    },
+    {
+     "id": "AGK-024",
+     "frage": "Mit welchem Bauteil misst ein Höhenmesser den Luftdruck?",
+     "antworten": [
+      "Mit einer Kapillare",
+      "Mit Aneroiddosen",
+      "Mit einem Magneten",
+      "Mit einem Kreisel"
+     ],
+     "richtig": 1,
+     "erklaerung": "Ausgleichsgefäß und Kapillare sind typisch für das Variometer."
+    },
+    {
+     "id": "AGK-025",
+     "frage": "Wie oft sollte der Kurskreisel im Flug mit dem Magnetkompass abgeglichen werden?",
+     "antworten": [
+      "Nie, er driftet nicht",
+      "Etwa einmal pro Stunde",
+      "Etwa alle 10–15 Minuten",
+      "Nur einmal vor dem Start"
+     ],
+     "richtig": 2,
+     "erklaerung": "Erddrehung und Lagerreibung führen zu einer Drift (Präzession)."
+    },
+    {
+     "id": "AGK-026",
+     "frage": "Wie verhält sich der Magnetkompass auf der Nordhalbkugel bei Beschleunigung auf Ost- oder Westkurs?",
+     "antworten": [
+      "Eine Drehung nach Westen",
+      "Eine Drehung nach Süden",
+      "Eine Drehung nach Norden",
+      "Den korrekten Kurs"
+     ],
+     "richtig": 2,
+     "erklaerung": "Merkhilfe ANDS: Accelerate North, Decelerate South. Auf Nord- und Südkurs treten keine Beschleunigungsfehler auf."
+    },
+    {
+     "id": "AGK-027",
+     "frage": "Wie verhält sich der Magnetkompass (Nordhalbkugel) beim Einleiten einer Kurve aus Nordkurs?",
+     "antworten": [
+      "Er zeigt exakt an",
+      "Er eilt voraus",
+      "Er springt auf Süd",
+      "Er bleibt zurück"
+     ],
+     "richtig": 3,
+     "erklaerung": "Beim Ausleiten auf Nordkurs früher, auf Südkurs später ausleiten."
+    },
+    {
+     "id": "AGK-028",
+     "frage": "Was versteht man unter Deviation?",
+     "antworten": [
+      "Ablenkung durch Magnetfelder im Flugzeug",
+      "Drift des Kurskreisels durch Präzession",
+      "Winkel zwischen geografisch und magnetisch Nord",
+      "Winkel zwischen Kurs und Steuerkurs (Luvwinkel)"
+     ],
+     "richtig": 0,
+     "erklaerung": "Sie wird mit einer Deviationstabelle (Steuertafel) am Kompass korrigiert. Die Missweisung (Variation) ist dagegen erdmagnetisch bedingt."
+    },
+    {
+     "id": "AGK-029",
+     "frage": "Wie lange dauert eine Vollkreiskurve mit Standardkurvenrate (Rate 1)?",
+     "antworten": [
+      "2 Minuten",
+      "3 Minuten",
+      "1 Minute",
+      "4 Minuten"
+     ],
+     "richtig": 0,
+     "erklaerung": "Standardrate = 3° pro Sekunde → 360° in 120 s."
+    },
+    {
+     "id": "AGK-030",
+     "frage": "Was zeigt die Kugel (Libelle) im Wendezeiger an?",
+     "antworten": [
+      "Ob koordiniert geflogen wird",
+      "Den magnetischen Kurs",
+      "Die Querneigung in Grad",
+      "Die Steig- oder Sinkrate"
+     ],
+     "richtig": 0,
+     "erklaerung": "„Tritt auf die Kugel“: Seitenruder auf der Seite treten, auf die die Kugel ausgewandert ist."
+    },
+    {
+     "id": "AGK-031",
+     "frage": "Welche Instrumente fallen bei Ausfall der Vakuumpumpe typischerweise aus?",
+     "antworten": [
+      "Fahrtmesser und Höhenmesser",
+      "Drehzahlmesser und Öldruckanzeige",
+      "Künstlicher Horizont und Kurskreisel",
+      "Wendezeiger und Magnetkompass"
+     ],
+     "richtig": 2,
+     "erklaerung": "Der Wendezeiger ist meist elektrisch angetrieben und bleibt dann als Backup verfügbar."
+    },
+    {
+     "id": "AGK-032",
+     "frage": "Welche Höhe überträgt ein Transponder im Mode C?",
+     "antworten": [
+      "Die Höhe nach aktuellem QNH",
+      "Die GPS-Höhe über Ellipsoid",
+      "Die Druckhöhe (1013,25 hPa)",
+      "Die Höhe über Grund (Radar)"
+     ],
+     "richtig": 2,
+     "erklaerung": "Die Bodenstelle rechnet die Anzeige mit dem aktuellen QNH um."
+    },
+    {
+     "id": "AGK-033",
+     "frage": "Wie lange ist eine Bescheinigung über die Prüfung der Lufttüchtigkeit (ARC) gültig?",
+     "antworten": [
+      "Unbefristet",
+      "12 Monate",
+      "24 Monate",
+      "6 Monate"
+     ],
+     "richtig": 1,
+     "erklaerung": "Das ARC (Airworthiness Review Certificate) muss jährlich erneuert bzw. verlängert werden."
+    },
+    {
+     "id": "AGK-034",
+     "frage": "Welches Teil eines Tragflügels nimmt die Biegekräfte hauptsächlich auf?",
+     "antworten": [
+      "Die Beplankung allein",
+      "Die Rippen",
+      "Das Querruder",
+      "Der Holm"
+     ],
+     "richtig": 3,
+     "erklaerung": "Rippen geben dem Flügel die Profilform; der Holm trägt die Biegebelastung."
+    },
+    {
+     "id": "AGK-035",
+     "frage": "Welcher Klappentyp vergrößert zusätzlich die Flügelfläche?",
+     "antworten": [
+      "Die Fowlerklappe",
+      "Das Trimmruder",
+      "Die Wölbungsklappe (einfache Klappe)",
+      "Die Spreizklappe"
+     ],
+     "richtig": 0,
+     "erklaerung": "Fowlerklappen fahren nach hinten aus und schwenken dann nach unten."
+    },
+    {
+     "id": "AGK-036",
+     "frage": "Was kann eine verstopfte Tankentlüftung verursachen?",
+     "antworten": [
+      "Unterdruck im Tank, Kraftstoffmangel am Motor",
+      "Vergaservereisung durch feuchte Tankluft",
+      "Überladung der Batterie durch Spannungsspitzen",
+      "Überdruck im Tank, Kraftstoffaustritt am Motor"
+     ],
+     "richtig": 0,
+     "erklaerung": "Die Entlüftung muss bei der Vorflugkontrolle auf freien Durchgang geprüft werden."
+    },
+    {
+     "id": "AGK-037",
+     "frage": "Welchem Zweck dient die elektrische Kraftstoffhilfspumpe (z. B. bei Tiefdeckern)?",
+     "antworten": [
+      "Befüllen der Tanks am Boden aus Kanistern",
+      "Versorgung bei Start, Landung und Pumpenausfall",
+      "Erhöhung des Ladedrucks im Steigflug",
+      "Kühlung des Motors bei hohen Temperaturen"
+     ],
+     "richtig": 1,
+     "erklaerung": "Bei Tiefdeckern liegen die Tanks unter dem Motor; Schwerkraftförderung ist nicht möglich."
+    },
+    {
+     "id": "AGK-038",
+     "frage": "Welches stöchiometrische Mischungsverhältnis (Kraftstoff zu Luft, nach Masse) gilt für Benzin etwa?",
+     "antworten": [
+      "1 : 15",
+      "1 : 1",
+      "1 : 5",
+      "1 : 50"
+     ],
+     "richtig": 0,
+     "erklaerung": "Für maximale Leistung wird etwas reicher (ca. 1:12,5), für Sparbetrieb etwas magerer gefahren."
+    },
+    {
+     "id": "AGK-039",
+     "frage": "Welchen Zweck hat ein Shimmy-Dämpfer am Bugfahrwerk?",
+     "antworten": [
+      "Er verhindert Bugradflattern",
+      "Er bremst das Bugrad ab",
+      "Er dämpft harte Landestöße",
+      "Er lenkt das Bugrad am Boden"
+     ],
+     "richtig": 0,
+     "erklaerung": "Shimmy ist eine schnelle Schwingung des Bugrads um seine Hochachse."
+    },
+    {
+     "id": "AGK-040",
+     "frage": "Woran erkennt man eine undichte Abgasanlage im Zusammenhang mit der Kabinenheizung?",
+     "antworten": [
+      "An sinkender Zylinderkopftemperatur",
+      "An CO-Symptomen oder einem CO-Warner",
+      "Am steigenden Öldruck im Reiseflug",
+      "An einer höheren Reisegeschwindigkeit"
+     ],
+     "richtig": 1,
+     "erklaerung": "Ein CO-Detektor im Cockpit ist eine preiswerte, sinnvolle Sicherheitsausrüstung."
+    }
+   ]
+  },
+  {
+   "nr": 9,
+   "id": "navigation",
+   "name": "Navigation",
+   "kuerzel": "NAV",
+   "pruefung": {
+    "fragen": 20,
+    "minuten": 60
+   },
+   "fragen": [
+    {
+     "id": "NAV-001",
+     "frage": "Wie viele Meter entsprechen einer nautischen Meile (NM)?",
+     "antworten": [
+      "1000 m",
+      "2000 m",
+      "1609 m",
+      "1852 m"
+     ],
+     "richtig": 3,
+     "erklaerung": "1 NM entspricht einer Bogenminute auf einem Großkreis; 1609 m ist die Landmeile (statute mile)."
+    },
+    {
+     "id": "NAV-002",
+     "frage": "Welcher Entfernung entspricht 1° geografischer Breite?",
+     "antworten": [
+      "30 NM",
+      "100 NM",
+      "60 NM",
+      "1 NM"
+     ],
+     "richtig": 2,
+     "erklaerung": "1° = 60′; jede Bogenminute entlang eines Meridians = 1 NM."
+    },
+    {
+     "id": "NAV-003",
+     "frage": "Wie groß ist der Abstand zwischen zwei Meridianen mit 1° Längenunterschied auf 60° Nord?",
+     "antworten": [
+      "30 NM",
+      "60 NM",
+      "52 NM",
+      "15 NM"
+     ],
+     "richtig": 0,
+     "erklaerung": "Abstand = 60 NM × cos(Breite) = 60 × cos 60° = 30 NM."
+    },
+    {
+     "id": "NAV-004",
+     "frage": "Was ist die kürzeste Verbindung zwischen zwei Punkten auf der Erdkugel?",
+     "antworten": [
+      "Der Breitenkreis",
+      "Der Großkreis",
+      "Die Isogone",
+      "Die Loxodrome"
+     ],
+     "richtig": 1,
+     "erklaerung": "Die Loxodrome schneidet alle Meridiane unter gleichem Winkel, ist aber (außer auf Meridianen und Äquator) länger."
+    },
+    {
+     "id": "NAV-005",
+     "frage": "Welche Projektion verwendet die ICAO-Karte Österreich 1:500.000?",
+     "antworten": [
+      "Mercator-Zylinderprojektion",
+      "Gnomonische Azimutalprojektion",
+      "Lambert-Schnittkegelprojektion",
+      "Polare stereografische Projektion"
+     ],
+     "richtig": 2,
+     "erklaerung": "Sie ist winkeltreu und annähernd längentreu; Großkreise erscheinen nahezu als Geraden."
+    },
+    {
+     "id": "NAV-006",
+     "frage": "Wie viele Kilometer entsprechen 1 cm auf einer Karte im Maßstab 1:500.000?",
+     "antworten": [
+      "50 km",
+      "0,5 km",
+      "500 km",
+      "5 km"
+     ],
+     "richtig": 3,
+     "erklaerung": "1 cm × 500.000 = 500.000 cm = 5 km."
+    },
+    {
+     "id": "NAV-007",
+     "frage": "Auf einer Karte 1:500.000 messen Sie 10 cm. Wie viele NM sind das ungefähr?",
+     "antworten": [
+      "Etwa 50 NM",
+      "Etwa 10 NM",
+      "Etwa 93 NM",
+      "Etwa 27 NM"
+     ],
+     "richtig": 3,
+     "erklaerung": "10 cm = 50 km; 50 ÷ 1,852 ≈ 27 NM."
+    },
+    {
+     "id": "NAV-008",
+     "frage": "Rechtweisender Kurs 090°, Missweisung 3° Ost. Wie groß ist der missweisende Kurs?",
+     "antworten": [
+      "273°",
+      "090°",
+      "093°",
+      "087°"
+     ],
+     "richtig": 3,
+     "erklaerung": "Merkregel: Ostmissweisung abziehen, Westmissweisung addieren (MK = rwK − Var(E))."
+    },
+    {
+     "id": "NAV-009",
+     "frage": "Rechtweisender Kurs 270°, Missweisung 2° West. Wie groß ist der missweisende Kurs?",
+     "antworten": [
+      "268°",
+      "272°",
+      "270°",
+      "092°"
+     ],
+     "richtig": 1,
+     "erklaerung": "Westliche Missweisung wird zum rechtweisenden Kurs addiert."
+    },
+    {
+     "id": "NAV-010",
+     "frage": "Missweisender Steuerkurs 087°, Deviation +2° (Ost). Wie lautet der Kompasssteuerkurs?",
+     "antworten": [
+      "089°",
+      "087°",
+      "085°",
+      "083°"
+     ],
+     "richtig": 2,
+     "erklaerung": "KSK = MSK − Deviation (östlich/positiv)."
+    },
+    {
+     "id": "NAV-011",
+     "frage": "Wie heißen Linien gleicher Missweisung auf einer Karte?",
+     "antworten": [
+      "Isothermen",
+      "Isohypsen",
+      "Isogonen",
+      "Isobaren"
+     ],
+     "richtig": 2,
+     "erklaerung": "Die Linie mit Missweisung null heißt Agone."
+    },
+    {
+     "id": "NAV-012",
+     "frage": "Kurs 360°, TAS 100 kt, Wind aus 270° mit 20 kt. Welcher Luvwinkel ist etwa vorzuhalten?",
+     "antworten": [
+      "Etwa 12° nach rechts (ca. 012°)",
+      "Etwa 12° nach links (ca. 348°)",
+      "Etwa 20° nach links (ca. 340°)",
+      "Etwa 6° nach links (ca. 354°)"
+     ],
+     "richtig": 1,
+     "erklaerung": "Maximaler Luvwinkel ≈ Windgeschwindigkeit × 60 ÷ TAS = 12°; Wind von links → nach links vorhalten."
+    },
+    {
+     "id": "NAV-013",
+     "frage": "Wie lautet die 1:60-Regel?",
+     "antworten": [
+      "1° Fehler → nach 1 NM ca. 60 NM Ablage",
+      "60 kt TAS → je 1° Luvwinkel pro kt Wind",
+      "1° Fehler → nach 60 min ca. 1 NM Ablage",
+      "1° Fehler → nach 60 NM ca. 1 NM Ablage"
+     ],
+     "richtig": 3,
+     "erklaerung": "Ablagewinkel ≈ Ablage × 60 ÷ geflogene Strecke."
+    },
+    {
+     "id": "NAV-014",
+     "frage": "Nach 30 NM sind Sie 3 NM links vom Kurs. Bis zum Ziel sind es noch 60 NM. Um wie viel Grad müssen Sie nach rechts korrigieren, um das Ziel direkt zu erreichen?",
+     "antworten": [
+      "12°",
+      "6°",
+      "9°",
+      "3°"
+     ],
+     "richtig": 2,
+     "erklaerung": "Ablagewinkel: 3 × 60 ÷ 30 = 6°; Zielwinkel: 3 × 60 ÷ 60 = 3°; Summe 9°."
+    },
+    {
+     "id": "NAV-015",
+     "frage": "Wie viel Zeitunterschied entspricht 15° geografischer Länge?",
+     "antworten": [
+      "4 Minuten",
+      "15 Minuten",
+      "24 Stunden",
+      "1 Stunde"
+     ],
+     "richtig": 3,
+     "erklaerung": "360° in 24 h → 15° pro Stunde → 1° = 4 Minuten."
+    },
+    {
+     "id": "NAV-016",
+     "frage": "Es ist 14:00 Uhr MESZ (Sommerzeit). Wie spät ist es in UTC?",
+     "antworten": [
+      "13:00 UTC",
+      "12:00 UTC",
+      "16:00 UTC",
+      "14:00 UTC"
+     ],
+     "richtig": 1,
+     "erklaerung": "MEZ = UTC + 1, MESZ = UTC + 2."
+    },
+    {
+     "id": "NAV-017",
+     "frage": "Wie lange dauert ein Flug über 85 NM bei einer Grundgeschwindigkeit von 102 kt?",
+     "antworten": [
+      "Etwa 40 Minuten",
+      "Etwa 50 Minuten",
+      "Etwa 85 Minuten",
+      "Etwa 60 Minuten"
+     ],
+     "richtig": 1,
+     "erklaerung": "85 ÷ 102 = 0,833 h = 50 min."
+    },
+    {
+     "id": "NAV-018",
+     "frage": "Wie groß ist etwa die TAS bei IAS 100 kt in 5000 ft (Faustregel +2 % je 1000 ft)?",
+     "antworten": [
+      "Etwa 90 kt",
+      "Etwa 150 kt",
+      "Etwa 110 kt",
+      "Etwa 100 kt"
+     ],
+     "richtig": 2,
+     "erklaerung": "5 × 2 % = 10 % → 110 kt."
+    },
+    {
+     "id": "NAV-019",
+     "frage": "Sie fliegen zwischen zwei Punkten 18 NM in 12 Minuten. Wie groß ist die Grundgeschwindigkeit?",
+     "antworten": [
+      "150 kt",
+      "108 kt",
+      "90 kt",
+      "72 kt"
+     ],
+     "richtig": 2,
+     "erklaerung": "18 NM in 0,2 h = 90 kt."
+    },
+    {
+     "id": "NAV-020",
+     "frage": "Was ist ein VOR-Radial?",
+     "antworten": [
+      "Rechtweisende Standlinie von der Station",
+      "Rechtweisende Standlinie zur Station",
+      "Missweisende Standlinie von der Station",
+      "Missweisender Kurs zur Station hin"
+     ],
+     "richtig": 2,
+     "erklaerung": "Ein Radial entspricht dem QDR."
+    },
+    {
+     "id": "NAV-021",
+     "frage": "Sie haben auf dem VOR-Empfänger 270° gewählt, die Anzeige zeigt TO und die Nadel ist zentriert. Wo befinden Sie sich?",
+     "antworten": [
+      "Westlich der Station (Radial 270)",
+      "Östlich der Station (Radial 090)",
+      "Westlich der Station (Radial 090)",
+      "Östlich der Station (Radial 270)"
+     ],
+     "richtig": 1,
+     "erklaerung": "Mit Kurs 270 TO fliegt man auf die Station zu – man befindet sich also östlich davon (Radial 090)."
+    },
+    {
+     "id": "NAV-022",
+     "frage": "Wie viel Grad Ablage entspricht bei einer typischen VOR-Anzeige mit 5 Punkten ein voller Ausschlag?",
+     "antworten": [
+      "Etwa 10°",
+      "Etwa 2,5°",
+      "Etwa 5°",
+      "Etwa 35°"
+     ],
+     "richtig": 0,
+     "erklaerung": "Beim ILS-Localizer ist die Anzeige deutlich empfindlicher (ca. 2,5° Vollausschlag)."
+    },
+    {
+     "id": "NAV-023",
+     "frage": "Missweisender Steuerkurs 030°, das ADF zeigt eine relative Peilung von 060°. Wie lautet das QDM?",
+     "antworten": [
+      "030°",
+      "090°",
+      "060°",
+      "270°"
+     ],
+     "richtig": 1,
+     "erklaerung": "QDM = MSK + relative Peilung = 030° + 060° = 090°."
+    },
+    {
+     "id": "NAV-024",
+     "frage": "Welche Entfernung zeigt ein DME an?",
+     "antworten": [
+      "Die Schrägentfernung zur Station",
+      "Die verbleibende Entfernung zum Ziel",
+      "Die Höhe über der Station in ft",
+      "Die Entfernung über Grund zur Station"
+     ],
+     "richtig": 0,
+     "erklaerung": "Direkt über der Station zeigt das DME etwa die Flughöhe in NM an."
+    },
+    {
+     "id": "NAV-025",
+     "frage": "Wie viele Satelliten sind mindestens für eine dreidimensionale GPS-Position nötig?",
+     "antworten": [
+      "2",
+      "3",
+      "4",
+      "6"
+     ],
+     "richtig": 2,
+     "erklaerung": "Drei für die Position, einer zur Korrektur des Uhrenfehlers; für RAIM (Integritätsprüfung) mindestens 5."
+    },
+    {
+     "id": "NAV-026",
+     "frage": "In welchem Frequenzbereich arbeiten VOR-Stationen?",
+     "antworten": [
+      "190,00 – 1750,00 kHz",
+      "108,00 – 117,95 MHz",
+      "960,00 – 1215,00 MHz",
+      "118,00 – 136,975 MHz"
+     ],
+     "richtig": 1,
+     "erklaerung": "NDB im LF/MF-Bereich, DME im UHF-Bereich (960–1215 MHz)."
+    },
+    {
+     "id": "NAV-027",
+     "frage": "In welchem Frequenzbereich arbeiten NDB?",
+     "antworten": [
+      "UHF, ca. 960–1215 MHz",
+      "LF/MF, ca. 190–1750 kHz",
+      "VHF, ca. 108–118 MHz",
+      "VHF, ca. 118–137 MHz"
+     ],
+     "richtig": 1,
+     "erklaerung": "NDB-Signale sind anfällig für Störungen durch Gewitter, Küsteneffekt und Dämmerungseffekt."
+    },
+    {
+     "id": "NAV-028",
+     "frage": "Wie werden Hindernishöhen in der ICAO-Karte 1:500.000 angegeben?",
+     "antworten": [
+      "Meter über Grund ohne MSL-Angabe",
+      "Nur als Flugfläche über 1013 hPa",
+      "ft MSL, in Klammern ft über Grund",
+      "ft über Grund, in Klammern ft MSL"
+     ],
+     "richtig": 2,
+     "erklaerung": "Die Angaben erfolgen in ft; die Legende der jeweiligen Karte ist maßgeblich."
+    },
+    {
+     "id": "NAV-029",
+     "frage": "Was versteht man unter Koppelnavigation (Dead Reckoning)?",
+     "antworten": [
+      "Position aus Radarangaben der Flugsicherung",
+      "Position aus Peilungen zu Leuchtfeuern",
+      "Position aus Kurs, Fahrt, Zeit und Wind",
+      "Position ausschließlich aus GPS-Daten"
+     ],
+     "richtig": 2,
+     "erklaerung": "Die Koppelnavigation wird durch terrestrische Navigation (Sicht auf Bodenmerkmale) ständig überprüft."
+    },
+    {
+     "id": "NAV-030",
+     "frage": "Was ist eine Auffanglinie in der Sichtnavigation?",
+     "antworten": [
+      "Ein Breitenkreis durch den Zielort",
+      "Eine Höhenlinie gleicher Geländehöhe",
+      "Langes, markantes Merkmal quer zum Kurs",
+      "Eine Linie gleicher Missweisung"
+     ],
+     "richtig": 2,
+     "erklaerung": "Beispiele: Autobahn, Fluss, Bahnlinie oder Küstenlinie."
+    },
+    {
+     "id": "NAV-031",
+     "frage": "Wo sollte der rechtweisende Kurs auf einer Lambert-Karte gemessen werden?",
+     "antworten": [
+      "Am Zielpunkt der Strecke",
+      "Am Startpunkt der Strecke",
+      "Am Rand des Kartenblatts",
+      "In der Mitte der Strecke"
+     ],
+     "richtig": 3,
+     "erklaerung": "Die Meridiane laufen zusammen; der Kurs der Großkreislinie ändert sich entlang der Strecke."
+    },
+    {
+     "id": "NAV-032",
+     "frage": "Wie viele Meter entsprechen 1000 ft?",
+     "antworten": [
+      "Etwa 100 m",
+      "Etwa 1000 m",
+      "Etwa 305 m",
+      "Etwa 3280 m"
+     ],
+     "richtig": 2,
+     "erklaerung": "1 ft = 0,3048 m; 1 m ≈ 3,28 ft."
+    },
+    {
+     "id": "NAV-033",
+     "frage": "Wie viele km/h entsprechen 100 kt?",
+     "antworten": [
+      "Etwa 54 km/h",
+      "Etwa 185 km/h",
+      "Etwa 161 km/h",
+      "Etwa 100 km/h"
+     ],
+     "richtig": 1,
+     "erklaerung": "1 kt = 1 NM/h = 1,852 km/h."
+    },
+    {
+     "id": "NAV-034",
+     "frage": "Welche Information gibt die Missweisung an?",
+     "antworten": [
+      "Winkel zwischen Kompassnord und magnetisch Nord",
+      "Winkel zwischen rechtweisendem Kurs und Wind",
+      "Winkel zwischen geografisch und magnetisch Nord",
+      "Winkel zwischen Kurs über Grund und Steuerkurs"
+     ],
+     "richtig": 2,
+     "erklaerung": "Die Missweisung (Variation) ändert sich mit Ort und Zeit; Werte stehen in der Karte."
+    },
+    {
+     "id": "NAV-035",
+     "frage": "Was ist der Luvwinkel (WCA)?",
+     "antworten": [
+      "Winkel zwischen rw. und mw. Nord",
+      "Winkel zwischen Kurs und Steuerkurs",
+      "Winkel zwischen Kompass- und mw. Nord",
+      "Winkel zwischen Piste und Wind"
+     ],
+     "richtig": 1,
+     "erklaerung": "Steuerkurs = Kurs ± Luvwinkel (Wind von rechts → plus, von links → minus)."
+    },
+    {
+     "id": "NAV-036",
+     "frage": "Was passiert mit der Grundgeschwindigkeit bei reinem Gegenwind von 20 kt und TAS 110 kt?",
+     "antworten": [
+      "Sie bleibt 110 kt",
+      "Sie beträgt 90 kt",
+      "Sie beträgt 130 kt",
+      "Sie beträgt 100 kt"
+     ],
+     "richtig": 1,
+     "erklaerung": "GS = TAS − Gegenwindkomponente."
+    },
+    {
+     "id": "NAV-037",
+     "frage": "Was zeigt eine Isogone mit dem Wert 3° E an?",
+     "antworten": [
+      "Missweisung 3° Ost entlang dieser Linie",
+      "Ostwind mit 3 kt entlang dieser Linie",
+      "Missweisung 3° West entlang dieser Linie",
+      "Deviation 3° Ost entlang dieser Linie"
+     ],
+     "richtig": 0,
+     "erklaerung": "Östliche Missweisung: Kompassnadel zeigt östlich von rechtweisend Nord."
+    },
+    {
+     "id": "NAV-038",
+     "frage": "Welcher Fehler betrifft GPS-Signale typischerweise?",
+     "antworten": [
+      "Mehrwegeeffekt, Ionosphärenverzögerung",
+      "Küsteneffekt, Dämmerungseffekt",
+      "Beschleunigungs-, Drehfehler",
+      "Deviation, Missweisung"
+     ],
+     "richtig": 0,
+     "erklaerung": "Küsten- und Dämmerungseffekt betreffen NDB/ADF."
+    },
+    {
+     "id": "NAV-039",
+     "frage": "Was bedeutet „ETA“?",
+     "antworten": [
+      "Tatsächliche Abflugzeit",
+      "Geschätzte Kraftstoffmenge",
+      "Voraussichtliche Flugdauer",
+      "Voraussichtliche Ankunftszeit"
+     ],
+     "richtig": 3,
+     "erklaerung": "ETA = Estimated Time of Arrival; ATA = Actual Time of Arrival; ETE = Estimated Time Enroute."
+    },
+    {
+     "id": "NAV-040",
+     "frage": "Wie verändert sich die Sonnenaufgangszeit in UTC entlang desselben Breitenkreises nach Osten hin?",
+     "antworten": [
+      "Keine Änderung",
+      "Die Sonne geht immer um 06:00 UTC auf",
+      "Die Sonne geht später auf",
+      "Die Sonne geht früher auf"
+     ],
+     "richtig": 3,
+     "erklaerung": "Die Erde dreht sich nach Osten; pro Grad Länge ca. 4 Minuten früher."
+    },
+    {
+     "id": "NAV-041",
+     "frage": "Wie lang ist eine Landmeile (statute mile) etwa?",
+     "antworten": [
+      "1500 m",
+      "1609 m",
+      "1852 m",
+      "1000 m"
+     ],
+     "richtig": 1,
+     "erklaerung": "Im Luftfahrtbereich ist die nautische Meile (1852 m) Standard; Landmeilen kommen z. B. in US-Sichtangaben vor."
+    },
+    {
+     "id": "NAV-042",
+     "frage": "Wie oft gibt die Austro Control die ICAO-Karte Österreich 1:500.000 neu heraus?",
+     "antworten": [
+      "Alle zwei Jahre im Januar, Änderungen nur per NOTAM",
+      "Jährlich im März (Ausgabe 2026 gültig ab 19.03.2026)",
+      "Monatlich mit jedem AIRAC-Zyklus der AIP",
+      "Alle fünf Jahre, dazwischen gelten nur Nachträge"
+     ],
+     "richtig": 1,
+     "erklaerung": "Unterjährige Änderungen werden über AIP, AIC und NOTAM bekannt gegeben. Immer die aktuelle Ausgabe verwenden."
+    },
+    {
+     "id": "NAV-043",
+     "frage": "Wie viele Blätter umfasst die ICAO-Karte Österreich 1:500 000?",
+     "antworten": [
+      "Zwei Blätter (Ost und West)",
+      "Ein Blatt für ganz Österreich",
+      "Acht Blätter wie in Deutschland",
+      "Vier Blätter nach Bundesländern"
+     ],
+     "richtig": 1,
+     "erklaerung": "Die Austro Control gibt die ICAO-Karte Österreich als ein Blatt heraus (jährlich im März, PDF kostenlos)."
+    },
+    {
+     "id": "NAV-044",
+     "frage": "Welche Ortsmissweisung ist im Raum Fürstenfeld 2026 ungefähr zu erwarten?",
+     "antworten": [
+      "Etwa 5° West",
+      "Etwa 12° Ost",
+      "Etwa 1° West",
+      "Etwa 5° Ost"
+     ],
+     "richtig": 3,
+     "erklaerung": "In Ostösterreich liegt die Missweisung 2026 bei rund 5° E (Isogonen auf der ICAO-Karte). mwK = rwK − östliche Missweisung."
+    },
+    {
+     "id": "NAV-045",
+     "frage": "Welche Abkürzung kennzeichnet in Österreich ein Flugbeschränkungsgebiet (Restricted Area)?",
+     "antworten": [
+      "LOR",
+      "LOD",
+      "EDR",
+      "LOP"
+     ],
+     "richtig": 0,
+     "erklaerung": "LOR = Flugbeschränkungsgebiet, LOD = Gefahrengebiet, LOP = Luftsperrgebiet. ED-R wäre ein deutsches Flugbeschränkungsgebiet."
+    }
+   ]
+  }
+ ]
+}

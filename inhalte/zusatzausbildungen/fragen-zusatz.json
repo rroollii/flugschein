@@ -1,0 +1,1533 @@
+{
+  "titel": "Übungsfragen Zusatzausbildungen – Nachtflug, MEP, Flugfunk international (Österreich)",
+  "version": "1.0",
+  "stand": "2026-10",
+  "hinweis": "Eigene Übungsfragen, keine Originalfragen einer Behörde. Nachtflug: keine Behördenprüfung, Fragen dienen dem Kurs-Theorieteil. MEP: Theorieprüfung durch die ATO (Multiple Choice, 75 %). Flugfunk: Vorbereitung auf EFZ-Prüfung (Fernmeldebüro) und Phraseologie. Angaben mit [prüfen] sind vor Gebrauch zu verifizieren.",
+  "bestehensgrenze_prozent": 75,
+  "faecher": [
+    {
+      "nr": 1,
+      "id": "nachtflug",
+      "name": "Nachtflug",
+      "kuerzel": "NF",
+      "pruefung": {
+        "fragen": 20,
+        "minuten": 30
+      },
+      "fragen": [
+        {
+          "id": "NF-001",
+          "frage": "Wie ist „Nacht“ im Sinne von SERA (VO (EU) 923/2012) definiert?",
+          "antworten": [
+            "Zeit vom Sonnenuntergang bis zum Sonnenaufgang am Startflugplatz",
+            "Zeit vom Ende der bürgerlichen Abend- bis Beginn der Morgendämmerung",
+            "Zeit, in der die Sonne mehr als 12° unter dem Horizont steht",
+            "Zeit von 30 Minuten nach Sonnenuntergang bis 30 Minuten vor Sonnenaufgang"
+          ],
+          "richtig": 1,
+          "erklaerung": "SERA Art. 2: Nacht = Ende der bürgerlichen Abenddämmerung (ECET) bis Beginn der bürgerlichen Morgendämmerung."
+        },
+        {
+          "id": "NF-002",
+          "frage": "Die bürgerliche Abenddämmerung endet, wenn der Mittelpunkt der Sonnenscheibe …",
+          "antworten": [
+            "12° unter dem Horizont steht",
+            "18° unter dem Horizont steht",
+            "den Horizont gerade berührt",
+            "6° unter dem Horizont steht"
+          ],
+          "richtig": 3,
+          "erklaerung": "Bürgerlich 6°, nautisch 12°, astronomisch 18°."
+        },
+        {
+          "id": "NF-003",
+          "frage": "Welche Mindestflugzeit bei Nacht fordert FCL.810(a) für die Nachtflugberechtigung (Flugzeug)?",
+          "antworten": [
+            "5 h bei Nacht, davon mindestens 3 h mit Lehrer",
+            "10 h bei Nacht, davon mindestens 5 h mit Lehrer",
+            "3 h bei Nacht, davon mindestens 1 h mit Lehrer",
+            "5 h bei Nacht, davon mindestens 1 h mit Lehrer"
+          ],
+          "richtig": 0,
+          "erklaerung": "FCL.810(a)(1)(ii): mind. 5 h Nacht, davon mind. 3 h Dual, inkl. 1 h Überlandnavigation."
+        },
+        {
+          "id": "NF-004",
+          "frage": "Wie lang muss der duale Nacht-Überlandflug nach FCL.810 mindestens sein?",
+          "antworten": [
+            "50 km (27 NM)",
+            "100 km (54 NM)",
+            "270 km (150 NM)",
+            "25 km (13 NM)"
+          ],
+          "richtig": 0,
+          "erklaerung": "Mindestens ein dualer Überlandflug von mind. 50 km (27 NM) innerhalb der mind. 1 h Überlandnavigation."
+        },
+        {
+          "id": "NF-005",
+          "frage": "Welche Alleinflug-Anforderung enthält der Nachtflugkurs nach FCL.810?",
+          "antworten": [
+            "5 Alleinstarts und 5 Alleinlandungen bis zum Stillstand",
+            "3 Alleinstarts und 3 Alleinlandungen bis zum Stillstand",
+            "5 Alleinstarts und 5 Aufsetzer (Touch-and-go) solo",
+            "10 Alleinstarts und 10 Landungen mit Lehrer an Bord"
+          ],
+          "richtig": 0,
+          "erklaerung": "Gefordert: 5 solo take-offs und 5 solo full-stop landings bei Nacht."
+        },
+        {
+          "id": "NF-006",
+          "frage": "In welchem Zeitraum muss der Nachtflugkurs abgeschlossen werden?",
+          "antworten": [
+            "innerhalb von 3 Monaten",
+            "innerhalb von 12 Monaten",
+            "innerhalb von 24 Monaten",
+            "innerhalb von 6 Monaten"
+          ],
+          "richtig": 3,
+          "erklaerung": "FCL.810(a)(1): Kurs innerhalb von bis zu 6 Monaten an einer ATO oder DTO."
+        },
+        {
+          "id": "NF-007",
+          "frage": "Wie wird die Nachtflugberechtigung (Flugzeug) erworben?",
+          "antworten": [
+            "Praktische Prüfung mit einem Prüfer (FE) bei Nacht",
+            "Kurs an ATO/DTO, danach Eintrag durch Austro Control",
+            "Theorieprüfung im Prüfungszentrum der Austro Control in Wien",
+            "Theorie- und Praxisprüfung beim Fernmeldebüro"
+          ],
+          "richtig": 1,
+          "erklaerung": "Für die Night Rating (A) gibt es keinen Skill Test; die Behörde trägt die Berechtigung nach Kursabschluss ein."
+        },
+        {
+          "id": "NF-008",
+          "frage": "Wie lange ist die Nachtflugberechtigung gültig?",
+          "antworten": [
+            "24 Monate",
+            "12 Monate",
+            "unbefristet",
+            "so lange wie das Medical"
+          ],
+          "richtig": 2,
+          "erklaerung": "Die Night Rating hat kein Ablaufdatum; zu beachten sind aber die Recency-Regeln (FCL.060)."
+        },
+        {
+          "id": "NF-009",
+          "frage": "Was verlangt FCL.060 zusätzlich, wenn Sie als PIC bei Nacht Fluggäste befördern (ohne IR)?",
+          "antworten": [
+            "mind. 3 Starts und Landungen bei Nacht in den letzten 30 Tagen",
+            "einen Übungsflug bei Nacht mit einem Fluglehrer in den letzten 12 Monaten",
+            "keine Zusatzanforderung, die 3 Landungen bei Tag genügen",
+            "mind. 1 Start, Anflug und Landung bei Nacht in den letzten 90 Tagen"
+          ],
+          "richtig": 3,
+          "erklaerung": "Von den 3 Starts/Landungen in 90 Tagen muss mind. einer bei Nacht sein – außer der Pilot hat eine IR."
+        },
+        {
+          "id": "NF-010",
+          "frage": "Welche Zusatzanforderung gilt für LAPL(A)-Inhaber vor Abschluss der Nachtausbildung?",
+          "antworten": [
+            "Zuerst die Umwandlung der LAPL in eine PPL",
+            "Grundausbildung Instrumentenflug wie für die PPL",
+            "Mindestens 10 h Instrumentenflug mit IRI",
+            "Ein flugmedizinisches Tauglichkeitszeugnis Klasse 1"
+          ],
+          "richtig": 1,
+          "erklaerung": "FCL.810(a)(2): LAPL-Inhaber müssen vorher das Basic Instrument Flight Training der PPL absolviert haben."
+        },
+        {
+          "id": "NF-011",
+          "frage": "Wann ist für einen NVFR-Flug in Österreich ein Flugplan abzugeben?",
+          "antworten": [
+            "nur wenn eine Staatsgrenze überflogen wird",
+            "wenn der Flug die Umgebung des Flugplatzes verlässt",
+            "immer, auch für reine Platzrunden am eigenen Heimatflugplatz",
+            "nur beim Einflug in Luftraum C oder D"
+          ],
+          "richtig": 1,
+          "erklaerung": "AIP Austria ENR 1.2 Pkt. 2.2 / SERA.4001(b)(6): Flugplan, wenn die Flugplatzumgebung verlassen wird."
+        },
+        {
+          "id": "NF-012",
+          "frage": "Welche Hauptwolkenuntergrenze ist für NVFR mindestens erforderlich?",
+          "antworten": [
+            "1 000 ft (300 m)",
+            "1 500 ft (450 m)",
+            "2 000 ft (600 m)",
+            "3 000 ft (900 m)"
+          ],
+          "richtig": 1,
+          "erklaerung": "SERA.5005(c)(3)(i) / AIP ENR 1.2: Ceiling nicht unter 450 m (1 500 ft)."
+        },
+        {
+          "id": "NF-013",
+          "frage": "Welche Mindestflughöhe gilt in Österreich für NVFR außerhalb kontrollierten Luftraums (LVR 2014 § 24)?",
+          "antworten": [
+            "1 000 ft über dem höchsten Hindernis im Umkreis von 8 km",
+            "2 000 ft über dem höchsten Hindernis im Umkreis von 8 km",
+            "1 000 ft über dem höchsten Hindernis im Umkreis von 600 m",
+            "500 ft über Grund, über Städten 1 000 ft über Grund"
+          ],
+          "richtig": 1,
+          "erklaerung": "§ 24 Abs. 2 LVR 2014: 600 m (2 000 ft) über dem höchsten Hindernis im Umkreis von 8 km vom angenommenen Standort."
+        },
+        {
+          "id": "NF-014",
+          "frage": "Was gilt in Österreich für den Transponder im Luftraum G bei Nacht?",
+          "antworten": [
+            "Mode S mit Höhenübermittlung ist Pflicht",
+            "Pflicht nur oberhalb von 3 000 ft MSL oder 1 000 ft GND",
+            "Pflicht nur bei Grenzüberflügen",
+            "keine Pflicht, nur Empfehlung"
+          ],
+          "richtig": 0,
+          "erklaerung": "§ 30 Abs. 1 Z 4 LVR 2014: Luftraum G bei Nacht nur mit Mode-S-Transponder mit Druckhöhenübermittlung; Code 7000."
+        },
+        {
+          "id": "NF-015",
+          "frage": "Gilt bei Nacht im Luftraum G die reduzierte Flugsicht von 1 500 m (≤ 140 kt)?",
+          "antworten": [
+            "Ja, wenn die Geschwindigkeit unter 140 kt IAS liegt",
+            "Ja, aber nur unterhalb von 1 000 ft über Grund",
+            "Nein, bei Nacht gelten mindestens 5 km Flugsicht",
+            "Nein, bei Nacht sind mindestens 8 km gefordert"
+          ],
+          "richtig": 2,
+          "erklaerung": "AIP ENR 1.2: Die Erleichterungen der Tabelle S5-1 (a) und (b) gelten bei Nacht nicht."
+        },
+        {
+          "id": "NF-016",
+          "frage": "Wo muss der NVFR-Pilot ununterbrochene Erdsicht haben?",
+          "antworten": [
+            "nur in Kontrollzonen und bei Anflügen auf Flugplätze",
+            "in und unter 3 000 ft AMSL bzw. 1 000 ft GND (höherer Wert)",
+            "nur über gebirgigem Gelände und dort oberhalb von 5 000 ft AMSL",
+            "überall bis Flugfläche 100, unabhängig vom Luftraum"
+          ],
+          "richtig": 1,
+          "erklaerung": "SERA.5005(c)(3)(iii): in allen Luftraumklassen in und unter 900 m AMSL oder 300 m über Grund, der höhere Wert gilt."
+        },
+        {
+          "id": "NF-017",
+          "frage": "Welche Mindest-Kraftstoffreserve gilt nach Part-NCO für VFR-Flüge mit Flugzeugen bei Nacht?",
+          "antworten": [
+            "45 Minuten bei normaler Reiseflughöhe",
+            "30 Minuten bei normaler Reiseflughöhe",
+            "20 Minuten bei normaler Reiseflughöhe",
+            "60 Minuten plus 10 % der Flugzeit"
+          ],
+          "richtig": 0,
+          "erklaerung": "NCO.OP.125: VFR bei Tag 30 min, bei Nacht 45 min Endreserve [Wortlaut AMC prüfen]."
+        },
+        {
+          "id": "NF-018",
+          "frage": "Welche Farbe hat das Positionslicht an der linken Tragflächenspitze?",
+          "antworten": [
+            "grün",
+            "rot",
+            "weiß",
+            "gelb"
+          ],
+          "richtig": 1,
+          "erklaerung": "Links (backbord) rot, rechts (steuerbord) grün, Heck weiß."
+        },
+        {
+          "id": "NF-019",
+          "frage": "Sie sehen bei einem anderen Flugzeug rotes und grünes Positionslicht gleichzeitig, etwa auf Ihrer Höhe. Was bedeutet das?",
+          "antworten": [
+            "Das Flugzeug fliegt von Ihnen weg, keine Gefahr",
+            "Das Flugzeug kreuzt von links, es muss Ihnen ausweichen",
+            "Gegenverkehr frontal – beide weichen nach rechts aus",
+            "Das Flugzeug steigt und wird Sie überfliegen"
+          ],
+          "richtig": 2,
+          "erklaerung": "Rot und Grün gleichzeitig = Spitze auf Sie zu; SERA.3210: im Gegenflug beide nach rechts ausweichen."
+        },
+        {
+          "id": "NF-020",
+          "frage": "Sie sehen rechts vor sich nur das rote Positionslicht eines kreuzenden Flugzeugs. Wer weicht aus?",
+          "antworten": [
+            "Das andere Flugzeug, denn Sie kommen von rechts",
+            "Niemand, beide halten Kurs und Höhe bei",
+            "Sie, denn das andere Flugzeug kommt von rechts",
+            "Das höher fliegende Flugzeug muss steigen"
+          ],
+          "richtig": 2,
+          "erklaerung": "Rot = linke Seite des anderen; Sie sehen also seine linke Seite, es kommt von rechts → Sie weichen aus („Siehst du Rot, hast du Not“)."
+        },
+        {
+          "id": "NF-021",
+          "frage": "Welche Farbe und welchen Abstrahlwinkel hat das Hecklicht?",
+          "antworten": [
+            "weiß, 110°",
+            "rot, 140°",
+            "gelb, 180°",
+            "weiß, 140°"
+          ],
+          "richtig": 3,
+          "erklaerung": "Positionslichter: rot und grün je 110°, Hecklicht weiß 140° (zusammen 360°)."
+        },
+        {
+          "id": "NF-022",
+          "frage": "Welche Farbe hat die Pistenrandbefeuerung in der Regel?",
+          "antworten": [
+            "blau",
+            "grün",
+            "weiß",
+            "rot"
+          ],
+          "richtig": 2,
+          "erklaerung": "Pistenrand weiß (bei Instrumentenpisten letzte 600 m bzw. letztes Drittel gelb), Rollwegrand blau."
+        },
+        {
+          "id": "NF-023",
+          "frage": "Welche Farbe hat die Rollwegrandbefeuerung?",
+          "antworten": [
+            "blau",
+            "weiß",
+            "gelb",
+            "rot"
+          ],
+          "richtig": 0,
+          "erklaerung": "Rollwegrand blau, Rollwegmittellinie grün."
+        },
+        {
+          "id": "NF-024",
+          "frage": "Welche Farbe hat die Pistenendbefeuerung, vom Anflug aus gesehen am Ende der Piste?",
+          "antworten": [
+            "grün",
+            "rot",
+            "blau",
+            "weiß"
+          ],
+          "richtig": 1,
+          "erklaerung": "Schwelle grün (Richtung Anflug), Pistenende rot."
+        },
+        {
+          "id": "NF-025",
+          "frage": "Das PAPI zeigt 3 rote und 1 weiße Leuchte. Wo befinden Sie sich?",
+          "antworten": [
+            "etwas über dem Gleitweg",
+            "genau auf dem Gleitweg",
+            "weit über dem Gleitweg",
+            "etwas unter dem Gleitweg"
+          ],
+          "richtig": 3,
+          "erklaerung": "PAPI: 2 rot / 2 weiß = auf dem Gleitweg; mehr Rot = tiefer, mehr Weiß = höher."
+        },
+        {
+          "id": "NF-026",
+          "frage": "Wie lange dauert die Dunkeladaptation der Stäbchen ungefähr?",
+          "antworten": [
+            "etwa 2 Minuten",
+            "etwa 5 Minuten",
+            "etwa 2 Stunden",
+            "etwa 30 Minuten"
+          ],
+          "richtig": 3,
+          "erklaerung": "Zapfen adaptieren in ca. 5–10 min, Stäbchen brauchen ca. 30 min bis zur vollen Empfindlichkeit."
+        },
+        {
+          "id": "NF-027",
+          "frage": "Warum sollte man bei Nacht Objekte leicht seitlich (10–20°) anblicken?",
+          "antworten": [
+            "Seitliches Sehen schont den Sehnerv und verhindert dadurch rasche Ermüdung",
+            "Die Netzhautmitte enthält nur Zapfen, die bei Dunkelheit kaum ansprechen",
+            "Die Stäbchen liegen nur im Zentrum, dort entsteht ein Nachtfleck",
+            "Durch das Seitwärtsschauen wird die Pupille sofort weiter geöffnet"
+          ],
+          "richtig": 1,
+          "erklaerung": "Die Fovea centralis hat nur Zapfen → zentraler Nachtblindfleck; die lichtempfindlichen Stäbchen liegen außerhalb."
+        },
+        {
+          "id": "NF-028",
+          "frage": "Ab welcher Höhe kann Sauerstoffmangel die Nachtsicht bereits merklich verschlechtern?",
+          "antworten": [
+            "ab etwa 10 000 ft",
+            "ab etwa 12 500 ft",
+            "ab etwa 5 000 ft",
+            "ab etwa 18 000 ft"
+          ],
+          "richtig": 2,
+          "erklaerung": "Die Stäbchen reagieren empfindlich auf Hypoxie; Einbußen sind schon ab ca. 5 000 ft beschrieben."
+        },
+        {
+          "id": "NF-029",
+          "frage": "Beim Anflug über unbeleuchtetem Gelände auf eine beleuchtete Piste („Black Hole“) neigt der Pilot dazu, …",
+          "antworten": [
+            "sich zu tief zu fühlen und zu hoch anzufliegen",
+            "die Piste für kürzer zu halten und zu früh aufzusetzen",
+            "zu schnell zu werden, weil die Bodenreferenz fehlt",
+            "sich zu hoch zu fühlen und zu tief anzufliegen"
+          ],
+          "richtig": 3,
+          "erklaerung": "Black-Hole-Effekt: steiler wirkender Anflugwinkel → Pilot sinkt zu früh ab; PAPI und Höhenmesser nutzen."
+        },
+        {
+          "id": "NF-030",
+          "frage": "Was beschreibt die Autokinese?",
+          "antworten": [
+            "Ein fixierter Lichtpunkt scheint sich zu bewegen",
+            "Ein bewegtes Licht scheint plötzlich stillzustehen",
+            "Lichtpunkte am Boden wirken wie ein Sternenhimmel",
+            "Blitzlichter verursachen Schwindel und Übelkeit"
+          ],
+          "richtig": 0,
+          "erklaerung": "Gegenmittel: Blick nicht starr halten, Instrumente einbeziehen."
+        },
+        {
+          "id": "NF-031",
+          "frage": "Eine Piste ist schmaler als gewohnt. Welche Täuschung ist im Anflug zu erwarten?",
+          "antworten": [
+            "Man fühlt sich tiefer und fliegt zu hoch an",
+            "Man fühlt sich höher und fliegt zu tief an",
+            "Man schätzt den Seitenwind zu groß ein",
+            "Man hält die Piste für deutlich länger"
+          ],
+          "richtig": 1,
+          "erklaerung": "Schmale Piste → wirkt weiter weg/höher; breite Piste → wirkt näher/tiefer."
+        },
+        {
+          "id": "NF-032",
+          "frage": "Welche Gefahr birgt das Durchstarten in dunkler Umgebung (somatogravische Täuschung)?",
+          "antworten": [
+            "Das Steigen täuscht eine Linkskurve vor, man steuert rechts",
+            "Die Verzögerung täuscht Sinken vor, man zieht zu stark",
+            "Die Beschleunigung täuscht Steigen vor, der Pilot drückt nach",
+            "Die Motorleistung täuscht einen Stall vor, man drückt"
+          ],
+          "richtig": 2,
+          "erklaerung": "Lineare Beschleunigung wird als Nase-hoch empfunden → Gefahr, ins Gelände zu drücken. Instrumente kontrollieren!"
+        },
+        {
+          "id": "NF-033",
+          "frage": "Welcher Nachteil entsteht bei roter Cockpitbeleuchtung?",
+          "antworten": [
+            "Rot gedruckte Kartenangaben werden schlecht lesbar",
+            "Die Dunkeladaptation der Stäbchen geht schneller verloren",
+            "Rotes Licht blendet stärker als weißes Licht",
+            "Die Instrumente lassen sich nicht mehr ablesen"
+          ],
+          "richtig": 0,
+          "erklaerung": "Rot schont die Adaptation, aber rote Kartensignaturen (z. B. Lufträume) verschwinden."
+        },
+        {
+          "id": "NF-034",
+          "frage": "Welche Wetterlage ist für einen NVFR-Flug besonders kritisch?",
+          "antworten": [
+            "bedeckt in FL100 mit Wind 15 kt aus West",
+            "Temperatur 20 °C, Taupunkt 5 °C, CAVOK",
+            "klare, windschwache Nacht mit 2 °C Taupunktdifferenz",
+            "leichter Westwind, Sicht über 20 km, Wolkenuntergrenze 6 000 ft"
+          ],
+          "richtig": 2,
+          "erklaerung": "Ausstrahlung bei klarem Himmel und kleinem Spread → Strahlungsnebel kann rasch entstehen."
+        },
+        {
+          "id": "NF-035",
+          "frage": "Was ist oft ein erstes Anzeichen für den unbeabsichtigten Einflug in eine Wolke bei Nacht?",
+          "antworten": [
+            "Die eigenen Blitz- und Positionslichter erzeugen einen Lichtschein",
+            "Die Sterne werden deutlich heller, weil die Luftfeuchtigkeit ansteigt",
+            "Das Variometer zeigt plötzlich ein starkes Steigen an",
+            "Der Sprechfunkempfang wird stärker und klarer"
+          ],
+          "richtig": 0,
+          "erklaerung": "Ein Halo bzw. Reflexionen der eigenen Lichter deuten auf Wolke/Niederschlag – sofort umkehren."
+        },
+        {
+          "id": "NF-036",
+          "frage": "Woran erkennt man nachts im Reiseflug eine Wolke vor sich am ehesten?",
+          "antworten": [
+            "In einem Bereich verschwinden Sterne oder Bodenlichter",
+            "Die Außentemperaturanzeige steigt um mehrere Grad",
+            "Das Kollisionswarnlicht beginnt schneller zu blinken",
+            "Die Instrumentenbeleuchtung wird automatisch heller"
+          ],
+          "richtig": 0,
+          "erklaerung": "Abdeckung von Sternen oder Ortslichtern ist ein typischer Hinweis auf Wolken."
+        },
+        {
+          "id": "NF-037",
+          "frage": "Welches Instrument ist für VFR bei Nacht zusätzlich zur Tag-VFR-Ausstattung gefordert (NCO.IDE.A.120)?",
+          "antworten": [
+            "Funkkompass (ADF) mit Kursanzeige",
+            "Entfernungsmessgerät (DME)",
+            "Zweites Funkgerät mit Notfrequenz",
+            "künstlicher Horizont (Fluglage)"
+          ],
+          "richtig": 3,
+          "erklaerung": "Bei Nacht zusätzlich u. a. Wendezeiger mit Libelle, Fluglage, Variometer, stabilisierter Kurs [Detail im AFM/NCO prüfen]."
+        },
+        {
+          "id": "NF-038",
+          "frage": "Welche Ausrüstung ist nach Part-NCO für den Nachtbetrieb von Flugzeugen vorgeschrieben?",
+          "antworten": [
+            "Suchscheinwerfer an einer der beiden Tragflächenspitzen",
+            "beleuchtetes Kennzeichen am Seitenleitwerk",
+            "elektrische Taschenlampe an jedem Besatzungsplatz",
+            "Infrarotscheinwerfer für das Rollen"
+          ],
+          "richtig": 2,
+          "erklaerung": "NCO.IDE.A.115: Zusammenstoßwarnlichter, Positionslichter, Landescheinwerfer, Instrumentenbeleuchtung, Taschenlampe je Besatzungsplatz."
+        },
+        {
+          "id": "NF-039",
+          "frage": "Wann müssen nach SERA.3215 die Positionslichter eingeschaltet sein?",
+          "antworten": [
+            "nur im Flug, am Boden genügt das Zusammenstoßwarnlicht",
+            "nur beim Rollen, im Flug genügt der Landescheinwerfer",
+            "nur in Kontrollzonen und auf kontrollierten Flugplätzen",
+            "bei Nacht im Flug und beim Bewegen auf der Bewegungsfläche"
+          ],
+          "richtig": 3,
+          "erklaerung": "Bei Nacht: Zusammenstoßwarn- und Positionslichter im Flug; am Boden Positionslichter auf der Bewegungsfläche."
+        },
+        {
+          "id": "NF-040",
+          "frage": "Bis wann ist der Flugplatz Fürstenfeld (LOGF) laut veröffentlichten Betriebszeiten geöffnet?",
+          "antworten": [
+            "bis ECET, dem Ende der bürgerlichen Abenddämmerung",
+            "bis zum Sonnenuntergang laut den Tabellen der AIP Austria",
+            "bis 22:00 Lokalzeit an allen Tagen",
+            "durchgehend rund um die Uhr (H24)"
+          ],
+          "richtig": 0,
+          "erklaerung": "AIP/airteam.at: 09:00 LT bis ECET; daher Nachtstarts und -landungen in der Regel an einem befeuerten Platz wie Graz [mit Schule prüfen]."
+        },
+        {
+          "id": "NF-041",
+          "frage": "Welche Streckenwahl ist für einen NVFR-Überlandflug am sinnvollsten?",
+          "antworten": [
+            "auf möglichst direktem Weg über unbewohntes Wald- und Bergland",
+            "möglichst tief unter der Wolkenbasis, um Sicht zu behalten",
+            "über großen Seen, weil dort keine Hindernisse stehen",
+            "entlang beleuchteter Orte und Straßen, nahe befeuerter Plätze"
+          ],
+          "richtig": 3,
+          "erklaerung": "Gute Orientierung und Notlandemöglichkeiten; dunkle Gebiete bieten keine Bodenreferenz (Black Hole)."
+        },
+        {
+          "id": "NF-042",
+          "frage": "Was zerstört die Dunkeladaptation am schnellsten?",
+          "antworten": [
+            "gedimmte rote Instrumentenbeleuchtung im Cockpit",
+            "der Blick auf schwach beleuchtete Ortschaften",
+            "ein kurzer Blick in eine helle weiße Lichtquelle",
+            "das Tragen einer klaren Korrekturbrille"
+          ],
+          "richtig": 2,
+          "erklaerung": "Helles weißes Licht bleicht den Sehpurpur aus; die Adaptation dauert danach erneut viele Minuten."
+        }
+      ]
+    },
+    {
+      "nr": 2,
+      "id": "mep",
+      "name": "MEP",
+      "kuerzel": "MEP",
+      "pruefung": {
+        "fragen": 30,
+        "minuten": 60
+      },
+      "fragen": [
+        {
+          "id": "MEP-001",
+          "frage": "Welche Flugerfahrung fordert FCL.720.A vor der ersten Klassenberechtigung für mehrmotorige Flugzeuge mit einem Piloten?",
+          "antworten": [
+            "mindestens 70 h als PIC auf Flugzeugen",
+            "mindestens 50 h als PIC auf Flugzeugen",
+            "mindestens 100 h Gesamtflugzeit",
+            "mindestens 200 h Gesamtflugzeit"
+          ],
+          "richtig": 0,
+          "erklaerung": "FCL.720.A(a)(1): 70 h als PIC auf Flugzeugen; viele ATOs verlangen das schon vor Kursbeginn."
+        },
+        {
+          "id": "MEP-002",
+          "frage": "Wie viele Stunden Theorieunterricht umfasst die MEP-Ausbildung mindestens (FCL.725.A)?",
+          "antworten": [
+            "7 Stunden",
+            "3 Stunden",
+            "15 Stunden",
+            "25 Stunden"
+          ],
+          "richtig": 0,
+          "erklaerung": "FCL.725.A(a)(1): mind. 7 h Unterricht in multi-engine aeroplane operations."
+        },
+        {
+          "id": "MEP-003",
+          "frage": "Wie viel Flugausbildung unter normalen Bedingungen fordert FCL.725.A mindestens?",
+          "antworten": [
+            "1 h 00 min",
+            "2 h 30 min",
+            "3 h 30 min",
+            "5 h 00 min"
+          ],
+          "richtig": 1,
+          "erklaerung": "Mind. 2:30 h dual normal + mind. 3:30 h Triebwerksausfall/asymmetrischer Flug = 6 h."
+        },
+        {
+          "id": "MEP-004",
+          "frage": "Wie viel Ausbildung in Triebwerksausfallverfahren und asymmetrischem Flug ist mindestens gefordert?",
+          "antworten": [
+            "3 h 30 min",
+            "2 h 30 min",
+            "1 h 30 min",
+            "6 h 00 min"
+          ],
+          "richtig": 0,
+          "erklaerung": "FCL.725.A(a)(2): nicht weniger als 3:30 h engine failure procedures and asymmetric flight techniques."
+        },
+        {
+          "id": "MEP-005",
+          "frage": "Wer nimmt die Theorieprüfung für die MEP-Klassenberechtigung ab?",
+          "antworten": [
+            "Austro Control in Wien",
+            "das Fernmeldebüro",
+            "die ausbildende ATO",
+            "der Prüfer nur mündlich"
+          ],
+          "richtig": 2,
+          "erklaerung": "FCL.725(b): Theorieprüfung wird von der ATO organisiert; schriftlich, Multiple Choice, 75 % [Fragenzahl prüfen]."
+        },
+        {
+          "id": "MEP-006",
+          "frage": "Wie lange ist eine MEP-Klassenberechtigung gültig?",
+          "antworten": [
+            "24 Monate",
+            "36 Monate",
+            "12 Monate",
+            "unbefristet"
+          ],
+          "richtig": 2,
+          "erklaerung": "FCL.740(a): Klassenberechtigungen 1 Jahr, ausgenommen einmotorige Kolben (SEP) und TMG mit 2 Jahren."
+        },
+        {
+          "id": "MEP-007",
+          "frage": "In welchem Zeitraum vor Ablauf muss der Proficiency Check zur MEP-Verlängerung liegen?",
+          "antworten": [
+            "in den 6 Monaten vor Ablauf",
+            "in den 12 Monaten vor Ablauf",
+            "in den 3 Monaten vor Ablauf",
+            "im letzten Monat vor Ablauf"
+          ],
+          "richtig": 2,
+          "erklaerung": "FCL.740.A(a)(1): PC innerhalb der 3 Monate unmittelbar vor dem Ablaufdatum – Gültigkeit läuft dann ab altem Ablaufdatum weiter."
+        },
+        {
+          "id": "MEP-008",
+          "frage": "Was ist neben dem PC während der Gültigkeit für die MEP-Verlängerung erforderlich?",
+          "antworten": [
+            "12 h Flugzeit inkl. 6 h PIC und 12 Landungen in 12 Monaten",
+            "3 Starts und Landungen innerhalb der letzten 90 Tage",
+            "ein Übungsflug von 1 h mit einem Fluglehrer (FI)",
+            "10 Streckenabschnitte oder 1 Abschnitt mit einem Prüfer"
+          ],
+          "richtig": 3,
+          "erklaerung": "FCL.740.A(a)(2): 10 route sectors als Pilot der Klasse oder 1 route sector mit Prüfer (darf im PC geflogen werden)."
+        },
+        {
+          "id": "MEP-009",
+          "frage": "Wie ist VMCA auf dem Fahrtmesser eines mehrmotorigen Leichtflugzeugs gekennzeichnet?",
+          "antworten": [
+            "rote radiale Linie",
+            "blaue radiale Linie",
+            "gelber Bogen",
+            "weißer Bogen"
+          ],
+          "richtig": 0,
+          "erklaerung": "VMCA rote Linie; VYSE blaue Linie („blue line“)."
+        },
+        {
+          "id": "MEP-010",
+          "frage": "Was bezeichnet die blaue radiale Linie auf dem Fahrtmesser?",
+          "antworten": [
+            "VXSE – steilstes Steigen mit einem Triebwerk",
+            "VYSE – bestes Steigen mit einem Triebwerk",
+            "VMCA – Mindestgeschwindigkeit für Steuerbarkeit",
+            "VSSE – Mindestfahrt für simulierten Ausfall"
+          ],
+          "richtig": 1,
+          "erklaerung": "Blue line = VYSE, größte Steigrate (bzw. geringstes Sinken) bei einem ausgefallenen Triebwerk."
+        },
+        {
+          "id": "MEP-011",
+          "frage": "Beide Propeller drehen – vom Cockpit gesehen – im Uhrzeigersinn. Welches Triebwerk ist kritisch?",
+          "antworten": [
+            "das rechte Triebwerk",
+            "das linke Triebwerk",
+            "beide gleichermaßen",
+            "keines der beiden"
+          ],
+          "richtig": 1,
+          "erklaerung": "Der abwärts laufende Blattteil liegt jeweils rechts; beim rechten Motor ist der Hebelarm zur Längsachse größer → Ausfall links ist schlimmer."
+        },
+        {
+          "id": "MEP-012",
+          "frage": "Welcher Effekt ist der Hauptgrund für das kritische Triebwerk?",
+          "antworten": [
+            "Kreiselpräzession der Propeller beim Gieren um die Hochachse herum",
+            "Bodeneffekt, der den Auftrieb unter der Tragfläche erhöht",
+            "Vereisung des Vergasers bei laufendem Einmotorenbetrieb",
+            "P-Faktor, der Schub verlagert sich auf das abwärtsgehende Blatt"
+          ],
+          "richtig": 3,
+          "erklaerung": "Merkwort PAST: P-Faktor, Accelerated slipstream, Spiralling slipstream, Torque."
+        },
+        {
+          "id": "MEP-013",
+          "frage": "Was gilt bei gegenläufigen Propellern (z. B. PA-44 Seminole)?",
+          "antworten": [
+            "Das rechte Triebwerk wird kritisch",
+            "Es gibt kein kritisches Triebwerk",
+            "Das linke Triebwerk bleibt kritisch",
+            "VMCA ist dann nicht mehr definiert"
+          ],
+          "richtig": 1,
+          "erklaerung": "Gegenläufige Propeller heben die Asymmetrie aus P-Faktor und Drall auf."
+        },
+        {
+          "id": "MEP-014",
+          "frage": "Welche Bedingung erhöht VMCA?",
+          "antworten": [
+            "größere Dichtehöhe",
+            "Propeller in Segelstellung",
+            "Schwerpunkt weiter hinten",
+            "5° Querneigung zum laufenden Triebwerk"
+          ],
+          "richtig": 2,
+          "erklaerung": "Hinterer Schwerpunkt verkürzt den Hebelarm des Seitenruders → höhere VMC. Dichtehöhe ↑ und Segelstellung senken VMC."
+        },
+        {
+          "id": "MEP-015",
+          "frage": "Wie verändert sich VMCA mit zunehmender Dichtehöhe (Saugmotor)?",
+          "antworten": [
+            "VMCA steigt, weil die dünnere Luft das Seitenruder schwächt",
+            "VMCA sinkt, nähert sich aber der Stallgeschwindigkeit",
+            "VMCA bleibt unabhängig von der Höhe gleich",
+            "VMCA steigt, weil der Propeller schneller dreht"
+          ],
+          "richtig": 1,
+          "erklaerung": "Weniger Leistung = weniger Giermoment → VMCA sinkt; in großer Höhe kann der Stall vor VMC eintreten (Trudelgefahr)."
+        },
+        {
+          "id": "MEP-016",
+          "frage": "Wie fliegt man mit einem ausgefallenen Triebwerk mit dem geringsten Widerstand?",
+          "antworten": [
+            "Flügel waagerecht, Kugel genau in der Mitte, viel Seitenruder treten",
+            "ca. 10° Querneigung zum ausgefallenen Motor, Kugel mittig",
+            "ca. 2–5° Querneigung zum ausgefallenen Motor, ohne Seitenruder",
+            "ca. 2–5° Querneigung zum laufenden Motor, Kugel halb ausgelenkt"
+          ],
+          "richtig": 3,
+          "erklaerung": "Zero sideslip: leichte Querneigung zum arbeitenden Triebwerk („raise the dead“), Kugel etwa halb zur Seite des laufenden."
+        },
+        {
+          "id": "MEP-017",
+          "frage": "Etwa wie viel der Steigleistung geht bei Ausfall eines von zwei Triebwerken verloren?",
+          "antworten": [
+            "etwa 50 % wie die Leistung",
+            "etwa 80 % oder mehr",
+            "etwa 25 %",
+            "etwa 10 %"
+          ],
+          "richtig": 1,
+          "erklaerung": "Steigleistung hängt von der Überschussleistung ab; mit 50 % Leistung bleibt nur ein kleiner Überschuss."
+        },
+        {
+          "id": "MEP-018",
+          "frage": "Was bedeutet der Merksatz „Dead foot – dead engine“?",
+          "antworten": [
+            "Der Fuß ohne Pedaldruck zeigt die Seite des ausgefallenen Motors",
+            "Der Fuß mit Pedaldruck zeigt die Seite des ausgefallenen Motors",
+            "Bei einem Ausfall müssen beide Füße von den Pedalen genommen werden",
+            "Der linke Fuß bedient immer die Bremse des ausgefallenen Motors"
+          ],
+          "richtig": 0,
+          "erklaerung": "Man tritt das Seitenruder zum laufenden Motor; das unbelastete Pedal liegt auf der Seite des ausgefallenen."
+        },
+        {
+          "id": "MEP-019",
+          "frage": "Wie wird ein identifiziertes ausgefallenes Triebwerk verifiziert?",
+          "antworten": [
+            "Gashebel dieses Motors voll nach vorne – Drehzahl steigt",
+            "Gashebel dieses Motors zurücknehmen – es ändert sich nichts",
+            "Zündschalter dieses Motors aus- und wieder einschalten",
+            "Propeller des laufenden Motors kurz in Segelstellung bringen"
+          ],
+          "richtig": 1,
+          "erklaerung": "Identify – Verify – Feather: Wird beim Zurücknehmen keine Änderung spürbar, ist der richtige Motor erkannt."
+        },
+        {
+          "id": "MEP-020",
+          "frage": "Was hat nach einem Triebwerksausfall im Steigflug nach dem Start oberste Priorität?",
+          "antworten": [
+            "Richtung und Fahrt halten, mindestens VYSE",
+            "sofort den Propeller des Motors in Fahne",
+            "einen MAYDAY-Funkspruch absetzen",
+            "Treibstoffpumpen und Crossfeed prüfen"
+          ],
+          "richtig": 0,
+          "erklaerung": "Fly the aircraft: Kontrolle, Fahrt (blue line), dann Leistung – Widerstand – Identify – Verify – Feather."
+        },
+        {
+          "id": "MEP-021",
+          "frage": "Ein Triebwerk fällt im Startlauf vor dem Abheben aus. Was ist zu tun?",
+          "antworten": [
+            "abheben und auf VYSE beschleunigen",
+            "Fahrwerk einfahren und weiterstarten",
+            "Start abbrechen: Leistung weg, bremsen",
+            "den betroffenen Propeller sofort fahnen"
+          ],
+          "richtig": 2,
+          "erklaerung": "Ausfall am Boden bzw. unter VMC/vor Rotation → Startabbruch; Accelerate-Stop-Distance in der Planung beachten."
+        },
+        {
+          "id": "MEP-022",
+          "frage": "Was ist die absolute einmotorige Gipfelhöhe?",
+          "antworten": [
+            "Höhe, in der die Steigrate mit einem Motor null ist",
+            "Höhe, in der mit einem Motor 100 ft/min möglich sind",
+            "Höhe, in der beide Motoren noch 100 ft/min erreichen",
+            "Höhe, ab der der Turbolader keine Leistung mehr bringt"
+          ],
+          "richtig": 0,
+          "erklaerung": "Absolute ceiling: 0 ft/min; Single-engine service ceiling: definierte Mindeststeigrate [Wert laut AFM prüfen]."
+        },
+        {
+          "id": "MEP-023",
+          "frage": "Was bewirkt die Segelstellung (Fahnenstellung) eines Propellers?",
+          "antworten": [
+            "Blätter stehen quer zur Anströmung und bremsen das Flugzeug stark",
+            "Der Propeller dreht als Windmühle weiter und hält den Öldruck",
+            "Die Blätter schalten auf Umkehrschub für eine kürzere Landestrecke",
+            "Blätter stehen parallel zur Anströmung, der Widerstand ist minimal"
+          ],
+          "richtig": 3,
+          "erklaerung": "Ein windmühlender Propeller erzeugt großen Widerstand; in Segelstellung steht er still."
+        },
+        {
+          "id": "MEP-024",
+          "frage": "Was passiert beim typischen Verstellpropeller eines Kolben-Twins bei Öldruckverlust?",
+          "antworten": [
+            "Er geht durch Federdruck auf kleinste Steigung (hohe Drehzahl)",
+            "Er bleibt in der zuletzt eingestellten Blattstellung blockiert",
+            "Er geht automatisch in den Bereich des Umkehrschubs über",
+            "Er geht durch Feder- oder Gasdruck in Richtung Segelstellung"
+          ],
+          "richtig": 3,
+          "erklaerung": "Öldruck → kleine Steigung, Feder/Stickstoff → Fahne. Details flugzeugspezifisch (AFM, z. B. DA42) [prüfen]."
+        },
+        {
+          "id": "MEP-025",
+          "frage": "Wozu dient die Fliehkraftsperre (Anti-Feathering Lock) am Propeller?",
+          "antworten": [
+            "verhindert Segelstellung beim Abstellen am Boden (niedrige Drehzahl)",
+            "ermöglicht die Segelstellung erst oberhalb einer Fahrt von 100 kt IAS",
+            "verhindert eine Überdrehzahl des Propellers bei schnellem Sinkflug",
+            "verriegelt den Propeller nach dem Abstellen gegen Drehen von Hand"
+          ],
+          "richtig": 0,
+          "erklaerung": "Sonst stünde der Propeller nach jedem Abstellen in Fahne und der Motor ließe sich schwer starten."
+        },
+        {
+          "id": "MEP-026",
+          "frage": "Wofür wird die Kraftstoff-Querspeisung (Crossfeed) hauptsächlich verwendet?",
+          "antworten": [
+            "um bei Start und Landung beide Motoren aus einem Tank zu versorgen",
+            "um im Einmotorenflug Kraftstoff aus dem anderen Tank zu nutzen",
+            "um bei laufenden Motoren Kraftstoff zwischen Tanks hin und her zu pumpen",
+            "um die Motoren bei Vergaservereisung mit warmem Kraftstoff zu versorgen"
+          ],
+          "richtig": 1,
+          "erklaerung": "Crossfeed: Reichweite/Balance im Einmotorenflug, meist nur im Reiseflug und laut AFM; nicht bei Start/Landung."
+        },
+        {
+          "id": "MEP-027",
+          "frage": "Was ist die Accelerate-Stop Distance?",
+          "antworten": [
+            "Strecke bis zum Ausfall bei der Entscheidungsfahrt plus Anhaltestrecke",
+            "Strecke bis zum Abheben mit beiden Motoren und dem Steigen auf 50 ft Höhe",
+            "Strecke bis zum Abheben mit einem Motor und Steigen auf 50 ft",
+            "Strecke zum Anhalten nach einer Landung mit nur einem Motor"
+          ],
+          "richtig": 0,
+          "erklaerung": "Beschleunigen auf die festgelegte Geschwindigkeit, Ausfall, Abbruch und Anhalten."
+        },
+        {
+          "id": "MEP-028",
+          "frage": "Was ist die Accelerate-Go Distance?",
+          "antworten": [
+            "Strecke bis zum Ausfall, dann Abbruch und vollständiges Anhalten",
+            "Strecke bis zum Ausfall, dann mit einem Motor weiter bis 50 ft",
+            "Strecke mit beiden Motoren bis zum Erreichen von VYSE in 50 ft",
+            "Strecke zwischen dem Abheben und dem Einfahren des Fahrwerks"
+          ],
+          "richtig": 1,
+          "erklaerung": "Oft deutlich länger als die verfügbare Piste – Planung entscheidet, ob ein Weiterstart überhaupt möglich ist."
+        },
+        {
+          "id": "MEP-029",
+          "frage": "Was bezeichnet VSSE?",
+          "antworten": [
+            "beste Steiggeschwindigkeit mit nur einem laufenden Triebwerk (blaue Linie)",
+            "Mindestgeschwindigkeit für Steuerbarkeit am Boden beim Startlauf",
+            "Mindestfahrt für einen absichtlichen Triebwerksausfall in der Ausbildung",
+            "höchste Geschwindigkeit für das Ausfahren des Fahrwerks im Flug"
+          ],
+          "richtig": 2,
+          "erklaerung": "Safe single-engine speed: darunter keine absichtlichen Triebwerksabschaltungen/Simulationen."
+        },
+        {
+          "id": "MEP-030",
+          "frage": "Unter welchen Bedingungen wird VMCA bei der Zulassung (CS-23) u. a. ermittelt?",
+          "antworten": [
+            "beide Motoren im Leerlauf, Fahrwerk ausgefahren, Klappen in Landestellung",
+            "kritischer Motor in Fahne, anderer im Leerlauf, Flügel exakt waagerecht gehalten",
+            "beide Motoren mit Startleistung, Schwerpunkt vorne, maximale Startmasse",
+            "kritischer Motor windmühlend, anderer mit Startleistung, max. 5° Querneigung"
+          ],
+          "richtig": 3,
+          "erklaerung": "Weitere Bedingungen: ungünstigster (meist hinterer) Schwerpunkt, Fahrwerk eingefahren, Klappen in Startstellung, außerhalb Bodeneffekt."
+        },
+        {
+          "id": "MEP-031",
+          "frage": "Das Flugzeug giert bei Einmotorenflug trotz vollem Seitenruder weiter zum ausgefallenen Motor. Was tun?",
+          "antworten": [
+            "Leistung am laufenden Motor erhöhen und weiter ziehen",
+            "Querruder voll zum ausgefallenen Motor und Höhe halten",
+            "Leistung am laufenden Motor reduzieren und Nase senken",
+            "Fahrwerk ausfahren, um die Richtungsstabilität zu erhöhen"
+          ],
+          "richtig": 2,
+          "erklaerung": "Kontrollverlust unter VMC: Asymmetrie verringern (Leistung weg) und Fahrt aufholen."
+        },
+        {
+          "id": "MEP-032",
+          "frage": "Warum ist ein Strömungsabriss bei asymmetrischer Leistung besonders gefährlich?",
+          "antworten": [
+            "Er kann rasch in eine Trudelbewegung übergehen",
+            "Der Motor ohne Leistung springt dabei nicht mehr an",
+            "Das Fahrwerk fährt sich dabei selbsttätig aus",
+            "Der Höhenmesser zeigt dabei falsche Werte an"
+          ],
+          "richtig": 0,
+          "erklaerung": "Asymmetrischer Schub + Abriss → Trudeln. Deshalb Übungen nur in sicherer Höhe und oberhalb VSSE."
+        },
+        {
+          "id": "MEP-033",
+          "frage": "Welche Tragfläche hebt man im Einmotorenflug an („raise the dead“)?",
+          "antworten": [
+            "die Tragfläche mit dem laufenden Triebwerk",
+            "keine, die Flügel bleiben streng waagerecht",
+            "die jeweils in Flugrichtung linke Tragfläche",
+            "die Tragfläche mit dem ausgefallenen Triebwerk"
+          ],
+          "richtig": 3,
+          "erklaerung": "Querneigung zum laufenden Motor = Seite des ausgefallenen hoch."
+        },
+        {
+          "id": "MEP-034",
+          "frage": "Wann setzt man beim einmotorigen Anflug in der Regel die volle Landeklappenstellung?",
+          "antworten": [
+            "bereits im Gegenanflug vor dem Queranflug",
+            "erst wenn die Landung sicher gewährleistet ist",
+            "gar nicht, Landung immer ohne Landeklappen",
+            "sofort nach Feststellung des Motorausfalls"
+          ],
+          "richtig": 1,
+          "erklaerung": "Durchstarten mit einem Motor und vollen Klappen ist kaum möglich – Konfiguration spät und laut AFM."
+        },
+        {
+          "id": "MEP-035",
+          "frage": "Wer nimmt den Skill Test für die MEP-Klassenberechtigung ab?",
+          "antworten": [
+            "der Ausbildungsleiter der ATO ohne Prüferberechtigung",
+            "ein Sachverständiger des Fernmeldebüros in Graz",
+            "ein entsprechend berechtigter Prüfer (z. B. CRE oder FE)",
+            "der eigene Fluglehrer, der die Ausbildung gemacht hat"
+          ],
+          "richtig": 2,
+          "erklaerung": "Appendix 9 Part-FCL; Prüfer mit Berechtigung für die Klasse. Der eigene Lehrer darf grundsätzlich nicht prüfen."
+        },
+        {
+          "id": "MEP-036",
+          "frage": "Welchen Vorteil hat ein bestandener MEP-Proficiency-Check für die SEP-Verlängerung nach Erfahrung?",
+          "antworten": [
+            "Er ersetzt die geforderten 12 h Flugzeit vollständig",
+            "Er ersetzt den 1-stündigen Übungsflug mit Lehrer",
+            "Er verlängert die SEP automatisch um 24 Monate",
+            "Er hat keinerlei Auswirkung auf die SEP-Berechtigung"
+          ],
+          "richtig": 1,
+          "erklaerung": "FCL.740.A(b)(1)(ii): Befreiung vom Refresher-Training, wenn ein PC/Skill Test in einer anderen Klasse bestanden wurde."
+        },
+        {
+          "id": "MEP-037",
+          "frage": "Mit welchem Kraftstoff werden DA42 mit Austro- bzw. Thielert-Dieselmotoren betankt?",
+          "antworten": [
+            "AVGAS 100LL",
+            "MOGAS Super 95",
+            "AVGAS UL91",
+            "Jet A-1"
+          ],
+          "richtig": 3,
+          "erklaerung": "Die DA42 (TDI/NG/VI) hat Kolben-Dieselmotoren und fällt dennoch in die Klasse MEP [Musterdaten im AFM prüfen]."
+        },
+        {
+          "id": "MEP-038",
+          "frage": "Bietet das AirTeam Fürstenfeld laut Recherche (Stand 10/2026) eine MEP-Ausbildung an?",
+          "antworten": [
+            "Ja, auf der Bonanza F33A, die als Mehrmot eingetragen ist",
+            "Ja, auf der DA40 mit zweitem Triebwerk im Simulator",
+            "Nein, keine Zweimot in der Flotte; Anbieter z. B. in Graz",
+            "Ja, aber nur in Kombination mit Kunstflug- und Nachtflugberechtigung"
+          ],
+          "richtig": 2,
+          "erklaerung": "airteam.at nennt nur NVFR und Segelflugschlepp als Erweiterungen; MEP z. B. Motorflugunion, Absolute Pilots, AAT (LOWG) [prüfen]."
+        },
+        {
+          "id": "MEP-039",
+          "frage": "In welche Richtungen dreht das Flugzeug bei Ausfall des linken Motors ohne Steuereingabe?",
+          "antworten": [
+            "Gieren nach links, Rollen nach rechts",
+            "Gieren nach rechts, Rollen nach links",
+            "Gieren und Rollen nach rechts",
+            "Gieren und Rollen nach links"
+          ],
+          "richtig": 3,
+          "erklaerung": "Asymmetrischer Schub giert zum toten Motor; der Flügel mit laufendem Motor erzeugt mehr Auftrieb (Propellerstrahl) → Rollen zum toten Motor."
+        },
+        {
+          "id": "MEP-040",
+          "frage": "Was bewirkt die Fahrwerkswarnung typischerweise in einem MEP-Flugzeug?",
+          "antworten": [
+            "Warnton bei voller Leistung und ausgefahrenem Fahrwerk",
+            "automatisches Ausfahren des Fahrwerks unterhalb von 500 ft über Grund",
+            "Warnton bei reduzierter Leistung und eingefahrenem Fahrwerk",
+            "Abschalten des Motors bei eingefahrenem Fahrwerk"
+          ],
+          "richtig": 2,
+          "erklaerung": "Gear-up-Landungen sind eine typische MEP-Gefahr; Checkliste GUMPS/Final Check."
+        },
+        {
+          "id": "MEP-041",
+          "frage": "Was ist die „Zero-Thrust“-Einstellung in der MEP-Ausbildung?",
+          "antworten": [
+            "Leistungseinstellung, die beim Start maximalen Schub liefert",
+            "Propellerstellung, die am Boden Umkehrschub erzeugt",
+            "Gemischstellung, mit der der Motor sicher abgestellt wird",
+            "Leistungseinstellung, die einen gefahnten Propeller simuliert"
+          ],
+          "richtig": 3,
+          "erklaerung": "Statt echter Abschaltung wird mit reduziertem Ladedruck/Leistung ein gefahnter Propeller simuliert (AFM-Wert)."
+        },
+        {
+          "id": "MEP-042",
+          "frage": "Innerhalb welcher Frist muss der MEP-Skill-Test nach FCL.725(c) abgelegt werden?",
+          "antworten": [
+            "innerhalb von 6 Monaten nach Kursbeginn",
+            "innerhalb von 24 Monaten nach Kursbeginn",
+            "innerhalb von 36 Monaten nach der Theorie",
+            "innerhalb von 1 Monat nach Kursende"
+          ],
+          "richtig": 0,
+          "erklaerung": "Skill Test innerhalb von 6 Monaten nach Beginn des Lehrgangs und 6 Monaten vor Antragstellung [Wortlaut prüfen]."
+        }
+      ]
+    },
+    {
+      "nr": 3,
+      "id": "flugfunk-international",
+      "name": "Flugfunk international",
+      "kuerzel": "FFI",
+      "pruefung": {
+        "fragen": 20,
+        "minuten": 30
+      },
+      "fragen": [
+        {
+          "id": "FFI-001",
+          "frage": "Welches österreichische Funkzeugnis genügt mindestens für VFR-Sprechfunk in Englisch, auch im Ausland?",
+          "antworten": [
+            "BFZ – Eingeschränktes Sprechfunkzeugnis für den Binnenflugfunkdienst",
+            "EFZ – Eingeschränktes Sprechfunkzeugnis (beweglicher Flugfunkdienst)",
+            "AFZ – nur das Allgemeine Sprechfunkzeugnis erlaubt Englisch im VFR",
+            "Kein eigenes Zeugnis – das Sprechfunkrecht ist in der PPL enthalten"
+          ],
+          "richtig": 1,
+          "erklaerung": "fb.gv.at: EFZ = Englisch und Deutsch für VFR-Piloten; BFZ nur Deutsch und nur in Österreich; AFZ zusätzlich IFR."
+        },
+        {
+          "id": "FFI-002",
+          "frage": "Wozu berechtigt das BFZ?",
+          "antworten": [
+            "VFR-Sprechfunk auf Deutsch und Englisch in der EU",
+            "VFR- und IFR-Sprechfunk auf Deutsch in Österreich",
+            "Sprechfunk nur an Bodenfunkstellen, nicht im Luftfahrzeug",
+            "VFR-Sprechfunk nur auf Deutsch und nur in Österreich"
+          ],
+          "richtig": 3,
+          "erklaerung": "BFZ = Binnenflugfunk: deutsch, nur innerhalb Österreichs, VFR."
+        },
+        {
+          "id": "FFI-003",
+          "frage": "Wann wird das AFZ statt des EFZ benötigt?",
+          "antworten": [
+            "für Sprechfunk bei Flügen nach Instrumentenflugregeln (IFR)",
+            "für alle VFR-Flüge über die österreichische Staatsgrenze hinaus",
+            "für VFR-Flüge in Luftraum C oberhalb von Flugfläche 195",
+            "für jeden Einflug in eine Kontrollzone mit Flugplanpflicht"
+          ],
+          "richtig": 0,
+          "erklaerung": "AFZ = Allgemeines Sprechfunkzeugnis: VFR und IFR. Wer später eine IR plant, kann gleich das AFZ machen [prüfen]."
+        },
+        {
+          "id": "FFI-004",
+          "frage": "Welche Behörde nimmt in Österreich die Flugfunkprüfung ab?",
+          "antworten": [
+            "das Fernmeldebüro",
+            "die Austro Control",
+            "die Bezirkshauptmannschaft",
+            "die ausbildende ATO"
+          ],
+          "richtig": 0,
+          "erklaerung": "Funkerprüfungskommissionen beim Fernmeldebüro (Funker-Zeugnisgesetz); Prüfungsorte Wien, Graz, Innsbruck."
+        },
+        {
+          "id": "FFI-005",
+          "frage": "Womit beginnt die Funkerprüfung laut Durchführungsverordnung?",
+          "antworten": [
+            "mit dem Multiple-Choice-Test zu Recht",
+            "mit dem praktischen Teil „Fertigkeiten“",
+            "mit einem Englisch-Sprachtest Level 4",
+            "mit einer schriftlichen Übersetzung"
+          ],
+          "richtig": 1,
+          "erklaerung": "Die Prüfung beginnt mit „Fertigkeiten“ (simulierter Funkverkehr); danach Multiple Choice."
+        },
+        {
+          "id": "FFI-006",
+          "frage": "Welcher zusätzliche Prüfungsteil gilt beim EFZ und AFZ gegenüber dem BFZ?",
+          "antworten": [
+            "mündliche Prüfung zu Meteorologie auf Englisch",
+            "Übersetzung eines englischen Textes ins Deutsche",
+            "schriftliche Übersetzung vom Deutschen ins Englische",
+            "ein Morsetest mit den Kennungen von Funkfeuern"
+          ],
+          "richtig": 1,
+          "erklaerung": "fb.gv.at: Bei AFZ/EFZ ist ein englischer Text ins Deutsche zu übersetzen."
+        },
+        {
+          "id": "FFI-007",
+          "frage": "Wann darf man nach einer nicht bestandenen Flugfunkprüfung frühestens wieder antreten?",
+          "antworten": [
+            "bereits am nächsten Werktag, wie bei der Theorie",
+            "nach mindestens 4 Wochen ab dem ursprünglichen Prüfungstag",
+            "erst nach 12 Monaten und einer Nachschulung",
+            "nach der festgesetzten Frist von mindestens 3 Monaten"
+          ],
+          "richtig": 3,
+          "erklaerung": "FZG-DV: Die Kommission bestimmt mind. 3 Monate Wartezeit – daher früh einplanen."
+        },
+        {
+          "id": "FFI-008",
+          "frage": "Ab welchem Alter kann ein Flugfunkzeugnis ausgestellt werden?",
+          "antworten": [
+            "ab vollendetem 14. Lebensjahr",
+            "ab vollendetem 16. Lebensjahr",
+            "ab vollendetem 17. Lebensjahr",
+            "ab vollendetem 18. Lebensjahr"
+          ],
+          "richtig": 1,
+          "erklaerung": "fb.gv.at: Ausstellung ab Vollendung des 16. Lebensjahres."
+        },
+        {
+          "id": "FFI-009",
+          "frage": "Welche Unterlagen gehören zur Anmeldung beim Fernmeldebüro?",
+          "antworten": [
+            "Antrag, 2 Passfotos, Geburtsurkunde (Kopie), Meldezettel",
+            "Antrag, Medical Klasse 2, Flugbuch und Ausbildungsnachweis",
+            "Antrag, Strafregisterauszug, Reisepass und Lizenzkopie",
+            "Antrag, Sprachzertifikat Level 4 und ein Passfoto"
+          ],
+          "richtig": 0,
+          "erklaerung": "Antrag samt Beilagen an die Adresse des gewünschten Prüfungsortes; spätestens 14 Werktage vor dem Termin."
+        },
+        {
+          "id": "FFI-010",
+          "frage": "Welche Gebühren fallen für die Flugfunkprüfung (Vollprüfung) laut fb.gv.at an?",
+          "antworten": [
+            "18 € je Prüfungsfach, insgesamt 3 Fächer zu zahlen",
+            "47,24 € Prüfung, das Zeugnis wird danach kostenlos ausgestellt",
+            "122,74 € Prüfung inkl. Eingabegebühr, 21 € Zeugnisgebühr",
+            "250 € pauschal inklusive Kurs und Wiederholungsprüfung"
+          ],
+          "richtig": 2,
+          "erklaerung": "Prüfungsgebühr 101,74 € + 21 € Eingabegebühr = 122,74 €; Ergänzungsprüfung 100,94 €; Zeugnis 21 € (Stand 10/2026)."
+        },
+        {
+          "id": "FFI-011",
+          "frage": "Wie lange gilt ein Sprachenvermerk Englisch Level 4?",
+          "antworten": [
+            "6 Jahre",
+            "2 Jahre",
+            "unbefristet",
+            "4 Jahre"
+          ],
+          "richtig": 3,
+          "erklaerung": "FCL.055: Level 4 = 4 Jahre, Level 5 = 6 Jahre, Level 6 = unbefristet."
+        },
+        {
+          "id": "FFI-012",
+          "frage": "Welcher Sprachlevel ist unbefristet gültig?",
+          "antworten": [
+            "Level 5 (Extended)",
+            "Level 6 (Expert)",
+            "Level 4 (Operational)",
+            "Level 3 (Pre-operational)"
+          ],
+          "richtig": 1,
+          "erklaerung": "Level 6 hat keine Wiederholungspflicht."
+        },
+        {
+          "id": "FFI-013",
+          "frage": "Wie wird der Sprachenvermerk in Österreich in die Lizenz eingetragen?",
+          "antworten": [
+            "automatisch mit dem Bestehen der EFZ-Prüfung beim zuständigen Fernmeldebüro",
+            "durch Eintrag des Fluglehrers nach einem Funk-Übungsflug",
+            "Zertifikat einer LTB plus Antrag FO_LFA_ACW_096 an Austro Control",
+            "durch Vorlage eines Schulzeugnisses mit Englisch-Matura"
+          ],
+          "richtig": 2,
+          "erklaerung": "Test bei einer LTB (Liste DC_LFA_ACW_010), Antrag an Austro Control; Erst-Einträge nur durch Austro Control."
+        },
+        {
+          "id": "FFI-014",
+          "frage": "Wie lautet der Beginn einer Notmeldung (Distress)?",
+          "antworten": [
+            "MAYDAY MAYDAY MAYDAY",
+            "PAN PAN PAN PAN PAN PAN",
+            "SECURITE SECURITE SECURITE",
+            "EMERGENCY EMERGENCY EMERGENCY"
+          ],
+          "richtig": 0,
+          "erklaerung": "Notfall (unmittelbare Gefahr) = MAYDAY ×3; Dringlichkeit = PAN PAN ×3."
+        },
+        {
+          "id": "FFI-015",
+          "frage": "Was kennzeichnet PAN PAN?",
+          "antworten": [
+            "eine Dringlichkeitsmeldung ohne unmittelbare Gefahr",
+            "eine Notmeldung bei schwerer, unmittelbarer Gefahr",
+            "eine Sicherheitsmeldung über Wetter oder Navigation",
+            "das Ende eines Notverkehrs auf der Frequenz"
+          ],
+          "richtig": 0,
+          "erklaerung": "Urgency: z. B. Orientierungsverlust, kranker Passagier, Kraftstoff knapp, aber noch keine unmittelbare Gefahr."
+        },
+        {
+          "id": "FFI-016",
+          "frage": "Welchen Transpondercode setzt man bei Funkausfall?",
+          "antworten": [
+            "7700",
+            "7600",
+            "7500",
+            "7000"
+          ],
+          "richtig": 1,
+          "erklaerung": "7500 Entführung, 7600 Funkausfall, 7700 Notfall; 7000 VFR-Standard in Österreich."
+        },
+        {
+          "id": "FFI-017",
+          "frage": "Welche Frequenz ist die internationale Notfrequenz der Luftfahrt?",
+          "antworten": [
+            "123,450 MHz",
+            "122,705 MHz",
+            "124,400 MHz",
+            "121,500 MHz"
+          ],
+          "richtig": 3,
+          "erklaerung": "121.5 MHz (Guard). 123.45 ist Air-to-Air in manchen Regionen; 122.705 Fürstenfeld Radio; 124.4 Wien Information Süd."
+        },
+        {
+          "id": "FFI-018",
+          "frage": "Welche Angabe muss zurückgelesen werden?",
+          "antworten": [
+            "QNH",
+            "Bodenwind",
+            "Verkehrsinformation",
+            "Sichtweite"
+          ],
+          "richtig": 0,
+          "erklaerung": "Readback u. a.: Freigaben, Pisten-Anweisungen, Höhenmessereinstellung, Squawk, Höhen, Kurse, Geschwindigkeiten."
+        },
+        {
+          "id": "FFI-019",
+          "frage": "Was bedeutet „WILCO“?",
+          "antworten": [
+            "Ihre Nachricht erhalten, ich melde mich gleich wieder",
+            "Ich kann der Anweisung nicht nachkommen",
+            "Ihre Nachricht verstanden, ich werde sie befolgen",
+            "Bitte wiederholen Sie Ihre ganze Nachricht"
+          ],
+          "richtig": 2,
+          "erklaerung": "WILCO = will comply; „UNABLE“ = kann nicht befolgen."
+        },
+        {
+          "id": "FFI-020",
+          "frage": "Was bedeutet „ROGER“?",
+          "antworten": [
+            "Ja, das ist richtig – ich stimme Ihrer Frage ausdrücklich zu",
+            "Ich habe Ihre letzte Übermittlung vollständig erhalten",
+            "Ich werde Ihre Anweisung befolgen, wie gefordert",
+            "Bitte bestätigen Sie, dass Sie mich gehört haben"
+          ],
+          "richtig": 1,
+          "erklaerung": "ROGER ist keine Antwort auf eine Ja/Nein-Frage und ersetzt kein Readback."
+        },
+        {
+          "id": "FFI-021",
+          "frage": "Welches Wort verwendet man in der ICAO-Phraseologie für „Ja“?",
+          "antworten": [
+            "AFFIRMATIVE",
+            "YES SIR",
+            "CORRECT",
+            "AFFIRM"
+          ],
+          "richtig": 3,
+          "erklaerung": "AFFIRM (gesprochen AY-FIRM); NEGATIVE = nein. „Correct“ nur für „das ist richtig“ nach Readback."
+        },
+        {
+          "id": "FFI-022",
+          "frage": "Was bedeutet „STANDBY“?",
+          "antworten": [
+            "Gehen Sie auf Standby-Frequenz",
+            "Schalten Sie den Transponder aus",
+            "Warten Sie, ich rufe Sie zurück",
+            "Halten Sie vor der Piste an"
+          ],
+          "richtig": 2,
+          "erklaerung": "STANDBY ist weder Zustimmung noch Ablehnung."
+        },
+        {
+          "id": "FFI-023",
+          "frage": "Mit welcher Phrase bittet man um Wiederholung einer Nachricht?",
+          "antworten": [
+            "REPEAT",
+            "PARDON",
+            "AGAIN PLEASE",
+            "SAY AGAIN"
+          ],
+          "richtig": 3,
+          "erklaerung": "„REPEAT“ ist im militärischen Bereich ein Feuerbefehl und wird nicht verwendet."
+        },
+        {
+          "id": "FFI-024",
+          "frage": "Wie spricht man die Frequenz 124,400 MHz aus?",
+          "antworten": [
+            "ONE TWENTY-FOUR POINT FOUR HUNDRED",
+            "ONE TWO FOUR POINT FOUR ZERO ZERO ZERO",
+            "ONE TWO FOUR DECIMAL FOUR",
+            "TWELVE FOUR DECIMAL FOUR"
+          ],
+          "richtig": 2,
+          "erklaerung": "Sind die letzten beiden Ziffern 00, genügen die ersten vier Ziffern; sonst alle sechs (z. B. 122.705)."
+        },
+        {
+          "id": "FFI-025",
+          "frage": "Wie spricht man die Frequenz 122,705 MHz aus?",
+          "antworten": [
+            "ONE TWO TWO DECIMAL SEVEN",
+            "ONE TWENTY-TWO SEVEN OH FIVE",
+            "ONE TWO TWO POINT SEVEN ZERO FIVE ZERO",
+            "ONE TWO TWO DECIMAL SEVEN ZERO FIVE"
+          ],
+          "richtig": 3,
+          "erklaerung": "8,33-kHz-Kanal: alle sechs Ziffern, weil die letzten beiden nicht 00 sind."
+        },
+        {
+          "id": "FFI-026",
+          "frage": "Wie spricht man 2 500 ft Höhe aus?",
+          "antworten": [
+            "TWO FIVE ZERO ZERO FEET",
+            "TWENTY-FIVE HUNDRED FEET",
+            "TWO THOUSAND FIVE HUNDRED FEET",
+            "TWO THOUSAND AND FIVE HUNDRED FEET"
+          ],
+          "richtig": 2,
+          "erklaerung": "Tausender und Hunderter werden als THOUSAND/HUNDRED gesprochen."
+        },
+        {
+          "id": "FFI-027",
+          "frage": "Wie lautet „Steuerkurs 050“ in der Phraseologie?",
+          "antworten": [
+            "HEADING FIFTY",
+            "HEADING FIVE ZERO",
+            "HEADING ZERO FIVE ZERO",
+            "COURSE ZERO FIVE ZERO DEGREES"
+          ],
+          "richtig": 2,
+          "erklaerung": "Kurse immer dreistellig, Ziffer für Ziffer."
+        },
+        {
+          "id": "FFI-028",
+          "frage": "Wie darf das Rufzeichen OE-KRF abgekürzt werden?",
+          "antworten": [
+            "OSCAR ROMEO FOXTROT – erst nachdem die Bodenstelle abgekürzt hat",
+            "KILO ROMEO FOXTROT – sobald man sich auf der Frequenz gemeldet hat",
+            "OSCAR FOXTROT – jederzeit, um die Frequenz zu entlasten",
+            "ROMEO FOXTROT – nur bei Nacht und auf Fluginformationsfrequenzen"
+          ],
+          "richtig": 0,
+          "erklaerung": "Abkürzung: erstes Zeichen + mind. die letzten beiden; nur nach Abkürzung durch ATS."
+        },
+        {
+          "id": "FFI-029",
+          "frage": "Was bedeutet „SQUAWK IDENT“?",
+          "antworten": [
+            "den Code 7000 einstellen und Mode C wählen",
+            "das eigene Rufzeichen dreimal wiederholen",
+            "die Ident-Taste am Transponder kurz drücken",
+            "den Transponder kurz aus- und einschalten"
+          ],
+          "richtig": 2,
+          "erklaerung": "Ident hebt das Ziel auf dem Radarschirm kurz hervor."
+        },
+        {
+          "id": "FFI-030",
+          "frage": "Was bedeutet „HOLD SHORT OF RUNWAY 34C“?",
+          "antworten": [
+            "vor der Piste 34C anhalten, nicht auf sie rollen",
+            "auf die Piste 34C rollen und dort auf die Startfreigabe warten",
+            "die Piste 34C zügig überqueren",
+            "nach der Landung auf 34C kurz anhalten"
+          ],
+          "richtig": 0,
+          "erklaerung": "„LINE UP AND WAIT“ = auf die Piste rollen und warten. Hold-short muss zurückgelesen werden."
+        },
+        {
+          "id": "FFI-031",
+          "frage": "Was ist die korrekte Meldung am Flugplatz mit RADIO-Bodenstelle (z. B. Fürstenfeld Radio) vor dem Start?",
+          "antworten": [
+            "Bitte um Startfreigabe, „request take-off clearance“",
+            "Mitteilung der Absicht, z. B. „departing runway 30“",
+            "Bestätigung der Freigabe, „cleared for take-off“",
+            "Gar keine Meldung, Start nach eigenem Ermessen"
+          ],
+          "richtig": 1,
+          "erklaerung": "RADIO erteilt keine Freigaben; „take-off“ und „cleared“ sind Flugverkehrskontrollstellen vorbehalten."
+        },
+        {
+          "id": "FFI-032",
+          "frage": "In welcher Reihenfolge enthält eine MAYDAY-Meldung typischerweise die Angaben?",
+          "antworten": [
+            "Rufzeichen, Position, MAYDAY×3, Station, Absicht, Art des Notfalls",
+            "MAYDAY×3, Position, Station, Rufzeichen, Treibstoff, Art des Notfalls",
+            "Station, Rufzeichen, Position, Art des Notfalls, MAYDAY×3, Absicht",
+            "Station, MAYDAY×3, Rufzeichen, Art des Notfalls, Absicht, Position"
+          ],
+          "richtig": 3,
+          "erklaerung": "Zusätzlich: Höhe, Kurs, Personen an Bord, Restflugzeit. Wichtigstes zuerst, Rest wenn Zeit bleibt."
+        },
+        {
+          "id": "FFI-033",
+          "frage": "Was sendet man, wenn der eigene Empfänger ausgefallen ist, der Sender aber vermutlich arbeitet?",
+          "antworten": [
+            "STOP TRANSMITTING – Meldung einmal",
+            "RADIO CHECK – Meldung dreimal",
+            "BREAK BREAK – Meldung ohne Rufzeichen",
+            "TRANSMITTING BLIND – Meldung zweimal"
+          ],
+          "richtig": 3,
+          "erklaerung": "Blindsendung auf der zugeteilten Frequenz, Meldung wiederholen; Squawk 7600."
+        },
+        {
+          "id": "FFI-034",
+          "frage": "Wie korrigiert man einen eigenen Fehler während der Übermittlung?",
+          "antworten": [
+            "mit „CORRECTION“ und der richtigen Version",
+            "mit „NEGATIVE“ und erneutem Rufzeichen",
+            "mit „DISREGARD“ und Abbruch der Sendung",
+            "mit „SAY AGAIN“ und Pause"
+          ],
+          "richtig": 0,
+          "erklaerung": "CORRECTION = Fehler gemacht, richtig ist …; DISREGARD = letzte Übermittlung ignorieren."
+        },
+        {
+          "id": "FFI-035",
+          "frage": "Was bedeutet in der Verständlichkeitsskala „READABILITY 5“?",
+          "antworten": [
+            "nicht verständlich",
+            "einwandfrei verständlich",
+            "zeitweise verständlich",
+            "verständlich, aber mit Mühe"
+          ],
+          "richtig": 1,
+          "erklaerung": "1 unverständlich, 2 zeitweise, 3 mit Schwierigkeiten, 4 verständlich, 5 vollkommen verständlich."
+        },
+        {
+          "id": "FFI-036",
+          "frage": "Was bietet Wien Information (FIS) einem VFR-Flug?",
+          "antworten": [
+            "Staffelung zu allen Luftfahrzeugen im Luftraum G",
+            "Freigaben für den Einflug in alle Kontrollzonen Österreichs",
+            "Fluginformations- und Alarmdienst, aber keine Staffelung",
+            "Radarführung mit Hindernisfreiheit im Luftraum E"
+          ],
+          "richtig": 2,
+          "erklaerung": "FIS: Verkehrs- und Wetterinformationen, Alarmdienst; Verantwortung für Abstand bleibt beim Piloten."
+        },
+        {
+          "id": "FFI-037",
+          "frage": "Was gilt seit 15.05.2025 laut LVR 2014 § 21 für VFR-Grenzüberflüge bei Tag in den Lufträumen G und E?",
+          "antworten": [
+            "Weiterhin generelle Flugplanpflicht bei jedem Grenzüberflug in alle Richtungen",
+            "Flugplan ist nur bei Flügen nach Ungarn und Slowenien entbehrlich",
+            "Aus österreichischer Sicht flugplanfrei; Nachbarstaatregeln beachten",
+            "Flugplanfrei, aber nur ohne Transponder und unter 1 000 ft"
+          ],
+          "richtig": 2,
+          "erklaerung": "§ 21 LVR 2014; Einflug nach AT nur mit aktivem Mode-S-Transponder. Nachbarstaaten können FPL verlangen [AIP ENR 1.10 prüfen]."
+        },
+        {
+          "id": "FFI-038",
+          "frage": "Welcher Transpondercode ist in Österreich für VFR ohne andere Zuweisung einzustellen?",
+          "antworten": [
+            "7000",
+            "2000",
+            "0020",
+            "7600"
+          ],
+          "richtig": 0,
+          "erklaerung": "§ 30 Abs. 2 LVR 2014: Code 7000 mit Druckhöhenübermittlung."
+        },
+        {
+          "id": "FFI-039",
+          "frage": "Wie wird ein QNH von 1008 hPa ausgesprochen?",
+          "antworten": [
+            "QNH TEN ZERO EIGHT",
+            "QNH ONE THOUSAND EIGHT",
+            "QNH ONE OH OH EIGHT",
+            "QNH ONE ZERO ZERO EIGHT"
+          ],
+          "richtig": 3,
+          "erklaerung": "Ziffernweise; bei QNH unter 1000 zusätzlich „hectopascal“ empfohlen."
+        },
+        {
+          "id": "FFI-040",
+          "frage": "Wann wird das Wort „TAKE-OFF“ verwendet?",
+          "antworten": [
+            "bei jeder Meldung des Piloten am Rollhalt vor der Piste",
+            "nur bei Startfreigabe oder deren Widerruf durch ATC",
+            "bei Meldungen an RADIO-Stellen vor dem Start",
+            "bei jeder Positionsmeldung im Steigflug"
+          ],
+          "richtig": 1,
+          "erklaerung": "Sonst „DEPARTURE“ bzw. „ready for departure“ – Schutz vor Verwechslung mit einer Freigabe."
+        }
+      ]
+    }
+  ]
+}
