@@ -1,13 +1,19 @@
-// Hörbuch: liest Skripte, Dokumente, Fragenkataloge und das Glossar mit der Sprachausgabe des Geräts vor
-// (Web Speech API, keine Audiodateien). Gesprochen wird Satz für Satz, damit Pausieren, Springen und
-// Hervorheben zuverlässig funktionieren – lange Äußerungen bricht Chrome sonst nach ca. 15 s ab.
+// Hörbuch: liest Skripte, Dokumente, Fragenkataloge und das Glossar vor – standardmäßig mit vorab
+// gerenderten natürlichen Stimmen (src/audio.js, Zeitmarken je Satz), sonst mit der Sprachausgabe des Geräts
+// (Web Speech API). Die Gerätestimme spricht Satz für Satz, damit Pausieren, Springen und Hervorheben
+// zuverlässig funktionieren – lange Äußerungen bricht Chrome sonst nach ca. 15 s ab.
+// Die Segmentierung (Abschnitt „Quellen“ bis „Zustand“) liest auch der Audio-Generator
+// (internal/audio-quellen/segmente.mjs): Änderungen dort ändern die Text-Hashes → Audio neu rendern.
 import { useSyncExternalStore } from 'react';
 import { C, skriptById, fachById, kapitelKey, getState, toggleGelesen } from './store.js';
+import { ladeManifest, hoerbuchClip, getAudio, stopClip } from './audio.js';
 
 export const BLOCK = 'h1,h2,h3,h4,h5,h6,p,li,tr,dt,dd';
 const KEY = 'flugschein-hoerbuch-v1';
 const synth = typeof window !== 'undefined' ? window.speechSynthesis : null;
 export const ttsSupported = !!synth && typeof SpeechSynthesisUtterance !== 'undefined';
+const el = typeof Audio !== 'undefined' ? new Audio() : null;
+export const hoerbar = ttsSupported || !!el;
 export const RATES = [0.8, 0.9, 1, 1.1, 1.25, 1.5, 1.75, 2];
 const CHARS_PER_SEC = 14;
 
@@ -61,6 +67,14 @@ export function getSource(type, id) {
 export const minutenFuer = (zeichen, rate = 1) => Math.max(1, Math.round(zeichen / CHARS_PER_SEC / rate / 60));
 
 // ---------- Text → Sätze ----------
+const NATO_ABC = { A: 'Alfa', B: 'Bravo', C: 'Charlie', D: 'Delta', E: 'Echo', F: 'Foxtrot', G: 'Golf', H: 'Hotel', I: 'India', J: 'Juliett', K: 'Kilo', L: 'Lima', M: 'Mike', N: 'November', O: 'Oscar', P: 'Papa', Q: 'Quebec', R: 'Romeo', S: 'Sierra', T: 'Tango', U: 'Uniform', V: 'Victor', W: 'Whiskey', X: 'X-ray', Y: 'Yankee', Z: 'Zulu' };
+const nato = (s) => [...s].map((c) => NATO_ABC[c] || c).join(' ');
+// Abkürzungen, die Buchstabe für Buchstabe gesprochen werden (sonst liest die Stimme z. B. „LAPL“ als „Lappel“).
+// Als Wort gesprochene Akronyme (SERA, ICAO, EASA, NOTAM, METAR, TAF, ATIS, GAFOR, CAVOK, SIGMET, PAPI …) fehlen bewusst.
+const BUCHSTABIEREN = ('LAPL PPL CPL ATPL SPL BPL AIP AIC NCO EFZ BFZ AFZ KRF FCL ECQB QNH QFE QNE QDM QDR QTE VFR NVFR IFR VMC IMC ' +
+  'CTR TMA TMZ RMZ FIR FIS AIS ARO ATC ATS ACG TWR ATO DTO MSL AMSL AGL TAS IAS CAS WCA PIC UTC MEZ MESZ POH AFM MEP SEP ' +
+  'LOGF LOWG LOWW LOWI LOWS LOWK LOWL LOAN VOR DME NDB ADF VDF VHF UKW GNSS GPS SSR ELT PLB SAR ETA EOBT TEM ARC CRE MTOM MTOW ' +
+  'GND OAT EGT RPM ROC TCU PPR SZR USG AME AMC FAA CAA EU MET MED ENR GEN AD ML LFG SUB ZLLV MW VO ZÜP DVO RIS LVR').split(' ');
 const ABK = [
   [/\bz\.\s?B\./g, 'zum Beispiel'], [/\bd\.\s?h\./g, 'das heißt'], [/\bu\.\s?a\./g, 'unter anderem'], [/\bv\.\s?a\./g, 'vor allem'],
   [/\bo\.\s?Ä\./g, 'oder Ähnliches'], [/\bu\.\s?U\./g, 'unter Umständen'], [/\bi\.\s?d\.\s?R\./g, 'in der Regel'], [/\bs\.\s?o\./g, 'siehe oben'],
@@ -77,6 +91,9 @@ const ABK = [
   [/PPL\(A\)/g, 'PPL A'], [/LAPL\(A\)/g, 'LAPL A'], [/MEP\(land\)/g, 'MEP Land'], [/SEP\(land\)/g, 'SEP Land'],
   [/≥/g, ' mindestens '], [/≤/g, ' höchstens '], [/≈/g, ' etwa '], [/±/g, ' plus minus '], [/×/g, ' mal '], [/[→⇒➜]/g, ', '], [/[←↔]/g, ', '],
   [/\[prüfen[^\]]*\]/gi, ''], [/[*_#|`]/g, ' '], [/\s&\s/g, ' und '],
+  [/\b(OE|HB)-([A-Z]{3})\b/g, (_, p, s) => nato(p + s)], [/\bD-([A-Z]{4})\b/g, (_, s) => nato('D' + s)],
+  [/\bFL\s?(\d{2,3})\b/g, 'Flugfläche $1'], [/\bIMSAFE\b/g, "I'm safe"], [/(KURZ|…)\s+VOR\b/g, '$1 vor'],
+  [new RegExp(`(?<![\\p{L}\\p{N}])(${BUCHSTABIEREN.join('|')})(?![\\p{L}\\p{N}])`, 'gu'), (w) => [...w].join(' ')],
 ];
 export function speakable(text) {
   let t = ' ' + text + ' ';
@@ -136,11 +153,11 @@ const loadStore = () => {
   try { return JSON.parse(localStorage.getItem(KEY)) || {}; } catch { return {}; }
 };
 const saved = loadStore();
-const settings = { rate: 1, voiceURI: '', follow: true, markRead: false, weiter: true, wake: true, ...(saved.settings || {}) };
+const settings = { rate: 1, voiceURI: '', stimme: 'frau', follow: true, markRead: false, weiter: true, wake: true, ...(saved.settings || {}) };
 const positions = saved.positions || {};
 let snap = {
   srcKey: null, src: null, part: 0, seg: 0, segs: [], playing: false, voices: [], settings: { ...settings },
-  sleep: null, sleepUntil: 0, fehler: '', positions: { ...positions },
+  sleep: null, sleepUntil: 0, fehler: '', positions: { ...positions }, modus: null, audioGrund: '',
 };
 const listeners = new Set();
 const emit = (patch = {}) => {
@@ -172,6 +189,7 @@ export function sprich(text, lang = 'de', rate = settings.rate) {
   return new Promise((resolve) => {
     if (!ttsSupported || !text) return resolve(false);
     if (snap.playing) pause();
+    stopClip();
     synth.cancel();
     const clean = lang === 'de' ? speakable(text) : String(text).replace(/\p{Extended_Pictographic}\uFE0F?/gu, ' ').replace(/[*_#|`]/g, ' ');
     const u = new SpeechSynthesisUtterance(clean);
@@ -184,7 +202,8 @@ export function sprich(text, lang = 'de', rate = settings.rate) {
     synth.speak(u);
   });
 }
-export const stille = () => synth?.cancel();
+export const stille = () => { synth?.cancel(); stopClip(); };
+export const getStimme = () => settings.stimme;
 
 if (ttsSupported) {
   const load = () => emit({ voices: synth.getVoices() });
@@ -225,14 +244,103 @@ if (typeof navigator !== 'undefined' && 'mediaSession' in navigator) {
 }
 
 // ---------- Wiedergabe ----------
+// Zwei Wege: natürliche Stimme (ein MP3 je Teil, Segment ↔ Zeitmarke) oder Gerätestimme (Satz für Satz).
 let token = 0;
 let timer = null;
 let fehlerInFolge = 0;
+let clip = null;
+const audioDefekt = new Set();
 const savePos = () => {
   if (!snap.srcKey) return;
   positions[snap.srcKey] = { part: snap.part, seg: snap.seg, t: Date.now() };
   persist();
 };
+
+function clipJetzt() {
+  if (!el || settings.stimme === 'geraet' || !snap.src) return null;
+  const p = snap.src.parts[snap.part];
+  if (audioDefekt.has(`${snap.srcKey}|${p.id}|${settings.stimme}`)) return { grund: 'netz' };
+  return hoerbuchClip(snap.srcKey, p.id, snap.segs, settings.stimme);
+}
+
+function halt() {
+  token++;
+  clearTimeout(timer);
+  synth?.cancel();
+  if (el && !el.paused) el.pause();
+}
+
+function starte() {
+  clearTimeout(timer);
+  if (!snap.playing) return;
+  const c = clipJetzt();
+  if (c?.grund === 'laden') {
+    const my = token;
+    ladeManifest().then(() => { if (my === token && snap.playing) starte(); });
+    return;
+  }
+  if (c?.url) { audioStart(c); return; }
+  clip = null;
+  if (!ttsSupported) {
+    emit({ playing: false, modus: null, audioGrund: c?.grund || '', fehler: 'Für diesen Teil gibt es (noch) keine Aufnahme und dieser Browser hat keine Sprachausgabe.' });
+    return;
+  }
+  emit({ modus: 'geraet', audioGrund: settings.stimme === 'geraet' ? '' : c?.grund || '' });
+  speakNext();
+}
+
+function audioStart(c) {
+  const my = ++token;
+  synth?.cancel();
+  clip = c;
+  if (snap.modus !== 'audio' || snap.audioGrund) emit({ modus: 'audio', audioGrund: '' });
+  const url = c.useAlt ? c.alt : c.url;
+  const pos = (c.t[snap.seg] ?? 0) / 1000;
+  const setPos = () => { try { if (Math.abs(el.currentTime - pos) > 0.25) el.currentTime = pos; } catch { /* noch nicht seekbar */ } };
+  if (el.dataset.src !== url) {
+    el.dataset.src = url;
+    el.src = url;
+    el.addEventListener('loadedmetadata', () => { if (my === token) setPos(); }, { once: true });
+  } else setPos();
+  el.playbackRate = settings.rate;
+  el.play().catch((e) => {
+    if (my !== token) return;
+    if (e?.name === 'NotAllowedError') emit({ playing: false, fehler: 'Der Browser hat die Wiedergabe blockiert – bitte noch einmal auf Abspielen tippen.' });
+  });
+}
+
+if (el) {
+  el.preload = 'auto';
+  el.addEventListener('timeupdate', () => {
+    if (snap.modus !== 'audio' || !clip || !snap.playing) return;
+    if (snap.sleepUntil && Date.now() >= snap.sleepUntil) { pause(); emit({ sleep: null, sleepUntil: 0 }); return; }
+    const ms = el.currentTime * 1000 + 60;
+    let i = snap.seg;
+    while (i + 1 < clip.t.length && clip.t[i + 1] <= ms) i++;
+    while (i > 0 && clip.t[i] > ms) i--;
+    if (i !== snap.seg) { emit({ seg: i }); savePos(); }
+  });
+  el.addEventListener('ended', () => {
+    if (snap.modus !== 'audio' || !snap.playing) return;
+    fehlerInFolge = 0;
+    partEnded();
+  });
+  el.addEventListener('error', () => {
+    if (snap.modus !== 'audio' || !clip || !el.dataset.src) return;
+    if (!clip.useAlt && clip.alt) { el.dataset.src = ''; audioStart({ ...clip, useAlt: true }); return; }
+    audioDefekt.add(`${snap.srcKey}|${snap.src.parts[snap.part].id}|${settings.stimme}`);
+    el.dataset.src = '';
+    clip = null;
+    if (snap.playing) starte();
+  });
+  // Pause von außen (Kopfhörer abgezogen, Anruf, Systemsteuerung) in den Zustand übernehmen
+  el.addEventListener('pause', () => {
+    if (el.ended) return;
+    setTimeout(() => {
+      if (el.paused && snap.playing && snap.modus === 'audio' && !el.ended) { emit({ playing: false }); savePos(); lockScreen(false); mediaSession(); }
+    }, 400);
+  });
+}
 
 function speakNext() {
   clearTimeout(timer);
@@ -301,7 +409,9 @@ function partEnded() {
   savePos();
   if (settings.follow && followFrom) location.hash = next.src.parts[next.part].route;
   mediaSession();
-  timer = setTimeout(speakNext, 600 / settings.rate);
+  // Im Hintergrund (Sperrbildschirm) darf das Audio-Element nur ohne Verzögerung weiterspielen.
+  if (clipJetzt()?.url) starte();
+  else timer = setTimeout(starte, 600 / settings.rate);
 }
 
 function load(src, part, seg) {
@@ -312,24 +422,21 @@ function load(src, part, seg) {
 
 // ---------- Öffentliche Steuerung ----------
 export function play(type, id, part = null, seg = null) {
-  if (!ttsSupported) return;
+  if (!hoerbar) return;
   const src = getSource(type, id);
   if (!src) return;
   const pos = positions[src.key];
   const usePos = part == null && pos;
-  token++;
-  synth.cancel();
+  halt();
   load(src, usePos ? pos.part : part ?? 0, usePos ? pos.seg : seg ?? 0);
   emit({ playing: true });
   savePos();
   lockScreen(true);
   mediaSession();
-  speakNext();
+  starte();
 }
 export function pause() {
-  token++;
-  clearTimeout(timer);
-  synth?.cancel();
+  halt();
   emit({ playing: false });
   savePos();
   lockScreen(false);
@@ -338,27 +445,32 @@ export function pause() {
 export function resume() {
   if (!snap.src) return;
   if (snap.seg >= snap.segs.length) emit({ seg: 0 });
-  token++;
-  synth.cancel();
+  halt();
   emit({ playing: true, fehler: '' });
   lockScreen(true);
   mediaSession();
-  speakNext();
+  starte();
 }
 export const toggle = () => (snap.playing ? pause() : resume());
 export function stop() {
   pause();
-  emit({ srcKey: null, src: null, segs: [], part: 0, seg: 0, sleep: null, sleepUntil: 0 });
+  if (el) { el.removeAttribute('src'); el.dataset.src = ''; try { el.load(); } catch { /* */ } }
+  emit({ srcKey: null, src: null, segs: [], part: 0, seg: 0, sleep: null, sleepUntil: 0, modus: null, audioGrund: '' });
   persist();
 }
 function jump(seg) {
   const was = snap.playing;
-  token++;
-  clearTimeout(timer);
-  synth.cancel();
-  emit({ seg: Math.max(0, Math.min(seg, snap.segs.length - 1)) });
+  const ziel = Math.max(0, Math.min(seg, snap.segs.length - 1));
+  if (was && snap.modus === 'audio' && clip && el.dataset.src) {
+    emit({ seg: ziel });
+    try { el.currentTime = (clip.t[ziel] ?? 0) / 1000; } catch { /* */ }
+    savePos();
+    return;
+  }
+  halt();
+  emit({ seg: ziel });
   savePos();
-  if (was) timer = setTimeout(speakNext, 80);
+  if (was) timer = setTimeout(starte, 80);
 }
 export const skipSentence = (d) => snap.src && jump(snap.seg + d);
 export function skipSection(d) {
@@ -378,9 +490,7 @@ export function skipSection(d) {
 export function goPart(part, block = null) {
   if (!snap.src) return;
   const was = snap.playing;
-  token++;
-  clearTimeout(timer);
-  synth.cancel();
+  halt();
   load(snap.src, part, 0);
   if (block != null) {
     const i = snap.segs.findIndex((s) => s.b === block);
@@ -388,7 +498,7 @@ export function goPart(part, block = null) {
   }
   savePos();
   mediaSession();
-  if (was) timer = setTimeout(speakNext, 80);
+  if (was) { emit({ playing: true }); starte(); }
 }
 export function playFrom(type, id, part, block) {
   const src = getSource(type, id);
@@ -401,7 +511,8 @@ export function setSetting(k, v) {
   settings[k] = v;
   persist();
   emit();
-  if (k === 'rate' || k === 'voiceURI') { if (snap.playing) jump(snap.seg); }
+  if (k === 'rate' && snap.modus === 'audio' && el) { el.playbackRate = v; return; }
+  if (k === 'rate' || k === 'voiceURI' || k === 'stimme') { if (snap.playing) { halt(); timer = setTimeout(starte, 80); } }
   if (k === 'wake') lockScreen(snap.playing && v);
 }
 export function setSleep(mode) {
@@ -424,7 +535,18 @@ export function lastListened() {
 }
 export function restMinuten(t = snap) {
   if (!t.src) return 0;
+  if (t.modus === 'audio' && clip) return Math.max(1, Math.round((clip.ms - (clip.t[t.seg] || 0)) / 60000 / settings.rate));
   const imTeil = t.segs.slice(t.seg).reduce((n, s) => n + s.text.length, 0);
   return minutenFuer(imTeil, settings.rate);
 }
-if (typeof window !== 'undefined') window.addEventListener('pagehide', () => { if (snap.playing) savePos(); });
+// Vorschau für den Player: kommt für den geladenen Teil die natürliche Stimme oder die Gerätestimme?
+export function quelleFuerTeil(t = snap) {
+  if (!t.src) return null;
+  if (t.settings.stimme === 'geraet' || !el) return { modus: 'geraet', grund: '' };
+  const c = hoerbuchClip(t.srcKey, t.src.parts[t.part].id, t.segs, t.settings.stimme);
+  return c.url ? { modus: 'audio', grund: '' } : { modus: 'geraet', grund: c.grund };
+}
+if (typeof window !== 'undefined') {
+  window.addEventListener('pagehide', () => { if (snap.playing) savePos(); });
+  ladeManifest().then(() => emit());
+}

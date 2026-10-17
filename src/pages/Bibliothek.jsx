@@ -1,8 +1,9 @@
-import React, { useRef, useState } from 'react';
-import { PageHead, Icon, Html, Ring } from '../ui.jsx';
+import React, { useEffect, useMemo, useRef, useState } from 'react';
+import { PageHead, Icon, Html, Ring, Bar } from '../ui.jsx';
 import { useAppState, C, fachById, skriptById, skriptProgress, kapitelKey } from '../store.js';
-import { ttsSupported, fragenHtml, getSource, lastListened, play, useTts, minutenFuer } from '../tts.js';
-import { ListenButton, useTtsHighlight } from '../Player.jsx';
+import { hoerbar, fragenHtml, getSource, lastListened, play, useTts, minutenFuer } from '../tts.js';
+import { ListenButton, useTtsHighlight, StimmWahl } from '../Player.jsx';
+import { useAudio, audioPakete, offlineStand, machOffline, entferneOffline, offlineMoeglich } from '../audio.js';
 import { startSession } from './Fragen.jsx';
 
 const DOC_ICON = { 'ppl-ueberblick': '🧭', ausbildungsplan: '🗺️', lernplan: '📅', 'flugschule-fuerstenfeld': '🛫', 'fragen-ueberblick': '❓', 'skripte-ueberblick': '📚', 'zusatzausbildungen-ueberblick': '🌟' };
@@ -69,7 +70,7 @@ function Uebersicht() {
       <PageHead icon="📚" title="Lernunterlagen"
         sub={`Alle Unterlagen zum Lesen und Anhören: ${ppl.length} Fachskripte, ${zusatz.length} Zusatz-Skripte, ${katalogFaecher.length} Fragenkataloge, ${C.dokumente.length} Dokumente und das Glossar – zusammen rund ${Math.round(minutenFuer(gesamtZeichen) / 60)} Stunden Hörbuch.`} />
 
-      {ttsSupported ? (
+      {hoerbar ? (
         <section className="card listen-hero">
           <div className="row gap wrap">
             <span className="lib-icon big"><Icon name="headphones" size={26} /></span>
@@ -77,10 +78,11 @@ function Uebersicht() {
               <h2 className="mt0">Hörbuch</h2>
               <p className="muted small">
                 Jede Unterlage lässt sich vorlesen – im Auto, beim Sport oder vor dem Einschlafen. Der aktuelle Absatz wird im Text markiert,
-                Kapitel laufen automatisch weiter. Tempo, Stimme und Sleep-Timer stellst du im Player unten ein.
+                Kapitel laufen automatisch weiter. Tempo und Sleep-Timer stellst du im Player unten ein.
               </p>
             </div>
           </div>
+          <div className="player-field mt"><span>Stimme</span><StimmWahl /></div>
           <div className="row gap wrap mt">
             {last && (
               <button className="btn primary" onClick={() => play(last.type, last.id)}>
@@ -97,6 +99,8 @@ function Uebersicht() {
       ) : (
         <div className="alert warn">Dieser Browser unterstützt keine Sprachausgabe – die Hörbuch-Funktion ist hier nicht verfügbar. Lesen geht natürlich trotzdem.</div>
       )}
+
+      <OfflineAudio />
 
       <h2 className="section-title">Fachskripte PPL(A) <small className="muted">in empfohlener Lernreihenfolge</small></h2>
       <div className="lib-list">{ppl.map(skriptRow)}</div>
@@ -136,6 +140,70 @@ function Uebersicht() {
           meta={`${C.glossar.length} Fachbegriffe · ${minutenFuer(getSource('glossar', 'alle').zeichen)} min hören`} />
       </div>
     </>
+  );
+}
+
+const mb = (kb) => (kb >= 1024 ? `${(kb / 1024).toFixed(kb >= 10240 ? 0 : 1).replace('.', ',')} MB` : `${kb} KB`);
+
+function OfflineAudio() {
+  const a = useAudio();
+  const t = useTts();
+  const stimme = t.settings.stimme === 'mann' ? 'mann' : 'frau';
+  const pakete = useMemo(() => audioPakete(C, stimme), [a.manifest, stimme]);
+  const [lauf, setLauf] = useState({});
+  const [offen, setOffen] = useState(false);
+  const [platz, setPlatz] = useState(null);
+  useEffect(() => { offlineStand(pakete); }, [pakete]);
+  useEffect(() => { navigator.storage?.estimate?.().then((e) => setPlatz(e)).catch(() => {}); }, [a.offline]);
+  if (a.status !== 'ok' || !pakete.length) return null;
+  const name = a.manifest.stimmen?.[stimme]?.name || stimme;
+  const gespeichert = pakete.filter((p) => (a.offline[p.id] || 0) >= 0.999);
+  const laden = async (p) => {
+    setLauf((l) => ({ ...l, [p.id]: 0.001 }));
+    const fehler = await machOffline(p, (x) => setLauf((l) => ({ ...l, [p.id]: Math.max(0.001, x) })));
+    setLauf((l) => { const n = { ...l }; delete n[p.id]; return n; });
+    if (fehler) alert(`${fehler} Datei(en) konnten nicht geladen werden – bitte bei guter Verbindung erneut versuchen.`);
+  };
+  return (
+    <section className="card offline-audio">
+      <div className="row-between wrap">
+        <div>
+          <h2 className="mt0"><Icon name="download" size={18} /> Offline hören</h2>
+          <p className="muted small">
+            Natürliche Stimme ({name}) für ein Fach aufs Gerät laden – dann läuft das Hörbuch auch im Flugzeug oder ohne Netz.
+            {gespeichert.length ? ` Gespeichert: ${gespeichert.map((p) => p.titel).join(', ')}.` : ' Ohne Speichern wird jedes Kapitel beim Abspielen gestreamt.'}
+            {platz?.usage ? ` Belegt: ${mb(Math.round(platz.usage / 1024))}.` : ''}
+          </p>
+        </div>
+        <button className="btn ghost sm" onClick={() => setOffen(!offen)} aria-expanded={offen}>{offen ? 'Ausblenden' : 'Fächer anzeigen'}</button>
+      </div>
+      {!offlineMoeglich() && <p className="alert warn small">Offline-Speichern geht nur in der Web-Version (https://rroollii.github.io/flugschein/), nicht in der Einzeldatei.</p>}
+      {offen && offlineMoeglich() && (
+        <div className="offline-list">
+          {pakete.map((p) => {
+            const stand = a.offline[p.id] || 0;
+            const l = lauf[p.id];
+            return (
+              <div key={p.id} className="offline-row" style={{ '--c': p.farbe || 'var(--accent)' }}>
+                <span className="lib-icon">{p.icon}</span>
+                <span className="grow">
+                  <strong>{p.titel}</strong>
+                  <small className="muted">{p.info} · {p.minuten} min · ca. {mb(p.kb)}{stand > 0 && stand < 0.999 && !l ? ` · ${Math.round(stand * 100)} % gespeichert` : ''}</small>
+                  {l != null && <Bar value={l} height={4} color={p.farbe} />}
+                </span>
+                {l != null ? <span className="muted small">{Math.round(l * 100)} %</span>
+                  : stand >= 0.999 ? (
+                    <>
+                      <span className="pill ok">✓ offline</span>
+                      <button className="btn ghost sm" onClick={() => entferneOffline(p)} title="Vom Gerät löschen"><Icon name="trash" size={14} /></button>
+                    </>
+                  ) : <button className="btn ghost sm" onClick={() => laden(p)}><Icon name="download" size={14} /> Offline verfügbar machen</button>}
+              </div>
+            );
+          })}
+        </div>
+      )}
+    </section>
   );
 }
 

@@ -40,9 +40,11 @@ jobs:
             git fetch --depth 1 origin audio
             git worktree add ../audio-src FETCH_HEAD
             rm -rf _site/audio
-            if [ -d ../audio-src/audio ]; then cp -a ../audio-src/audio _site/audio; else mkdir -p _site/audio && (cd ../audio-src && tar --exclude=.git -cf - .) | tar -xf - -C _site/audio; fi
-            rm -f _site/audio/.git
-            du -sh _site/audio
+            # Pfade im Manifest ("datei": "audio/<stimme>/…") sind relativ zur Seitenwurzel → audio/ + manifest.json nach _site/audio/
+            cp -a ../audio-src/audio _site/audio
+            cp ../audio-src/manifest.json _site/audio/manifest.json
+            rm -f _site/audio/index.json _site/audio/.git
+            du -sh _site/audio; ls _site/audio
           else
             echo "Kein Branch audio – nur Gerätestimme."
           fi

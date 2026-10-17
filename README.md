@@ -60,9 +60,18 @@ Listenpunkte werden abhakbar (Punkt/Handlung getrennt bei Punktlinien `....` ode
 Token mit nur `gist`-Scope, nur lokal gespeichert (`flugschein-sync-v1`). Zusammenführen pro Eintrag über Zeitstempel (`state.ts`, von `update()` gepflegt),
 Fragen/Karten nach Anzahl Wiederholungen, Flugbuch per ID mit Löschmarken. Alternative: Link/QR-Code mit komprimiertem Fortschritt (`#/sync?d=…`).
 
-**Audio (natürliche Stimmen)**: Der Workflow übernimmt den Inhalt des Branches `audio` (falls vorhanden) nach `_site/audio/` – ein Push auf `audio` löst
-ebenfalls einen Deploy aus. Der Service Worker cacht Audio nicht vorab (nur `audio/manifest.json` network-first; Clips aus Cache `flugschein-audio`, sonst Netz).
-`src/audio.js` ist vorbereitet; Player-Stimmwahl Frau/Mann und „offline verfügbar machen“ folgen mit dem Manifest-Schema.
+**Audio (natürliche Stimmen)**: MP3s + `manifest.json` aus dem Branch `audio` (Generator: `internal/audio-quellen/`, Schema dort in `manifest-schema.md`).
+- Auslieferung: Der Workflow kopiert `audio/` und `manifest.json` des Branches nach `_site/audio/` (GitHub Pages, gleiche Herkunft, CDN; ein Push auf `audio`
+  löst ebenfalls einen Deploy aus). Ist `./audio/manifest.json` nicht erreichbar (z. B. Einzeldatei per `file://`), nutzt `src/audio.js` `raw.githubusercontent.com`;
+  auch einzelne Dateien fallen bei Fehlern dorthin zurück.
+- Player (`src/tts.js`): Stimmwahl Frau/Mann (Standard Frau) oder Gerätestimme. Pro Teil wird die Aufnahme nur genutzt, wenn Segmentzahl `n` und Text-Hash
+  zur aktuellen Segmentierung passen – sonst liest die Gerätestimme (Hinweis im Player). Mitlesen/Springen über die Zeitmarken `t[i]`.
+- **Aussprache (`ABK`, `BUCHSTABIEREN`, NATO-Kennzeichen in `src/tts.js`) und Segmentierung ändern die Hashes** → danach
+  `bash internal/audio-quellen/neu-generieren.sh --push` (inkrementell), sonst Gerätestimme für die betroffenen Teile.
+- Funktraining: Pilot = gewählte Stimme, Gegenstelle = andere Stimme (Hash über den Original-Text). Englische Funk-Dialoge in Codeblöcken der Skripte:
+  Knopf „Dialog anhören“ mit Zeilen-Hervorhebung.
+- Offline: „Lernunterlagen → Offline hören“ legt je Fach (Skript + Fragenkatalog + Dialoge), „Dokumente & Glossar“ oder „Funktraining“ die MP3s in den Cache
+  `flugschein-audio`. Der Service Worker lädt Audio nie vorab, liefert gespeicherte Dateien als Range-Antwort (206, nötig für Safari) und streamt den Rest.
 
 ## Hosting (GitHub Pages: https://rroollii.github.io/flugschein/)
 

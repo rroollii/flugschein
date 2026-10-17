@@ -1,8 +1,9 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { PageHead, Icon, Html, Bar } from '../ui.jsx';
 import { useAppState, C, update } from '../store.js';
-import { ttsSupported, sprich, stille } from '../tts.js';
-import { playClip, hasClip } from '../audio.js';
+import { ttsSupported, sprich, stille, getStimme, getTts, pause } from '../tts.js';
+import { playClip, funkClip, ladeManifest, andereStimme, useAudio } from '../audio.js';
+import { StimmWahl } from '../Player.jsx';
 
 const SR = typeof window !== 'undefined' ? window.SpeechRecognition || window.webkitSpeechRecognition : null;
 const KEY = 'flugschein-funk-einstellungen';
@@ -37,6 +38,7 @@ const themaName = (t) => THEMA[t] || t;
 
 export default function Funk({ route }) {
   const s = useAppState();
+  const audio = useAudio();
   const echte = C.funk?.szenarien || [];
   const list = echte.length ? echte : DEMO;
   const [f, setF] = useState({ sprache: '', niveau: '', thema: '' });
@@ -50,7 +52,7 @@ export default function Funk({ route }) {
     <>
       <PageHead icon="📻" title="Funktraining" sub="Sprechfunk üben: Die Gegenstelle spricht, du antwortest laut – danach siehst und hörst du die Musterlösung. Auf Wunsch hört die App mit und vergleicht grob." />
       {!echte.length && <div className="alert info">Die Funk-Szenarien werden gerade erstellt und erscheinen nach dem nächsten Update automatisch. Bis dahin kannst du den Ablauf mit einem Beispiel ausprobieren.</div>}
-      {!ttsSupported && <div className="alert warn">Dieser Browser hat keine Sprachausgabe – die Funksprüche werden nur als Text angezeigt.</div>}
+      {!ttsSupported && audio.status === 'fehlt' && <div className="alert warn">Dieser Browser hat keine Sprachausgabe – die Funksprüche werden nur als Text angezeigt.</div>}
       {C.funk?.hinweis && <div className="alert warn small">⚠️ {C.funk.hinweis}</div>}
       {C.funk?.intro && <section className="card"><Html html={C.funk.intro} /></section>}
       {echte.length > 0 && (
@@ -100,7 +102,17 @@ function Uebung({ sz }) {
   const say = async (st) => {
     if (st.aktion) return false;
     const idx = sz.schritte.indexOf(st);
-    if (await hasClip('funk', sz.id, idx)) return playClip('funk', sz.id, idx);
+    const stimme = getStimme();
+    if (stimme !== 'geraet') {
+      await ladeManifest();
+      const c = funkClip(sz.id, idx, st.text, st.pilot ? stimme : andereStimme(stimme));
+      if (c) {
+        if (getTts().playing) pause();
+        stille();
+        const ok = await playClip(c);
+        if (ok !== false || !alive.current) return ok;
+      }
+    }
     return sprich(st.text.replace(/\((?:aktion|action)\b[^)]*\)/gi, ' '), st.sprache || sz.sprache, 0.95);
   };
   const go = async (n) => {
@@ -190,6 +202,9 @@ function Uebung({ sz }) {
           <h3 className="mt0">Einstellungen</h3>
           <div className="player-field"><span>Bedenkzeit für deine Antwort</span>
             <div className="seg">{[[5, '5 s'], [10, '10 s'], [15, '15 s'], [25, '25 s'], [0, 'bis ich tippe']].map(([v, l]) => <button key={v} className={cfg.pause === v ? 'active' : ''} onClick={() => setC('pause', v)}>{l}</button>)}</div>
+          </div>
+          <div className="player-field"><span>Stimme (du als Pilot – die Gegenstelle spricht mit der anderen Stimme)</span>
+            <StimmWahl />
           </div>
           <div className="player-opts">
             <label><input type="checkbox" checked={cfg.vorlesen} onChange={(e) => setC('vorlesen', e.target.checked)} /> Musterlösung vorlesen</label>

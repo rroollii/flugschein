@@ -1,6 +1,6 @@
 import React, { useRef, useState } from 'react';
 import { PageHead, Ring, Icon, Html, navigate, Bar, Collapse } from '../ui.jsx';
-import { ListenButton, useTtsHighlight } from '../Player.jsx';
+import { ListenButton, useTtsHighlight, useFunkDialoge } from '../Player.jsx';
 import { useAppState, C, skriptById, fachById, skriptProgress, kapitelKey, toggleGelesen, allSkriptProgress } from '../store.js';
 import { startSession } from './Fragen.jsx';
 
@@ -60,6 +60,7 @@ export function Reader({ skript, kapId, abschnitt, base }) {
   const read = key && s.gelesen[key];
   const textRef = useRef(null);
   useTtsHighlight(textRef, 'skript', skript.id, k ? idx : -1);
+  useFunkDialoge(textRef, `skript:${skript.id}`, k?.id);
 
   const markAndNext = () => {
     if (!read) toggleGelesen(key);

@@ -5,7 +5,7 @@ import {
   toggleCheck, streak, dueCards, today, skriptById, kapitelKey, fachById, weekDates, daysBetween,
 } from '../store.js';
 import { startSession } from './Fragen.jsx';
-import { ttsSupported, lastListened, play, useTts } from '../tts.js';
+import { hoerbar, lastListened, play, useTts } from '../tts.js';
 
 const TIPPS = [
   'Verständnis vor Auswendiglernen – rund die Hälfte der Prüfungsfragen kennst du vorher nicht.',
@@ -41,8 +41,8 @@ export default function Dashboard() {
   const next = nextChapter(s, woche?.faecher);
   const st = streak(s);
   useTts();
-  const gehoert = ttsSupported ? lastListened() : null;
-  const [neuZu, setNeuZu] = useState(() => localStorage.getItem('flugschein-neu-v2') === 'zu');
+  const gehoert = hoerbar ? lastListened() : null;
+  const [neuZu, setNeuZu] = useState(() => localStorage.getItem('flugschein-neu-v3') === 'zu');
   const hoeren = () => (gehoert ? play(gehoert.type, gehoert.id) : next ? play('skript', next.skript.id, next.skript.kapitel.indexOf(next.kapitel), 0) : navigate('/bibliothek'));
   const heute = s.aktivitaet[today()] || 0;
   const tipp = TIPPS[new Date().getDate() % TIPPS.length];
@@ -67,7 +67,7 @@ export default function Dashboard() {
             <span><Icon name="target" size={16} /> {heute} Aktionen heute</span>
             {wk > 0 && <span><Icon name="calendar" size={16} /> Lernwoche {wk}</span>}
           </div>
-          {ttsSupported && (
+          {hoerbar && (
             <button className="hero-listen" onClick={hoeren}>
               <Icon name="headphones" size={18} /> {gehoert ? 'Weiterhören' : 'Skripte anhören'}
               <small>{gehoert ? gehoert.src.parts[gehoert.pos.part]?.titel : 'als Hörbuch vorlesen lassen'}</small>
@@ -81,11 +81,11 @@ export default function Dashboard() {
 
       {!neuZu && (
         <section className="card neu-box">
-          <div className="row-between"><h2 className="mt0">✨ Neu in deiner Lernplattform</h2><button className="icon-btn sm" aria-label="Ausblenden" onClick={() => { localStorage.setItem('flugschein-neu-v2', 'zu'); setNeuZu(true); }}><Icon name="x" size={16} /></button></div>
+          <div className="row-between"><h2 className="mt0">✨ Neu in deiner Lernplattform</h2><button className="icon-btn sm" aria-label="Ausblenden" onClick={() => { localStorage.setItem('flugschein-neu-v3', 'zu'); setNeuZu(true); }}><Icon name="x" size={16} /></button></div>
           <div className="neu-grid">
-            <a href="#/bibliothek"><span>🎧</span><strong>Hörbuch</strong><small>Alle Skripte vorlesen lassen – „Anhören“ in jedem Kapitel</small></a>
+            <a href="#/bibliothek"><span>🎧</span><strong>Hörbuch mit natürlichen Stimmen</strong><small>Frau oder Mann, Text läuft mit – „Anhören“ in jedem Kapitel, auch offline</small></a>
             <a href="#/lernkarten"><span>🃏</span><strong>Lernkarten</strong><small>{C.karten.length} Karten aus Skripten & Glossar, Anki-Export</small></a>
-            <a href="#/funk"><span>📻</span><strong>Funktraining</strong><small>{C.funk?.szenarien?.length || 'Beispiel-'} Szenarien mit Sprachausgabe</small></a>
+            <a href="#/funk"><span>📻</span><strong>Funktraining</strong><small>{C.funk?.szenarien?.length || 'Beispiel-'} Szenarien mit echten Stimmen</small></a>
             <a href="#/checklisten"><span>✅</span><strong>Checklisten</strong><small>{C.checklisten?.length || 0} Checklisten zum Abhaken & Drucken</small></a>
             <a href="#/sync"><span>🔄</span><strong>Geräte-Sync</strong><small>Handy ↔ PC abgleichen</small></a>
           </div>
@@ -134,7 +134,7 @@ export default function Dashboard() {
                 <span><strong>Weiterlesen: {next.skript.titel.replace(/\s*\(.*\)$/, '')}</strong><small>{next.kapitel.titel}</small></span>
               </button>
             )}
-            {ttsSupported && (gehoert || next) && (
+            {hoerbar && (gehoert || next) && (
               <button className="action" onClick={() => (gehoert ? play(gehoert.type, gehoert.id) : play('skript', next.skript.id, next.skript.kapitel.indexOf(next.kapitel), 0))}>
                 <span className="action-icon blue"><Icon name="headphones" /></span>
                 <span>
