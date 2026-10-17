@@ -1,27 +1,13 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { PageHead, Icon } from '../ui.jsx';
 import { useAppState, update, setState, getState, emptyState, normalize, SCHEMA, C, today } from '../store.js';
+import { merge } from '../sync.js';
 
 let installEvt = null;
 window.addEventListener('beforeinstallprompt', (e) => {
   e.preventDefault();
   installEvt = e;
 });
-
-function merge(a, b) {
-  const out = structuredClone(a);
-  for (const k of ['checks', 'gelesen', 'gemerkt', 'fristen']) out[k] = { ...a[k], ...b[k] };
-  for (const [id, r] of Object.entries(b.fragen || {})) {
-    const x = a.fragen[id];
-    out.fragen[id] = !x || (r.last || '') >= (x.last || '') ? r : x;
-  }
-  for (const [d, n] of Object.entries(b.aktivitaet || {})) out.aktivitaet[d] = Math.max(a.aktivitaet[d] || 0, n);
-  const ids = new Set(a.logbuch.map((f) => f.id));
-  out.logbuch = [...a.logbuch, ...(b.logbuch || []).filter((f) => !ids.has(f.id))];
-  const ex = new Set(a.pruefungen.map((p) => p.datum));
-  out.pruefungen = [...a.pruefungen, ...(b.pruefungen || []).filter((p) => !ex.has(p.datum))].sort((x, y) => x.datum.localeCompare(y.datum));
-  return out;
-}
 
 export default function Daten() {
   const s = useAppState();
@@ -64,7 +50,7 @@ export default function Daten() {
   const [importMode, setImportMode] = useState('merge');
   const counts = [
     ['Abgehakte Punkte', Object.keys(s.checks).length], ['Gelesene Kapitel', Object.keys(s.gelesen).length],
-    ['Bearbeitete Fragen', Object.keys(s.fragen).length], ['Flüge', s.logbuch.length], ['Prüfungen', s.pruefungen.length],
+    ['Bearbeitete Fragen', Object.keys(s.fragen).length], ['Lernkarten', Object.keys(s.karten).length], ['Flüge', s.logbuch.length], ['Prüfungen', s.pruefungen.length],
   ];
 
   return (
@@ -97,6 +83,7 @@ export default function Daten() {
           <div className="row gap wrap mt">
             <button className="btn primary" onClick={exportJson}><Icon name="download" size={16} /> Als JSON exportieren</button>
           </div>
+          <div className="alert info small mt"><Icon name="repeat" size={14} /> Zwischen Handy und PC automatisch abgleichen: <a href="#/sync">Geräte-Sync einrichten</a></div>
           <h3>Importieren</h3>
           <div className="seg">
             <button className={importMode === 'merge' ? 'active' : ''} onClick={() => setImportMode('merge')}>Zusammenführen</button>

@@ -50,6 +50,10 @@ function routeFor(href, baseDir) {
   m = norm.match(/^fragen\/\d+-(.+)\.md$/);
   if (m) return `#/bibliothek/fragen/${m[1]}`;
   if (/^fragen/.test(norm) || /^pruefungssimulator/.test(norm)) return '#/fragen';
+  if (/^checklisten\/(index\.md)?$/.test(norm)) return '#/checklisten';
+  m = norm.match(/^checklisten\/(.+)\.md$/);
+  if (m) return `#/checklisten/${m[1]}`;
+  if (/^funkuebungen\//.test(norm)) return '#/funk';
   if (/^ausbildungsplan\.md$/.test(norm)) return '#/ausbildung';
   if (/^lernplan\.md$/.test(norm)) return '#/lernplan';
   m = norm.match(/^([^/]+)\.md$/);
@@ -177,7 +181,66 @@ function parseSkript(dir, file, idPrefix, fachPool, bereich) {
   }
   if (best && !best.skriptId) best.skriptId = id;
   else if (!best && bereich === 'ppl') warn('Skript ohne Fachzuordnung:', file);
+  const base = bereich === 'zusatz' ? 'zusatz' : 'skripte';
+  chapters.forEach((c, i) => {
+    const kap = kapitel[i];
+    kartenAus(c.tokens, kap.titel, mk, (k) => addKarte({ ...k, fachId: best?.id || null, deck: best?.id || id, quelle: `#/${base}/${id}/${kap.id}`, kapitel: kap.titel }));
+  });
   return { id, titel, fachId: best?.id || null, bereich, intro: render(intro), kapitel };
+}
+
+// ---------- Lernkarten aus Skripten (Tabellen, Merksätze, Definitionen) ----------
+const karten = [];
+const kartenSeen = new Set();
+const escHtml = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+const noTex = (s) => s.replace(/\\\(|\\\)/g, '').replace(/\\_/g, '_');
+function addKarte(k) {
+  const key = hash(k.front + '|' + k.sub + '|' + stripTags(k.back));
+  if (kartenSeen.has(key) || !k.front || stripTags(k.back).length < 2) return;
+  kartenSeen.add(key);
+  karten.push({ id: 'k-' + key, ...k });
+}
+const MERK = /merk|eselsbr|faustregel|prüfungsfalle|wichtig|achtung|grenzwert|regel|praxistipp|tipp/i;
+function kartenAus(tokens, ctx0, mk, push) {
+  const plain = (s) => stripTags(mk.parseInline(noTex(s)));
+  const inline = (s) => mk.parseInline(noTex(s));
+  let ctx = stripTags(mk.parseInline(noTex(ctx0)));
+  const kap = ctx;
+  const merk = (raw) => {
+    const m = raw.trim().match(/^\*\*([^*]{2,70}?)\*\*\s*:?\s*([\s\S]{8,})$/);
+    if (!m || !MERK.test(m[1])) return false;
+    const label = plain(m[1]).replace(/:\s*$/, '');
+    push({ typ: 'merksatz', front: `${label}: ${ctx}`, sub: ctx === kap ? '' : kap, back: postHtml(mk.parse(noTex(m[2].trim()))) });
+    return true;
+  };
+  for (const t of tokens) {
+    if (t.type === 'heading') { ctx = plain(t.text); continue; }
+    if (t.type === 'table') {
+      const head = t.header.map((h) => plain(h.text));
+      if (head.length < 2 || head.length > 5) continue;
+      const keep = head.map((h, i) => i > 0 && !/^(quelle|fundstelle|referenz|rechtsgrundlage)/i.test(h));
+      for (const row of t.rows) {
+        const front = plain(row[0].text);
+        if (!front || front.length > 90 || /^(summe|gesamt)\b/i.test(front)) continue;
+        const parts = row.map((c, i) => (keep[i] && c.text.trim() && c.text.trim() !== '–' ? { k: head[i], v: c.text } : null)).filter(Boolean);
+        if (!parts.length) continue;
+        const back = parts.length === 1 ? inline(parts[0].v) : `<ul>${parts.map((p) => `<li><strong>${escHtml(p.k)}:</strong> ${inline(p.v)}</li>`).join('')}</ul>`;
+        push({ typ: 'tabelle', front, sub: `${ctx} · ${head[0]}`, back });
+      }
+      continue;
+    }
+    if (t.type === 'blockquote') { merk(t.text); continue; }
+    if (t.type === 'paragraph') { merk(t.text); continue; }
+    if (t.type === 'list') {
+      for (const it of t.items) {
+        const first = it.text.split('\n')[0];
+        const m = first.match(/^\*\*([^*]{2,70}?)\*\*\s*(?::|–|—|-|=)\s*(.{12,})$/);
+        if (m && !/^\d+\.?$/.test(m[1])) push({ typ: 'definition', front: plain(m[1]).replace(/:\s*$/, ''), sub: ctx, back: inline(m[2]) });
+        else if (!merk(first)) { /* kein Kartenmuster */ }
+        for (const sub of it.tokens || []) if (sub.type === 'list') kartenAus([sub], ctx, mk, push);
+      }
+    }
+  }
 }
 const skripte = skriptFiles.map((file) => parseSkript('skripte', file, '', faecher, 'ppl'));
 // Reihenfolge der Skripte wie die Fächer
@@ -417,6 +480,121 @@ if (fs.existsSync(zAbs)) {
   if (zDoc) dokumente.push(zDoc);
 }
 
+for (const g of glossar) addKarte({ typ: 'glossar', front: g.begriff, sub: 'Glossar', back: g.html, fachId: null, deck: 'glossar', quelle: '#/glossar' });
+
+// ---------- Funktraining (optional: docs/funkuebungen/szenarien.json) ----------
+// Tolerant gegenüber Feldnamen (de/en), damit kleine Schema-Abweichungen den Build nicht brechen.
+const pick = (o, ...keys) => { for (const k of keys) if (o && o[k] != null && o[k] !== '') return o[k]; return undefined; };
+const lang2 = (v, d = 'de') => (String(v || d).toLowerCase().match(/^(de|en)/) || [, d])[1];
+const PILOT = /pilot|^du$|^ich$|you|student|schüler|lfz|luftfahrzeug|aircraft|flugzeug|^own/i;
+function funkSchritt(st, sprache) {
+  if (typeof st === 'string') { const m = st.match(/^\s*([^:]{2,30}):\s*(.+)$/); st = m ? { rolle: m[1], text: m[2] } : { rolle: 'atc', text: st }; }
+  const both = pick(st, 'atc', 'ATC') && pick(st, 'pilot', 'Pilot');
+  if (both) return [...funkSchritt({ ...st, pilot: undefined, Pilot: undefined, rolle: 'atc', text: pick(st, 'atc', 'ATC') }, sprache), ...funkSchritt({ ...st, atc: undefined, ATC: undefined, rolle: 'pilot', text: pick(st, 'pilot', 'Pilot') }, sprache)];
+  const rolle = String(pick(st, 'rolle', 'role', 'sprecher', 'speaker', 'von', 'from', 'wer') || (pick(st, 'pilot', 'erwartet', 'musterloesung', 'musterlösung', 'expected') ? 'pilot' : 'atc'));
+  const text = pick(st, 'text', 'funkspruch', 'satz', 'message', 'msg', 'atc', 'pilot', 'musterloesung', 'musterlösung', 'erwartet', 'expected', 'loesung', 'lösung');
+  if (!text) return [];
+  const aktion = /^\s*\((?:aktion|action)\b[^)]*\)\s*$/i.test(String(text));
+  return [{
+    pilot: PILOT.test(rolle), aktion, station: String(pick(st, 'station', 'stelle', 'callsign', 'rufzeichen') || rolle),
+    text: String(text), hinweis: pick(st, 'hinweis', 'aufgabe', 'prompt', 'instruction', 'tipp', 'situation') || '',
+    erklaerung: pick(st, 'erklaerung', 'erklärung', 'explanation', 'kommentar') || '',
+    sprache: lang2(pick(st, 'sprache', 'language', 'lang'), sprache),
+    varianten: [].concat(pick(st, 'varianten', 'alternativen', 'alternatives') || []).map(String),
+  }];
+}
+const funk = { intro: '', szenarien: [], quelle: null };
+const funkRaw = read('funkuebungen/szenarien.json');
+if (funkRaw) {
+  try {
+    const j = JSON.parse(funkRaw);
+    const list = Array.isArray(j) ? j : pick(j, 'szenarien', 'scenarios', 'uebungen', 'übungen', 'exercises') || [];
+    funk.quelle = 'funkuebungen/szenarien.json';
+    funk.hinweis = (!Array.isArray(j) && pick(j, 'hinweis', 'intro', 'beschreibung', 'note')) || '';
+    const rz = !Array.isArray(j) && j.rufzeichen;
+    funk.rufzeichen = rz ? (typeof rz === 'string' ? { kennzeichen: rz } : rz) : null;
+    list.forEach((s, i) => {
+      const sprache = lang2(pick(s, 'sprache', 'language', 'lang'));
+      const schritte = [].concat(pick(s, 'schritte', 'steps', 'dialog', 'ablauf', 'funkverkehr', 'exchanges', 'sequence') || []).flatMap((st) => funkSchritt(st, sprache));
+      if (!schritte.length) { warn('Funk-Szenario ohne Schritte übersprungen:', pick(s, 'titel', 'title', 'id') || i); return; }
+      const titel = String(pick(s, 'titel', 'title', 'name') || `Szenario ${i + 1}`);
+      funk.szenarien.push({
+        id: String(pick(s, 'id') || slug(titel)), titel, sprache,
+        kategorie: String(pick(s, 'kategorie', 'category', 'phase', 'thema', 'typ') || ''),
+        niveau: String(pick(s, 'schwierigkeit', 'niveau', 'level', 'difficulty') || ''),
+        flugplatz: String(pick(s, 'flugplatz', 'aerodrome', 'airport', 'ort') || ''),
+        rufzeichen: String(pick(s, 'rufzeichen', 'callsign', 'kennzeichen') || funk.rufzeichen?.kennzeichen || ''),
+        themen: [].concat(pick(s, 'themen', 'tags', 'topics') || []).map(String),
+        frequenzen: [].concat(pick(s, 'frequenzen', 'frequencies') || []).map((f) => (typeof f === 'string' ? { name: f } : { name: String(pick(f, 'name', 'station') || ''), mhz: String(pick(f, 'mhz', 'frequenz', 'frequency') || ''), uebungswert: !!pick(f, 'uebungswert', 'übungswert', 'fictional') })),
+        beschreibung: mdInline(String(pick(s, 'beschreibung', 'situation', 'description', 'kontext', 'context', 'lage') || '')),
+        hinweise: [].concat(pick(s, 'hinweise', 'tipps', 'notes', 'merke') || []).map((h) => mdInline(String(h))),
+        schritte,
+      });
+    });
+  } catch (e) {
+    warn('funkuebungen/szenarien.json nicht lesbar:', e.message);
+  }
+}
+const funkIntro = read('funkuebungen/index.md');
+if (funkIntro) funk.intro = mdToHtml(funkIntro.replace(/^# .*\n/, ''), 'funkuebungen');
+
+// ---------- Checklisten (optional: docs/checklisten/*.md) ----------
+const CL = 'checklisten';
+const checklisten = [];
+if (fs.existsSync(path.join(CONTENT_DIR, CL))) {
+  const clIndex = read(`${CL}/index.md`) || '';
+  const files = fs.readdirSync(path.join(CONTENT_DIR, CL)).filter((f) => f.endsWith('.md') && !/^(index|readme)\.md$/i.test(f)).sort();
+  if (clIndex) files.sort((a, b) => ((clIndex.indexOf(a) + 1) || 1e9) - ((clIndex.indexOf(b) + 1) || 1e9));
+  for (const file of files) {
+    const fid = file.replace(/\.md$/, '');
+    const md = read(`${CL}/${file}`);
+    const mkc = makeMarked(CL);
+    let titel = fid;
+    const abschnitte = [];
+    let sec = null;
+    let textBuf = [];
+    const flush = () => {
+      const d = textBuf.join('\n').trim();
+      textBuf = [];
+      if (d) cur().bloecke.push({ typ: 'text', html: mdToHtml(d, CL) });
+    };
+    const cur = () => sec || (sec = (abschnitte.push({ id: 'start', titel: '', bloecke: [] }), abschnitte[abschnitte.length - 1]));
+    const item = (text, sub, aktion = '') => {
+      const s = cur();
+      s.bloecke.push({ typ: 'item', id: `cl:${fid}:${hash((s.titel || '') + '|' + text + '|' + aktion)}`, html: mkc.parseInline(text), aktion: aktion ? mkc.parseInline(aktion) : '', sub });
+    };
+    let inCode = false;
+    md.split('\n').forEach((raw) => {
+      if (/^```/.test(raw.trim())) { inCode = !inCode; textBuf.push(raw); return; }
+      if (inCode) { textBuf.push(raw); return; }
+      const h1 = raw.match(/^# (.*)$/);
+      if (h1) { titel = cleanTitle(h1[1].trim()); return; }
+      const h = raw.match(/^(#{2,4}) (.*)$/);
+      if (h) { flush(); sec = { id: slug(h[2]), titel: stripTags(mkc.parseInline(h[2].trim())), ebene: h[1].length, bloecke: [] }; abschnitte.push(sec); return; }
+      const li = raw.match(/^(\s*)(?:[-*+]|\d+[.)])\s+(?:\[[ xX]\]\s+)?(.+)$/);
+      if (li) {
+        flush();
+        const t = li[2].trim();
+        const dots = t.match(/^(.+?)\s*(?:\.{4,}|…{2,}|\t)\s*(.+)$/);
+        if (dots && dots[2].length <= 60) item(dots[1], li[1].length >= 2, dots[2]);
+        else item(t, li[1].length >= 2);
+        return;
+      }
+      if (raw.trim() === '---') return;
+      textBuf.push(raw);
+    });
+    flush();
+    const items = abschnitte.flatMap((a) => a.bloecke.filter((b) => b.typ === 'item'));
+    if (!items.length) { warn('Checkliste ohne Punkte:', file); continue; }
+    checklisten.push({
+      id: fid, titel, anzahl: items.length, abschnitte: abschnitte.filter((a) => a.bloecke.length || a.titel),
+      notfall: /notfall|emergency|notverfahren|feuer|ausfall/i.test(titel + ' ' + fid),
+    });
+  }
+  if (clIndex) checklisten.intro = mdToHtml(clIndex.replace(/^# .*\n/, ''), CL);
+}
+const checklistenIntro = checklisten.intro || '';
+
 // ---------- Ausgabe ----------
 const ueberblickMd = read('ppl-ueberblick.md') || '';
 const land = /Österreich|Austro Control/i.test(apMd + ueberblickMd) ? 'Österreich' : /Deutschland/.test(apMd + ueberblickMd) ? 'Deutschland' : '';
@@ -429,7 +607,7 @@ const content = {
   faecher, fragen, skripte, skriptIndex, empfohleneReihenfolge,
   ausbildung: { phasen, minima, fristen, intro: apSections[0]?.descHtml || '', checklisten: apSections.filter((s) => !phasen.includes(s) && s.items.length) },
   lernplan: { ziel: lpZiel ? mdInline(lpZiel) : '', wochen, checklisten: lpChecklisten, planTitel: planSection?.titel || 'Wochenplan', planIntro: planSection?.descHtml || '' },
-  dokumente, glossar, zusatz,
+  dokumente, glossar, zusatz, karten, funk, checklisten, checklistenIntro,
 };
 fs.mkdirSync(path.dirname(OUT), { recursive: true });
 fs.writeFileSync(OUT, JSON.stringify(content));
@@ -438,4 +616,5 @@ console.log(`  ${faecher.length} Fächer · ${fragen.length} Fragen · ${skripte
 console.log(`  ${phasen.length} Ausbildungsphasen (${phasen.reduce((n, p) => n + p.items.length, 0)} Punkte) · ${wochen.length} Lernwochen · ${fristen.length} Fristen · ${glossar.length} Glossarbegriffe · ${dokumente.length} Dokumente`);
 console.log(`  Mindestwerte: ${JSON.stringify({ ...minima, text: undefined })}${land ? ' · Land: ' + land : ''}`);
 console.log(`  Zusatzausbildungen: ${zusatz.module.map((m) => `${m.id} (${m.kapitel} Kap., ${m.fragen} Fragen, ${m.checklisten.reduce((n, c) => n + c.anzahl, 0)} Checkpunkte)`).join(' · ') || 'keine'}`);
+console.log(`  ${karten.length} Lernkarten · ${funk.szenarien.length} Funk-Szenarien · ${checklisten.length} Checklisten (${checklisten.reduce((n, c) => n + c.anzahl, 0)} Punkte)`);
 console.log(`  ${(fs.statSync(OUT).size / 1024).toFixed(0)} KB → ${path.relative(root, OUT)}`);

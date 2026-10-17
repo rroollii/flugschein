@@ -15,6 +15,10 @@ import Daten from './pages/Daten.jsx';
 import Zusatz from './pages/Zusatz.jsx';
 import Bibliothek from './pages/Bibliothek.jsx';
 import Player from './Player.jsx';
+import Lernkarten from './pages/Lernkarten.jsx';
+import Funk from './pages/Funk.jsx';
+import Checklisten from './pages/Checklisten.jsx';
+import Sync from './pages/Sync.jsx';
 
 const NAV = [
   { id: '', label: 'Übersicht', icon: 'home' },
@@ -24,10 +28,14 @@ const NAV = [
   { id: 'skripte', label: 'Skripte', icon: 'book' },
   { id: 'fragen', label: 'Übungsfragen', icon: 'quiz' },
   { id: 'karteikasten', label: 'Karteikasten', icon: 'cards' },
+  { id: 'lernkarten', label: 'Lernkarten', icon: 'flip' },
+  { id: 'funk', label: 'Funktraining', icon: 'radio' },
+  { id: 'checklisten', label: 'Checklisten', icon: 'log' },
   { id: 'zusatz', label: 'Zusatzausbildungen', icon: 'star' },
   { id: 'statistik', label: 'Statistik', icon: 'chart' },
   { id: 'glossar', label: 'Glossar', icon: 'glossary' },
   { id: 'dokumente', label: 'Dokumente', icon: 'doc' },
+  { id: 'sync', label: 'Geräte-Sync', icon: 'repeat' },
   { id: 'daten', label: 'Daten & Einstellungen', icon: 'settings' },
 ];
 const MOBILE = ['', 'bibliothek', 'ausbildung', 'fragen'];
@@ -37,6 +45,7 @@ const KURZ = { 'Übungsfragen': 'Fragen', Lernunterlagen: 'Lernen' };
 const PAGES = {
   '': Dashboard, ausbildung: Ausbildung, lernplan: Lernplan, skripte: Skripte, fragen: Fragen, karteikasten: Karteikasten,
   statistik: Statistik, suche: Suche, glossar: Glossar, dokumente: Dokumente, daten: Daten, zusatz: Zusatz, bibliothek: Bibliothek,
+  lernkarten: Lernkarten, funk: Funk, checklisten: Checklisten, sync: Sync,
 };
 
 function useTheme(theme) {

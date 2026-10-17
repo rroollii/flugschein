@@ -33,6 +33,8 @@ export const emptyState = () => ({
   gemerkt: {},
   pruefungen: [],
   aktivitaet: {},
+  karten: {},
+  ts: {},
 });
 
 function load() {
@@ -48,7 +50,7 @@ function load() {
 export function normalize(s) {
   const e = emptyState();
   const out = { ...e, ...s, settings: { ...e.settings, ...(s.settings || {}) } };
-  for (const k of ['checks', 'gelesen', 'fristen', 'fragen', 'gemerkt', 'aktivitaet']) if (typeof out[k] !== 'object' || Array.isArray(out[k]) || !out[k]) out[k] = {};
+  for (const k of ['checks', 'gelesen', 'fristen', 'fragen', 'gemerkt', 'aktivitaet', 'karten', 'ts']) if (typeof out[k] !== 'object' || Array.isArray(out[k]) || !out[k]) out[k] = {};
   for (const k of ['logbuch', 'pruefungen']) if (!Array.isArray(out[k])) out[k] = [];
   return out;
 }
@@ -73,12 +75,32 @@ export function setState(next) {
   persist();
   listeners.forEach((l) => l());
 }
+// Änderungszeitpunkte je Eintrag (auch Löschungen) – Grundlage für das Zusammenführen beim Geräte-Sync.
+export const TRACKED = ['checks', 'gelesen', 'gemerkt', 'fristen'];
+function stamp(prev, next) {
+  const now = Date.now();
+  for (const b of TRACKED) {
+    const a = prev[b] || {}, z = next[b] || {};
+    for (const k of new Set([...Object.keys(a), ...Object.keys(z)])) {
+      if (JSON.stringify(a[k]) !== JSON.stringify(z[k])) next.ts[`${b}|${k}`] = now;
+    }
+  }
+  const ids = new Set(next.logbuch.map((f) => f.id));
+  for (const f of prev.logbuch) if (!ids.has(f.id)) next.ts[`logbuch|${f.id}`] = now;
+  const pm = new Map(prev.logbuch.map((f) => [f.id, JSON.stringify(f)]));
+  for (const f of next.logbuch) if (pm.get(f.id) !== JSON.stringify(f)) next.ts[`logbuch|${f.id}`] = now;
+  if (JSON.stringify(prev.settings) !== JSON.stringify(next.settings)) next.ts.settings = now;
+}
+const changeListeners = new Set();
+export const onChange = (f) => (changeListeners.add(f), () => changeListeners.delete(f));
 export function update(fn) {
   const next = structuredClone(state);
   fn(next);
+  stamp(state, next);
   state = next;
   persist();
   listeners.forEach((l) => l());
+  changeListeners.forEach((l) => l());
 }
 const subscribe = (l) => {
   listeners.add(l);
@@ -133,6 +155,20 @@ export function applyAnswer(s, qid, ok) {
   q.due = addDays(t, LEITNER[q.box]);
   s.fragen[qid] = q;
   bump(s);
+}
+export function recordKarte(id, ok) {
+  update((s) => {
+    const t = today();
+    const k = s.karten[id] || { n: 0, ok: 0, box: 0 };
+    k.n += 1;
+    if (ok) k.ok += 1;
+    k.last = t;
+    k.lastOk = !!ok;
+    k.box = ok ? Math.min(5, (k.box || 0) + 1) : 1;
+    k.due = addDays(t, LEITNER[k.box]);
+    s.karten[id] = k;
+    bump(s);
+  });
 }
 export function recordExam(result) {
   update((s) => {
@@ -254,4 +290,23 @@ export function dueCards(s, fachIds = null, newLimit = null) {
   const lim = newLimit ?? s.settings.neueKartenProTag ?? 15;
   const newToday = Object.values(s.fragen).filter((r) => r.n === 1 && r.last === t).length;
   return { due, neu, neuHeute: neu.slice(0, Math.max(0, lim - newToday)) };
+}
+
+// ---------- Lernkarten ----------
+export const karteById = Object.fromEntries((content.karten || []).map((k) => [k.id, k]));
+export const kartenDecks = () => {
+  const decks = [];
+  for (const f of content.faecher) if ((content.karten || []).some((k) => k.deck === f.id)) decks.push({ id: f.id, name: f.name, icon: f.icon, farbe: f.farbe, zusatz: !!f.zusatz });
+  for (const sk of content.skripte) if (!sk.fachId && content.karten.some((k) => k.deck === sk.id)) decks.push({ id: sk.id, name: sk.titel, icon: '📘', farbe: '#6c5ce7' });
+  if ((content.karten || []).some((k) => k.deck === 'glossar')) decks.push({ id: 'glossar', name: 'Glossar', icon: '📖', farbe: '#00a3a3' });
+  return decks;
+};
+export function kartenStatus(s, deckIds, neuLimit = 20) {
+  const t = today();
+  const pool = (content.karten || []).filter((k) => deckIds.includes(k.deck));
+  const due = pool.filter((k) => s.karten[k.id] && s.karten[k.id].due <= t);
+  const neu = pool.filter((k) => !s.karten[k.id]);
+  const sicher = pool.filter((k) => (s.karten[k.id]?.box || 0) >= 3).length;
+  const neuHeute = Object.entries(s.karten).filter(([id, r]) => r.n === 1 && r.last === t && deckIds.includes(karteById[id]?.deck)).length;
+  return { pool, due, neu, sicher, neuHeute: neu.slice(0, Math.max(0, neuLimit - neuHeute)) };
 }

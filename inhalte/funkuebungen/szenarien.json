@@ -1,0 +1,1555 @@
+{
+  "version": 1,
+  "stand": "2026-10-17",
+  "hinweis": "Lernmaterial für die EFZ-/BFZ-Vorbereitung. Echte Frequenzen: Fürstenfeld Radio 122,705 MHz, Wien Information 124,400 MHz [prüfen] und die internationale Notfrequenz 121,500 MHz. Alle anderen Frequenzen, Squawks, QNH-Werte und Meldepunkte außerhalb von LOGF sind Übungswerte – im Flug gelten AIP, NOTAM und ATC.",
+  "rufzeichen": {
+    "kennzeichen": "OE-CBF",
+    "gesprochen": "Oscar Echo Charlie Bravo Foxtrot",
+    "muster": "DA20"
+  },
+  "szenarien": [
+    {
+      "id": "logf-abflug-platzrunde",
+      "titel": "Fürstenfeld: Rollen und Abflug in die Platzrunde",
+      "sprache": "de",
+      "schwierigkeit": "leicht",
+      "themen": [
+        "fuerstenfeld",
+        "abflug",
+        "platzrunde"
+      ],
+      "frequenzen": [
+        {
+          "name": "Fürstenfeld Radio",
+          "mhz": "122,705",
+          "uebungswert": false
+        }
+      ],
+      "situation": "Du sitzt in der DA20 OE-CBF am Abstellplatz in Fürstenfeld (LOGF) und möchtest Platzrunden fliegen. Frequenz Fürstenfeld Radio 122,705 MHz. Radio erteilt keine Freigaben, nur Informationen.",
+      "schritte": [
+        {
+          "rolle": "pilot",
+          "text": "Fürstenfeld Radio, Oscar Echo Charlie Bravo Foxtrot, DA zwanzig, am Abstellplatz, zwei Personen an Bord, zum Rollen für Platzrunden.",
+          "hinweis": "Erstanruf: Station, Rufzeichen, Muster, Position, Personen an Bord, Absicht."
+        },
+        {
+          "rolle": "atc",
+          "text": "Oscar Echo Charlie Bravo Foxtrot, Fürstenfeld Radio, Piste in Benutzung drei null, Wind drei zwo null Grad, acht Knoten, QNH eins null eins acht, kein gemeldeter Verkehr."
+        },
+        {
+          "rolle": "pilot",
+          "text": "Rolle zum Rollhalt Piste drei null, QNH eins null eins acht, Oscar Echo Charlie Bravo Foxtrot.",
+          "hinweis": "Piste und QNH zurücklesen. Keine Rollfreigabe – Radio gibt nur Informationen."
+        },
+        {
+          "rolle": "pilot",
+          "text": "Oscar Echo Charlie Bravo Foxtrot, Rollhalt Piste drei null, abflugbereit für Platzrunden.",
+          "hinweis": "Nach dem Motorcheck melden."
+        },
+        {
+          "rolle": "atc",
+          "text": "Oscar Echo Charlie Bravo Foxtrot, Wind drei eins null Grad, sieben Knoten, kein Verkehr in der Platzrunde."
+        },
+        {
+          "rolle": "pilot",
+          "text": "Rolle auf Piste drei null und starte, Oscar Echo Charlie Bravo Foxtrot.",
+          "hinweis": "Du entscheidest selbst über den Start. Bei RWY 30 Rechtsplatzrunde nördlich des Platzes [prüfen: Sichtanflugkarte]."
+        }
+      ]
+    },
+    {
+      "id": "logf-ankunft-therme",
+      "titel": "Fürstenfeld: Anflug über Therme Blumau",
+      "sprache": "de",
+      "schwierigkeit": "leicht",
+      "themen": [
+        "fuerstenfeld",
+        "ankunft",
+        "meldepunkte"
+      ],
+      "frequenzen": [
+        {
+          "name": "Fürstenfeld Radio",
+          "mhz": "122,705",
+          "uebungswert": false
+        }
+      ],
+      "situation": "Rückflug von einem Überlandflug. Du näherst dich dem Pflichtmeldepunkt THERME BLUMAU in 2 500 ft und rufst Fürstenfeld Radio.",
+      "schritte": [
+        {
+          "rolle": "pilot",
+          "text": "Fürstenfeld Radio, Oscar Echo Charlie Bravo Foxtrot, DA zwanzig, Therme Blumau, zwo tausend fünfhundert Fuß, zur Landung.",
+          "hinweis": "Meldepunkt und Höhe nennen."
+        },
+        {
+          "rolle": "atc",
+          "text": "Oscar Echo Charlie Bravo Foxtrot, Fürstenfeld Radio, Piste in Benutzung zwo eins … Korrektur, Piste in Benutzung eins zwo, Wind eins zwo null Grad, fünf Knoten, QNH eins null eins fünf, eine Cessna in der Platzrunde.",
+          "hinweis": "Achtung: Radio korrigiert sich selbst – nur die korrigierte Piste zurücklesen."
+        },
+        {
+          "rolle": "pilot",
+          "text": "Piste eins zwo, QNH eins null eins fünf, halte Ausschau nach Cessna, Oscar Echo Charlie Bravo Foxtrot."
+        },
+        {
+          "rolle": "pilot",
+          "text": "Oscar Echo Charlie Bravo Foxtrot, Gegenanflug Piste eins zwo.",
+          "hinweis": "RWY 12: Linksplatzrunde nördlich, 1 000 ft AGL (ca. 1 830 ft MSL) [prüfen]."
+        },
+        {
+          "rolle": "atc",
+          "text": "Oscar Echo Charlie Bravo Foxtrot, die Cessna ist im Endanflug."
+        },
+        {
+          "rolle": "pilot",
+          "text": "Cessna in Sicht, Oscar Echo Charlie Bravo Foxtrot."
+        },
+        {
+          "rolle": "pilot",
+          "text": "Oscar Echo Charlie Bravo Foxtrot, Endanflug Piste eins zwo.",
+          "hinweis": "Keine Landefreigabe – du landest in eigener Verantwortung."
+        },
+        {
+          "rolle": "pilot",
+          "text": "Oscar Echo Charlie Bravo Foxtrot, Piste eins zwo frei.",
+          "hinweis": "Nach dem Abrollen melden."
+        }
+      ]
+    },
+    {
+      "id": "logf-abflug-ueberland",
+      "titel": "Fürstenfeld: Abflug über Autobahnknoten nach Graz",
+      "sprache": "de",
+      "schwierigkeit": "mittel",
+      "themen": [
+        "fuerstenfeld",
+        "abflug",
+        "meldepunkte",
+        "fis"
+      ],
+      "frequenzen": [
+        {
+          "name": "Fürstenfeld Radio",
+          "mhz": "122,705",
+          "uebungswert": false
+        },
+        {
+          "name": "Wien Information (Sektor Süd)",
+          "mhz": "124,400",
+          "uebungswert": false
+        }
+      ],
+      "situation": "Überlandflug von Fürstenfeld nach Graz. Abflug über den Pflichtmeldepunkt AUTOBAHNKNOTEN, danach Wechsel zu Wien Information 124,400 MHz.",
+      "schritte": [
+        {
+          "rolle": "pilot",
+          "text": "Fürstenfeld Radio, Oscar Echo Charlie Bravo Foxtrot, DA zwanzig, Rollhalt Piste drei null, abflugbereit, Abflug über Autobahnknoten nach Graz."
+        },
+        {
+          "rolle": "atc",
+          "text": "Oscar Echo Charlie Bravo Foxtrot, Wind zwo neun null Grad, zehn Knoten, QNH eins null eins drei, ein Segelflugzeug im Schlepp nordwestlich des Platzes."
+        },
+        {
+          "rolle": "pilot",
+          "text": "QNH eins null eins drei, halte Ausschau nach Segelflugzeug im Schlepp, Oscar Echo Charlie Bravo Foxtrot."
+        },
+        {
+          "rolle": "pilot",
+          "text": "Oscar Echo Charlie Bravo Foxtrot, Autobahnknoten, zwo tausend fünfhundert Fuß, verlasse die Frequenz zu Wien Information.",
+          "hinweis": "Pflichtmeldepunkt melden, Frequenzwechsel ankündigen."
+        },
+        {
+          "rolle": "atc",
+          "text": "Oscar Echo Charlie Bravo Foxtrot, Fürstenfeld Radio, guten Flug, auf Wiederhören."
+        },
+        {
+          "rolle": "pilot",
+          "text": "Auf Wiederhören, Oscar Echo Charlie Bravo Foxtrot."
+        }
+      ]
+    },
+    {
+      "id": "logf-arrival-english",
+      "titel": "Fürstenfeld Radio: arrival via Golfplatz (English)",
+      "sprache": "en",
+      "schwierigkeit": "mittel",
+      "themen": [
+        "fuerstenfeld",
+        "ankunft",
+        "englisch"
+      ],
+      "frequenzen": [
+        {
+          "name": "Fürstenfeld Radio",
+          "mhz": "122,705",
+          "uebungswert": false
+        }
+      ],
+      "situation": "You are flying OE-CBF back to Fürstenfeld and practise the phraseology in English. You approach the mandatory reporting point GOLFPLATZ (GZ) at 2 500 ft.",
+      "schritte": [
+        {
+          "rolle": "pilot",
+          "text": "Fürstenfeld Radio, Oscar Echo Charlie Bravo Foxtrot, DA twenty, Golfplatz, two thousand five hundred feet, for landing.",
+          "hinweis": "Reporting points keep their German names."
+        },
+        {
+          "rolle": "atc",
+          "text": "Oscar Echo Charlie Bravo Foxtrot, Fürstenfeld Radio, runway in use three zero, wind three one zero degrees, one zero knots, QNH one zero zero niner, parachute dropping in progress north of the field."
+        },
+        {
+          "rolle": "pilot",
+          "text": "Runway three zero, QNH one zero zero niner, looking out for parachute activity, Oscar Echo Charlie Bravo Foxtrot.",
+          "hinweis": "Parachute operations: avoid the drop zone (C182 D-EEGW)."
+        },
+        {
+          "rolle": "pilot",
+          "text": "Oscar Echo Charlie Bravo Foxtrot, downwind runway three zero."
+        },
+        {
+          "rolle": "atc",
+          "text": "Oscar Echo Charlie Bravo Foxtrot, roger, report final."
+        },
+        {
+          "rolle": "pilot",
+          "text": "Wilco, Oscar Echo Charlie Bravo Foxtrot."
+        },
+        {
+          "rolle": "pilot",
+          "text": "Oscar Echo Charlie Bravo Foxtrot, final runway three zero."
+        },
+        {
+          "rolle": "atc",
+          "text": "Oscar Echo Charlie Bravo Foxtrot, wind three zero zero degrees, eight knots."
+        }
+      ]
+    },
+    {
+      "id": "logf-blindmeldungen",
+      "titel": "Fürstenfeld ohne Flugplatzbetriebsleiter: Blindmeldungen",
+      "sprache": "de",
+      "schwierigkeit": "mittel",
+      "themen": [
+        "fuerstenfeld",
+        "platzrunde",
+        "blindmeldung"
+      ],
+      "frequenzen": [
+        {
+          "name": "Fürstenfeld Radio",
+          "mhz": "122,705",
+          "uebungswert": false
+        }
+      ],
+      "situation": "Außerhalb der Öffnungszeit (PPR erteilt) ist kein Flugplatzbetriebsleiter besetzt. Du gibst Blindmeldungen an den Verkehr auf 122,705 MHz. Die vorgelesenen Meldungen stammen von einem anderen Piloten. Bezeichnung „Fürstenfeld Verkehr“ [prüfen mit der Flugschule].",
+      "schritte": [
+        {
+          "rolle": "pilot",
+          "text": "Fürstenfeld Verkehr, Oscar Echo Charlie Bravo Foxtrot, DA zwanzig, Rollhalt Piste eins zwo, rolle auf und starte für Platzrunden, Fürstenfeld Verkehr.",
+          "hinweis": "Blindmeldung: Adressat am Anfang und am Ende nennen."
+        },
+        {
+          "rolle": "atc",
+          "text": "Fürstenfeld Verkehr, Oscar Echo Delta Tango Tango, Cessna eins sieben zwo, Jobst, zwo tausend fünfhundert Fuß, zur Landung Piste eins zwo, Fürstenfeld Verkehr.",
+          "hinweis": "Anderer Pilot (C172) meldet sich – Position merken."
+        },
+        {
+          "rolle": "pilot",
+          "text": "Fürstenfeld Verkehr, Oscar Echo Charlie Bravo Foxtrot, Gegenanflug Piste eins zwo, Cessna in Sicht, Fürstenfeld Verkehr."
+        },
+        {
+          "rolle": "atc",
+          "text": "Fürstenfeld Verkehr, Oscar Echo Delta Tango Tango, Queranflug Piste eins zwo, Fürstenfeld Verkehr."
+        },
+        {
+          "rolle": "pilot",
+          "text": "Fürstenfeld Verkehr, Oscar Echo Charlie Bravo Foxtrot, verlängere Gegenanflug, folge der Cessna, Fürstenfeld Verkehr.",
+          "hinweis": "Staffelung selbst herstellen."
+        },
+        {
+          "rolle": "pilot",
+          "text": "Fürstenfeld Verkehr, Oscar Echo Charlie Bravo Foxtrot, Endanflug Piste eins zwo, Fürstenfeld Verkehr."
+        }
+      ]
+    },
+    {
+      "id": "wien-info-erstkontakt",
+      "titel": "Wien Information: Erstkontakt und FIS",
+      "sprache": "de",
+      "schwierigkeit": "leicht",
+      "themen": [
+        "fis",
+        "transponder"
+      ],
+      "frequenzen": [
+        {
+          "name": "Wien Information (Sektor Süd)",
+          "mhz": "124,400",
+          "uebungswert": false
+        }
+      ],
+      "situation": "Nach dem Abflug aus Fürstenfeld rufst du Wien Information (Sektor Süd, 124,400 MHz) für Fluginformationsdienst auf dem Weg nach Kapfenberg.",
+      "schritte": [
+        {
+          "rolle": "pilot",
+          "text": "Wien Information, Oscar Echo Charlie Bravo Foxtrot.",
+          "hinweis": "Kurzer Erstanruf, warten bis die Station antwortet."
+        },
+        {
+          "rolle": "atc",
+          "text": "Oscar Echo Charlie Bravo Foxtrot, Wien Information."
+        },
+        {
+          "rolle": "pilot",
+          "text": "Oscar Echo Charlie Bravo Foxtrot, DA zwanzig, VFR von Fürstenfeld nach Kapfenberg, zehn Meilen nordwestlich Fürstenfeld, drei tausend fünfhundert Fuß, erbitte Fluginformationsdienst.",
+          "hinweis": "Muster, Flugregeln, Abflug/Ziel, Position, Höhe, Anliegen."
+        },
+        {
+          "rolle": "atc",
+          "text": "Oscar Echo Charlie Bravo Foxtrot, Transponder vier sechs zwo eins."
+        },
+        {
+          "rolle": "pilot",
+          "text": "Transponder vier sechs zwo eins, Oscar Echo Charlie Bravo Foxtrot."
+        },
+        {
+          "rolle": "atc",
+          "text": "Oscar Echo Charlie Bravo Foxtrot, im Radar identifiziert, drei tausend fünfhundert Fuß, QNH eins null eins sechs, Fluginformationsdienst."
+        },
+        {
+          "rolle": "pilot",
+          "text": "QNH eins null eins sechs, Oscar Echo Charlie Bravo Foxtrot."
+        }
+      ]
+    },
+    {
+      "id": "vienna-info-initial",
+      "titel": "Vienna Information: initial contact (English)",
+      "sprache": "en",
+      "schwierigkeit": "leicht",
+      "themen": [
+        "fis",
+        "englisch",
+        "transponder"
+      ],
+      "frequenzen": [
+        {
+          "name": "Vienna Information",
+          "mhz": "124,400",
+          "uebungswert": false
+        }
+      ],
+      "situation": "Departing Fürstenfeld towards Wiener Neustadt Ost (LOAN). Call Vienna Information on 124.400 for flight information service.",
+      "schritte": [
+        {
+          "rolle": "pilot",
+          "text": "Vienna Information, Oscar Echo Charlie Bravo Foxtrot."
+        },
+        {
+          "rolle": "atc",
+          "text": "Oscar Echo Charlie Bravo Foxtrot, Vienna Information, go ahead."
+        },
+        {
+          "rolle": "pilot",
+          "text": "Oscar Echo Charlie Bravo Foxtrot, DA twenty, VFR from Fürstenfeld to Wiener Neustadt Ost, five miles north of Fürstenfeld, three thousand feet, request flight information service."
+        },
+        {
+          "rolle": "atc",
+          "text": "Oscar Echo Charlie Bravo Foxtrot, squawk four six three two."
+        },
+        {
+          "rolle": "pilot",
+          "text": "Squawk four six three two, Oscar Echo Charlie Bravo Foxtrot."
+        },
+        {
+          "rolle": "atc",
+          "text": "Oscar Echo Charlie Bravo Foxtrot, radar identified, QNH one zero one four, flight information service, report Pinkafeld."
+        },
+        {
+          "rolle": "pilot",
+          "text": "QNH one zero one four, wilco, Oscar Echo Charlie Bravo Foxtrot.",
+          "hinweis": "'Wilco' = will comply; reporting instruction acknowledged."
+        }
+      ]
+    },
+    {
+      "id": "wien-info-flugplan-eroeffnen",
+      "titel": "Wien Information: Flugplan eröffnen",
+      "sprache": "de",
+      "schwierigkeit": "mittel",
+      "themen": [
+        "fis",
+        "flugplan"
+      ],
+      "frequenzen": [
+        {
+          "name": "Wien Information (Sektor Süd)",
+          "mhz": "124,400",
+          "uebungswert": false
+        }
+      ],
+      "situation": "Du hast für einen Flug von Fürstenfeld nach Maribor einen VFR-Flugplan aufgegeben und bist um 09:42 UTC gestartet. Eröffne den Flugplan bei Wien Information.",
+      "schritte": [
+        {
+          "rolle": "pilot",
+          "text": "Wien Information, Oscar Echo Charlie Bravo Foxtrot, erbitte Eröffnung des Flugplans."
+        },
+        {
+          "rolle": "atc",
+          "text": "Oscar Echo Charlie Bravo Foxtrot, Wien Information, bitte kommen."
+        },
+        {
+          "rolle": "pilot",
+          "text": "Oscar Echo Charlie Bravo Foxtrot, DA zwanzig, VFR von Fürstenfeld nach Maribor, abgeflogen um vier zwo, erbitte Eröffnung des Flugplans.",
+          "hinweis": "Abflugzeit in Minuten nach der vollen Stunde (UTC)."
+        },
+        {
+          "rolle": "atc",
+          "text": "Oscar Echo Charlie Bravo Foxtrot, Flugplan eröffnet um vier zwo, Transponder vier sechs eins fünf, QNH eins null zwo null."
+        },
+        {
+          "rolle": "pilot",
+          "text": "Flugplan eröffnet um vier zwo, Transponder vier sechs eins fünf, QNH eins null zwo null, Oscar Echo Charlie Bravo Foxtrot."
+        }
+      ]
+    },
+    {
+      "id": "wien-info-tiefflug-militaer",
+      "titel": "Wien Information: Status militärische Tiefflugstrecke",
+      "sprache": "de",
+      "schwierigkeit": "mittel",
+      "themen": [
+        "fis",
+        "verkehrsinformation",
+        "fuerstenfeld"
+      ],
+      "frequenzen": [
+        {
+          "name": "Wien Information (Sektor Süd)",
+          "mhz": "124,400",
+          "uebungswert": false
+        }
+      ],
+      "situation": "Nördlich und westlich von Fürstenfeld liegen militärische Tiefflugstrecken. Du fliegst Richtung Hartberg und fragst den Status ab.",
+      "schritte": [
+        {
+          "rolle": "pilot",
+          "text": "Wien Information, Oscar Echo Charlie Bravo Foxtrot, erbitte Status der Tiefflugstrecke nördlich Fürstenfeld."
+        },
+        {
+          "rolle": "atc",
+          "text": "Oscar Echo Charlie Bravo Foxtrot, die Tiefflugstrecke ist aktiv bis vierzehn dreißig, militärischer Verkehr in niedriger Höhe möglich."
+        },
+        {
+          "rolle": "pilot",
+          "text": "Tiefflugstrecke aktiv bis vierzehn dreißig, steige auf vier tausend fünfhundert Fuß, Oscar Echo Charlie Bravo Foxtrot.",
+          "hinweis": "Information wiederholen und eigene Absicht melden."
+        },
+        {
+          "rolle": "atc",
+          "text": "Oscar Echo Charlie Bravo Foxtrot, verstanden, Verkehrsinformation: zwei Hubschrauber, zwölf Uhr, fünf Meilen, Gegenrichtung, zwo tausend fünfhundert Fuß."
+        },
+        {
+          "rolle": "pilot",
+          "text": "Halte Ausschau, Oscar Echo Charlie Bravo Foxtrot."
+        },
+        {
+          "rolle": "pilot",
+          "text": "Oscar Echo Charlie Bravo Foxtrot, Verkehr in Sicht."
+        }
+      ]
+    },
+    {
+      "id": "graz-ctr-einflug",
+      "titel": "Einflug CTR Graz von Osten (Übung)",
+      "sprache": "de",
+      "schwierigkeit": "mittel",
+      "themen": [
+        "ctr",
+        "graz",
+        "ankunft"
+      ],
+      "frequenzen": [
+        {
+          "name": "Graz ATIS",
+          "mhz": "128,355",
+          "uebungswert": true
+        },
+        {
+          "name": "Graz Turm / Graz Tower",
+          "mhz": "119,730",
+          "uebungswert": true
+        }
+      ],
+      "situation": "Flug von Fürstenfeld nach Graz (LOWG). Du hast die ATIS gehört (Information Bravo) und rufst Graz Turm (Übungswert 119,730 MHz). Meldepunkt „Echo“ ist ein Übungsbeispiel – echte Punkte aus der Sichtanflugkarte LOWG.",
+      "schritte": [
+        {
+          "rolle": "pilot",
+          "text": "Graz Turm, Oscar Echo Charlie Bravo Foxtrot, DA zwanzig, fünf Meilen östlich Meldepunkt Echo, zwo tausend fünfhundert Fuß, Information Bravo, zur Landung.",
+          "hinweis": "ATIS-Kennung nennen."
+        },
+        {
+          "rolle": "atc",
+          "text": "Oscar Echo Charlie Bravo Foxtrot, Graz Turm, Transponder vier sieben null eins, Einflug in die Kontrollzone über Echo, zwo tausend fünfhundert Fuß oder darunter, Piste drei fünf, QNH eins null eins zwo, melden Sie Echo."
+        },
+        {
+          "rolle": "pilot",
+          "text": "Transponder vier sieben null eins, Einflug über Echo, zwo tausend fünfhundert Fuß oder darunter, Piste drei fünf, QNH eins null eins zwo, melde Echo, Oscar Echo Charlie Bravo Foxtrot.",
+          "hinweis": "Freigabe vollständig zurücklesen: Einflugfreigabe, Höhe, Piste, QNH, Squawk."
+        },
+        {
+          "rolle": "pilot",
+          "text": "Oscar Echo Charlie Bravo Foxtrot, Echo."
+        },
+        {
+          "rolle": "atc",
+          "text": "Oscar Echo Charlie Bravo Foxtrot, fliegen Sie in den rechten Gegenanflug Piste drei fünf, melden Sie Gegenanflug."
+        },
+        {
+          "rolle": "pilot",
+          "text": "Rechter Gegenanflug Piste drei fünf, melde Gegenanflug, Oscar Echo Charlie Bravo Foxtrot."
+        },
+        {
+          "rolle": "pilot",
+          "text": "Oscar Echo Charlie Bravo Foxtrot, rechter Gegenanflug Piste drei fünf."
+        },
+        {
+          "rolle": "atc",
+          "text": "Oscar Echo Charlie Bravo Foxtrot, Nummer eins, Wind drei vier null Grad, sechs Knoten, Piste drei fünf, frei zur Landung."
+        },
+        {
+          "rolle": "pilot",
+          "text": "Piste drei fünf, frei zur Landung, Oscar Echo Charlie Bravo Foxtrot.",
+          "hinweis": "Landefreigabe immer mit Piste zurücklesen."
+        }
+      ]
+    },
+    {
+      "id": "graz-ctr-transit-en",
+      "titel": "Graz Tower: CTR transit with orbit (English)",
+      "sprache": "en",
+      "schwierigkeit": "schwer",
+      "themen": [
+        "ctr",
+        "graz",
+        "englisch",
+        "transponder"
+      ],
+      "frequenzen": [
+        {
+          "name": "Graz Turm / Graz Tower",
+          "mhz": "119,730",
+          "uebungswert": true
+        }
+      ],
+      "situation": "You want to cross the Graz control zone from east to west towards Köflach. Graz Tower (practice value 119.730) is busy with an arriving airliner. Reporting points ECHO and WHISKEY are practice examples.",
+      "schritte": [
+        {
+          "rolle": "pilot",
+          "text": "Graz Tower, Oscar Echo Charlie Bravo Foxtrot, DA twenty, VFR from Fürstenfeld to Köflach, five miles east of ECHO, two thousand five hundred feet, request crossing of the control zone."
+        },
+        {
+          "rolle": "atc",
+          "text": "Oscar Echo Charlie Bravo Foxtrot, Graz Tower, squawk four seven zero four, hold at ECHO, expect crossing in five minutes, QNH one zero one one."
+        },
+        {
+          "rolle": "pilot",
+          "text": "Squawk four seven zero four, hold at ECHO, QNH one zero one one, Oscar Echo Charlie Bravo Foxtrot.",
+          "hinweis": "Do NOT enter the CTR – you are told to hold outside."
+        },
+        {
+          "rolle": "pilot",
+          "text": "Oscar Echo Charlie Bravo Foxtrot, ECHO, orbiting."
+        },
+        {
+          "rolle": "atc",
+          "text": "Oscar Echo Charlie Bravo Foxtrot, cleared to cross the control zone from ECHO to WHISKEY via the northern threshold, not above two thousand feet, report WHISKEY."
+        },
+        {
+          "rolle": "pilot",
+          "text": "Cleared to cross from ECHO to WHISKEY via the northern threshold, not above two thousand feet, wilco, Oscar Echo Charlie Bravo Foxtrot."
+        },
+        {
+          "rolle": "pilot",
+          "text": "Oscar Echo Charlie Bravo Foxtrot, WHISKEY, leaving the control zone."
+        },
+        {
+          "rolle": "atc",
+          "text": "Oscar Echo Charlie Bravo Foxtrot, squawk seven zero zero zero, frequency change approved."
+        },
+        {
+          "rolle": "pilot",
+          "text": "Squawk seven zero zero zero, Oscar Echo Charlie Bravo Foxtrot."
+        }
+      ]
+    },
+    {
+      "id": "graz-radar-luftraum-d",
+      "titel": "Graz Radar: Freigabe in Luftraum D (TMA)",
+      "sprache": "de",
+      "schwierigkeit": "schwer",
+      "themen": [
+        "tma",
+        "graz",
+        "transponder"
+      ],
+      "frequenzen": [
+        {
+          "name": "Wien Information (Sektor Süd)",
+          "mhz": "124,400",
+          "uebungswert": false
+        },
+        {
+          "name": "Graz Radar",
+          "mhz": "119,305",
+          "uebungswert": true
+        }
+      ],
+      "situation": "Du möchtest über der TMA Graz auf 5 500 ft nach Westen fliegen – dort ist Luftraum D. Wien Information übergibt dich an Graz Radar (Übungswert 119,305 MHz).",
+      "schritte": [
+        {
+          "rolle": "atc",
+          "text": "Oscar Echo Charlie Bravo Foxtrot, Wien Information, für Einflug in Luftraum D rufen Sie Graz Radar auf eins eins neun komma drei null fünf."
+        },
+        {
+          "rolle": "pilot",
+          "text": "Graz Radar eins eins neun komma drei null fünf, Oscar Echo Charlie Bravo Foxtrot."
+        },
+        {
+          "rolle": "pilot",
+          "text": "Graz Radar, Oscar Echo Charlie Bravo Foxtrot, DA zwanzig, VFR von Fürstenfeld nach Zeltweg, Gleisdorf, vier tausend fünfhundert Fuß, Transponder vier sechs zwo eins, erbitte Steigflug auf fünf tausend fünfhundert Fuß durch Luftraum Delta."
+        },
+        {
+          "rolle": "atc",
+          "text": "Oscar Echo Charlie Bravo Foxtrot, Graz Radar, im Radar identifiziert, freigegeben in Luftraum Delta, steigen Sie auf fünf tausend fünfhundert Fuß, direkt Zeltweg, QNH eins null eins vier."
+        },
+        {
+          "rolle": "pilot",
+          "text": "Freigegeben in Luftraum Delta, steige auf fünf tausend fünfhundert Fuß, direkt Zeltweg, QNH eins null eins vier, Oscar Echo Charlie Bravo Foxtrot."
+        },
+        {
+          "rolle": "atc",
+          "text": "Oscar Echo Charlie Bravo Foxtrot, melden Sie Erreichen."
+        },
+        {
+          "rolle": "pilot",
+          "text": "Oscar Echo Charlie Bravo Foxtrot, erreiche fünf tausend fünfhundert Fuß."
+        }
+      ]
+    },
+    {
+      "id": "transponder-anweisungen-de",
+      "titel": "Transponder-Anweisungen (Deutsch)",
+      "sprache": "de",
+      "schwierigkeit": "mittel",
+      "themen": [
+        "transponder",
+        "fis"
+      ],
+      "frequenzen": [
+        {
+          "name": "Wien Information (Sektor Süd)",
+          "mhz": "124,400",
+          "uebungswert": false
+        }
+      ],
+      "situation": "Wien Information gibt dir verschiedene Transponder-Anweisungen. Reagiere korrekt – manche verlangen eine Aktion statt einer langen Antwort.",
+      "schritte": [
+        {
+          "rolle": "atc",
+          "text": "Oscar Echo Charlie Bravo Foxtrot, Transponder vier sechs zwo sieben."
+        },
+        {
+          "rolle": "pilot",
+          "text": "Transponder vier sechs zwo sieben, Oscar Echo Charlie Bravo Foxtrot."
+        },
+        {
+          "rolle": "atc",
+          "text": "Oscar Echo Charlie Bravo Foxtrot, Transponder Ident."
+        },
+        {
+          "rolle": "pilot",
+          "text": "Ident, Oscar Echo Charlie Bravo Foxtrot.",
+          "hinweis": "Aktion: IDENT-Taste einmal drücken."
+        },
+        {
+          "rolle": "atc",
+          "text": "Oscar Echo Charlie Bravo Foxtrot, keine Höhenanzeige, überprüfen Sie Höhenübermittlung."
+        },
+        {
+          "rolle": "pilot",
+          "text": "Überprüfe Höhenübermittlung, Oscar Echo Charlie Bravo Foxtrot.",
+          "hinweis": "Transponder-Modus auf ALT (Mode C/S mit Höhe) prüfen."
+        },
+        {
+          "rolle": "atc",
+          "text": "Oscar Echo Charlie Bravo Foxtrot, Höhenanzeige drei tausend achthundert Fuß, bestätigen Sie Höhe."
+        },
+        {
+          "rolle": "pilot",
+          "text": "Drei tausend achthundert Fuß, Oscar Echo Charlie Bravo Foxtrot.",
+          "hinweis": "Höhe am Höhenmesser (QNH) prüfen und bestätigen."
+        },
+        {
+          "rolle": "atc",
+          "text": "Oscar Echo Charlie Bravo Foxtrot, Radardienst beendet, Transponder sieben null null null."
+        },
+        {
+          "rolle": "pilot",
+          "text": "Transponder sieben null null null, Oscar Echo Charlie Bravo Foxtrot."
+        }
+      ]
+    },
+    {
+      "id": "transponder-instructions-en",
+      "titel": "Transponder instructions (English)",
+      "sprache": "en",
+      "schwierigkeit": "mittel",
+      "themen": [
+        "transponder",
+        "englisch"
+      ],
+      "frequenzen": [
+        {
+          "name": "Vienna Information",
+          "mhz": "124,400",
+          "uebungswert": false
+        }
+      ],
+      "situation": "Vienna Information gives you a series of transponder instructions. Read back and act correctly.",
+      "schritte": [
+        {
+          "rolle": "atc",
+          "text": "Oscar Echo Charlie Bravo Foxtrot, reset squawk four six five one."
+        },
+        {
+          "rolle": "pilot",
+          "text": "Resetting four six five one, Oscar Echo Charlie Bravo Foxtrot."
+        },
+        {
+          "rolle": "atc",
+          "text": "Oscar Echo Charlie Bravo Foxtrot, squawk ident."
+        },
+        {
+          "rolle": "pilot",
+          "text": "Squawk ident, Oscar Echo Charlie Bravo Foxtrot.",
+          "hinweis": "Action: press IDENT once."
+        },
+        {
+          "rolle": "atc",
+          "text": "Oscar Echo Charlie Bravo Foxtrot, check altitude readout, I read three thousand two hundred feet."
+        },
+        {
+          "rolle": "pilot",
+          "text": "Checking, altitude three thousand five hundred feet on QNH one zero one three, Oscar Echo Charlie Bravo Foxtrot.",
+          "hinweis": "If your altimeter shows something else, say it – there may be a wrong QNH or a transponder fault."
+        },
+        {
+          "rolle": "atc",
+          "text": "Oscar Echo Charlie Bravo Foxtrot, roger, stop squawk Charlie, wrong indication."
+        },
+        {
+          "rolle": "pilot",
+          "text": "Stopping squawk Charlie, Oscar Echo Charlie Bravo Foxtrot.",
+          "hinweis": "Altitude reporting off; Mode A code stays on."
+        }
+      ]
+    },
+    {
+      "id": "grenze-ungarn",
+      "titel": "Grenzüberflug nach Ungarn (English)",
+      "sprache": "en",
+      "schwierigkeit": "schwer",
+      "themen": [
+        "grenzueberflug",
+        "ungarn",
+        "englisch",
+        "flugplan"
+      ],
+      "frequenzen": [
+        {
+          "name": "Vienna Information",
+          "mhz": "124,400",
+          "uebungswert": false
+        },
+        {
+          "name": "Budapest Information",
+          "mhz": "133,005",
+          "uebungswert": true
+        }
+      ],
+      "situation": "Flight with filed flight plan from Fürstenfeld to Sármellék (LHSM) near Lake Balaton. The Hungarian border is about 15 km east of Fürstenfeld [check]. Budapest Information frequency is a practice value (133.005); border point names are practice examples.",
+      "schritte": [
+        {
+          "rolle": "pilot",
+          "text": "Vienna Information, Oscar Echo Charlie Bravo Foxtrot, approaching the Hungarian border at Heiligenkreuz, request frequency change to Budapest Information."
+        },
+        {
+          "rolle": "atc",
+          "text": "Oscar Echo Charlie Bravo Foxtrot, Vienna Information, contact Budapest Information on one three three decimal zero zero five, squawk unchanged."
+        },
+        {
+          "rolle": "pilot",
+          "text": "One three three decimal zero zero five, squawk unchanged, Oscar Echo Charlie Bravo Foxtrot."
+        },
+        {
+          "rolle": "pilot",
+          "text": "Budapest Information, Oscar Echo Charlie Bravo Foxtrot, DA twenty, VFR flight plan from Fürstenfeld to Sármellék, crossing the border at Heiligenkreuz, three thousand five hundred feet, squawk four six one five."
+        },
+        {
+          "rolle": "atc",
+          "text": "Oscar Echo Charlie Bravo Foxtrot, Budapest Information, identified, QNH one zero one seven, report Szentgotthárd and Lake Balaton western shore."
+        },
+        {
+          "rolle": "pilot",
+          "text": "QNH one zero one seven, wilco, Oscar Echo Charlie Bravo Foxtrot."
+        },
+        {
+          "rolle": "pilot",
+          "text": "Oscar Echo Charlie Bravo Foxtrot, Szentgotthárd, three thousand five hundred feet, estimating Lake Balaton western shore at one five."
+        },
+        {
+          "rolle": "atc",
+          "text": "Oscar Echo Charlie Bravo Foxtrot, roger, caution: restricted area active south of your route, remain north of the main road."
+        },
+        {
+          "rolle": "pilot",
+          "text": "Remaining north of the main road, Oscar Echo Charlie Bravo Foxtrot."
+        }
+      ]
+    },
+    {
+      "id": "grenze-slowenien-maribor",
+      "titel": "Grenzüberflug Slowenien und Landung Maribor (English)",
+      "sprache": "en",
+      "schwierigkeit": "schwer",
+      "themen": [
+        "grenzueberflug",
+        "slowenien",
+        "englisch",
+        "ankunft"
+      ],
+      "frequenzen": [
+        {
+          "name": "Vienna Information",
+          "mhz": "124,400",
+          "uebungswert": false
+        },
+        {
+          "name": "Ljubljana Information",
+          "mhz": "126,505",
+          "uebungswert": true
+        },
+        {
+          "name": "Maribor Tower",
+          "mhz": "119,205",
+          "uebungswert": true
+        }
+      ],
+      "situation": "Flight with filed flight plan from Fürstenfeld to Maribor (LJMB). Ljubljana Information (practice value 126.505) and Maribor Tower (practice value 119.205). Entry point names are practice examples.",
+      "schritte": [
+        {
+          "rolle": "atc",
+          "text": "Oscar Echo Charlie Bravo Foxtrot, Vienna Information, contact Ljubljana Information one two six decimal five zero five, good day."
+        },
+        {
+          "rolle": "pilot",
+          "text": "One two six decimal five zero five, good day, Oscar Echo Charlie Bravo Foxtrot."
+        },
+        {
+          "rolle": "pilot",
+          "text": "Ljubljana Information, Oscar Echo Charlie Bravo Foxtrot, DA twenty, VFR flight plan Fürstenfeld to Maribor, five miles north of the border at Bad Radkersburg, three thousand feet, squawk four six one five."
+        },
+        {
+          "rolle": "atc",
+          "text": "Oscar Echo Charlie Bravo Foxtrot, Ljubljana Information, identified, QNH one zero one nine, contact Maribor Tower one one niner decimal two zero five at the border."
+        },
+        {
+          "rolle": "pilot",
+          "text": "QNH one zero one niner, Maribor Tower one one niner decimal two zero five at the border, Oscar Echo Charlie Bravo Foxtrot."
+        },
+        {
+          "rolle": "pilot",
+          "text": "Maribor Tower, Oscar Echo Charlie Bravo Foxtrot, DA twenty, border crossing at Bad Radkersburg, three thousand feet, for landing."
+        },
+        {
+          "rolle": "atc",
+          "text": "Oscar Echo Charlie Bravo Foxtrot, Maribor Tower, runway one four, wind one five zero degrees, six knots, QNH one zero one niner, join left downwind runway one four, report downwind."
+        },
+        {
+          "rolle": "pilot",
+          "text": "Runway one four, QNH one zero one niner, join left downwind, wilco, Oscar Echo Charlie Bravo Foxtrot."
+        }
+      ]
+    },
+    {
+      "id": "positionsmeldung-budapest",
+      "titel": "Position report to Budapest Information",
+      "sprache": "en",
+      "schwierigkeit": "mittel",
+      "themen": [
+        "positionsmeldung",
+        "ungarn",
+        "englisch"
+      ],
+      "frequenzen": [
+        {
+          "name": "Budapest Information",
+          "mhz": "133,005",
+          "uebungswert": true
+        }
+      ],
+      "situation": "You are in Hungarian airspace on the way back to Austria. Budapest Information (practice value) asks for regular position reports.",
+      "schritte": [
+        {
+          "rolle": "atc",
+          "text": "Oscar Echo Charlie Bravo Foxtrot, Budapest Information, report your position."
+        },
+        {
+          "rolle": "pilot",
+          "text": "Oscar Echo Charlie Bravo Foxtrot, overhead Körmend, three thousand five hundred feet, estimating the Austrian border at Heiligenkreuz at two five.",
+          "hinweis": "Position report: callsign, position, level, (time), next point with estimate."
+        },
+        {
+          "rolle": "atc",
+          "text": "Oscar Echo Charlie Bravo Foxtrot, roger, report crossing the border."
+        },
+        {
+          "rolle": "pilot",
+          "text": "Wilco, Oscar Echo Charlie Bravo Foxtrot."
+        },
+        {
+          "rolle": "pilot",
+          "text": "Oscar Echo Charlie Bravo Foxtrot, crossing the Austrian border at Heiligenkreuz."
+        },
+        {
+          "rolle": "atc",
+          "text": "Oscar Echo Charlie Bravo Foxtrot, contact Vienna Information one two four decimal four, squawk seven zero zero zero."
+        },
+        {
+          "rolle": "pilot",
+          "text": "One two four decimal four, squawk seven zero zero zero, Oscar Echo Charlie Bravo Foxtrot."
+        }
+      ]
+    },
+    {
+      "id": "positionsmeldung-wien",
+      "titel": "Positionsmeldung an Wien Information",
+      "sprache": "de",
+      "schwierigkeit": "leicht",
+      "themen": [
+        "positionsmeldung",
+        "fis"
+      ],
+      "frequenzen": [
+        {
+          "name": "Wien Information (Sektor Süd)",
+          "mhz": "124,400",
+          "uebungswert": false
+        }
+      ],
+      "situation": "Auf dem Überlandflug Fürstenfeld – Pinkafeld verlangt Wien Information eine Positionsmeldung.",
+      "schritte": [
+        {
+          "rolle": "atc",
+          "text": "Oscar Echo Charlie Bravo Foxtrot, Wien Information, melden Sie Ihre Position."
+        },
+        {
+          "rolle": "pilot",
+          "text": "Oscar Echo Charlie Bravo Foxtrot, über Hartberg, drei tausend fünfhundert Fuß, Pinkafeld um eins fünf.",
+          "hinweis": "Position, Höhe, nächster Punkt mit voraussichtlicher Zeit (Minuten)."
+        },
+        {
+          "rolle": "atc",
+          "text": "Oscar Echo Charlie Bravo Foxtrot, verstanden, melden Sie Pinkafeld."
+        },
+        {
+          "rolle": "pilot",
+          "text": "Melde Pinkafeld, Oscar Echo Charlie Bravo Foxtrot."
+        },
+        {
+          "rolle": "pilot",
+          "text": "Oscar Echo Charlie Bravo Foxtrot, Pinkafeld, drei tausend fünfhundert Fuß, beginne Sinkflug zur Landung, verlasse die Frequenz."
+        },
+        {
+          "rolle": "atc",
+          "text": "Oscar Echo Charlie Bravo Foxtrot, Frequenzwechsel genehmigt, Transponder sieben null null null."
+        },
+        {
+          "rolle": "pilot",
+          "text": "Transponder sieben null null null, Oscar Echo Charlie Bravo Foxtrot."
+        }
+      ]
+    },
+    {
+      "id": "wetter-wien-info",
+      "titel": "Wetterabfrage bei Wien Information",
+      "sprache": "de",
+      "schwierigkeit": "leicht",
+      "themen": [
+        "wetter",
+        "fis"
+      ],
+      "frequenzen": [
+        {
+          "name": "Wien Information (Sektor Süd)",
+          "mhz": "124,400",
+          "uebungswert": false
+        }
+      ],
+      "situation": "Westlich von Fürstenfeld bauen sich Wolken auf. Du fragst bei Wien Information das aktuelle Wetter in Graz ab.",
+      "schritte": [
+        {
+          "rolle": "pilot",
+          "text": "Wien Information, Oscar Echo Charlie Bravo Foxtrot, erbitte aktuelles Wetter Graz."
+        },
+        {
+          "rolle": "atc",
+          "text": "Oscar Echo Charlie Bravo Foxtrot, Graz, zwölf zwanzig: Wind zwo vier null Grad, zwölf Knoten, Böen zwo zwo Knoten, Sicht acht Kilometer, Schauer, Wolken aufgelockert zwo tausend fünfhundert Fuß, Cumulonimbus, Temperatur zwo sechs, Taupunkt eins acht, QNH eins null null neun.",
+          "hinweis": "Wichtige Punkte notieren: Böen, Schauer, CB – Gewitter!"
+        },
+        {
+          "rolle": "pilot",
+          "text": "Graz QNH eins null null neun, Cumulonimbus, ich ändere meine Route und fliege zurück nach Fürstenfeld, Oscar Echo Charlie Bravo Foxtrot.",
+          "hinweis": "QNH zurücklesen und Entscheidung melden (Wärmegewitter in der Oststeiermark)."
+        },
+        {
+          "rolle": "atc",
+          "text": "Oscar Echo Charlie Bravo Foxtrot, verstanden, melden Sie Verlassen der Frequenz."
+        },
+        {
+          "rolle": "pilot",
+          "text": "Wird gemacht, Oscar Echo Charlie Bravo Foxtrot."
+        }
+      ]
+    },
+    {
+      "id": "weather-request-en",
+      "titel": "Weather request Vienna Information (English)",
+      "sprache": "en",
+      "schwierigkeit": "mittel",
+      "themen": [
+        "wetter",
+        "englisch"
+      ],
+      "frequenzen": [
+        {
+          "name": "Vienna Information",
+          "mhz": "124,400",
+          "uebungswert": false
+        }
+      ],
+      "situation": "In the morning you are on a flight towards Graz and ask Vienna Information for the latest Graz weather because of possible fog.",
+      "schritte": [
+        {
+          "rolle": "pilot",
+          "text": "Vienna Information, Oscar Echo Charlie Bravo Foxtrot, request latest weather Graz."
+        },
+        {
+          "rolle": "atc",
+          "text": "Oscar Echo Charlie Bravo Foxtrot, Graz zero eight five zero: wind calm, visibility one thousand five hundred metres, mist, broken six hundred feet, temperature eight, dew point seven, QNH one zero two four, trend: becoming visibility five kilometres after zero niner three zero."
+        },
+        {
+          "rolle": "pilot",
+          "text": "QNH one zero two four, Graz below VFR minima, I will hold over Fürstenfeld and wait for improvement, Oscar Echo Charlie Bravo Foxtrot.",
+          "hinweis": "Visibility 1 500 m and broken 600 ft: no VFR landing (CTR minimum 5 km / 1 500 ft) – make a decision."
+        },
+        {
+          "rolle": "atc",
+          "text": "Oscar Echo Charlie Bravo Foxtrot, roger, report when proceeding to Graz."
+        },
+        {
+          "rolle": "pilot",
+          "text": "Wilco, Oscar Echo Charlie Bravo Foxtrot."
+        }
+      ]
+    },
+    {
+      "id": "funkausfall-empfang-ok",
+      "titel": "Funkausfall: Senden defekt, Empfang funktioniert",
+      "sprache": "de",
+      "schwierigkeit": "mittel",
+      "themen": [
+        "funkausfall",
+        "transponder"
+      ],
+      "frequenzen": [
+        {
+          "name": "Wien Information (Sektor Süd)",
+          "mhz": "124,400",
+          "uebungswert": false
+        }
+      ],
+      "situation": "Dein Funkgerät empfängt, aber Wien Information hört dich nicht. Wien Information versucht, mit dir über den Transponder zu kommunizieren.",
+      "schritte": [
+        {
+          "rolle": "atc",
+          "text": "Oscar Echo Charlie Bravo Foxtrot, Wien Information, keine Antwort empfangen. Wenn Sie mich hören, Transponder Ident."
+        },
+        {
+          "rolle": "pilot",
+          "text": "(Aktion: IDENT-Taste drücken – keine Sprachantwort)",
+          "hinweis": "Bei Senderausfall per Transponder antworten. Vorher Transponder 7600 setzen, wenn nicht anders angewiesen."
+        },
+        {
+          "rolle": "atc",
+          "text": "Oscar Echo Charlie Bravo Foxtrot, Ident beobachtet. Wenn Sie nach Fürstenfeld zurückfliegen, Transponder Ident."
+        },
+        {
+          "rolle": "pilot",
+          "text": "(Aktion: IDENT-Taste drücken)"
+        },
+        {
+          "rolle": "atc",
+          "text": "Oscar Echo Charlie Bravo Foxtrot, verstanden, Fürstenfeld Radio wird informiert. Kein gemeldeter Verkehr auf Ihrer Strecke."
+        },
+        {
+          "rolle": "pilot",
+          "text": "Wien Information, Oscar Echo Charlie Bravo Foxtrot, Senden im Blindverkehr, Sender gestört, fliege nach Fürstenfeld zurück, Ankunft um vier fünf, drei tausend Fuß, Oscar Echo Charlie Bravo Foxtrot.",
+          "hinweis": "Trotzdem blind senden (vielleicht kommt es an). Meldung zweimal sprechen ist üblich."
+        }
+      ]
+    },
+    {
+      "id": "radio-failure-blind",
+      "titel": "Radio failure: transmitting blind (English)",
+      "sprache": "en",
+      "schwierigkeit": "schwer",
+      "themen": [
+        "funkausfall",
+        "englisch",
+        "transponder"
+      ],
+      "frequenzen": [
+        {
+          "name": "Vienna Information",
+          "mhz": "124,400",
+          "uebungswert": false
+        },
+        {
+          "name": "Notfrequenz (international)",
+          "mhz": "121,500",
+          "uebungswert": false
+        }
+      ],
+      "situation": "You receive nothing on any frequency. You set squawk 7600, check all equipment and transmit blind on Vienna Information and on 121.5.",
+      "schritte": [
+        {
+          "rolle": "pilot",
+          "text": "Transmitting blind, transmitting blind, Oscar Echo Charlie Bravo Foxtrot, radio failure, squawking seven six zero zero, position ten miles west of Fürstenfeld, three thousand feet, returning to Fürstenfeld, estimating Fürstenfeld at three zero, Oscar Echo Charlie Bravo Foxtrot.",
+          "hinweis": "Prefix 'transmitting blind', send twice. Before that: volume, squelch, headset, frequency, circuit breaker."
+        },
+        {
+          "rolle": "atc",
+          "text": "Oscar Echo Charlie Bravo Foxtrot, Vienna Information, if you read, squawk ident.",
+          "hinweis": "In this scenario you do NOT hear ATC – but the controller is trying. With receiver failure you would not hear this."
+        },
+        {
+          "rolle": "pilot",
+          "text": "Transmitting blind, Oscar Echo Charlie Bravo Foxtrot, overhead Autobahnknoten, two thousand five hundred feet, joining the circuit at Fürstenfeld, Oscar Echo Charlie Bravo Foxtrot.",
+          "hinweis": "Keep transmitting blind at each key position."
+        },
+        {
+          "rolle": "atc",
+          "text": "Fürstenfeld Radio, the DA twenty in the circuit is not responding, light signal steady green from the tower.",
+          "hinweis": "Watch for light signals at the field: steady green = cleared to land (if signals are used)."
+        },
+        {
+          "rolle": "pilot",
+          "text": "(Action: rock wings / flash landing light to acknowledge and land)"
+        }
+      ]
+    },
+    {
+      "id": "pan-pan-oeldruck",
+      "titel": "PAN PAN: sinkender Öldruck",
+      "sprache": "de",
+      "schwierigkeit": "schwer",
+      "themen": [
+        "notfall",
+        "panpan",
+        "fis"
+      ],
+      "frequenzen": [
+        {
+          "name": "Wien Information (Sektor Süd)",
+          "mhz": "124,400",
+          "uebungswert": false
+        }
+      ],
+      "situation": "Auf dem Flug nach Kapfenberg sinkt der Öldruck langsam, die Öltemperatur steigt. Der Motor läuft noch. Du meldest eine Dringlichkeit bei Wien Information und fliegst zurück.",
+      "schritte": [
+        {
+          "rolle": "pilot",
+          "text": "PAN PAN, PAN PAN, PAN PAN, Wien Information, Oscar Echo Charlie Bravo Foxtrot, DA zwanzig, sinkender Öldruck, steigende Öltemperatur, fliege zurück nach Fürstenfeld, fünfzehn Meilen nordwestlich Fürstenfeld, vier tausend Fuß, Kurs eins drei null, zwei Personen an Bord.",
+          "hinweis": "Dringlichkeit: Art, Absicht, Position, Höhe, Kurs, POB. Vorher: Aviate – Navigate – Communicate."
+        },
+        {
+          "rolle": "atc",
+          "text": "Oscar Echo Charlie Bravo Foxtrot, Wien Information, PAN PAN verstanden, Transponder sieben sieben null null, Fürstenfeld liegt eins drei fünf Grad, vierzehn Meilen, QNH eins null eins vier."
+        },
+        {
+          "rolle": "pilot",
+          "text": "Transponder sieben sieben null null, QNH eins null eins vier, Oscar Echo Charlie Bravo Foxtrot."
+        },
+        {
+          "rolle": "atc",
+          "text": "Oscar Echo Charlie Bravo Foxtrot, Fürstenfeld Radio ist informiert, Piste in Benutzung drei null. Benötigen Sie weitere Unterstützung?"
+        },
+        {
+          "rolle": "pilot",
+          "text": "Negativ, Motor läuft noch, behalte vier tausend Fuß für Gleitreserve, Oscar Echo Charlie Bravo Foxtrot.",
+          "hinweis": "Höhe halten erhöht die Auswahl an Notlandefeldern."
+        },
+        {
+          "rolle": "pilot",
+          "text": "Oscar Echo Charlie Bravo Foxtrot, Fürstenfeld in Sicht, wechsle zu Fürstenfeld Radio."
+        }
+      ]
+    },
+    {
+      "id": "mayday-engine-failure-en",
+      "titel": "MAYDAY: engine failure (English)",
+      "sprache": "en",
+      "schwierigkeit": "schwer",
+      "themen": [
+        "notfall",
+        "mayday",
+        "englisch"
+      ],
+      "frequenzen": [
+        {
+          "name": "Vienna Information",
+          "mhz": "124,400",
+          "uebungswert": false
+        }
+      ],
+      "situation": "Cruising at 3 500 ft between Fürstenfeld and Hartberg the engine stops. Restart attempts fail. You select a field and declare an emergency with Vienna Information.",
+      "schritte": [
+        {
+          "rolle": "pilot",
+          "text": "MAYDAY, MAYDAY, MAYDAY, Vienna Information, Oscar Echo Charlie Bravo Foxtrot, DA twenty, engine failure, forced landing in a field, eight miles north of Fürstenfeld, passing two thousand eight hundred feet, heading three six zero, two persons on board.",
+          "hinweis": "Squawk 7700 if time permits. Best glide first!"
+        },
+        {
+          "rolle": "atc",
+          "text": "Oscar Echo Charlie Bravo Foxtrot, Vienna Information, MAYDAY acknowledged, squawk seven seven zero zero if able, QNH one zero one three, rescue services are being alerted."
+        },
+        {
+          "rolle": "pilot",
+          "text": "Squawk seven seven zero zero, QNH one zero one three, Oscar Echo Charlie Bravo Foxtrot."
+        },
+        {
+          "rolle": "atc",
+          "text": "Oscar Echo Charlie Bravo Foxtrot, say landing site."
+        },
+        {
+          "rolle": "pilot",
+          "text": "Field two miles east of Bad Blumau, next to the main road, Oscar Echo Charlie Bravo Foxtrot.",
+          "hinweis": "Short, precise – then concentrate on flying."
+        },
+        {
+          "rolle": "atc",
+          "text": "Oscar Echo Charlie Bravo Foxtrot, roger, report on the ground if able."
+        },
+        {
+          "rolle": "pilot",
+          "text": "Oscar Echo Charlie Bravo Foxtrot, landed safely, no injuries, cancel distress.",
+          "hinweis": "After landing: cancel MAYDAY so search and rescue can stand down."
+        }
+      ]
+    },
+    {
+      "id": "mayday-motorbrand-logf",
+      "titel": "MAYDAY: Motorbrand in der Platzrunde Fürstenfeld",
+      "sprache": "de",
+      "schwierigkeit": "schwer",
+      "themen": [
+        "notfall",
+        "mayday",
+        "fuerstenfeld"
+      ],
+      "frequenzen": [
+        {
+          "name": "Fürstenfeld Radio",
+          "mhz": "122,705",
+          "uebungswert": false
+        }
+      ],
+      "situation": "Im Gegenanflug Piste 12 in Fürstenfeld riechst du Rauch und siehst Flammen am Motor. Brand-Notverfahren laut POH einleiten und sofort landen.",
+      "schritte": [
+        {
+          "rolle": "pilot",
+          "text": "MAYDAY, MAYDAY, MAYDAY, Fürstenfeld Radio, Oscar Echo Charlie Bravo Foxtrot, Motorbrand, Notlandung auf Piste eins zwo, Gegenanflug, ein tausend achthundert Fuß, eine Person an Bord.",
+          "hinweis": "Erst Brandhahn ZU, Gas voll, Gemisch ARM, Zündung AUS – dann Funk."
+        },
+        {
+          "rolle": "atc",
+          "text": "Oscar Echo Charlie Bravo Foxtrot, Fürstenfeld Radio, MAYDAY verstanden, Piste eins zwo frei, Wind eins zwo null Grad, sechs Knoten, Feuerwehr ist alarmiert."
+        },
+        {
+          "rolle": "atc",
+          "text": "An alle Luftfahrzeuge, Fürstenfeld Radio, Notverkehr auf der Frequenz, Platzrunde räumen.",
+          "hinweis": "Radio verhängt Funkstille – andere Piloten sollen nicht mehr senden."
+        },
+        {
+          "rolle": "pilot",
+          "text": "Oscar Echo Charlie Bravo Foxtrot, gelandet, Flugzeug verlassen, keine Verletzten."
+        },
+        {
+          "rolle": "atc",
+          "text": "An alle Luftfahrzeuge, Fürstenfeld Radio, Notverkehr beendet.",
+          "hinweis": "Ende des Notverkehrs (Distress traffic ended)."
+        }
+      ]
+    },
+    {
+      "id": "readback-fehler-de",
+      "titel": "Readback-Fehler: falsches QNH und falscher Squawk",
+      "sprache": "de",
+      "schwierigkeit": "mittel",
+      "themen": [
+        "readback",
+        "fis",
+        "transponder"
+      ],
+      "frequenzen": [
+        {
+          "name": "Wien Information (Sektor Süd)",
+          "mhz": "124,400",
+          "uebungswert": false
+        }
+      ],
+      "situation": "Übung zum Zurücklesen. Im ersten Readback ist absichtlich ein Fehler: Wien Information korrigiert, du liest die richtigen Werte erneut zurück.",
+      "schritte": [
+        {
+          "rolle": "atc",
+          "text": "Oscar Echo Charlie Bravo Foxtrot, Wien Information, Transponder vier sechs fünf drei, QNH eins null eins fünf."
+        },
+        {
+          "rolle": "pilot",
+          "text": "Transponder vier sechs fünf drei, QNH eins null eins drei, Oscar Echo Charlie Bravo Foxtrot.",
+          "hinweis": "Absichtlicher Fehler im Readback (QNH 1013 statt 1015) – Muster für einen typischen Hörfehler."
+        },
+        {
+          "rolle": "atc",
+          "text": "Oscar Echo Charlie Bravo Foxtrot, negativ, QNH eins null eins fünf, ich wiederhole, eins null eins fünf."
+        },
+        {
+          "rolle": "pilot",
+          "text": "QNH eins null eins fünf, Oscar Echo Charlie Bravo Foxtrot.",
+          "hinweis": "Nur den korrigierten Wert zurücklesen."
+        },
+        {
+          "rolle": "atc",
+          "text": "Oscar Echo Charlie Bravo Foxtrot, melden Sie Hartberg in drei tausend fünfhundert Fuß."
+        },
+        {
+          "rolle": "pilot",
+          "text": "Melde Hartberg in vier tausend fünfhundert Fuß, Oscar Echo Charlie Bravo Foxtrot.",
+          "hinweis": "Wieder ein absichtlicher Fehler."
+        },
+        {
+          "rolle": "atc",
+          "text": "Oscar Echo Charlie Bravo Foxtrot, negativ, drei tausend fünfhundert Fuß."
+        },
+        {
+          "rolle": "pilot",
+          "text": "Drei tausend fünfhundert Fuß, melde Hartberg, Oscar Echo Charlie Bravo Foxtrot."
+        }
+      ]
+    },
+    {
+      "id": "readback-error-en",
+      "titel": "Readback error: frequency and altitude (English)",
+      "sprache": "en",
+      "schwierigkeit": "mittel",
+      "themen": [
+        "readback",
+        "englisch"
+      ],
+      "frequenzen": [
+        {
+          "name": "Graz Turm / Graz Tower",
+          "mhz": "119,730",
+          "uebungswert": true
+        },
+        {
+          "name": "Vienna Information",
+          "mhz": "124,400",
+          "uebungswert": false
+        }
+      ],
+      "situation": "Leaving the Graz control zone, the tower gives you a frequency change. Your first readback contains an error that the controller corrects.",
+      "schritte": [
+        {
+          "rolle": "atc",
+          "text": "Oscar Echo Charlie Bravo Foxtrot, Graz Tower, contact Vienna Information one two four decimal four, maintain two thousand five hundred feet until leaving the control zone."
+        },
+        {
+          "rolle": "pilot",
+          "text": "One two four decimal one, maintain two thousand five hundred feet, Oscar Echo Charlie Bravo Foxtrot.",
+          "hinweis": "Intentional error: 124.1 instead of 124.4."
+        },
+        {
+          "rolle": "atc",
+          "text": "Oscar Echo Charlie Bravo Foxtrot, negative, one two four decimal four."
+        },
+        {
+          "rolle": "pilot",
+          "text": "One two four decimal four, Oscar Echo Charlie Bravo Foxtrot."
+        },
+        {
+          "rolle": "atc",
+          "text": "Oscar Echo Charlie Bravo Foxtrot, correction, maintain two thousand feet until leaving the control zone.",
+          "hinweis": "The controller corrects their own instruction ('correction')."
+        },
+        {
+          "rolle": "pilot",
+          "text": "Maintain two thousand feet until leaving the control zone, Oscar Echo Charlie Bravo Foxtrot."
+        }
+      ]
+    },
+    {
+      "id": "pilot-korrektur-de",
+      "titel": "Eigenen Fehler korrigieren: „Korrektur“",
+      "sprache": "de",
+      "schwierigkeit": "leicht",
+      "themen": [
+        "readback",
+        "fuerstenfeld"
+      ],
+      "frequenzen": [
+        {
+          "name": "Fürstenfeld Radio",
+          "mhz": "122,705",
+          "uebungswert": false
+        }
+      ],
+      "situation": "Du versprichst dich bei der Positionsmeldung in Fürstenfeld. Übe den korrekten Gebrauch von „Korrektur“.",
+      "schritte": [
+        {
+          "rolle": "pilot",
+          "text": "Fürstenfeld Radio, Oscar Echo Charlie Bravo Foxtrot, Golfplatz, Korrektur, Therme Blumau, zwo tausend fünfhundert Fuß, zur Landung.",
+          "hinweis": "„Korrektur“ sagen und die richtige Angabe sofort nachschieben."
+        },
+        {
+          "rolle": "atc",
+          "text": "Oscar Echo Charlie Bravo Foxtrot, bestätigen Sie Position Therme Blumau."
+        },
+        {
+          "rolle": "pilot",
+          "text": "Bestätige, Therme Blumau, Oscar Echo Charlie Bravo Foxtrot."
+        },
+        {
+          "rolle": "atc",
+          "text": "Oscar Echo Charlie Bravo Foxtrot, Piste in Benutzung drei null, QNH eins null zwo zwo."
+        },
+        {
+          "rolle": "pilot",
+          "text": "Piste drei null, QNH eins null zwo zwo, Oscar Echo Charlie Bravo Foxtrot."
+        }
+      ]
+    },
+    {
+      "id": "pan-pan-orientierung-en",
+      "titel": "PAN PAN: uncertain of position (English)",
+      "sprache": "en",
+      "schwierigkeit": "schwer",
+      "themen": [
+        "notfall",
+        "panpan",
+        "englisch",
+        "positionsmeldung"
+      ],
+      "frequenzen": [
+        {
+          "name": "Vienna Information",
+          "mhz": "124,400",
+          "uebungswert": false
+        }
+      ],
+      "situation": "After deviating around showers south of Fürstenfeld you are uncertain of your position, close to the Slovenian border. Fuel for 1 h 10 min remains. Ask Vienna Information for help.",
+      "schritte": [
+        {
+          "rolle": "pilot",
+          "text": "PAN PAN, PAN PAN, PAN PAN, Vienna Information, Oscar Echo Charlie Bravo Foxtrot, DA twenty, uncertain of position, last known position Feldbach two zero minutes ago, three thousand feet, heading one niner zero, endurance one hour one zero minutes, one person on board, request position assistance.",
+          "hinweis": "Do not wait too long – ask for help early. Heading 190 from Feldbach = towards Slovenia!"
+        },
+        {
+          "rolle": "atc",
+          "text": "Oscar Echo Charlie Bravo Foxtrot, Vienna Information, squawk four six four four and ident."
+        },
+        {
+          "rolle": "pilot",
+          "text": "Squawk four six four four, Oscar Echo Charlie Bravo Foxtrot.",
+          "hinweis": "Action: press IDENT."
+        },
+        {
+          "rolle": "atc",
+          "text": "Oscar Echo Charlie Bravo Foxtrot, radar identified, position three miles north of the Slovenian border, eight miles south of Bad Radkersburg. Turn left heading zero two zero for Fürstenfeld, distance three two miles."
+        },
+        {
+          "rolle": "pilot",
+          "text": "Left heading zero two zero for Fürstenfeld, Oscar Echo Charlie Bravo Foxtrot."
+        },
+        {
+          "rolle": "atc",
+          "text": "Oscar Echo Charlie Bravo Foxtrot, do you wish to cancel PAN PAN?"
+        },
+        {
+          "rolle": "pilot",
+          "text": "Affirm, cancel PAN PAN, position now known, Oscar Echo Charlie Bravo Foxtrot."
+        }
+      ]
+    },
+    {
+      "id": "logf-departure-english",
+      "titel": "Fürstenfeld Radio: departure (English)",
+      "sprache": "en",
+      "schwierigkeit": "leicht",
+      "themen": [
+        "fuerstenfeld",
+        "abflug",
+        "englisch"
+      ],
+      "frequenzen": [
+        {
+          "name": "Fürstenfeld Radio",
+          "mhz": "122,705",
+          "uebungswert": false
+        }
+      ],
+      "situation": "Practise a departure from Fürstenfeld in English, e.g. as preparation for the language proficiency check. You depart to the east via THERME BLUMAU.",
+      "schritte": [
+        {
+          "rolle": "pilot",
+          "text": "Fürstenfeld Radio, Oscar Echo Charlie Bravo Foxtrot, DA twenty, at the apron, two persons on board, request taxi information, VFR to Punitz."
+        },
+        {
+          "rolle": "atc",
+          "text": "Oscar Echo Charlie Bravo Foxtrot, Fürstenfeld Radio, runway in use one two, wind one zero zero degrees, eight knots, QNH one zero one six."
+        },
+        {
+          "rolle": "pilot",
+          "text": "Runway one two, QNH one zero one six, taxiing to holding point runway one two, Oscar Echo Charlie Bravo Foxtrot."
+        },
+        {
+          "rolle": "pilot",
+          "text": "Oscar Echo Charlie Bravo Foxtrot, holding point runway one two, ready for departure, leaving via Therme Blumau."
+        },
+        {
+          "rolle": "atc",
+          "text": "Oscar Echo Charlie Bravo Foxtrot, wind one one zero degrees, seven knots, no reported traffic."
+        },
+        {
+          "rolle": "pilot",
+          "text": "Lining up and taking off runway one two, Oscar Echo Charlie Bravo Foxtrot.",
+          "hinweis": "No take-off clearance at an uncontrolled field – you inform."
+        },
+        {
+          "rolle": "pilot",
+          "text": "Oscar Echo Charlie Bravo Foxtrot, Therme Blumau, two thousand five hundred feet, leaving the frequency."
+        }
+      ]
+    }
+  ]
+}

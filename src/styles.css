@@ -615,3 +615,83 @@ tr.tts-cur { box-shadow: none; }
 @media print {
   .player { display: none !important; }
 }
+
+/* ---------- Übersicht: Hörbuch & Neu ---------- */
+.hero-listen { position: relative; z-index: 1; margin-top: 1rem; display: inline-grid; grid-template-columns: auto 1fr; column-gap: 0.55rem; align-items: center; text-align: left;
+  background: #fff; color: #0d47a1; border: 0; border-radius: 14px; padding: 0.6rem 1rem; font-weight: 700; cursor: pointer; box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18); max-width: 100%; }
+.hero-listen small { grid-column: 2; font-weight: 500; color: #4a5f80; font-size: 0.78rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.hero-listen:hover { transform: translateY(-1px); }
+.neu-box h2 { font-size: 1.1rem; }
+.neu-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 0.6rem; }
+.neu-grid a { display: grid; gap: 0.15rem; padding: 0.75rem; border: 1px solid var(--line); border-radius: 12px; color: var(--text); background: var(--bg); }
+.neu-grid a:hover { border-color: var(--accent); text-decoration: none; }
+.neu-grid span { font-size: 1.4rem; }
+.neu-grid small { color: var(--muted); font-size: 0.8rem; }
+
+/* ---------- Lernkarten ---------- */
+.deck-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(270px, 1fr)); gap: 0.8rem; margin-bottom: 1rem; }
+.deck { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 0.7rem; display: grid; gap: 0.55rem; box-shadow: var(--shadow); }
+.deck.on { border-color: var(--c); box-shadow: 0 0 0 2px color-mix(in srgb, var(--c) 35%, transparent); }
+.deck-main { display: flex; align-items: center; gap: 0.7rem; border: 0; background: none; text-align: left; cursor: pointer; color: var(--text); padding: 0; }
+.deck-main strong, .deck-main small { display: block; }
+.deck-check { width: 22px; height: 22px; border-radius: 7px; border: 2px solid var(--line); display: grid; place-items: center; color: #fff; flex-shrink: 0; }
+.deck.on .deck-check { background: var(--c); border-color: var(--c); }
+.karten-session { max-width: 760px; margin: 0 auto; display: grid; gap: 0.9rem; }
+.flashcard { display: block; width: 100%; min-height: 300px; text-align: left; cursor: pointer; background: var(--card); border: 1px solid var(--line); border-radius: 20px; padding: 1.6rem; box-shadow: var(--shadow); color: var(--text); font: inherit; outline: none; }
+.flashcard:focus-visible { box-shadow: 0 0 0 3px var(--accent-soft); }
+.fc-front { display: grid; gap: 0.6rem; justify-items: start; }
+.fc-front h2 { margin: 0.3rem 0 0; font-size: 1.6rem; line-height: 1.25; }
+.fc-hint { margin-top: 1.5rem; }
+.flashcard .fc-back { display: none; }
+.flashcard.flipped .fc-front { display: none; }
+.flashcard.flipped .fc-back { display: block; animation: fade 0.25s ease; }
+.fc-back .md { font-size: 1.08rem; line-height: 1.6; }
+.karten-buttons .btn { min-width: 170px; }
+
+/* ---------- Funktraining ---------- */
+.chip-sep { width: 1px; background: var(--line); margin: 0 0.2rem; }
+.funk-row { text-decoration: none; }
+.funk-log { display: grid; gap: 0.6rem; margin: 1rem 0; }
+.bubble { max-width: 82%; padding: 0.7rem 0.9rem; border-radius: 16px; background: var(--card); border: 1px solid var(--line); box-shadow: var(--shadow); }
+.bubble small { display: block; color: var(--muted); font-weight: 700; font-size: 0.75rem; margin-bottom: 0.2rem; }
+.bubble p { margin: 0.1rem 0; }
+.bubble.atc { border-bottom-left-radius: 4px; }
+.bubble.pilot { justify-self: end; background: var(--accent-soft); border-bottom-right-radius: 4px; }
+.bubble.live { border-color: var(--accent); animation: pulse 1.6s ease-in-out infinite; }
+@keyframes pulse { 50% { box-shadow: 0 0 0 4px var(--accent-soft); } }
+.funk-antwort .gesagt { font-size: 1.1rem; padding: 0.7rem; background: var(--bg); border-radius: 10px; min-height: 2.6rem; }
+.loesung-text { font-size: 1.15rem; font-weight: 600; }
+
+/* ---------- Checklisten ---------- */
+.lib-row.notfall { border-left-color: var(--bad); }
+.checkliste .cl-abschnitt h3 { margin: 1.3rem 0 0.3rem; font-size: 1.05rem; text-transform: uppercase; letter-spacing: 0.04em; color: var(--muted); }
+.checkliste.notfall .cl-abschnitt h3 { color: var(--bad); }
+.cl-item { display: flex; gap: 1rem; justify-content: space-between; flex-wrap: wrap; }
+.cl-aktion { font-weight: 700; margin-left: auto; }
+.cl-text { margin: 0.4rem 0.6rem; font-size: 0.95rem; }
+.print-only { display: none; }
+
+/* ---------- Sync ---------- */
+.qr { width: min(260px, 100%); background: #fff; padding: 6px; border-radius: 12px; border: 1px solid var(--line); }
+.qr svg { width: 100%; height: auto; display: block; }
+.steps { padding-left: 1.2rem; display: grid; gap: 0.4rem; }
+
+@media (max-width: 860px) {
+  .bubble { max-width: 94%; }
+  .karten-buttons .btn { min-width: 0; flex: 1; }
+  .flashcard { min-height: 240px; padding: 1.2rem; }
+  .fc-front h2 { font-size: 1.3rem; }
+}
+@media print {
+  .no-print, .page-head .page-actions, .neu-box { display: none !important; }
+  .print-only { display: block; }
+  body, .content { background: #fff !important; color: #000; }
+  .content { padding: 0 !important; max-width: none; }
+  .checkliste .card { padding: 0; }
+  .checkliste .check { padding: 0.15rem 0; break-inside: avoid; }
+  .checkliste .check .box { border-color: #000; background: #fff !important; color: transparent !important; }
+  .checkliste .check.on .check-text { text-decoration: none; color: #000; }
+  .checkliste .bar { display: none; }
+  .cl-abschnitt { break-inside: avoid-page; }
+  .cl-abschnitt h3 { color: #000 !important; border-bottom: 1px solid #000; }
+}

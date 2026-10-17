@@ -61,6 +61,8 @@ const P = {
   headphones: 'M3 18v-6a9 9 0 0118 0v6M21 19a2 2 0 01-2 2h-1a2 2 0 01-2-2v-3a2 2 0 012-2h3zM3 19a2 2 0 002 2h1a2 2 0 002-2v-3a2 2 0 00-2-2H3z',
   library: 'M4 4h4v16H4zM10 4h4v16h-4zM16.5 4.6l3.8-1 3.2 15.5-3.8 1z',
   chevU: 'M18 15l-6-6-6 6',
+  flip: 'M3 7h13v13H3zM8 4h13v13M7 12h5M7 15h3',
+  radio: 'M4 10h16v10H4zM8 10l9-6M8 16a1.5 1.5 0 100-3 1.5 1.5 0 000 3zM13 14h4M13 17h4',
 };
 export function Icon({ name, size = 20, className = '', ...rest }) {
   return (

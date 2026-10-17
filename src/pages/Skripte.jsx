@@ -16,7 +16,9 @@ function Uebersicht() {
   const liste = C.skripte.filter((sk) => sk.bereich !== 'zusatz');
   return (
     <>
-      <PageHead icon="📚" title="Skripte" sub={`${liste.length} Fachskripte · ${all.done}/${all.total} Kapitel gelesen`} />
+      <PageHead icon="📚" title="Skripte" sub={`${liste.length} Fachskripte · ${all.done}/${all.total} Kapitel gelesen`}>
+        <a className="btn primary sm" href="#/bibliothek"><Icon name="headphones" size={16} /> Als Hörbuch anhören</a>
+      </PageHead>
       <div className="skript-grid">
         {liste.map((sk) => {
           const f = fachById[sk.fachId];

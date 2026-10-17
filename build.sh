@@ -64,7 +64,7 @@ if [[ -n "$REPO_DIR" ]]; then
   mkdir -p "$REPO_DIR"
   copy_src "$SRC" "$REPO_DIR"
   rm -rf "$REPO_DIR/inhalte" && mkdir -p "$REPO_DIR/inhalte"
-  for x in "$CONTENT_DIR"/*.md "$CONTENT_DIR"/skripte "$CONTENT_DIR"/fragen "$CONTENT_DIR"/zusatzausbildungen; do
+  for x in "$CONTENT_DIR"/*.md "$CONTENT_DIR"/skripte "$CONTENT_DIR"/fragen "$CONTENT_DIR"/zusatzausbildungen "$CONTENT_DIR"/checklisten "$CONTENT_DIR"/funkuebungen; do
     [[ -e "$x" ]] && copy_src "$x" "$REPO_DIR/inhalte/$(basename "$x")"
   done
   echo "  Fertig. Im Repo baut .github/workflows/pages.yml automatisch nach GitHub Pages."

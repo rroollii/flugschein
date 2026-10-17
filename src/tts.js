@@ -162,6 +162,30 @@ function pickVoice() {
   const all = snap.voices;
   return all.find((v) => v.voiceURI === settings.voiceURI) || [...germanVoices()].sort((a, b) => voiceScore(b) - voiceScore(a))[0] || null;
 }
+export function voiceFor(lang = 'de') {
+  if (lang === 'de') return pickVoice();
+  const score = (v) => (/natural|neural|online|premium|enhanced|google/i.test(v.name) ? 2 : 0) + (v.lang === 'en-GB' ? 1 : 0);
+  return snap.voices.filter((v) => v.lang?.toLowerCase().startsWith(lang)).sort((a, b) => score(b) - score(a))[0] || null;
+}
+// Einzelner Satz außerhalb des Hörbuchs (Lernkarten, Funktraining); unterbricht ein laufendes Hörbuch.
+export function sprich(text, lang = 'de', rate = settings.rate) {
+  return new Promise((resolve) => {
+    if (!ttsSupported || !text) return resolve(false);
+    if (snap.playing) pause();
+    synth.cancel();
+    const clean = lang === 'de' ? speakable(text) : String(text).replace(/\p{Extended_Pictographic}\uFE0F?/gu, ' ').replace(/[*_#|`]/g, ' ');
+    const u = new SpeechSynthesisUtterance(clean);
+    const v = voiceFor(lang);
+    if (v) u.voice = v;
+    u.lang = v?.lang || (lang === 'en' ? 'en-GB' : 'de-DE');
+    u.rate = rate;
+    u.onend = () => resolve(true);
+    u.onerror = () => resolve(false);
+    synth.speak(u);
+  });
+}
+export const stille = () => synth?.cancel();
+
 if (ttsSupported) {
   const load = () => emit({ voices: synth.getVoices() });
   load();

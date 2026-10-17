@@ -44,6 +44,26 @@ Gelesen wird satzweise mit Hervorhebung; Aussprache-Korrekturen (Abkürzungen, E
 
 Checklisten-IDs werden aus dem Text gebildet: Wird ein Punkt umformuliert, gilt er als neu (Haken muss erneut gesetzt werden).
 
+**Lernkarten** (`#/lernkarten`, `src/pages/Lernkarten.jsx`): entstehen beim Build aus den Skripten (Tabellenzeilen: Spalte 1 = Vorderseite,
+übrige Spalten = Rückseite; Absätze/Zitate mit fettem Label wie „Merksatz“, „Eselsbrücke“, „Prüfungsfalle“, „Grenzwert“; Listenpunkte `**Begriff**: Erklärung`)
+und dem Glossar. Stapel je Fach + Glossar, Leitner wie der Karteikasten (`state.karten`), Neue pro Tag einstellbar, Vorlesen optional,
+Anki-Export als TSV (`#deck column`/`#tags column`, Import in Anki: Datei → Importieren).
+
+**Funktraining** (`#/funk`, `src/pages/Funk.jsx`): aus `funkuebungen/szenarien.json` (Schema dort in `README.md`; Zusatzfelder `themen`, `frequenzen[].uebungswert`).
+Gegenstelle spricht (Stimme je `sprache` de/en), Bedenkzeit, dann Musterlösung (Text + Vorlesen). Pilot-Schritte der Form „(Aktion: …)“ werden nur angezeigt.
+Optional Spracherkennung (Web Speech API) mit grobem Schlüsselwort-Abgleich (Zahlwörter → Ziffern).
+
+**Checklisten** (`#/checklisten`, `src/pages/Checklisten.jsx`): aus `checklisten/*.md` (Reihenfolge/Einleitung aus `index.md`), Abschnitte `##`–`####`,
+Listenpunkte werden abhakbar (Punkt/Handlung getrennt bei Punktlinien `....` oder Tab), Tabellen bleiben Text. „Alle zurücksetzen“, Druckansicht (`@media print`).
+
+**Geräte-Sync** (`#/sync`, `src/sync.js`, `src/pages/Sync.jsx`): ohne eigenen Server über ein privates GitHub-Gist (`flugschein-fortschritt.json`).
+Token mit nur `gist`-Scope, nur lokal gespeichert (`flugschein-sync-v1`). Zusammenführen pro Eintrag über Zeitstempel (`state.ts`, von `update()` gepflegt),
+Fragen/Karten nach Anzahl Wiederholungen, Flugbuch per ID mit Löschmarken. Alternative: Link/QR-Code mit komprimiertem Fortschritt (`#/sync?d=…`).
+
+**Audio (natürliche Stimmen)**: Der Workflow übernimmt den Inhalt des Branches `audio` (falls vorhanden) nach `_site/audio/` – ein Push auf `audio` löst
+ebenfalls einen Deploy aus. Der Service Worker cacht Audio nicht vorab (nur `audio/manifest.json` network-first; Clips aus Cache `flugschein-audio`, sonst Netz).
+`src/audio.js` ist vorbereitet; Player-Stimmwahl Frau/Mann und „offline verfügbar machen“ folgen mit dem Manifest-Schema.
+
 ## Hosting (GitHub Pages: https://rroollii.github.io/flugschein/)
 
 Aktuelle Einrichtung: Repo öffentlich, Settings → Pages → „Deploy from a branch“: **`gh-pages` / (root)**.

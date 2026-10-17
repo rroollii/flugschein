@@ -57,12 +57,15 @@ const precache = ['./', './index.html', './manifest.webmanifest', ...icons.map((
 const sw = `// Service Worker – Version ${version} (wird bei jedem Build neu erzeugt)
 const CACHE = 'flugschein-${version}';
 const PRECACHE = ${JSON.stringify(precache)};
+// Audio (natürliche Stimmen) wird nie vorab geladen: nur was die App per „Offline verfügbar machen“ in
+// diesen Cache legt, ist offline da; er überlebt App-Updates. manifest.json immer frisch aus dem Netz.
+const AUDIO = 'flugschein-audio';
 self.addEventListener('install', (e) => {
   e.waitUntil(caches.open(CACHE).then((c) => c.addAll(PRECACHE)).then(() => self.skipWaiting()));
 });
 self.addEventListener('activate', (e) => {
   e.waitUntil(
-    caches.keys().then((keys) => Promise.all(keys.filter((k) => k.startsWith('flugschein-') && k !== CACHE).map((k) => caches.delete(k))))
+    caches.keys().then((keys) => Promise.all(keys.filter((k) => k.startsWith('flugschein-') && k !== CACHE && k !== AUDIO).map((k) => caches.delete(k))))
       .then(() => self.clients.claim()),
   );
 });
@@ -70,6 +73,18 @@ self.addEventListener('activate', (e) => {
 self.addEventListener('fetch', (e) => {
   const req = e.request;
   if (req.method !== 'GET' || new URL(req.url).origin !== location.origin) return;
+  const url = new URL(req.url);
+  if (url.pathname.includes('/audio/')) {
+    if (url.pathname.endsWith('/manifest.json')) {
+      e.respondWith(fetch(req).then((res) => {
+        if (res.ok) { const copy = res.clone(); caches.open(AUDIO).then((c) => c.put(url.pathname, copy)); }
+        return res;
+      }).catch(() => caches.open(AUDIO).then((c) => c.match(url.pathname))));
+      return;
+    }
+    e.respondWith(caches.open(AUDIO).then((c) => c.match(url.pathname)).then((hit) => hit || fetch(req)));
+    return;
+  }
   if (req.mode === 'navigate') {
     e.respondWith(
       fetch(req).then((res) => {

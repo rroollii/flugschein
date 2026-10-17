@@ -1,11 +1,12 @@
 # Baut die Plattform aus inhalte/ und legt das Ergebnis in den Branch gh-pages.
 # GitHub Pages (Settings → Pages → Deploy from a branch: gh-pages / root) veröffentlicht es
 # danach automatisch unter https://rroollii.github.io/flugschein/.
+# Audiodateien (natürliche Stimmen) kommen aus dem Branch `audio` und landen unter gh-pages/audio/.
 name: Plattform bauen (gh-pages)
 
 on:
   push:
-    branches: [main]
+    branches: [main, audio]
   workflow_dispatch:
 
 permissions:
@@ -20,6 +21,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: main
       - uses: actions/setup-node@v4
         with:
           node-version: 20
@@ -31,6 +34,18 @@ jobs:
           CONTENT_DIR: inhalte
           OUT_DIR: _site
           BASE_PATH: /flugschein/
+      - name: Audio aus Branch audio übernehmen (falls vorhanden)
+        run: |
+          if git ls-remote --exit-code --heads origin audio >/dev/null; then
+            git fetch --depth 1 origin audio
+            git worktree add ../audio-src FETCH_HEAD
+            rm -rf _site/audio
+            if [ -d ../audio-src/audio ]; then cp -a ../audio-src/audio _site/audio; else mkdir -p _site/audio && (cd ../audio-src && tar --exclude=.git -cf - .) | tar -xf - -C _site/audio; fi
+            rm -f _site/audio/.git
+            du -sh _site/audio
+          else
+            echo "Kein Branch audio – nur Gerätestimme."
+          fi
       - name: Nach gh-pages veröffentlichen
         run: |
           git config user.name "github-actions[bot]"

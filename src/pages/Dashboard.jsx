@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React, { useMemo, useState } from 'react';
 import { Ring, Bar, Icon, Check, navigate, pct, fmtH, FachChip } from '../ui.jsx';
 import {
   useAppState, C, allSkriptProgress, fachStats, checklistProgress, allPhaseItems, flightProgress, currentWeek, weekOf,
@@ -42,6 +42,8 @@ export default function Dashboard() {
   const st = streak(s);
   useTts();
   const gehoert = ttsSupported ? lastListened() : null;
+  const [neuZu, setNeuZu] = useState(() => localStorage.getItem('flugschein-neu-v2') === 'zu');
+  const hoeren = () => (gehoert ? play(gehoert.type, gehoert.id) : next ? play('skript', next.skript.id, next.skript.kapitel.indexOf(next.kapitel), 0) : navigate('/bibliothek'));
   const heute = s.aktivitaet[today()] || 0;
   const tipp = TIPPS[new Date().getDate() % TIPPS.length];
   const begriff = C.glossar.length ? C.glossar[(daysBetween('2026-01-01', today()) + C.glossar.length * 10) % C.glossar.length] : null;
@@ -65,11 +67,30 @@ export default function Dashboard() {
             <span><Icon name="target" size={16} /> {heute} Aktionen heute</span>
             {wk > 0 && <span><Icon name="calendar" size={16} /> Lernwoche {wk}</span>}
           </div>
+          {ttsSupported && (
+            <button className="hero-listen" onClick={hoeren}>
+              <Icon name="headphones" size={18} /> {gehoert ? 'Weiterhören' : 'Skripte anhören'}
+              <small>{gehoert ? gehoert.src.parts[gehoert.pos.part]?.titel : 'als Hörbuch vorlesen lassen'}</small>
+            </button>
+          )}
         </div>
         <div className="hero-ring">
           <Ring value={gesamt} size={140} stroke={13} color="#fff" sub="Gesamt" />
         </div>
       </section>
+
+      {!neuZu && (
+        <section className="card neu-box">
+          <div className="row-between"><h2 className="mt0">✨ Neu in deiner Lernplattform</h2><button className="icon-btn sm" aria-label="Ausblenden" onClick={() => { localStorage.setItem('flugschein-neu-v2', 'zu'); setNeuZu(true); }}><Icon name="x" size={16} /></button></div>
+          <div className="neu-grid">
+            <a href="#/bibliothek"><span>🎧</span><strong>Hörbuch</strong><small>Alle Skripte vorlesen lassen – „Anhören“ in jedem Kapitel</small></a>
+            <a href="#/lernkarten"><span>🃏</span><strong>Lernkarten</strong><small>{C.karten.length} Karten aus Skripten & Glossar, Anki-Export</small></a>
+            <a href="#/funk"><span>📻</span><strong>Funktraining</strong><small>{C.funk?.szenarien?.length || 'Beispiel-'} Szenarien mit Sprachausgabe</small></a>
+            <a href="#/checklisten"><span>✅</span><strong>Checklisten</strong><small>{C.checklisten?.length || 0} Checklisten zum Abhaken & Drucken</small></a>
+            <a href="#/sync"><span>🔄</span><strong>Geräte-Sync</strong><small>Handy ↔ PC abgleichen</small></a>
+          </div>
+        </section>
+      )}
 
       <section className="grid4">
         <a className="stat-card" href="#/skripte">
