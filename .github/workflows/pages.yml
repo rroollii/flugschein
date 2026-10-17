@@ -48,18 +48,20 @@ jobs:
           else
             echo "Kein Branch audio – nur Gerätestimme."
           fi
+      # gh-pages besteht immer nur aus einem Commit ohne Vorgänger: alte Audio-Versionen bleiben so nicht über den
+      # Verlauf erreichbar, und es wird nie der ganze Branch geladen (Abgleich über Partial-Fetch ohne Blobs).
+      # Die MP3-Blobs sind identisch mit denen im Branch audio → der Push überträgt nur Geändertes.
       - name: Nach gh-pages veröffentlichen
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898299+github-actions[bot]@users.noreply.github.com"
-          git fetch origin gh-pages
-          git worktree add ../pages origin/gh-pages
-          find ../pages -mindepth 1 -maxdepth 1 ! -name .git -exec rm -rf {} +
-          cp -a _site/. ../pages/
-          rm -f ../pages/BUILD-INFO.txt
-          touch ../pages/.nojekyll
-          cd ../pages
-          git add -A
-          if git diff --cached --quiet; then echo "Keine Änderungen am Build."; exit 0; fi
-          git commit -m "Build von ${GITHUB_SHA::7}"
-          git push origin HEAD:gh-pages
+          rm -f _site/BUILD-INFO.txt
+          touch _site/.nojekyll
+          export GIT_INDEX_FILE="$RUNNER_TEMP/pages.index"
+          git --work-tree=_site add -A
+          TREE=$(git write-tree)
+          ALT=""
+          if git fetch -q --depth 1 --filter=blob:none origin gh-pages; then ALT=$(git rev-parse 'FETCH_HEAD^{tree}'); fi
+          if [ "$TREE" = "$ALT" ]; then echo "Keine Änderungen am Build."; exit 0; fi
+          COMMIT=$(git commit-tree "$TREE" -m "Build von ${GITHUB_SHA::7}")
+          git push -f origin "$COMMIT:refs/heads/gh-pages"
