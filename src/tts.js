@@ -76,6 +76,7 @@ const BUCHSTABIEREN = ('LAPL PPL CPL ATPL SPL BPL AIP AIC NCO EFZ BFZ AFZ KRF FC
   'LOGF LOWG LOWW LOWI LOWS LOWK LOWL LOAN VOR DME NDB ADF VDF VHF UKW GNSS GPS SSR ELT PLB SAR ETA EOBT TEM ARC CRE MTOM MTOW ' +
   'GND OAT EGT RPM ROC TCU PPR SZR USG AME AMC FAA CAA EU MET MED ENR GEN AD ML LFG SUB ZLLV MW VO ZÜP DVO RIS LVR').split(' ');
 const ABK = [
+  [/[☐☑☒✓✔✗✘]/g, ' '],
   [/\bz\.\s?B\./g, 'zum Beispiel'], [/\bd\.\s?h\./g, 'das heißt'], [/\bu\.\s?a\./g, 'unter anderem'], [/\bv\.\s?a\./g, 'vor allem'],
   [/\bo\.\s?Ä\./g, 'oder Ähnliches'], [/\bu\.\s?U\./g, 'unter Umständen'], [/\bi\.\s?d\.\s?R\./g, 'in der Regel'], [/\bs\.\s?o\./g, 'siehe oben'],
   [/\bs\.\s?u\./g, 'siehe unten'], [/\bbzw\./g, 'beziehungsweise'], [/\bca\./g, 'circa'], [/\bggf\./g, 'gegebenenfalls'], [/\binkl\./g, 'inklusive'],
