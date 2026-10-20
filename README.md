@@ -53,6 +53,14 @@ Anki-Export als TSV (`#deck column`/`#tags column`, Import in Anki: Datei → Im
 Gegenstelle spricht (Stimme je `sprache` de/en), Bedenkzeit, dann Musterlösung (Text + Vorlesen). Pilot-Schritte der Form „(Aktion: …)“ werden nur angezeigt.
 Optional Spracherkennung (Web Speech API) mit grobem Schlüsselwort-Abgleich (Zahlwörter → Ziffern).
 
+**LPE-Training** (`#/lpe`, `src/pages/Lpe.jsx`): aus `funkuebungen/lpe-uebungen.json` (Schema in `funkuebungen/README.md`; `content.lpe`, Schritt-Feld `n` = Index
+in der JSON-Datei = Schlüssel im Audio-Manifest `lpe`). Prüfer/ATC/Ansage sprechen mit der anderen Stimme als der gewählten, Musterantwort mit der gewählten
+(sonst Gerätestimme `en`). Aufgabe + Bildbeschreibung (`bild`) als Karte, Antwort-Timer (Interview/Bild 45/60/90 s, sonst 15/20/30 s), optional Aufnahme
+(MediaRecorder, nur im Tab) und Spracherkennung `en-GB` mit Schlüsselwort-Abgleich; Ansagen (`sprecher: ansage`) mit „Nochmal hören“, Text erst am Ende.
+Am Ende Vokabeln, Fortschritt `checks['lpe:<id>']`. Prüfungssimulation `#/lpe/simulation`: Teil I Interview + Bild, Teil II Hörverstehen, Readback/Weitergabe,
+unerwartete Situation (zufällig), danach Selbsteinschätzung nach 6 ICAO-Kriterien (Level = Minimum, `localStorage` `flugschein-lpe-simulationen`).
+Wochenpläne in Zusatzmodulen (`**Woche N – …**` + Checkboxen) werden je Woche gruppiert.
+
 **Checklisten** (`#/checklisten`, `src/pages/Checklisten.jsx`): aus `checklisten/*.md` (Reihenfolge/Einleitung aus `index.md`), Abschnitte `##`–`####`,
 Listenpunkte werden abhakbar (Punkt/Handlung getrennt bei Punktlinien `....` oder Tab), Tabellen bleiben Text. „Alle zurücksetzen“, Druckansicht (`@media print`).
 
@@ -70,7 +78,7 @@ Fragen/Karten nach Anzahl Wiederholungen, Flugbuch per ID mit Löschmarken. Alte
   `bash internal/audio-quellen/neu-generieren.sh --push` (inkrementell), sonst Gerätestimme für die betroffenen Teile.
 - Funktraining: Pilot = gewählte Stimme, Gegenstelle = andere Stimme (Hash über den Original-Text). Englische Funk-Dialoge in Codeblöcken der Skripte:
   Knopf „Dialog anhören“ mit Zeilen-Hervorhebung.
-- Offline: „Lernunterlagen → Offline hören“ legt je Fach (Skript + Fragenkatalog + Dialoge), „Dokumente & Glossar“ oder „Funktraining“ die MP3s in den Cache
+- Offline: „Lernunterlagen → Offline hören“ legt je Fach (Skript + Fragenkatalog + Dialoge), „Dokumente & Glossar“, „Funktraining“ oder „LPE-Training“ die MP3s in den Cache
   `flugschein-audio`. Der Service Worker lädt Audio nie vorab, liefert gespeicherte Dateien als Range-Antwort (206, nötig für Safari) und streamt den Rest.
 
 ## Hosting (GitHub Pages: https://rroollii.github.io/flugschein/)

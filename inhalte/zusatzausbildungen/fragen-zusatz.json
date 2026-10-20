@@ -1,8 +1,8 @@
 {
-  "titel": "Übungsfragen Zusatzausbildungen – Nachtflug, MEP, Flugfunk international (Österreich)",
+  "titel": "Übungsfragen Zusatzausbildungen – Nachtflug, MEP, Flugfunk international, LPE Englisch (Österreich)",
   "version": "1.0",
   "stand": "2026-10",
-  "hinweis": "Eigene Übungsfragen, keine Originalfragen einer Behörde. Nachtflug: keine Behördenprüfung, Fragen dienen dem Kurs-Theorieteil. MEP: Theorieprüfung durch die ATO (Multiple Choice, 75 %). Flugfunk: Vorbereitung auf EFZ-Prüfung (Fernmeldebüro) und Phraseologie. Angaben mit [prüfen] sind vor Gebrauch zu verifizieren.",
+  "hinweis": "Eigene Übungsfragen, keine Originalfragen einer Behörde. Nachtflug: keine Behördenprüfung, Fragen dienen dem Kurs-Theorieteil. MEP: Theorieprüfung durch die ATO (Multiple Choice, 75 %). Flugfunk: Vorbereitung auf EFZ-Prüfung (Fernmeldebüro) und Phraseologie. LPE Englisch: Recht/Verfahren zum Sprachenvermerk (FCL.055) und Plain-English-Wortschatz – der eigentliche Sprachtest ist mündlich. Angaben mit [prüfen] sind vor Gebrauch zu verifizieren.",
   "bestehensgrenze_prozent": 75,
   "faecher": [
     {
@@ -1526,6 +1526,546 @@
           ],
           "richtig": 1,
           "erklaerung": "Sonst „DEPARTURE“ bzw. „ready for departure“ – Schutz vor Verwechslung mit einer Freigabe."
+        }
+      ]
+    },
+    {
+      "nr": 4,
+      "id": "lpe-englisch",
+      "name": "LPE Englisch",
+      "kuerzel": "LPE",
+      "pruefung": {
+        "fragen": 20,
+        "minuten": 30
+      },
+      "fragen": [
+        {
+          "id": "LPE-001",
+          "frage": "Welche Vorschrift verlangt den Sprachenvermerk für Piloten, die am Sprechfunk teilnehmen?",
+          "antworten": [
+            "FCL.060 der VO (EU) 1178/2011 (Teil-FCL)",
+            "SERA.14001 der VO (EU) 923/2012",
+            "FCL.055 der VO (EU) 1178/2011 (Teil-FCL)",
+            "§ 4 des Funker-Zeugnisgesetzes"
+          ],
+          "richtig": 2,
+          "erklaerung": "FCL.055 Sprachkenntnisse; FCL.060 betrifft die fliegerische Erfahrung (Recency)."
+        },
+        {
+          "id": "LPE-002",
+          "frage": "Welches Mindestniveau verlangt FCL.055 für den Sprachenvermerk?",
+          "antworten": [
+            "Level 3 – Pre-operational",
+            "Level 5 – Extended",
+            "Level 4 – Operational",
+            "Level 6 – Expert"
+          ],
+          "richtig": 2,
+          "erklaerung": "Mindestens Operational Level (4) nach Anlage 2 zu Teil-FCL."
+        },
+        {
+          "id": "LPE-003",
+          "frage": "Wie lange ist ein Sprachenvermerk Englisch Level 4 gültig?",
+          "antworten": [
+            "2 Jahre",
+            "4 Jahre",
+            "6 Jahre",
+            "unbefristet"
+          ],
+          "richtig": 1,
+          "erklaerung": "Level 4: 4 Jahre, Level 5: 6 Jahre, Level 6: unbefristet."
+        },
+        {
+          "id": "LPE-004",
+          "frage": "Wie lange ist ein Sprachenvermerk Level 5 gültig?",
+          "antworten": [
+            "6 Jahre",
+            "4 Jahre",
+            "8 Jahre",
+            "unbefristet"
+          ],
+          "richtig": 0,
+          "erklaerung": "Level 5 (Extended) muss alle 6 Jahre neu nachgewiesen werden."
+        },
+        {
+          "id": "LPE-005",
+          "frage": "Was gilt für einen Sprachenvermerk Level 6?",
+          "antworten": [
+            "alle 10 Jahre zu wiederholen",
+            "gilt nur so lange wie das Medical",
+            "keine Wiederholungsprüfung nötig",
+            "erlischt mit dem Lizenzablauf"
+          ],
+          "richtig": 2,
+          "erklaerung": "Level 6 (Expert) ist unbefristet gültig."
+        },
+        {
+          "id": "LPE-006",
+          "frage": "Wer trägt den Sprachenvermerk in einer österreichischen Lizenz erstmals ein?",
+          "antworten": [
+            "das Fernmeldebüro nach der Funkprüfung",
+            "die Flugschule (ATO/DTO) selbst",
+            "jeder Prüfer per Handeintrag",
+            "Austro Control, Abteilung Lizenzierung"
+          ],
+          "richtig": 3,
+          "erklaerung": "Ersteintragungen nur durch Austro Control; Handeintrag nur bei Verlängerung mit gleichem Level."
+        },
+        {
+          "id": "LPE-007",
+          "frage": "Mit welchem Formular beantragt man den Eintrag bei Austro Control?",
+          "antworten": [
+            "DC_LFA_ACW_010",
+            "FO_LFA_ACW_053",
+            "DC_LFA_ACW_013",
+            "FO_LFA_ACW_096"
+          ],
+          "richtig": 3,
+          "erklaerung": "FO_LFA_ACW_096 = Antrag auf Eintragung eines Sprachenvermerks; DC_LFA_ACW_010 ist die LTB-Liste."
+        },
+        {
+          "id": "LPE-008",
+          "frage": "Welche Gebühr nennt die Austro-Control-Gebührenverordnung (TP 16d) für die Bescheinigung der Sprachkompetenz?",
+          "antworten": [
+            "143,74 € inklusive Zeugnisgebühr",
+            "47 € – für Level 4, 5 und 6 gleich",
+            "67 € für Level 4, 114 € für Level 6",
+            "keine Gebühr – im PPL-Antrag enthalten"
+          ],
+          "richtig": 1,
+          "erklaerung": "ACGV Anlage 1 TP 16d: Level 4/5/6 je 47 € (Stand 2026) [prüfen]."
+        },
+        {
+          "id": "LPE-009",
+          "frage": "Ersetzt ein bestandenes AFZ oder EFZ den Sprachenvermerk Englisch?",
+          "antworten": [
+            "Nein – Funkzeugnis und Sprachenvermerk sind getrennt nötig",
+            "Ja – das AFZ enthält den Level-4-Nachweis bereits automatisch",
+            "Ja – aber nur für VFR-Flüge innerhalb der EU",
+            "Nur das AFZ, nicht aber das EFZ"
+          ],
+          "richtig": 0,
+          "erklaerung": "Funkzeugnis (Fernmeldebüro) prüft Phraseologie/Verfahren, der Sprachtest (Austro Control) plain English."
+        },
+        {
+          "id": "LPE-010",
+          "frage": "Worauf liegt laut Austro Control der Schwerpunkt der Sprachkompetenzprüfung?",
+          "antworten": [
+            "auf „plain language“ über die Standardphraseologie hinaus",
+            "auf korrekter ICAO-Standardphraseologie und Readbacks",
+            "auf Luftrecht und Verfahren in englischer Sprache",
+            "auf schriftlicher Übersetzung englischer Funktexte"
+          ],
+          "richtig": 0,
+          "erklaerung": "Sprechfunkprüfung = Phraseologie; Sprachtest = spontane, nicht kodierte Sprache."
+        },
+        {
+          "id": "LPE-011",
+          "frage": "Ein Pilot hat nur „Deutsch“ als Sprachenvermerk. Was ist laut Austro Control nicht zulässig?",
+          "antworten": [
+            "jeder Funkverkehr mit Fürstenfeld Radio auf Deutsch",
+            "Flüge über 3 000 ft im Luftraum G",
+            "Funk auf Deutsch mit Graz Tower",
+            "Englisch im kontrollierten Luftraum und bei IFR"
+          ],
+          "richtig": 3,
+          "erklaerung": "Ein reiner Deutsch-Eintrag erlaubt kein Englisch im kontrollierten Luftraum und bei IFR."
+        },
+        {
+          "id": "LPE-012",
+          "frage": "Wer ist laut Austro Control von der Sprachnachweispflicht ausgenommen?",
+          "antworten": [
+            "Inhaber einer LAPL(A) mit weniger als 50 h",
+            "Inhaber von Segelflug- und Ballonlizenzen",
+            "Flugschüler bei ihren Solo-Überlandflügen",
+            "Piloten mit AFZ und mehr als 100 h"
+          ],
+          "richtig": 1,
+          "erklaerung": "Ausgenommen: Segelflug, Freiballon, nationale Lizenzen (z. B. UL)."
+        },
+        {
+          "id": "LPE-013",
+          "frage": "Welche Liste von Austro Control nennt die zertifizierten Prüfstellen (Language Testing Bodies)?",
+          "antworten": [
+            "DC_LFA_ACW_012",
+            "FO_LFA_ACW_096",
+            "DC_LFA_ACW_010",
+            "ZPH FCL 8"
+          ],
+          "richtig": 2,
+          "erklaerung": "010 = LTBs, 011 = Tests, 012 = Linguisten (LPLE), 013 = Prüfer (LPE)."
+        },
+        {
+          "id": "LPE-014",
+          "frage": "Wie wird bei der Bewertung der Gesamtlevel festgelegt?",
+          "antworten": [
+            "Durchschnitt der sechs Kriterien, kaufmännisch gerundet",
+            "das schwächste der sechs Kriterien bestimmt den Level",
+            "der Interviewteil allein bestimmt den Level",
+            "der Prüfer legt den Level vor dem Test fest"
+          ],
+          "richtig": 1,
+          "erklaerung": "ICAO: Der niedrigste Einzelwert ist der Gesamtlevel."
+        },
+        {
+          "id": "LPE-015",
+          "frage": "Wie viele Bewerter beurteilen einen Sprachtest in Österreich mindestens?",
+          "antworten": [
+            "einer – der prüfende Fluglehrer",
+            "zwei – Prüfer (LPE) und Linguist (LPLE)",
+            "drei – zwei Prüfer und Austro Control",
+            "keiner – die Software bewertet automatisch"
+          ],
+          "richtig": 1,
+          "erklaerung": "LPE + LPLE; bei Abweichung ggf. dritte Bewertung durch die LTB."
+        },
+        {
+          "id": "LPE-016",
+          "frage": "Was verlangt AMC1 FCL.055 unter anderem für den Testablauf?",
+          "antworten": [
+            "einen schriftlichen Grammatiktest mit 75 %",
+            "einen Flug mit englischem Funk im Luftfahrzeug",
+            "eine Prüfung ausschließlich vor Ort in Wien",
+            "einen Teil ohne Sichtkontakt (voice-only)"
+          ],
+          "richtig": 3,
+          "erklaerung": "Die Kommunikation ohne Sichtkontakt muss mitgeprüft werden – z. B. Kamera aus."
+        },
+        {
+          "id": "LPE-017",
+          "frage": "Wer darf eine Verlängerung bei gleichbleibendem Level als Handeintrag vornehmen?",
+          "antworten": [
+            "ein LPE, der zusätzlich Examiner (z. B. FE) ist",
+            "jeder Fluglehrer (FI) der eigenen Flugschule",
+            "das Fernmeldebüro bei der Funkprüfung",
+            "der Pilot selbst mit Kopie des Zertifikats"
+          ],
+          "richtig": 0,
+          "erklaerung": "Austro Control empfiehlt für Auslandsflüge trotzdem den Behördeneintrag."
+        },
+        {
+          "id": "LPE-018",
+          "frage": "Welcher Test gehört zur LTB 112?",
+          "antworten": [
+            "CheckL6 mit Computer-Based-Test",
+            "ELPT mit semi-direktem Teil",
+            "Test der Austrian Airlines (nur Level 4)",
+            "„ICAO Level“ (online, Level 4 only oder 4–6)"
+          ],
+          "richtig": 3,
+          "erklaerung": "LTB 112 = ICAO Level; LTB 101 = CheckL6; LTB 106 = ELPT; LTB 102 = AUA."
+        },
+        {
+          "id": "LPE-019",
+          "frage": "Was bedeutet der „offene Test“ Level 4–6 bei LTB 112?",
+          "antworten": [
+            "bescheinigt wird das tatsächlich gezeigte Level 4, 5 oder 6",
+            "man muss sich vorab für Level 5 oder 6 entscheiden",
+            "nur Level 6 wird bescheinigt, sonst nicht bestanden",
+            "er ist nur für Berufspiloten mit ATPL zugelassen"
+          ],
+          "richtig": 0,
+          "erklaerung": "Ohne Festlegung vorab; L4 only hat leichtere Aufgaben und max. Level 4."
+        },
+        {
+          "id": "LPE-020",
+          "frage": "Was hört ein Flugschüler im LTB-112-Test anstelle der beiden ATIS-Aufnahmen?",
+          "antworten": [
+            "eine kurze Geschichte mit zwei Fragen",
+            "einen MAYDAY-Ruf zum Mitschreiben",
+            "eine Wettervorhersage auf Deutsch",
+            "nichts – der Teil entfällt ersatzlos"
+          ],
+          "richtig": 0,
+          "erklaerung": "Lizenzinhaber: 2 ATIS; Flugschüler: Kurzgeschichte + 2 Fragen."
+        },
+        {
+          "id": "LPE-021",
+          "frage": "Was ist ein „bird strike“?",
+          "antworten": [
+            "Streik des Bodenpersonals am Flughafen",
+            "Vogelschwarm auf oder neben der Piste, ohne Kollision",
+            "Zusammenstoß eines Luftfahrzeugs mit einem Vogel",
+            "plötzlicher Seitenwindstoß beim Landen"
+          ],
+          "richtig": 2,
+          "erklaerung": "bird strike = Vogelschlag; a flock of birds = Vogelschwarm."
+        },
+        {
+          "id": "LPE-022",
+          "frage": "Welche Übersetzung von „precautionary landing“ ist richtig?",
+          "antworten": [
+            "Notwasserung",
+            "Landung ohne Klappen",
+            "Bauchlandung nach Fahrwerksdefekt",
+            "Sicherheitslandung (vorsorglich)"
+          ],
+          "richtig": 3,
+          "erklaerung": "precautionary = vorsorglich; forced landing = Notlandung; ditching = Notwasserung."
+        },
+        {
+          "id": "LPE-023",
+          "frage": "Wie sagt man richtig: „Ich fliege seit zwei Jahren“?",
+          "antworten": [
+            "I fly since two years.",
+            "I am flying since two years.",
+            "I have been flying for two years.",
+            "I flew for two years since."
+          ],
+          "richtig": 2,
+          "erklaerung": "Present Perfect Continuous + for (Zeitdauer); since nur mit Zeitpunkt."
+        },
+        {
+          "id": "LPE-024",
+          "frage": "Welcher Satz ist grammatikalisch korrekt?",
+          "antworten": [
+            "I have flown to Graz yesterday.",
+            "I have fly to Graz yesterday.",
+            "I am flown to Graz yesterday.",
+            "I flew to Graz yesterday."
+          ],
+          "richtig": 3,
+          "erklaerung": "Bestimmter Zeitpunkt in der Vergangenheit (yesterday) → Past Simple."
+        },
+        {
+          "id": "LPE-025",
+          "frage": "Was bedeutet „The engine is running rough“?",
+          "antworten": [
+            "Der Motor läuft unrund",
+            "Der Motor läuft mit Vollgas",
+            "Der Motor ist abgestellt",
+            "Der Motor läuft im Leerlauf"
+          ],
+          "richtig": 0,
+          "erklaerung": "rough-running engine = unrund laufender Motor, typisch bei Vergaservereisung."
+        },
+        {
+          "id": "LPE-026",
+          "frage": "Ein Passagier „fainted“. Was ist passiert?",
+          "antworten": [
+            "Er hat sich übergeben",
+            "Er ist ohnmächtig geworden",
+            "Er hat Atemnot bekommen",
+            "Er ist eingeschlafen"
+          ],
+          "richtig": 1,
+          "erklaerung": "to faint / to pass out = ohnmächtig werden; to vomit = sich übergeben."
+        },
+        {
+          "id": "LPE-027",
+          "frage": "Welches englische Wort passt für „aktuell“ in „das aktuelle Wetter“?",
+          "antworten": [
+            "actual",
+            "current",
+            "eventual",
+            "topical"
+          ],
+          "richtig": 1,
+          "erklaerung": "Falscher Freund: actual = tatsächlich; current = aktuell."
+        },
+        {
+          "id": "LPE-028",
+          "frage": "Welches englische Wort bedeutet „eventuell / vielleicht“?",
+          "antworten": [
+            "eventually",
+            "finally",
+            "possibly",
+            "at last"
+          ],
+          "richtig": 2,
+          "erklaerung": "Falscher Freund: eventually = schließlich, letztendlich."
+        },
+        {
+          "id": "LPE-029",
+          "frage": "Was bedeutet „to divert“ im Flugbetrieb?",
+          "antworten": [
+            "eine Platzrunde abkürzen",
+            "den Flugplan stornieren und am Boden bleiben",
+            "die Flughöhe beibehalten",
+            "zu einem anderen Flugplatz ausweichen"
+          ],
+          "richtig": 3,
+          "erklaerung": "divert/diversion = Ausweichen zu einem alternate."
+        },
+        {
+          "id": "LPE-030",
+          "frage": "Welche Formulierung ist eine gute Nachfrage-Strategie (Interactions)?",
+          "antworten": [
+            "„Sorry, could you repeat the last part, please?“",
+            "„Roger, wilco.“ (obwohl nicht verstanden)",
+            "Schweigen, bis der Prüfer weiterspricht",
+            "„Yes, yes, okay.“ sagen und schnell das Thema wechseln"
+          ],
+          "richtig": 0,
+          "erklaerung": "Nachfragen und Bestätigen zählen positiv für Interactions."
+        },
+        {
+          "id": "LPE-031",
+          "frage": "Was beschreibt „The cloud base is getting lower“?",
+          "antworten": [
+            "Die Wolken lösen sich auf",
+            "Die Sicht wird besser",
+            "Die Wolkenuntergrenze sinkt",
+            "Die Wolkenobergrenze steigt"
+          ],
+          "richtig": 2,
+          "erklaerung": "cloud base = Wolkenuntergrenze; to lift/clear up = sich auflösen."
+        },
+        {
+          "id": "LPE-032",
+          "frage": "Welcher Ausdruck gehört zur Ortsangabe in einer Bildbeschreibung?",
+          "antworten": [
+            "in the meantime",
+            "in the long run",
+            "in the foreground",
+            "in the first place"
+          ],
+          "richtig": 2,
+          "erklaerung": "foreground/background/on the left/next to = Ortsangaben; die anderen sind Zeit-/Diskursmarker."
+        },
+        {
+          "id": "LPE-033",
+          "frage": "Welche Zeitform nutzt man, um zu beschreiben, was auf einem Bild gerade passiert?",
+          "antworten": [
+            "Present Continuous („is parking“)",
+            "Past Perfect („had parked“)",
+            "Future Perfect („will have parked“)",
+            "Past Simple („parked“)"
+          ],
+          "richtig": 0,
+          "erklaerung": "Was gerade passiert → Present Continuous."
+        },
+        {
+          "id": "LPE-034",
+          "frage": "Was bedeutet „The windscreen is cracked“?",
+          "antworten": [
+            "Die Windschutzscheibe ist innen beschlagen",
+            "Die Windschutzscheibe hat einen Sprung",
+            "Der Windsack ist gerissen",
+            "Die Scheibe ist vereist"
+          ],
+          "richtig": 1,
+          "erklaerung": "cracked = gesprungen; misted up = beschlagen; iced up = vereist."
+        },
+        {
+          "id": "LPE-035",
+          "frage": "Was bedeutet „The passenger is short of breath“?",
+          "antworten": [
+            "Der Passagier ist zu klein für den Gurt",
+            "Der Passagier hat Atemnot",
+            "Der Passagier hat Kopfschmerzen",
+            "Der Passagier spricht sehr leise"
+          ],
+          "richtig": 1,
+          "erklaerung": "short of breath = kurzatmig; dizzy = schwindlig; headache = Kopfschmerz."
+        },
+        {
+          "id": "LPE-036",
+          "frage": "Welches Verbindungswort drückt einen Gegensatz aus?",
+          "antworten": [
+            "therefore",
+            "moreover",
+            "for instance",
+            "however"
+          ],
+          "richtig": 3,
+          "erklaerung": "however = jedoch; therefore = daher; moreover = außerdem; for instance = zum Beispiel."
+        },
+        {
+          "id": "LPE-037",
+          "frage": "Welcher Satz ist korrekt?",
+          "antworten": [
+            "I got my licence last year.",
+            "I became my licence last year.",
+            "I have become my licence last year.",
+            "I did become my licence last year."
+          ],
+          "richtig": 0,
+          "erklaerung": "Falscher Freund: become = werden; bekommen = get/receive."
+        },
+        {
+          "id": "LPE-038",
+          "frage": "Welche Form ist richtig?",
+          "antworten": [
+            "We need more informations about the weather.",
+            "We need more information about the weather.",
+            "We need a information about the weather.",
+            "We need many information about the weather."
+          ],
+          "richtig": 1,
+          "erklaerung": "information und advice sind unzählbar – kein Plural-s, kein „a“."
+        },
+        {
+          "id": "LPE-039",
+          "frage": "Was ist im Interview die beste Reaktion, wenn ein Fachwort fehlt?",
+          "antworten": [
+            "das Wort umschreiben (paraphrasing)",
+            "das deutsche Wort verwenden und weiterreden",
+            "die Antwort abbrechen und schweigen",
+            "auf Standardphraseologie ausweichen"
+          ],
+          "richtig": 0,
+          "erklaerung": "Paraphrasing ist ein Kernmerkmal von Vocabulary Level 4."
+        },
+        {
+          "id": "LPE-040",
+          "frage": "Wie lang sollte eine Antwort auf eine Interviewfrage typischerweise sein?",
+          "antworten": [
+            "ein Wort oder eine kurze Phrase",
+            "möglichst nur Standardphraseologie",
+            "etwa 4–6 zusammenhängende Sätze",
+            "mindestens fünf Minuten ohne Pause"
+          ],
+          "richtig": 2,
+          "erklaerung": "LTB 112 nennt 4–5 Sätze je Frage; zu kurze Antworten liefern zu wenig Sprachprobe."
+        },
+        {
+          "id": "LPE-041",
+          "frage": "Was wird im Sprachtest NICHT bewertet?",
+          "antworten": [
+            "Aussprache und Verständlichkeit",
+            "Flüssigkeit und Verbindungswörter",
+            "Reaktion auf unerwartete Wendungen im Gespräch",
+            "die fliegerische Richtigkeit des Inhalts"
+          ],
+          "richtig": 3,
+          "erklaerung": "Es ist ein Sprachtest, kein Fachtest – Inhalte müssen nur plausibel sein."
+        },
+        {
+          "id": "LPE-042",
+          "frage": "Welcher Satz ist eine korrekte Konditional-Antwort auf „What would you do if…?“",
+          "antworten": [
+            "If the weather gets worse, I would turned back.",
+            "If the weather got worse, I would turn back.",
+            "If the weather would get worse, I turn back.",
+            "If the weather got worse, I will turned back."
+          ],
+          "richtig": 1,
+          "erklaerung": "Konditional 2: if + Past Simple, would + Grundform."
+        },
+        {
+          "id": "LPE-043",
+          "frage": "Was bedeutet „uncertain of position“?",
+          "antworten": [
+            "Die Position wurde vom Radar bestätigt",
+            "Der Pilot meldet einen Pflichtmeldepunkt im Anflug",
+            "Der Pilot ist sich seiner Position nicht sicher",
+            "Der Transponder zeigt keine Höhe"
+          ],
+          "richtig": 2,
+          "erklaerung": "Typischer Anlass für PAN PAN bzw. Hilfeersuchen beim FIS."
+        },
+        {
+          "id": "LPE-044",
+          "frage": "Was bedeutet „Request an ambulance on arrival“?",
+          "antworten": [
+            "Bitte um Landefreigabe nach Ankunft",
+            "Bitte um Tankwagen bei der Ankunft",
+            "Bitte um Ankunftszeit des Rettungsfluges",
+            "Bitte um Rettung bei der Ankunft"
+          ],
+          "richtig": 3,
+          "erklaerung": "Typische Formulierung bei medizinischen Notfällen an Bord."
         }
       ]
     }

@@ -1,0 +1,1238 @@
+{
+  "version": 1,
+  "stand": "2026-10-20",
+  "hinweis": "Sprech- und Hörübungen zur Vorbereitung auf den Sprachtest Englisch (FCL.055, ICAO Level 4–6). Bewertet wird im Test plain English, nicht Fachwissen. Alle Frequenzen, Squawks, QNH-, ATIS- und Wetterwerte sind Übungswerte – im Flug gelten AIP, NOTAM und ATC. Musterantworten sind Beispiele für Level 4/5, keine einzig richtige Lösung.",
+  "rufzeichen": {
+    "kennzeichen": "OE-CBF",
+    "gesprochen": "Oscar Echo Charlie Bravo Foxtrot",
+    "muster": "DA20"
+  },
+  "typen": {
+    "interview": "Prüferfrage anhören, frei 45–60 s antworten (4–6 Sätze).",
+    "bildbeschreibung": "Bild (Beschreibung in „bild“) 45–60 s auf Englisch beschreiben.",
+    "bildvergleich": "Zwei Bilder vergleichen: Gemeinsamkeiten, Unterschiede, Meinung.",
+    "hoerverstehen": "ATIS/Meldung anhören, mitschreiben, Fragen beantworten.",
+    "readback": "ATC-Anweisung anhören und korrekt zurücklesen.",
+    "weitergabe": "Funkspruch anhören und in plain English (3. Person) an eine andere Stelle weitergeben.",
+    "unerwartete-situation": "Unerwartete Situation/Notfall: melden und in plain English erklären, auf Rückfragen reagieren."
+  },
+  "uebungen": [
+    {
+      "id": "lpe-intro",
+      "titel": "Interview: Please introduce yourself",
+      "typ": "interview",
+      "sprache": "en",
+      "schwierigkeit": "leicht",
+      "level_ziel": "4",
+      "themen": [
+        "interview",
+        "vorstellung"
+      ],
+      "situation": "Beginn jedes Sprachtests. Der Prüfer begrüßt dich und bittet um eine kurze Vorstellung.",
+      "aufgabe": "Stell dich in ca. 60 Sekunden vor: Name, Wohnort, Beruf, Flugausbildung, Motivation, Pläne.",
+      "schritte": [
+        {
+          "rolle": "atc",
+          "sprecher": "pruefer",
+          "text": "Good morning and welcome. Before we start, please introduce yourself and tell me a little about your flying."
+        },
+        {
+          "rolle": "pilot",
+          "text": "Good morning. My name is Thomas, I'm thirty-four and I live near Fürstenfeld in Styria. I work as an electrician for a local company. At the moment I'm training for my private pilot licence at the flight school in Fürstenfeld, and I've flown about twenty-five hours so far, including my first solo flights. I've always been fascinated by aviation – my grandfather used to take me to the airfield when I was a kid. Once I have my licence, I'd like to fly to Slovenia and Croatia.",
+          "hinweis": "Struktur: Person → Beruf → Ausbildung mit Zahlen → Motivation (used to) → Pläne (I'd like to). Natürlich sprechen, nicht ablesen."
+        },
+        {
+          "rolle": "atc",
+          "sprecher": "pruefer",
+          "text": "That sounds great. What made you choose Fürstenfeld for your training?"
+        },
+        {
+          "rolle": "pilot",
+          "text": "Mainly because it's close to where I live, so I can fly after work. The club atmosphere is also very friendly, and the instructors have a lot of experience.",
+          "hinweis": "Kurze Folgefrage – trotzdem 2–3 Sätze mit Begründung (because, also)."
+        }
+      ],
+      "vokabeln": [
+        {
+          "en": "to be fascinated by",
+          "de": "fasziniert sein von"
+        },
+        {
+          "en": "used to",
+          "de": "pflegte zu / früher"
+        },
+        {
+          "en": "so far",
+          "de": "bisher"
+        }
+      ]
+    },
+    {
+      "id": "lpe-first-solo",
+      "titel": "Interview: Your first solo flight",
+      "typ": "interview",
+      "sprache": "en",
+      "schwierigkeit": "leicht",
+      "level_ziel": "4",
+      "themen": [
+        "interview",
+        "erlebnis",
+        "vergangenheit"
+      ],
+      "situation": "Der Prüfer fragt nach einem persönlichen fliegerischen Erlebnis.",
+      "aufgabe": "Erzähle von deinem ersten Alleinflug (oder stell ihn dir vor). Past Simple verwenden, chronologisch erzählen.",
+      "schritte": [
+        {
+          "rolle": "atc",
+          "sprecher": "pruefer",
+          "text": "Can you describe your first solo flight? How did you feel?"
+        },
+        {
+          "rolle": "pilot",
+          "text": "It was on a calm morning last spring. After three circuits my instructor got out and told me to do one on my own. I was quite nervous during the take-off, but once I was in the air I felt really focused. The aircraft climbed much faster without my instructor. The landing was a bit long, but safe, and afterwards everybody congratulated me.",
+          "hinweis": "Verbindungswörter: after, but, once, afterwards. Gefühle benennen: nervous, focused, proud."
+        }
+      ],
+      "vokabeln": [
+        {
+          "en": "circuit",
+          "de": "Platzrunde"
+        },
+        {
+          "en": "to congratulate",
+          "de": "gratulieren"
+        },
+        {
+          "en": "focused",
+          "de": "konzentriert"
+        }
+      ]
+    },
+    {
+      "id": "lpe-weather-decision",
+      "titel": "Interview: Weather got worse",
+      "typ": "interview",
+      "sprache": "en",
+      "schwierigkeit": "mittel",
+      "level_ziel": "4",
+      "themen": [
+        "interview",
+        "wetter",
+        "hypothetisch"
+      ],
+      "situation": "Der Prüfer stellt eine hypothetische Frage – typisch für den Level-4-entscheidenden Teil.",
+      "aufgabe": "Antworte mit Konditional (If …, I would …) und begründe deine Entscheidung.",
+      "schritte": [
+        {
+          "rolle": "atc",
+          "sprecher": "pruefer",
+          "text": "Imagine you're on a cross-country flight and the weather gets worse than forecast. What would you do?"
+        },
+        {
+          "rolle": "pilot",
+          "text": "First of all, I would not continue into bad weather. If the cloud base got lower, I would turn back or divert to the nearest suitable airfield while I still had good visibility. I would inform Vienna Information about my new intentions and ask for the latest weather. If I were unsure of my position, I would ask for help immediately rather than wait.",
+          "hinweis": "Konditional 2: If + Past Simple, would + Grundform. Struktur: Entscheidung → Begründung → Kommunikation."
+        },
+        {
+          "rolle": "atc",
+          "sprecher": "pruefer",
+          "text": "Have you ever had to make a decision like that?"
+        },
+        {
+          "rolle": "pilot",
+          "text": "Not on my own yet, but once with my instructor we turned back near Gleisdorf because of low clouds. It showed me how quickly conditions can change in the hills.",
+          "hinweis": "Ehrlich bleiben – auch „noch nicht“ ist eine gute Antwort, wenn man weitererzählt."
+        }
+      ],
+      "vokabeln": [
+        {
+          "en": "to divert",
+          "de": "ausweichen"
+        },
+        {
+          "en": "cloud base",
+          "de": "Wolkenuntergrenze"
+        },
+        {
+          "en": "suitable",
+          "de": "geeignet"
+        }
+      ]
+    },
+    {
+      "id": "lpe-biggest-risk",
+      "titel": "Interview: Biggest danger for private pilots",
+      "typ": "interview",
+      "sprache": "en",
+      "schwierigkeit": "schwer",
+      "level_ziel": "5",
+      "themen": [
+        "interview",
+        "meinung",
+        "sicherheit"
+      ],
+      "situation": "Meinungsfrage – hier zeigen sich Level 5/6 (Argumentation, komplexe Strukturen).",
+      "aufgabe": "Begründe deine Meinung mit Beispiel und Gegenargument (in my opinion, on the other hand, that's why).",
+      "schritte": [
+        {
+          "rolle": "atc",
+          "sprecher": "pruefer",
+          "text": "In your opinion, what is the biggest danger for private pilots, and how can it be reduced?"
+        },
+        {
+          "rolle": "pilot",
+          "text": "In my opinion, the biggest danger is flying into bad weather, so-called VFR into IMC. Many accidents happen because pilots feel under pressure to get home, for example after a weekend trip. On the other hand, modern weather apps make planning much easier than in the past. That's why I think the key is to set personal minimums before the flight and to stick to them, even if it means leaving the aircraft somewhere and taking the train.",
+          "hinweis": "Meinung → Begründung → Beispiel → Gegenargument → Schlussfolgerung."
+        },
+        {
+          "rolle": "atc",
+          "sprecher": "pruefer",
+          "text": "Do you think regular training could help?"
+        },
+        {
+          "rolle": "pilot",
+          "text": "Definitely. Flying with an instructor once a year, especially in marginal weather or with simulated instrument conditions, keeps your skills fresh and shows you your own limits."
+        }
+      ],
+      "vokabeln": [
+        {
+          "en": "under pressure",
+          "de": "unter Druck"
+        },
+        {
+          "en": "personal minimums",
+          "de": "persönliche Minima"
+        },
+        {
+          "en": "to stick to",
+          "de": "sich halten an"
+        }
+      ]
+    },
+    {
+      "id": "lpe-bild-birdstrike",
+      "titel": "Bild: Bird strike damage",
+      "typ": "bildbeschreibung",
+      "sprache": "en",
+      "schwierigkeit": "leicht",
+      "level_ziel": "4",
+      "themen": [
+        "bild",
+        "birdstrike",
+        "technik"
+      ],
+      "situation": "Im Test wird ein Foto gezeigt. Hier ist das Bild nur beschrieben – stell es dir vor.",
+      "aufgabe": "Beschreibe das Bild 45–60 s: Überblick → Details mit Ortsangaben → was passiert → Vermutung → Folgen.",
+      "bild": "Hochdecker (z. B. Cessna 172) auf dem Vorfeld; Mechaniker mit Taschenlampe am linken Flügel; deutliche Delle mit Federn an der Flügelvorderkante; Hangar im Hintergrund.",
+      "schritte": [
+        {
+          "rolle": "atc",
+          "sprecher": "pruefer",
+          "text": "Please describe what you can see in this picture."
+        },
+        {
+          "rolle": "pilot",
+          "text": "This picture shows a small single-engine aircraft parked on the apron. In the foreground, a mechanic is looking at the left wing with a torch. There's a large dent in the leading edge and some feathers, so it looks like the aircraft has hit a bird. In the background I can see a hangar and another aircraft. I think the aircraft must not fly again until the damage has been inspected.",
+          "hinweis": "Ortsangaben: in the foreground, in the background. Vermutung: it looks like. Folge: must not fly until …"
+        }
+      ],
+      "vokabeln": [
+        {
+          "en": "dent",
+          "de": "Delle"
+        },
+        {
+          "en": "leading edge",
+          "de": "Flügelvorderkante"
+        },
+        {
+          "en": "torch",
+          "de": "Taschenlampe"
+        }
+      ]
+    },
+    {
+      "id": "lpe-bild-smoke-gear",
+      "titel": "Bild: Smoke from the landing gear",
+      "typ": "bildbeschreibung",
+      "sprache": "en",
+      "schwierigkeit": "mittel",
+      "level_ziel": "4",
+      "themen": [
+        "bild",
+        "notfall",
+        "flughafen"
+      ],
+      "situation": "Bild einer ungewöhnlichen Situation – der Prüfer fragt zusätzlich, welche Meldung du absetzen würdest.",
+      "aufgabe": "Beschreibe das Bild und formuliere die Meldung, die du als Beobachter an den Turm geben würdest.",
+      "bild": "Verkehrsflugzeug auf der Landebahn kurz nach dem Aufsetzen, starker weißer Rauch am linken Hauptfahrwerk, Pistenrand mit Gras, bewölkter Himmel.",
+      "schritte": [
+        {
+          "rolle": "atc",
+          "sprecher": "pruefer",
+          "text": "Describe the picture. What do you think is happening?"
+        },
+        {
+          "rolle": "pilot",
+          "text": "Here we can see an airliner just after touchdown. There's a lot of white smoke coming from the left main landing gear. It might be caused by overheated brakes or a burst tyre. The aircraft is still rolling down the runway, and I can't see any fire engines yet.",
+          "hinweis": "might be caused by – Vermutung; Present Continuous für den Moment."
+        },
+        {
+          "rolle": "atc",
+          "sprecher": "pruefer",
+          "text": "You are waiting at the holding point and you see this. What would you say on the radio?"
+        },
+        {
+          "rolle": "pilot",
+          "text": "Tower, Oscar Bravo Foxtrot, for information, the aircraft that just landed has heavy smoke coming from its left main gear.",
+          "hinweis": "Kurz, klar, wer – was – wo. Kein MAYDAY, weil man nicht selbst betroffen ist."
+        }
+      ],
+      "vokabeln": [
+        {
+          "en": "touchdown",
+          "de": "Aufsetzen"
+        },
+        {
+          "en": "burst tyre",
+          "de": "geplatzter Reifen"
+        },
+        {
+          "en": "overheated brakes",
+          "de": "überhitzte Bremsen"
+        }
+      ]
+    },
+    {
+      "id": "lpe-bild-fog",
+      "titel": "Bild: Airfield in the fog",
+      "typ": "bildbeschreibung",
+      "sprache": "en",
+      "schwierigkeit": "leicht",
+      "level_ziel": "4",
+      "themen": [
+        "bild",
+        "wetter",
+        "fuerstenfeld"
+      ],
+      "situation": "Herbstmorgen auf einem kleinen Flugplatz.",
+      "aufgabe": "Beschreibe das Bild und sage, ob man heute fliegen kann und warum (nicht).",
+      "bild": "Kleiner Flugplatz mit Asphaltpiste, dichter Talnebel, schlaffer Windsack, zwei abgedeckte Kleinflugzeuge vor dem Hangar.",
+      "schritte": [
+        {
+          "rolle": "atc",
+          "sprecher": "pruefer",
+          "text": "What can you see here? Would you go flying today?"
+        },
+        {
+          "rolle": "pilot",
+          "text": "This is a small airfield on an autumn morning. The whole valley is covered by low-lying fog and the windsock is hanging down, so there's no wind at all. The aircraft are still covered and nobody is flying. I wouldn't go flying right now, because the visibility is far below VFR minimums. I guess the fog will lift around midday, so I'd check the weather again later.",
+          "hinweis": "Bewertung mit Begründung (because) + Ausblick (will lift, I'd check)."
+        }
+      ],
+      "vokabeln": [
+        {
+          "en": "low-lying fog",
+          "de": "Bodennebel"
+        },
+        {
+          "en": "windsock",
+          "de": "Windsack"
+        },
+        {
+          "en": "to lift",
+          "de": "sich auflösen (Nebel)"
+        }
+      ]
+    },
+    {
+      "id": "lpe-bild-thunderstorm",
+      "titel": "Bild: Thunderstorm on the approach",
+      "typ": "bildbeschreibung",
+      "sprache": "en",
+      "schwierigkeit": "mittel",
+      "level_ziel": "4",
+      "themen": [
+        "bild",
+        "wetter",
+        "gewitter"
+      ],
+      "situation": "Blick aus dem Cockpit im Anflug.",
+      "aufgabe": "Beschreibe die Wetterlage und erkläre, was du als Pilot tun würdest.",
+      "bild": "Cockpitsicht im Endanflug: Piste noch sonnig, dahinter riesige Cb-Wolke mit dunklem Regenvorhang und Blitz rechts.",
+      "schritte": [
+        {
+          "rolle": "atc",
+          "sprecher": "pruefer",
+          "text": "Describe this picture. What would you do as the pilot?"
+        },
+        {
+          "rolle": "pilot",
+          "text": "The picture is taken from the cockpit during the approach. Straight ahead there's a huge cumulonimbus cloud with a dark rain shaft underneath, and I think I can see lightning on the right. The runway is still in sunshine, but the storm is moving towards it. I would not continue the approach, because of the risk of windshear, hail and severe turbulence. I'd hold well away from the storm or divert to another airfield.",
+          "hinweis": "Wetterwortschatz: cumulonimbus, rain shaft, lightning, windshear, hail."
+        }
+      ],
+      "vokabeln": [
+        {
+          "en": "rain shaft",
+          "de": "Regenvorhang"
+        },
+        {
+          "en": "windshear",
+          "de": "Windscherung"
+        },
+        {
+          "en": "hail",
+          "de": "Hagel"
+        }
+      ]
+    },
+    {
+      "id": "lpe-bild-forced-landing",
+      "titel": "Bild: Forced landing in a field",
+      "typ": "bildbeschreibung",
+      "sprache": "en",
+      "schwierigkeit": "mittel",
+      "level_ziel": "4",
+      "themen": [
+        "bild",
+        "notfall",
+        "notlandung"
+      ],
+      "situation": "Unfallfoto aus einem Bericht.",
+      "aufgabe": "Beschreibe das Bild, stelle Vermutungen über die Ursache an und was als Nächstes passiert.",
+      "bild": "Kleinflugzeug in einem Maisfeld, Bugfahrwerk eingeknickt, Propeller verbogen, zwei Personen daneben, Feuerwehrauto auf Feldweg im Hintergrund.",
+      "schritte": [
+        {
+          "rolle": "atc",
+          "sprecher": "pruefer",
+          "text": "Please describe the picture and tell me what might have happened."
+        },
+        {
+          "rolle": "pilot",
+          "text": "It looks like a small aircraft has made a forced landing in a field. The nose gear has collapsed and the propeller is bent. Two people are standing next to the aircraft and they seem to be unhurt. In the background a fire engine is arriving on a farm road. Maybe they ran out of fuel or had an engine failure. Next, the police and the accident investigators will probably come to look at the aircraft.",
+          "hinweis": "Vermutungen: it looks like, seem to be, maybe, probably."
+        }
+      ],
+      "vokabeln": [
+        {
+          "en": "to collapse",
+          "de": "einknicken"
+        },
+        {
+          "en": "unhurt",
+          "de": "unverletzt"
+        },
+        {
+          "en": "accident investigator",
+          "de": "Unfalluntersucher"
+        }
+      ]
+    },
+    {
+      "id": "lpe-bild-fuel",
+      "titel": "Bild: Refuelling before the flight",
+      "typ": "bildbeschreibung",
+      "sprache": "en",
+      "schwierigkeit": "leicht",
+      "level_ziel": "4",
+      "themen": [
+        "bild",
+        "flughafen",
+        "vorflug"
+      ],
+      "situation": "Alltagsszene auf dem Vorfeld.",
+      "aufgabe": "Beschreibe die Szene und erkläre, warum der Pilot das tut.",
+      "bild": "Tankwagen neben Tiefdecker (z. B. DA40), Pilot hält Kraftstoffprüfbecher gegen das Licht, Tankwart rollt Schlauch auf, sonniger Tag.",
+      "schritte": [
+        {
+          "rolle": "atc",
+          "sprecher": "pruefer",
+          "text": "What is happening in this picture?"
+        },
+        {
+          "rolle": "pilot",
+          "text": "In the middle of the picture there's a fuel truck next to a small low-wing aircraft. A pilot is holding a fuel sampler up to the light. He's checking the fuel for water and dirt and making sure it has the correct colour. On the right, a ground handler is rolling up the hose. It's a sunny day, so they're probably preparing for a flight.",
+          "hinweis": "Present Continuous für Handlungen; Zweck erklären: checking … for …"
+        }
+      ],
+      "vokabeln": [
+        {
+          "en": "fuel sampler",
+          "de": "Kraftstoffprüfbecher"
+        },
+        {
+          "en": "hose",
+          "de": "Schlauch"
+        },
+        {
+          "en": "low-wing aircraft",
+          "de": "Tiefdecker"
+        }
+      ]
+    },
+    {
+      "id": "lpe-vergleich-cockpits",
+      "titel": "Bildvergleich: Classic vs. glass cockpit",
+      "typ": "bildvergleich",
+      "sprache": "en",
+      "schwierigkeit": "mittel",
+      "level_ziel": "4",
+      "themen": [
+        "bild",
+        "vergleich",
+        "technik"
+      ],
+      "situation": "Zwei Bilder nebeneinander (LTB 112: Aufgabe 2 im offenen Test).",
+      "aufgabe": "Vergleiche die beiden Bilder: both, whereas, the main difference, on the other hand – und sag, was du bevorzugst.",
+      "bild": "Links: Cockpit mit sechs analogen Rundinstrumenten. Rechts: Glascockpit mit zwei großen Bildschirmen (PFD/MFD).",
+      "schritte": [
+        {
+          "rolle": "atc",
+          "sprecher": "pruefer",
+          "text": "Please compare these two pictures. Which cockpit would you prefer and why?"
+        },
+        {
+          "rolle": "pilot",
+          "text": "Both pictures show the cockpit of a light aircraft. In the first one there are traditional round gauges, whereas the second one has two large screens – a so-called glass cockpit. The main difference is how the information is presented. With a glass cockpit you get more information at a glance, for example traffic and terrain. On the other hand, it takes longer to learn and you depend completely on electrical power. Personally, I'd prefer the glass cockpit for cross-country flights, but I think it's good to learn the basics on classic instruments.",
+          "hinweis": "Vergleichswörter + persönliche Meinung mit Begründung."
+        }
+      ],
+      "vokabeln": [
+        {
+          "en": "gauge",
+          "de": "Anzeige/Rundinstrument"
+        },
+        {
+          "en": "at a glance",
+          "de": "auf einen Blick"
+        },
+        {
+          "en": "to depend on",
+          "de": "abhängig sein von"
+        }
+      ]
+    },
+    {
+      "id": "lpe-vergleich-airports",
+      "titel": "Bildvergleich: Big airport vs. grass strip",
+      "typ": "bildvergleich",
+      "sprache": "en",
+      "schwierigkeit": "schwer",
+      "level_ziel": "5",
+      "themen": [
+        "bild",
+        "vergleich",
+        "flughafen"
+      ],
+      "situation": "Zwei Bilder: internationaler Flughafen und kleine Graspiste.",
+      "aufgabe": "Vergleiche, und erkläre die Unterschiede für einen Privatpiloten (Funk, Verfahren, Kosten).",
+      "bild": "Links: Großflughafen mit Tower und Airlinern. Rechts: Graspiste mit Holzhütte, Windsack, ein Kleinflugzeug.",
+      "schritte": [
+        {
+          "rolle": "atc",
+          "sprecher": "pruefer",
+          "text": "Compare these two pictures. What are the differences for a private pilot?"
+        },
+        {
+          "rolle": "pilot",
+          "text": "The first picture shows a busy international airport with a tall control tower and several airliners at the gates. In contrast, the second one shows a small grass strip with a wooden hut and a windsock. At the big airport you need a clearance for everything, from taxiing to take-off, and the landing fees are quite high. At the small field, on the other hand, you usually just talk to an information service or make blind calls, and it's much more relaxed. However, you have to be careful about the surface, especially after rain.",
+          "hinweis": "in contrast, on the other hand, however – Level 5 zeigt sich in Argumentation und Details."
+        }
+      ],
+      "vokabeln": [
+        {
+          "en": "landing fee",
+          "de": "Landegebühr"
+        },
+        {
+          "en": "clearance",
+          "de": "Freigabe"
+        },
+        {
+          "en": "surface",
+          "de": "Oberfläche/Belag"
+        }
+      ]
+    },
+    {
+      "id": "lpe-atis-graz",
+      "titel": "Hörverstehen: ATIS Graz",
+      "typ": "hoerverstehen",
+      "sprache": "en",
+      "schwierigkeit": "mittel",
+      "level_ziel": "4",
+      "themen": [
+        "atis",
+        "graz",
+        "zahlen"
+      ],
+      "situation": "Du hörst eine ATIS-Aufnahme (Übungswerte!). Mitschreiben erlaubt.",
+      "aufgabe": "Höre die ATIS und beantworte die Fragen des Prüfers: Kennung, Piste, Wind, Sicht, Wolken, QNH.",
+      "schritte": [
+        {
+          "rolle": "atc",
+          "sprecher": "ansage",
+          "text": "Graz information Kilo, time one four two zero. Runway in use three five. Wind three three zero degrees, one two knots, gusting two two knots. Visibility one zero kilometres. Few clouds at two thousand five hundred feet, broken at five thousand feet. Temperature one four, dew point eight. QNH one zero one three. Caution, bird activity in the vicinity of the airport. Acknowledge information Kilo on initial contact.",
+          "hinweis": "Übungswerte – keine echte ATIS."
+        },
+        {
+          "rolle": "atc",
+          "sprecher": "pruefer",
+          "text": "What is the QNH, and which runway is in use?"
+        },
+        {
+          "rolle": "pilot",
+          "text": "The QNH is one zero one three and runway three five is in use.",
+          "hinweis": "Zahlen in ICAO-Aussprache, ganzer Satz."
+        },
+        {
+          "rolle": "atc",
+          "sprecher": "pruefer",
+          "text": "What does the ATIS say about the wind and is there anything pilots should be careful about?"
+        },
+        {
+          "rolle": "pilot",
+          "text": "The wind is from three three zero degrees at twelve knots, gusting twenty-two knots. Pilots should be careful because there is bird activity near the airport.",
+          "hinweis": "Inhalt in eigenen Worten wiedergeben = Comprehension + Structure."
+        }
+      ],
+      "vokabeln": [
+        {
+          "en": "gusting",
+          "de": "in Böen"
+        },
+        {
+          "en": "in the vicinity of",
+          "de": "in der Nähe von"
+        },
+        {
+          "en": "dew point",
+          "de": "Taupunkt"
+        }
+      ]
+    },
+    {
+      "id": "lpe-atis-ljubljana",
+      "titel": "Hörverstehen: ATIS Ljubljana mit Änderung",
+      "typ": "hoerverstehen",
+      "sprache": "en",
+      "schwierigkeit": "schwer",
+      "level_ziel": "5",
+      "themen": [
+        "atis",
+        "slowenien",
+        "wetter"
+      ],
+      "situation": "Ausländische ATIS mit unerwarteter Information (Übungswerte).",
+      "aufgabe": "Höre die ATIS, notiere die Werte und erkläre, was die Warnung für deinen Flug bedeutet.",
+      "schritte": [
+        {
+          "rolle": "atc",
+          "sprecher": "ansage",
+          "text": "Ljubljana information Bravo, time zero nine five zero. Expect ILS approach runway three zero. Runway one two closed for maintenance until one four hundred. Wind variable three knots. Visibility two thousand metres in mist. Broken eight hundred feet. Temperature six, dew point five. QNH one zero two two. Temporary, visibility four thousand metres. Transition level seven zero.",
+          "hinweis": "Übungswerte – keine echte ATIS."
+        },
+        {
+          "rolle": "atc",
+          "sprecher": "pruefer",
+          "text": "Could you go to Ljubljana under VFR right now? Explain why or why not."
+        },
+        {
+          "rolle": "pilot",
+          "text": "No, not at the moment. The visibility is only two thousand metres in mist and the cloud is broken at eight hundred feet, which is below VFR minimums for a control zone. The ATIS says visibility might temporarily improve to four thousand metres, but that's still not enough with such a low cloud base. I would wait or plan another destination.",
+          "hinweis": "Schlussfolgern statt nur wiederholen – Level 5 zeigt sich hier."
+        },
+        {
+          "rolle": "atc",
+          "sprecher": "pruefer",
+          "text": "Which runway is closed and until when?"
+        },
+        {
+          "rolle": "pilot",
+          "text": "Runway one two is closed for maintenance until fourteen hundred."
+        }
+      ],
+      "vokabeln": [
+        {
+          "en": "mist",
+          "de": "feuchter Dunst"
+        },
+        {
+          "en": "maintenance",
+          "de": "Wartung"
+        },
+        {
+          "en": "temporary",
+          "de": "vorübergehend"
+        }
+      ]
+    },
+    {
+      "id": "lpe-story-student",
+      "titel": "Hörverstehen: Kurzgeschichte (Flugschüler)",
+      "typ": "hoerverstehen",
+      "sprache": "en",
+      "schwierigkeit": "leicht",
+      "level_ziel": "4",
+      "themen": [
+        "geschichte",
+        "flugschueler"
+      ],
+      "situation": "Für Flugschüler ohne Lizenz (LTB 112): Zwei Fragen vorab, dann eine kurze Geschichte.",
+      "aufgabe": "Merke dir die zwei Fragen, höre die Geschichte, beantworte beide Fragen in ganzen Sätzen.",
+      "schritte": [
+        {
+          "rolle": "atc",
+          "sprecher": "pruefer",
+          "text": "Listen to two questions first. One: why did the pilot land at Wiener Neustadt? Two: how did she get home? Now listen to the story."
+        },
+        {
+          "rolle": "atc",
+          "sprecher": "ansage",
+          "text": "Last Saturday Anna, a student pilot from Graz, was flying solo to Vienna for the first time. Near Wiener Neustadt she noticed that the oil temperature was rising quickly, so she decided to land there as a precaution. A mechanic found a small leak in the oil cooler. The aircraft had to stay for repairs, so Anna's instructor drove for two hours to pick her up, and they went back to Graz by car."
+        },
+        {
+          "rolle": "pilot",
+          "text": "She landed at Wiener Neustadt because the oil temperature was rising quickly, so it was a precautionary landing. She got home by car – her instructor drove there to pick her up.",
+          "hinweis": "Beide Fragen beantworten, Gründe mit because/so."
+        }
+      ],
+      "vokabeln": [
+        {
+          "en": "as a precaution",
+          "de": "vorsorglich"
+        },
+        {
+          "en": "oil cooler",
+          "de": "Ölkühler"
+        },
+        {
+          "en": "to pick somebody up",
+          "de": "jemanden abholen"
+        }
+      ]
+    },
+    {
+      "id": "lpe-readback-graz-ctr",
+      "titel": "Readback: Graz CTR clearance",
+      "typ": "readback",
+      "sprache": "en",
+      "schwierigkeit": "mittel",
+      "level_ziel": "4",
+      "themen": [
+        "readback",
+        "graz",
+        "ctr"
+      ],
+      "situation": "Du fliegst mit OE-CBF von Fürstenfeld Richtung Graz. Werte sind Übungswerte.",
+      "aufgabe": "Lies die Anweisung korrekt zurück (Rufzeichen am Ende).",
+      "schritte": [
+        {
+          "rolle": "atc",
+          "sprecher": "atc",
+          "text": "Oscar Echo Charlie Bravo Foxtrot, Graz Tower, enter control zone via Echo, not above two thousand five hundred feet, QNH one zero one five, squawk four six two one, report Echo.",
+          "hinweis": "Übungswerte."
+        },
+        {
+          "rolle": "pilot",
+          "text": "Enter control zone via Echo, not above two thousand five hundred feet, QNH one zero one five, squawk four six two one, wilco, Oscar Bravo Foxtrot.",
+          "hinweis": "Freigaben, Höhen, QNH, Squawk zurücklesen; „report“ mit wilco quittieren."
+        }
+      ],
+      "vokabeln": [
+        {
+          "en": "not above",
+          "de": "nicht höher als"
+        },
+        {
+          "en": "squawk",
+          "de": "Transpondercode setzen"
+        }
+      ]
+    },
+    {
+      "id": "lpe-readback-hold",
+      "titel": "Readback: Hold and expect delay",
+      "typ": "readback",
+      "sprache": "en",
+      "schwierigkeit": "schwer",
+      "level_ziel": "4",
+      "themen": [
+        "readback",
+        "unerwartet",
+        "graz"
+      ],
+      "situation": "Unerwartete Anweisung: Warten wegen Verkehr. Danach Nachfrage im plain English.",
+      "aufgabe": "Lies zurück und frage nach, wie lange die Verzögerung dauert – im plain English.",
+      "schritte": [
+        {
+          "rolle": "atc",
+          "sprecher": "atc",
+          "text": "Oscar Echo Charlie Bravo Foxtrot, hold over Kalsdorf at two thousand feet, expect a delay of one five minutes due to traffic, report holding."
+        },
+        {
+          "rolle": "pilot",
+          "text": "Hold over Kalsdorf at two thousand feet, wilco, Oscar Bravo Foxtrot.",
+          "hinweis": "Delay muss nicht zurückgelesen werden, schadet aber nicht."
+        },
+        {
+          "rolle": "pilot",
+          "text": "Oscar Bravo Foxtrot, I have fuel for about forty-five minutes. If the delay is longer than fifteen minutes, I'd prefer to return to Fürstenfeld.",
+          "hinweis": "Plain English: eigene Lage + Absicht. Genau das testet „Interactions“."
+        },
+        {
+          "rolle": "atc",
+          "sprecher": "atc",
+          "text": "Oscar Bravo Foxtrot, roger, I expect you to be number two in about ten minutes, I'll call you back."
+        }
+      ],
+      "vokabeln": [
+        {
+          "en": "delay",
+          "de": "Verzögerung"
+        },
+        {
+          "en": "I'd prefer to",
+          "de": "ich würde lieber"
+        }
+      ]
+    },
+    {
+      "id": "lpe-relay-mayday",
+      "titel": "Weitergabe: MAYDAY relay",
+      "typ": "weitergabe",
+      "sprache": "en",
+      "schwierigkeit": "schwer",
+      "level_ziel": "4",
+      "themen": [
+        "weitergabe",
+        "mayday",
+        "notfall"
+      ],
+      "situation": "Du hörst einen schwachen MAYDAY-Ruf, den der FIS nicht empfangen kann. Wie bei CheckL6: hören, notieren, weitergeben.",
+      "aufgabe": "Notiere die Fakten und gib sie in plain English (3. Person) an Vienna Information weiter.",
+      "schritte": [
+        {
+          "rolle": "atc",
+          "sprecher": "ansage",
+          "text": "MAYDAY MAYDAY MAYDAY, Oscar Echo Delta Kilo Lima, Piper Archer, engine fire, five miles west of Hartberg, two thousand feet, descending, forced landing in a field, three persons on board.",
+          "hinweis": "Leise/abgehackt vorlesen, wenn möglich."
+        },
+        {
+          "rolle": "atc",
+          "sprecher": "pruefer",
+          "text": "Vienna Information could not hear that call. Please pass the information on to them."
+        },
+        {
+          "rolle": "pilot",
+          "text": "MAYDAY relay, Vienna Information, Oscar Echo Charlie Bravo Foxtrot. I received a MAYDAY from Oscar Echo Delta Kilo Lima, a Piper Archer. The pilot reported an engine fire. He is five miles west of Hartberg at two thousand feet, descending, and is making a forced landing in a field. There are three persons on board.",
+          "hinweis": "3. Person: he is, the pilot reported. Alle Fakten: wer, was, wo, Höhe, Absicht, POB."
+        }
+      ],
+      "vokabeln": [
+        {
+          "en": "to relay",
+          "de": "weitergeben"
+        },
+        {
+          "en": "persons on board",
+          "de": "Personen an Bord"
+        }
+      ]
+    },
+    {
+      "id": "lpe-relay-medical",
+      "titel": "Weitergabe: Medizinische Meldung",
+      "typ": "weitergabe",
+      "sprache": "en",
+      "schwierigkeit": "mittel",
+      "level_ziel": "4",
+      "themen": [
+        "weitergabe",
+        "medizin"
+      ],
+      "situation": "Ein anderer Pilot meldet ein medizinisches Problem – du gibst es an die Flugplatzinformation weiter.",
+      "aufgabe": "Gib die Meldung vollständig in eigenen Worten weiter.",
+      "schritte": [
+        {
+          "rolle": "atc",
+          "sprecher": "ansage",
+          "text": "Fürstenfeld traffic, Oscar Echo Kilo Romeo Foxtrot, my passenger has severe chest pain, I'm about ten miles east, inbound for landing in five minutes, please call an ambulance."
+        },
+        {
+          "rolle": "atc",
+          "sprecher": "pruefer",
+          "text": "The radio operator on the ground missed this call. Tell him what the pilot said."
+        },
+        {
+          "rolle": "pilot",
+          "text": "The pilot of Oscar Echo Kilo Romeo Foxtrot says his passenger has severe chest pain. He's about ten miles east of the airfield and will land in about five minutes. He asked us to call an ambulance.",
+          "hinweis": "Indirekte Rede: says, asked us to … Zahlen vollständig."
+        }
+      ],
+      "vokabeln": [
+        {
+          "en": "chest pain",
+          "de": "Brustschmerz"
+        },
+        {
+          "en": "severe",
+          "de": "stark/schwer"
+        }
+      ]
+    },
+    {
+      "id": "lpe-unexp-birdstrike",
+      "titel": "Unerwartet: Bird strike after take-off",
+      "typ": "unerwartete-situation",
+      "sprache": "en",
+      "schwierigkeit": "mittel",
+      "level_ziel": "4",
+      "themen": [
+        "unerwartet",
+        "birdstrike",
+        "panpan",
+        "fuerstenfeld"
+      ],
+      "situation": "Kurz nach dem Start in Fürstenfeld trifft ein Bussard die Windschutzscheibe; Sicht nach vorne eingeschränkt, Motor normal.",
+      "aufgabe": "Setze eine PAN-PAN-Meldung ab und erkläre die Lage auf Rückfragen in plain English.",
+      "schritte": [
+        {
+          "rolle": "pilot",
+          "text": "PAN PAN, PAN PAN, PAN PAN, Fürstenfeld Radio, Oscar Echo Charlie Bravo Foxtrot, DA twenty, bird strike after take-off, windscreen cracked, engine normal, one thousand five hundred feet in the downwind, returning for landing, two persons on board.",
+          "hinweis": "PAN PAN: dringend, nicht lebensbedrohlich."
+        },
+        {
+          "rolle": "atc",
+          "sprecher": "atc",
+          "text": "Oscar Bravo Foxtrot, Fürstenfeld Radio, PAN PAN received. Can you see well enough to land?"
+        },
+        {
+          "rolle": "pilot",
+          "text": "The left side of the windscreen is badly cracked, but I can see through the right side. I'll fly a slightly wider circuit and make a long final. Please keep the runway clear and have the fire brigade on standby.",
+          "hinweis": "Plain English: Zustand → Plan → Bitte."
+        },
+        {
+          "rolle": "atc",
+          "sprecher": "atc",
+          "text": "Oscar Bravo Foxtrot, runway clear, fire brigade informed, wind two niner zero degrees, five knots."
+        }
+      ],
+      "vokabeln": [
+        {
+          "en": "cracked",
+          "de": "gesprungen"
+        },
+        {
+          "en": "on standby",
+          "de": "in Bereitschaft"
+        },
+        {
+          "en": "long final",
+          "de": "langer Endanflug"
+        }
+      ]
+    },
+    {
+      "id": "lpe-unexp-passenger",
+      "titel": "Unerwartet: Passenger unconscious",
+      "typ": "unerwartete-situation",
+      "sprache": "en",
+      "schwierigkeit": "schwer",
+      "level_ziel": "4",
+      "themen": [
+        "unerwartet",
+        "medizin",
+        "panpan",
+        "graz"
+      ],
+      "situation": "Auf dem Weg nach Graz verliert dein Passagier plötzlich das Bewusstsein. Er atmet.",
+      "aufgabe": "Melde den Notfall bei Graz Radar und beantworte die Fragen nach Zustand und Absicht.",
+      "schritte": [
+        {
+          "rolle": "pilot",
+          "text": "PAN PAN, PAN PAN, PAN PAN, Graz Radar, Oscar Echo Charlie Bravo Foxtrot, DA twenty, medical emergency, my passenger has lost consciousness, twelve miles east of Graz, three thousand feet, request direct to Graz and an ambulance on arrival."
+        },
+        {
+          "rolle": "atc",
+          "sprecher": "atc",
+          "text": "Oscar Bravo Foxtrot, Graz Radar, PAN PAN acknowledged, squawk seven seven zero zero, proceed direct to the airport, ambulance will be waiting. Say the condition of the passenger."
+        },
+        {
+          "rolle": "pilot",
+          "text": "Squawk seven seven zero zero, direct Graz. He's breathing, but he's not responding when I talk to him. He complained of a headache a few minutes ago. I've opened the fresh air vents and switched off the cabin heating in case it's carbon monoxide.",
+          "hinweis": "Beschreibung + Vermutung (in case it's …) + ergriffene Maßnahmen."
+        },
+        {
+          "rolle": "atc",
+          "sprecher": "atc",
+          "text": "Oscar Bravo Foxtrot, understood. Are you feeling well yourself?"
+        },
+        {
+          "rolle": "pilot",
+          "text": "I feel a little dizzy, but I'm fine to fly. I'm breathing fresh air from the vents now and will land as quickly as possible.",
+          "hinweis": "Unerwartete Rückfrage – ehrlich und klar antworten."
+        }
+      ],
+      "vokabeln": [
+        {
+          "en": "unconscious",
+          "de": "bewusstlos"
+        },
+        {
+          "en": "carbon monoxide",
+          "de": "Kohlenmonoxid"
+        },
+        {
+          "en": "dizzy",
+          "de": "schwindlig"
+        }
+      ]
+    },
+    {
+      "id": "lpe-unexp-rough-engine",
+      "titel": "Unerwartet: Rough-running engine",
+      "typ": "unerwartete-situation",
+      "sprache": "en",
+      "schwierigkeit": "mittel",
+      "level_ziel": "4",
+      "themen": [
+        "unerwartet",
+        "technik",
+        "panpan"
+      ],
+      "situation": "Auf 3 500 ft nördlich von Fürstenfeld läuft der Motor plötzlich unrund, Drehzahl fällt. Vergaservorwärmung bringt keine Besserung.",
+      "aufgabe": "Melde das Problem bei Vienna Information und erkläre deine Absicht.",
+      "schritte": [
+        {
+          "rolle": "pilot",
+          "text": "PAN PAN, PAN PAN, PAN PAN, Vienna Information, Oscar Echo Charlie Bravo Foxtrot, DA twenty, engine running rough with loss of RPM, eight miles north of Fürstenfeld, three thousand five hundred feet, returning to Fürstenfeld, two persons on board."
+        },
+        {
+          "rolle": "atc",
+          "sprecher": "atc",
+          "text": "Oscar Bravo Foxtrot, Vienna Information, PAN PAN acknowledged. Do you need any assistance? Say intentions if the engine fails."
+        },
+        {
+          "rolle": "pilot",
+          "text": "At the moment the engine is still producing partial power and I can maintain altitude. I've applied carb heat and checked the mixture, but there's no improvement. If the engine stops, I'll land in the fields south of Hartberg. I'd like you to inform Fürstenfeld that I'll be landing in about six minutes.",
+          "hinweis": "Ist-Zustand → bisherige Maßnahmen → Plan B → Bitte."
+        }
+      ],
+      "vokabeln": [
+        {
+          "en": "partial power",
+          "de": "Teilleistung"
+        },
+        {
+          "en": "to maintain altitude",
+          "de": "Höhe halten"
+        },
+        {
+          "en": "mixture",
+          "de": "Gemisch"
+        }
+      ]
+    },
+    {
+      "id": "lpe-unexp-diversion",
+      "titel": "Unerwartet: Weather diversion to Graz",
+      "typ": "unerwartete-situation",
+      "sprache": "en",
+      "schwierigkeit": "mittel",
+      "level_ziel": "4",
+      "themen": [
+        "unerwartet",
+        "wetter",
+        "umleitung",
+        "slowenien"
+      ],
+      "situation": "Unterwegs nach Maribor sinkt die Wolkenbasis über dem Pohorje-Gebirge. Du willst nach Graz ausweichen.",
+      "aufgabe": "Erkläre die Situation und deine geänderte Absicht im plain English; frage nach dem Wetter in Graz.",
+      "schritte": [
+        {
+          "rolle": "pilot",
+          "text": "Vienna Information, Oscar Echo Charlie Bravo Foxtrot, the cloud base ahead of me is getting too low to continue to Maribor. I'm turning back and would like to divert to Graz instead. Could you give me the latest weather for Graz?"
+        },
+        {
+          "rolle": "atc",
+          "sprecher": "atc",
+          "text": "Oscar Bravo Foxtrot, roger. Graz, wind three four zero degrees eight knots, visibility more than ten kilometres, few clouds at three thousand feet, QNH one zero one six. Do you want me to amend your flight plan?"
+        },
+        {
+          "rolle": "pilot",
+          "text": "QNH one zero one six. Yes, please change my destination to Graz and cancel the arrival at Maribor. I estimate Graz in twenty-five minutes.",
+          "hinweis": "Unerwartete Frage nach dem Flugplan – sofort, passend, informativ antworten."
+        }
+      ],
+      "vokabeln": [
+        {
+          "en": "to amend",
+          "de": "ändern"
+        },
+        {
+          "en": "destination",
+          "de": "Zielflugplatz"
+        },
+        {
+          "en": "to estimate",
+          "de": "schätzen/voraussichtlich"
+        }
+      ]
+    },
+    {
+      "id": "lpe-unexp-runway-blocked",
+      "titel": "Unerwartet: Runway blocked",
+      "typ": "unerwartete-situation",
+      "sprache": "en",
+      "schwierigkeit": "schwer",
+      "level_ziel": "4",
+      "themen": [
+        "unerwartet",
+        "flughafen",
+        "interaktion"
+      ],
+      "situation": "Im Anflug erfährst du, dass die Piste in Fürstenfeld durch ein liegengebliebenes Flugzeug blockiert ist.",
+      "aufgabe": "Reagiere auf die Information, frage nach Details und triff eine Entscheidung (Interactions!).",
+      "schritte": [
+        {
+          "rolle": "atc",
+          "sprecher": "atc",
+          "text": "Oscar Bravo Foxtrot, Fürstenfeld Radio, be advised, the runway is blocked by an aircraft with a flat tyre. Say intentions."
+        },
+        {
+          "rolle": "pilot",
+          "text": "Understood, runway blocked. How long do you expect it to be closed?",
+          "hinweis": "Erst nachfragen – Informationen sammeln."
+        },
+        {
+          "rolle": "atc",
+          "sprecher": "atc",
+          "text": "Oscar Bravo Foxtrot, they're waiting for a tow, I'd estimate at least thirty minutes."
+        },
+        {
+          "rolle": "pilot",
+          "text": "In that case I'll divert to Graz. I have enough fuel for about one hour. Please inform my club that I'll be landing in Graz.",
+          "hinweis": "Konsequenz mit „in that case“ + Begründung + Bitte."
+        }
+      ],
+      "vokabeln": [
+        {
+          "en": "be advised",
+          "de": "zur Information"
+        },
+        {
+          "en": "flat tyre",
+          "de": "platter Reifen"
+        },
+        {
+          "en": "tow",
+          "de": "Abschleppen/Schlepper"
+        }
+      ]
+    },
+    {
+      "id": "lpe-unexp-smoke",
+      "titel": "Unerwartet: Smoke in the cockpit",
+      "typ": "unerwartete-situation",
+      "sprache": "en",
+      "schwierigkeit": "schwer",
+      "level_ziel": "4",
+      "themen": [
+        "unerwartet",
+        "notfall",
+        "mayday",
+        "feuer"
+      ],
+      "situation": "Plötzlich Brandgeruch und leichter Rauch hinter dem Instrumentenbrett. Du vermutest ein elektrisches Problem.",
+      "aufgabe": "MAYDAY absetzen, Maßnahmen erklären, auf Rückfragen antworten.",
+      "schritte": [
+        {
+          "rolle": "pilot",
+          "text": "MAYDAY, MAYDAY, MAYDAY, Vienna Information, Oscar Echo Charlie Bravo Foxtrot, DA twenty, smoke in the cockpit, probably electrical, six miles south of Fürstenfeld, two thousand five hundred feet, landing at Fürstenfeld, two persons on board."
+        },
+        {
+          "rolle": "atc",
+          "sprecher": "atc",
+          "text": "Oscar Bravo Foxtrot, Vienna Information, MAYDAY acknowledged. Is the smoke getting worse?"
+        },
+        {
+          "rolle": "pilot",
+          "text": "No, it's getting less. I've switched off the master switch and the avionics, and I've opened the air vents. I'll lose the radio in a moment because I'm switching everything off. I'll land at Fürstenfeld in about four minutes.",
+          "hinweis": "Vorher ankündigen, dass der Funk gleich ausfällt – genau so eine „Komplikation“ will der Prüfer hören."
+        },
+        {
+          "rolle": "atc",
+          "sprecher": "atc",
+          "text": "Oscar Bravo Foxtrot, understood, I'll inform Fürstenfeld and the fire brigade."
+        }
+      ],
+      "vokabeln": [
+        {
+          "en": "master switch",
+          "de": "Hauptschalter"
+        },
+        {
+          "en": "air vents",
+          "de": "Lüftungsdüsen"
+        },
+        {
+          "en": "burning smell",
+          "de": "Brandgeruch"
+        }
+      ]
+    },
+    {
+      "id": "lpe-unexp-lost",
+      "titel": "Unerwartet: Uncertain of position",
+      "typ": "unerwartete-situation",
+      "sprache": "en",
+      "schwierigkeit": "mittel",
+      "level_ziel": "4",
+      "themen": [
+        "unerwartet",
+        "navigation",
+        "panpan"
+      ],
+      "situation": "Im Dunst hast du die Orientierung verloren. Letzte sichere Position: Hartberg vor 20 Minuten.",
+      "aufgabe": "Bitte Vienna Information um Hilfe und beschreibe, was du unter dir siehst.",
+      "schritte": [
+        {
+          "rolle": "pilot",
+          "text": "PAN PAN, PAN PAN, PAN PAN, Vienna Information, Oscar Echo Charlie Bravo Foxtrot, DA twenty, uncertain of position in haze, last known position over Hartberg twenty minutes ago, heading one eight zero, three thousand feet, fuel for one hour, request assistance."
+        },
+        {
+          "rolle": "atc",
+          "sprecher": "atc",
+          "text": "Oscar Bravo Foxtrot, Vienna Information, squawk seven seven zero zero. Describe what you can see below you."
+        },
+        {
+          "rolle": "pilot",
+          "text": "Squawk seven seven zero zero. I can see a motorway going from north-west to south-east, and on the left there's a town with a big lake and a castle on a hill. There's also a large thermal spa with blue roofs.",
+          "hinweis": "Beschreiben mit Ortsangaben und Umschreibungen, auch wenn Namen fehlen."
+        },
+        {
+          "rolle": "atc",
+          "sprecher": "atc",
+          "text": "Oscar Bravo Foxtrot, identified, you are four miles west of Bad Waltersdorf. Turn left heading one five zero for Fürstenfeld.",
+          "hinweis": "Position und Kurs sind Übungswerte."
+        }
+      ],
+      "vokabeln": [
+        {
+          "en": "motorway",
+          "de": "Autobahn"
+        },
+        {
+          "en": "castle",
+          "de": "Burg/Schloss"
+        },
+        {
+          "en": "thermal spa",
+          "de": "Therme"
+        }
+      ]
+    }
+  ]
+}

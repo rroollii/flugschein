@@ -1,4 +1,4 @@
-# Zusatzausbildungen zur PPL(A) – Nachtflug, MEP, Flugfunk international
+# Zusatzausbildungen zur PPL(A) – Nachtflug, MEP, Flugfunk international, LPE Englisch
 
 > Stand: 17.10.2026 · Grundlage: EASA Part-FCL, SERA, österreichische Regeln (Austro Control, LVR 2014, AIP Austria, Fernmeldebüro). Unsicheres ist mit **[prüfen]** markiert. Preise sind Richtwerte und vor der Buchung per Angebot zu bestätigen.
 
@@ -7,6 +7,7 @@
 | Nachtflugberechtigung (Night Rating / NVFR, FCL.810) | [nachtflug.md](nachtflug.md) | „Nachtflug“, 42 Fragen |
 | MEP(land)-Klassenberechtigung | [mep.md](mep.md) | „MEP“, 42 Fragen |
 | Flugfunkzeugnis EFZ + Sprachvermerk Englisch | [flugfunk-international.md](flugfunk-international.md) | „Flugfunk international“, 40 Fragen |
+| **Sprachtest Englisch / Language Proficiency (LPE, FCL.055)** – Prüfung, Teststellen, 8-Wochen-Vorbereitung | [lpe-englisch.md](lpe-englisch.md) · Sprechübungen [lpe-uebungen.json](../funkuebungen/lpe-uebungen.json) | „LPE Englisch“, 44 Fragen |
 
 Verwandt: [PPL-Ausbildungsplan](../ausbildungsplan.md) · [Lernplan](../lernplan.md) · [Skript Kommunikation](../skripte/kommunikation.md) · [Fragenbank PPL](../fragen/fragenbank.json)
 
@@ -58,8 +59,8 @@ danach ──► MEP(land) als 1–3-wöchiger Kompaktkurs in Graz o. Ä. ──
 |---|---|---|
 | EFZ-Prüfung + Zeugnis | **143,74 €** (122,74 € + 21 €) | fb.gv.at, 10/2026 |
 | Funkkurs der Schule | ca. 150–500 € **[prüfen]** | Schulangebot |
-| Sprachtest Englisch | **199–260 €** | LTB 112 (199/259 €), Flugring Salzburg (240 €) |
-| Eintrag Sprachvermerk | Gebühr Austro Control **[prüfen]** | Gebührenverordnung |
+| Sprachtest Englisch | **149–260 €** | Easy ELP/LTB 112 (149/199 €), ICAOSpeak/LTB 106 (159 €), Flugring Salzburg (240 €) – siehe [lpe-englisch.md](lpe-englisch.md) |
+| Eintrag Sprachvermerk | **47 €** | ACGV Anlage 1 TP 16d (Level 4/5/6) |
 | Nachtflugberechtigung | ca. **1 500–2 800 €** | 5–7 h Charter + Lehrer, Theorie, Landegebühren/Nachtzuschlag LOWG **[Angebot AirTeam]** |
 | Stundenaufbau auf 70 h PIC | ca. **8 000–15 000 €** | ~55–65 h × ca. 150–230 €/h nass im Verein **[Charterpreise AirTeam prüfen]** – größter Kostenblock |
 | MEP-Kurs | ca. **4 600 €** inkl. USt. | Aviation Flight Center (Mindeststunden, ohne Prüfung/Landegebühren) |
@@ -74,6 +75,12 @@ danach ──► MEP(land) als 1–3-wöchiger Kompaktkurs in Graz o. Ä. ──
 2. Anmeldung beim Fernmeldebüro (Graz) mit Antrag, 2 Passfotos, Geburtsurkunde, Meldezettel.
 3. Prüfung: simulierter Funkverkehr, Übersetzung Englisch→Deutsch, Multiple Choice; Zeugnis wird sofort ausgehändigt.
 4. Sprachtest bei einer LTB, Antrag FO_LFA_ACW_096 bei Austro Control.
+
+**Sprachtest Englisch (LPE)** – Details: [lpe-englisch.md](lpe-englisch.md)
+1. Teststelle wählen (online: LTB 112/Easy ELP 149–199 €, ICAOSpeak/LTB 106 159 €; Präsenz: Prüfer in Graz über LTB 101/106; Flugring Salzburg 240 €).
+2. 4–8 Wochen Vorbereitung: Interview, Bildbeschreibung, ATIS/Readback, unerwartete Situationen.
+3. Test ca. 30–70 min (Teil I Aufgaben, Teil II Interview), zwei Bewerter, schwächstes von 6 Kriterien zählt.
+4. Zertifikat + FO_LFA_ACW_096 an Austro Control, Gebühr 47 €.
 
 **Nachtflug** – Details: [nachtflug.md](nachtflug.md)
 1. Anfrage AirTeam (Flugzeug, Nachtplatz, Kosten), Kursbeginn ⇒ 6-Monats-Frist läuft.
@@ -118,7 +125,7 @@ Ergänzungen zu [ausbildungsplan.md](../ausbildungsplan.md) – dort nichts dopp
 | Ausbildung | AirTeam Fürstenfeld (LOGF) | Alternativen |
 |---|---|---|
 | EFZ / Funk | Funk ist Teil der PPL-Ausbildung; eigener EFZ-Kurs nicht separat ausgewiesen **[nachfragen]** | Prüfung immer beim Fernmeldebüro (Graz) |
-| Sprachtest Englisch | nein (LTB nötig) | LTB 112 online, Flugring Salzburg, weitere LTBs laut Austro-Control-Liste; AAT Graz bietet Vorbereitung |
+| Sprachtest Englisch | nein (LTB nötig) | online: LTB 112 (Easy ELP), LTB 106 (ICAOSpeak); Präsenz: Prüfer in Graz (LTB 101/106), Flugring Salzburg – Details [lpe-englisch.md](lpe-englisch.md) |
 | Nachtflug | **ja**, „NVFR Nachtsichtflugberechtigung“ | Steirische Motorflugunion (LOWG), AAT (LOWG), FGW (Wien) |
 | MEP | **nein**, keine Zweimot in der Flotte | Steirische Motorflugunion, Absolute Pilots, AAT (alle LOWG); Aviation Flight Center, Diamond Flight Training (LOAN); Fly-West (LOWI) |
 
@@ -126,9 +133,9 @@ Kontakt AirTeam: clubleitung@airteam.at · Turm +43 3382 52666-10 · Betriebslei
 
 ## 8. Übungsfragen
 
-[`fragen-zusatz.json`](fragen-zusatz.json) hat dasselbe Schema wie [`../fragen/fragenbank.json`](../fragen/fragenbank.json) (`faecher[]` mit `nr`, `id`, `name`, `kuerzel`, `pruefung`, `fragen[]`; jede Frage mit `id`, `frage`, `antworten[4]`, `richtig` (Index 0–3), `erklaerung`). Fach-IDs: `nachtflug` (NF), `mep` (MEP), `flugfunk-international` (FFI).
+[`fragen-zusatz.json`](fragen-zusatz.json) hat dasselbe Schema wie [`../fragen/fragenbank.json`](../fragen/fragenbank.json) (`faecher[]` mit `nr`, `id`, `name`, `kuerzel`, `pruefung`, `fragen[]`; jede Frage mit `id`, `frage`, `antworten[4]`, `richtig` (Index 0–3), `erklaerung`). Fach-IDs: `nachtflug` (NF), `mep` (MEP), `flugfunk-international` (FFI), `lpe-englisch` (LPE).
 
-Qualitätsprüfung per Skript: Die richtige Antwort ist in **NF 11,9 %**, **MEP 11,9 %**, **FFI 10,0 %** der Fragen die längste (Grenze 25 %); die Position der richtigen Antwort ist auf A–D gleich verteilt.
+Qualitätsprüfung per Skript: Die richtige Antwort ist in **NF 11,9 %**, **MEP 11,9 %**, **FFI 10,0 %**, **LPE 15,9 %** der Fragen die längste (Grenze 25 %); die Position der richtigen Antwort ist auf A–D gleich verteilt.
 
 ## Quellen (Auswahl)
 

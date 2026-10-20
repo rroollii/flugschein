@@ -44,9 +44,10 @@ Zurück: [Überblick Zusatzausbildungen](index.md) · Fragen: [`fragen-zusatz.js
 | Mindestlevel | **Level 4 (Operational)** |
 | Gültigkeit | Level 4: **4 Jahre** · Level 5: **6 Jahre** · Level 6: **unbefristet** |
 | Test | bei einer von Austro Control zertifizierten **LTB** (Liste DC_LFA_ACW_010, Testliste DC_LFA_ACW_011). Beispiele: **LTB 112** (online, 199 € Level 4 / 259 € Level 4–6), **Flugring Salzburg** (240 €, 10-min-Interview + 30 Fragen computerbasiert, ca. 70 min) |
-| Eintrag | Zertifikat + Formular **FO_LFA_ACW_096** an Austro Control (pilots@austrocontrol.at); Gebühr laut Austro-Control-Gebührenverordnung **[Betrag prüfen]** |
+| Eintrag | Zertifikat + Formular **FO_LFA_ACW_096** an Austro Control (pilots@austrocontrol.at); Gebühr **47 €** (ACGV Anlage 1 TP 16d) |
 | Bewertung | ICAO-Skala: Aussprache, Struktur, Wortschatz, Flüssigkeit, Verständnis, Interaktion – **der schwächste Bereich bestimmt den Level** |
 | Tipp | Wer sicher spricht, sollte Level 5 oder 6 anstreben – spart Wiederholungen |
+| Vorbereitung | Prüfungsablauf, Teststellen (inkl. Prüfer in Graz), 8-Wochen-Plan, Wortschatz und Musterantworten: **[lpe-englisch.md](lpe-englisch.md)** |
 
 ---
 
