@@ -257,7 +257,7 @@ function LpeUebung({ u, sim, cfgOverride, onFertig }) {
 
   const a = phase === 'loesung' && gesagt && step?.pilot ? abgleich(gesagt, step.text) : null;
   const zeigeText = (st) => !cfg.textVerbergen || phase !== 'hoeren' || st !== step;
-  const verlauf = u.schritte.slice(0, Math.max(0, ['loesung', 'ende', 'gehoert'].includes(phase) ? i + 1 : i));
+  const verlauf = u.schritte.slice(0, Math.max(0, ['ende', 'gehoert'].includes(phase) ? i + 1 : i));
   const t = zeitFuer(u, cfg);
 
   return (
