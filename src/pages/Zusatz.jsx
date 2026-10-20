@@ -13,7 +13,7 @@ export default function Zusatz({ route }) {
   const ohneSkript = zFaecher.filter((f) => !f.skriptId);
   return (
     <>
-      <PageHead icon="🌟" title={C.zusatz.titel} sub="Erweiterungen nach der PPL(A): Nachtflug, Mehrmotorenberechtigung, internationales Flugfunkzeugnis" />
+      <PageHead icon="🌟" title={C.zusatz.titel} sub="Erweiterungen nach der PPL(A): Nachtflug, Mehrmotorenberechtigung, Flugfunk, Sprachtest Englisch (LPE)" />
       {!module.length && !zFaecher.length && (
         <div className="card empty-state">
           <div className="result-emoji">🛠️</div>
@@ -37,6 +37,7 @@ export default function Zusatz({ route }) {
               <p className="muted small">{p.done}/{p.total} Kapitel gelesen{st ? ` · ${st.beantwortet}/${st.total} Fragen bearbeitet` : ''}</p>
               <div className="row gap wrap">
                 <a className="btn primary sm" href={`#/zusatz/${sk.id}${next ? '/' + next.id : ''}`}><Icon name="book" size={14} /> {p.done ? 'Weiterlesen' : 'Lesen'}</a>
+                {/lpe/.test(sk.id) && C.lpe?.uebungen?.length > 0 && <a className="btn ghost sm" href="#/lpe"><Icon name="mic" size={14} /> LPE-Training</a>}
                 {f && f.anzahlFragen > 0 && (
                   <>
                     <button className="btn ghost sm" onClick={() => startSession({ titel: f.name, ids: C.fragen.filter((q) => q.fachId === f.id).map((q) => q.id), modus: 'lernen', zufall: true, anzahl: 20 })}>Üben</button>

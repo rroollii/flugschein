@@ -58,6 +58,12 @@ export function funkClip(szenarioId, index, text, stimme) {
   return eintrag(e, stimme);
 }
 
+export function lpeClip(uebungId, index, text, stimme) {
+  const e = snap.manifest?.lpe?.[uebungId]?.[String(index)];
+  if (!e || e.hash !== fnv1a(String(text))) return null;
+  return eintrag(e, stimme);
+}
+
 export function dialogClip(srcKey, partId, pre, stimme) {
   const e = (snap.manifest?.dialoge?.[srcKey]?.[partId] || []).find((d) => d.pre === pre);
   if (!e) return null;
@@ -114,6 +120,8 @@ export function audioPakete(C, stimme) {
   pakete.push({ id: 'allgemein', titel: 'Dokumente & Glossar', icon: '📄', info: `${C.dokumente.length} Dokumente + Glossar`, files: dateien(rest) });
   const funk = Object.values(m.funkuebungen || {}).flatMap((sz) => Object.values(sz));
   pakete.push({ id: 'funk', titel: 'Funktraining', icon: '📻', info: `${Object.keys(m.funkuebungen || {}).length} Szenarien (beide Stimmen)`, files: dateien(funk, ['frau', 'mann']) });
+  const lpe = Object.values(m.lpe || {}).flatMap((u) => Object.values(u));
+  pakete.push({ id: 'lpe', titel: 'LPE-Training (Englisch)', icon: '🗣️', info: `${Object.keys(m.lpe || {}).length} Übungen (beide Stimmen)`, files: dateien(lpe, ['frau', 'mann']) });
   return pakete.filter((p) => p.files.length).map((p) => ({
     ...p, urls: p.files.map((x) => urlFor(x.datei)), kb: Math.round(p.files.reduce((n, x) => n + x.ms * KB_PRO_MS, 0)),
     minuten: Math.round(p.files.reduce((n, x) => n + x.ms, 0) / 60000),

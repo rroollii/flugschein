@@ -62,6 +62,7 @@ const P = {
   library: 'M4 4h4v16H4zM10 4h4v16h-4zM16.5 4.6l3.8-1 3.2 15.5-3.8 1z',
   chevU: 'M18 15l-6-6-6 6',
   flip: 'M3 7h13v13H3zM8 4h13v13M7 12h5M7 15h3',
+  mic: 'M12 3a3 3 0 00-3 3v6a3 3 0 006 0V6a3 3 0 00-3-3zM5 11a7 7 0 0014 0M12 18v3M8 21h8',
   radio: 'M4 10h16v10H4zM8 10l9-6M8 16a1.5 1.5 0 100-3 1.5 1.5 0 000 3zM13 14h4M13 17h4',
 };
 export function Icon({ name, size = 20, className = '', ...rest }) {

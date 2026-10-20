@@ -17,6 +17,7 @@ import Bibliothek from './pages/Bibliothek.jsx';
 import Player from './Player.jsx';
 import Lernkarten from './pages/Lernkarten.jsx';
 import Funk from './pages/Funk.jsx';
+import Lpe from './pages/Lpe.jsx';
 import Checklisten from './pages/Checklisten.jsx';
 import Sync from './pages/Sync.jsx';
 
@@ -30,6 +31,7 @@ const NAV = [
   { id: 'karteikasten', label: 'Karteikasten', icon: 'cards' },
   { id: 'lernkarten', label: 'Lernkarten', icon: 'flip' },
   { id: 'funk', label: 'Funktraining', icon: 'radio' },
+  { id: 'lpe', label: 'LPE-Training', icon: 'mic' },
   { id: 'checklisten', label: 'Checklisten', icon: 'log' },
   { id: 'zusatz', label: 'Zusatzausbildungen', icon: 'star' },
   { id: 'statistik', label: 'Statistik', icon: 'chart' },
@@ -45,7 +47,7 @@ const KURZ = { 'Übungsfragen': 'Fragen', Lernunterlagen: 'Lernen' };
 const PAGES = {
   '': Dashboard, ausbildung: Ausbildung, lernplan: Lernplan, skripte: Skripte, fragen: Fragen, karteikasten: Karteikasten,
   statistik: Statistik, suche: Suche, glossar: Glossar, dokumente: Dokumente, daten: Daten, zusatz: Zusatz, bibliothek: Bibliothek,
-  lernkarten: Lernkarten, funk: Funk, checklisten: Checklisten, sync: Sync,
+  lernkarten: Lernkarten, funk: Funk, lpe: Lpe, checklisten: Checklisten, sync: Sync,
 };
 
 function useTheme(theme) {

@@ -716,3 +716,25 @@ pre.dlg-aktiv { outline: 2px solid color-mix(in srgb, var(--c, var(--accent)) 55
   .offline-row { flex-wrap: wrap; }
   .offline-row .grow { flex-basis: calc(100% - 60px); }
 }
+
+/* LPE-Training */
+.lpe-hinweis { display: block; text-decoration: none; color: inherit; }
+.lpe-sim-card { border: 2px solid var(--accent); }
+.lpe-aufgabe small { display: block; font-weight: 700; color: var(--muted); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.04em; }
+.lpe-aufgabe p { font-size: 1.05rem; }
+.lpe-bild { display: grid; grid-template-columns: 9rem 1fr; gap: 1rem; align-items: center; }
+.lpe-bild-rahmen { aspect-ratio: 4 / 3; border-radius: 10px; border: 2px dashed var(--line); background: var(--bg); display: grid; place-items: center; text-align: center; padding: 0.4rem; }
+.lpe-bild-rahmen span { font-size: 2.2rem; }
+.lpe-bild-rahmen small { color: var(--muted); font-size: 0.7rem; }
+@media (max-width: 560px) { .lpe-bild { grid-template-columns: 1fr; } .lpe-bild-rahmen { aspect-ratio: auto; } }
+.lpe-uhr { margin: 0.6rem 0 0.9rem; }
+.lpe-uhr strong { font-size: 2rem; font-variant-numeric: tabular-nums; display: block; }
+.lpe-uhr.knapp strong { color: var(--warn, #e67e22); }
+.lpe-audio { width: 100%; max-width: 320px; height: 36px; margin-top: 0.4rem; }
+.lpe-vergleich { margin: 0.6rem 0; }
+.lpe-vokabeln { width: 100%; border-collapse: collapse; margin-bottom: 1rem; }
+.lpe-vokabeln td { padding: 0.4rem 0.5rem; border-bottom: 1px solid var(--line); }
+.lpe-kriterium { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 0.5rem; padding: 0.6rem 0; border-bottom: 1px solid var(--line); }
+.lpe-plan { padding-left: 1.2rem; }
+.lpe-plan li { margin: 0.35rem 0; }
+.lpe-sim-kopf { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.5rem; }

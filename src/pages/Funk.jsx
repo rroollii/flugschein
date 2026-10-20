@@ -54,6 +54,7 @@ export default function Funk({ route }) {
       {!echte.length && <div className="alert info">Die Funk-Szenarien werden gerade erstellt und erscheinen nach dem nächsten Update automatisch. Bis dahin kannst du den Ablauf mit einem Beispiel ausprobieren.</div>}
       {!ttsSupported && audio.status === 'fehlt' && <div className="alert warn">Dieser Browser hat keine Sprachausgabe – die Funksprüche werden nur als Text angezeigt.</div>}
       {C.funk?.hinweis && <div className="alert warn small">⚠️ {C.funk.hinweis}</div>}
+      {C.lpe?.uebungen?.length > 0 && <a className="alert info lpe-hinweis" href="#/lpe">🗣️ <strong>Neu: LPE-Training</strong> – Sprachtest Englisch mit Interview, Bildbeschreibung, ATIS-Hörverstehen und Prüfungssimulation →</a>}
       {C.funk?.intro && <section className="card"><Html html={C.funk.intro} /></section>}
       {echte.length > 0 && (
         <section className="card funk-filter">

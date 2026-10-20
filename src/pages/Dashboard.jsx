@@ -42,7 +42,7 @@ export default function Dashboard() {
   const st = streak(s);
   useTts();
   const gehoert = hoerbar ? lastListened() : null;
-  const [neuZu, setNeuZu] = useState(() => localStorage.getItem('flugschein-neu-v3') === 'zu');
+  const [neuZu, setNeuZu] = useState(() => localStorage.getItem('flugschein-neu-v4') === 'zu');
   const hoeren = () => (gehoert ? play(gehoert.type, gehoert.id) : next ? play('skript', next.skript.id, next.skript.kapitel.indexOf(next.kapitel), 0) : navigate('/bibliothek'));
   const heute = s.aktivitaet[today()] || 0;
   const tipp = TIPPS[new Date().getDate() % TIPPS.length];
@@ -81,10 +81,11 @@ export default function Dashboard() {
 
       {!neuZu && (
         <section className="card neu-box">
-          <div className="row-between"><h2 className="mt0">✨ Neu in deiner Lernplattform</h2><button className="icon-btn sm" aria-label="Ausblenden" onClick={() => { localStorage.setItem('flugschein-neu-v3', 'zu'); setNeuZu(true); }}><Icon name="x" size={16} /></button></div>
+          <div className="row-between"><h2 className="mt0">✨ Neu in deiner Lernplattform</h2><button className="icon-btn sm" aria-label="Ausblenden" onClick={() => { localStorage.setItem('flugschein-neu-v4', 'zu'); setNeuZu(true); }}><Icon name="x" size={16} /></button></div>
           <div className="neu-grid">
             <a href="#/bibliothek"><span>🎧</span><strong>Hörbuch mit natürlichen Stimmen</strong><small>Frau oder Mann, Text läuft mit – „Anhören“ in jedem Kapitel, auch offline</small></a>
             <a href="#/lernkarten"><span>🃏</span><strong>Lernkarten</strong><small>{C.karten.length} Karten aus Skripten & Glossar, Anki-Export</small></a>
+            {C.lpe?.uebungen?.length > 0 && <a href="#/lpe"><span>🗣️</span><strong>LPE-Training</strong><small>Sprachtest Englisch: {C.lpe.uebungen.length} Übungen + Prüfungssimulation</small></a>}
             <a href="#/funk"><span>📻</span><strong>Funktraining</strong><small>{C.funk?.szenarien?.length || 'Beispiel-'} Szenarien mit echten Stimmen</small></a>
             <a href="#/checklisten"><span>✅</span><strong>Checklisten</strong><small>{C.checklisten?.length || 0} Checklisten zum Abhaken & Drucken</small></a>
             <a href="#/sync"><span>🔄</span><strong>Geräte-Sync</strong><small>Handy ↔ PC abgleichen</small></a>

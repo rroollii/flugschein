@@ -53,6 +53,7 @@ function routeFor(href, baseDir) {
   if (/^checklisten\/(index\.md)?$/.test(norm)) return '#/checklisten';
   m = norm.match(/^checklisten\/(.+)\.md$/);
   if (m) return `#/checklisten/${m[1]}`;
+  if (/^funkuebungen\/lpe/.test(norm)) return '#/lpe';
   if (/^funkuebungen\//.test(norm)) return '#/funk';
   if (/^ausbildungsplan\.md$/.test(norm)) return '#/ausbildung';
   if (/^lernplan\.md$/.test(norm)) return '#/lernplan';
@@ -463,11 +464,12 @@ if (fs.existsSync(zAbs)) {
       const items = [...sec.items, ...sec.gruppen.flatMap((g) => g.items)];
       if (!items.length) continue;
       const gruppen = [];
-      for (const it of items) {
+      for (const it of sec.items) {
         const g = gruppen[gruppen.length - 1];
         if (!g || g.label !== it.label) gruppen.push({ label: it.label, items: [it] });
         else g.items.push(it);
       }
+      for (const w of sec.gruppen) if (w.items.length) gruppen.push({ label: (w.titel ? `${w.label} – ${w.titel}` : w.label).replace(/\(\s+/g, '(').replace(/\s+\)/g, ')'), items: w.items });
       checklisten.push({ id: `${sk.id}:${sec.id}`, titel: sec.titel, gruppen, anzahl: items.length });
     }
     zusatz.module.push({
@@ -538,6 +540,34 @@ if (funkRaw) {
 const funkIntro = read('funkuebungen/index.md');
 if (funkIntro) funk.intro = mdToHtml(funkIntro.replace(/^# .*\n/, ''), 'funkuebungen');
 
+// ---------- LPE-Training (optional: docs/funkuebungen/lpe-uebungen.json, Schema in funkuebungen/README.md) ----------
+const lpe = { hinweis: '', typen: {}, uebungen: [], rufzeichen: null };
+const lpeRaw = read('funkuebungen/lpe-uebungen.json');
+if (lpeRaw) {
+  try {
+    const j = JSON.parse(lpeRaw);
+    lpe.hinweis = j.hinweis || '';
+    lpe.typen = j.typen || {};
+    lpe.rufzeichen = j.rufzeichen || null;
+    for (const u of j.uebungen || []) {
+      const sprache = lang2(u.sprache, 'en');
+      // n = Index in der JSON-Datei (Schlüssel im Audio-Manifest)
+      const schritte = (u.schritte || []).map((st, n) => ({
+        n, pilot: PILOT.test(String(st.rolle || '')), text: String(st.text || ''), sprecher: st.sprecher || (PILOT.test(String(st.rolle || '')) ? 'pilot' : 'atc'),
+        hinweis: st.hinweis || '', sprache: lang2(st.sprache, sprache),
+      })).filter((st) => st.text);
+      if (!u.id || !schritte.length) { warn('LPE-Übung ohne id/Schritte übersprungen:', u.titel || u.id); continue; }
+      lpe.uebungen.push({
+        id: u.id, titel: u.titel || u.id, typ: u.typ || 'interview', sprache, niveau: u.schwierigkeit || '', level: String(u.level_ziel || ''),
+        themen: (u.themen || []).map(String), situation: mdInline(u.situation || ''), aufgabe: mdInline(u.aufgabe || ''), bild: u.bild ? mdInline(u.bild) : '',
+        schritte, vokabeln: (u.vokabeln || []).filter((v) => v.en).map((v) => ({ en: String(v.en), de: String(v.de || '') })),
+      });
+    }
+  } catch (e) {
+    warn('funkuebungen/lpe-uebungen.json nicht lesbar:', e.message);
+  }
+}
+
 // ---------- Checklisten (optional: docs/checklisten/*.md) ----------
 const CL = 'checklisten';
 const checklisten = [];
@@ -607,7 +637,7 @@ const content = {
   faecher, fragen, skripte, skriptIndex, empfohleneReihenfolge,
   ausbildung: { phasen, minima, fristen, intro: apSections[0]?.descHtml || '', checklisten: apSections.filter((s) => !phasen.includes(s) && s.items.length) },
   lernplan: { ziel: lpZiel ? mdInline(lpZiel) : '', wochen, checklisten: lpChecklisten, planTitel: planSection?.titel || 'Wochenplan', planIntro: planSection?.descHtml || '' },
-  dokumente, glossar, zusatz, karten, funk, checklisten, checklistenIntro,
+  dokumente, glossar, zusatz, karten, funk, lpe, checklisten, checklistenIntro,
 };
 fs.mkdirSync(path.dirname(OUT), { recursive: true });
 fs.writeFileSync(OUT, JSON.stringify(content));
@@ -616,5 +646,5 @@ console.log(`  ${faecher.length} Fächer · ${fragen.length} Fragen · ${skripte
 console.log(`  ${phasen.length} Ausbildungsphasen (${phasen.reduce((n, p) => n + p.items.length, 0)} Punkte) · ${wochen.length} Lernwochen · ${fristen.length} Fristen · ${glossar.length} Glossarbegriffe · ${dokumente.length} Dokumente`);
 console.log(`  Mindestwerte: ${JSON.stringify({ ...minima, text: undefined })}${land ? ' · Land: ' + land : ''}`);
 console.log(`  Zusatzausbildungen: ${zusatz.module.map((m) => `${m.id} (${m.kapitel} Kap., ${m.fragen} Fragen, ${m.checklisten.reduce((n, c) => n + c.anzahl, 0)} Checkpunkte)`).join(' · ') || 'keine'}`);
-console.log(`  ${karten.length} Lernkarten · ${funk.szenarien.length} Funk-Szenarien · ${checklisten.length} Checklisten (${checklisten.reduce((n, c) => n + c.anzahl, 0)} Punkte)`);
+console.log(`  ${karten.length} Lernkarten · ${funk.szenarien.length} Funk-Szenarien · ${lpe.uebungen.length} LPE-Übungen · ${checklisten.length} Checklisten (${checklisten.reduce((n, c) => n + c.anzahl, 0)} Punkte)`);
 console.log(`  ${(fs.statSync(OUT).size / 1024).toFixed(0)} KB → ${path.relative(root, OUT)}`);
