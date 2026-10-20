@@ -1,0 +1,19 @@
+# Liegt im Branch `audio` unter .github/workflows/. GitHub startet Push-Workflows mit der Workflow-Datei
+# des gepushten Branches – pages.yml existiert nur auf main. Daher startet dieser Workflow den
+# Pages-Build auf main per workflow_dispatch (mit GITHUB_TOKEN ausgelöste Dispatches erzeugen Läufe).
+name: Audio → Plattform neu bauen
+
+on:
+  push:
+    branches: [audio]
+
+permissions:
+  actions: write
+
+jobs:
+  dispatch:
+    runs-on: ubuntu-latest
+    steps:
+      - run: gh workflow run pages.yml --ref main -R "$GITHUB_REPOSITORY"
+        env:
+          GH_TOKEN: ${{ github.token }}
