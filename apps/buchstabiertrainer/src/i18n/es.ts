@@ -251,7 +251,7 @@ export const es: Woerterbuch = {
   'ds.kinder.t': 'Menores',
   'ds.kinder': 'La app está dirigida a alumnos piloto y aficionados a la radio y no recoge datos de menores.',
   'ds.kontakt.t': 'Contacto',
-  'ds.kontakt': 'Responsable: [nombre, dirección, correo – completar antes de publicar]. Según el RGPD tienes derecho de acceso, rectificación, supresión y a reclamar ante la autoridad de protección de datos (en Austria: dsb.gv.at). Como no guardamos datos tuyos, las solicitudes suelen referirse solo a los datos guardados en tu dispositivo.',
+  'ds.kontakt': 'Responsable: CHAOS GmbH, Am Gewerbepark 5, 8241 Dechantskirchen, Austria, correo: chaos@chaos.ms, número de registro mercantil: FN 654219 m. Según el RGPD tienes derecho de acceso, rectificación, supresión y a reclamar ante la autoridad de protección de datos (en Austria: dsb.gv.at). Como no guardamos datos tuyos, las solicitudes suelen referirse solo a los datos guardados en tu dispositivo.',
   'ds.stand.t': 'Actualización',
   'ds.stand': 'Octubre de 2026',
 

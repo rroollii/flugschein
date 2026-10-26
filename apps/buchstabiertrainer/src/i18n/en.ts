@@ -251,7 +251,7 @@ export const en: Woerterbuch = {
   'ds.kinder.t': 'Children',
   'ds.kinder': 'The app is aimed at student pilots and radio enthusiasts and collects no data from children.',
   'ds.kontakt.t': 'Contact',
-  'ds.kontakt': 'Controller: [name, address, e-mail – fill in before publishing]. Under the GDPR you have the right of access, rectification, erasure and to lodge a complaint with the data protection authority (in Austria: dsb.gv.at). As we do not store any of your data, requests usually only concern the data stored locally on your device.',
+  'ds.kontakt': 'Controller: CHAOS GmbH, Am Gewerbepark 5, 8241 Dechantskirchen, Austria, e-mail: chaos@chaos.ms, commercial register number: FN 654219 m. Under the GDPR you have the right of access, rectification, erasure and to lodge a complaint with the data protection authority (in Austria: dsb.gv.at). As we do not store any of your data, requests usually only concern the data stored locally on your device.',
   'ds.stand.t': 'Last updated',
   'ds.stand': 'October 2026',
 
