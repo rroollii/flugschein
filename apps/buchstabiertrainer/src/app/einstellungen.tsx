@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Alert, Platform } from 'react-native';
+import { router } from 'expo-router';
 import { Seite, Panel, T, Knopf, Auswahl, Zeile } from '../ui/komponenten';
 import { useFarben } from '../lib/theme';
 import { useStore, einstellen, zuruecksetzen } from '../lib/store';
@@ -65,7 +66,10 @@ export default function Einstellungen() {
       <Panel titel="Datenschutz">
         <T groesse={14}>Kein Konto, keine Werbung, keine Analyse. Läufe, Statistik und Einstellungen werden nur auf diesem Gerät gespeichert.</T>
         <T leise groesse={13} style={{ marginTop: 6 }}>Mikrofon und Spracherkennung laufen nur während einer Übung. Ist on-device nicht möglich, verarbeitet der Erkennungsdienst des Systems bzw. Browsers (Apple, Google) die Sprache.</T>
-        <Knopf klein art="fehler" titel="Alle Daten löschen" style={{ marginTop: 12, alignSelf: 'flex-start' }} onPress={loeschen} />
+        <Zeile style={{ marginTop: 12 }}>
+          <Knopf klein art="sekundaer" titel="Datenschutzerklärung" onPress={() => router.push('/datenschutz')} />
+          <Knopf klein art="fehler" titel="Alle Daten löschen" onPress={loeschen} />
+        </Zeile>
       </Panel>
       <T leise groesse={12} style={{ textAlign: 'center' }}>Buchstabiertrainer 1.0 · Teil der Flugschein-Lernplattform</T>
     </Seite>
