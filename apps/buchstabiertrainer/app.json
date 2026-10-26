@@ -131,6 +131,12 @@
       "fr": "./locales/fr.json",
       "it": "./locales/it.json",
       "es": "./locales/es.json"
-    }
+    },
+    "extra": {
+      "eas": {
+        "projectId": "0f7c9b28-6ee2-4fe5-aaec-7f92ee8cb5d1"
+      }
+    },
+    "owner": "rroollii"
   }
 }

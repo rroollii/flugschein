@@ -250,7 +250,7 @@ export const de = {
   'ds.kinder.t': 'Kinder',
   'ds.kinder': 'Die App richtet sich an Flugschüler:innen und Funk-Interessierte und erhebt keine Daten von Kindern.',
   'ds.kontakt.t': 'Kontakt',
-  'ds.kontakt': 'Verantwortlich: [Name, Anschrift, E-Mail – vor Veröffentlichung eintragen]. Du hast nach DSGVO das Recht auf Auskunft, Berichtigung, Löschung und Beschwerde bei der Datenschutzbehörde (in Österreich: dsb.gv.at). Da wir keine Daten von dir speichern, betreffen Anfragen in der Regel nur die lokal auf deinem Gerät gespeicherten Daten.',
+  'ds.kontakt': 'Verantwortlich: CHAOS GmbH, Am Gewerbepark 5, 8241 Dechantskirchen, Österreich, E-Mail: chaos@chaos.ms, Firmenbuchnummer: FN 654219 m. Du hast nach DSGVO das Recht auf Auskunft, Berichtigung, Löschung und Beschwerde bei der Datenschutzbehörde (in Österreich: dsb.gv.at). Da wir keine Daten von dir speichern, betreffen Anfragen in der Regel nur die lokal auf deinem Gerät gespeicherten Daten.',
   'ds.stand.t': 'Stand',
   'ds.stand': 'Oktober 2026',
 
