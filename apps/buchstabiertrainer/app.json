@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "Buchstabiertrainer",
+    "name": "PilotABC",
     "slug": "buchstabiertrainer",
     "description": "Train the ICAO/NATO phonetic alphabet: timed sprints with speech recognition, pronunciation, listening drills and aircraft registrations. Available in German, English, French, Italian and Spanish.",
     "version": "1.0.0",
@@ -59,8 +59,8 @@
     "web": {
       "output": "static",
       "favicon": "./assets/favicon.png",
-      "name": "Buchstabiertrainer",
-      "shortName": "Buchstabieren",
+      "name": "PilotABC",
+      "shortName": "PilotABC",
       "lang": "en",
       "themeColor": "#070b10",
       "backgroundColor": "#070b10"

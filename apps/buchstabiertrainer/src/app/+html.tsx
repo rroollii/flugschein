@@ -15,10 +15,10 @@ export default function Root({ children }: { children: React.ReactNode }) {
         <meta name="theme-color" content="#070b10" />
         <meta name="description" content="ICAO-/NATO-Buchstabieralphabet trainieren: Sprint auf Zeit mit Spracherkennung, Aussprache, Hörübungen und Kennzeichen. Ohne Konto, Fortschritt bleibt auf dem Gerät." />
         <meta name="apple-mobile-web-app-capable" content="yes" />
-        <meta name="apple-mobile-web-app-title" content="Buchstabieren" />
+        <meta name="apple-mobile-web-app-title" content="PilotABC" />
         <link rel="manifest" href={`${BASIS}/manifest.webmanifest`} />
         <link rel="apple-touch-icon" href={`${BASIS}/apple-touch-icon.png`} />
-        <title>Buchstabiertrainer – ICAO-Alphabet</title>
+        <title>PilotABC – Buchstabieren wie ein Pilot</title>
         <ScrollViewStyleReset />
         <style dangerouslySetInnerHTML={{ __html: 'html,body{background:#070b10;color-scheme:dark light}' }} />
         {headNodes}

@@ -1,10 +1,10 @@
 {
   "ios": {
-    "CFBundleDisplayName": "Alfabeto OACI",
+    "CFBundleDisplayName": "PilotABC",
     "NSMicrophoneUsageDescription": "La app te escucha durante un ejercicio para reconocer y evaluar las palabras clave que pronuncias (p. ej. «Alfa, Bravo»). No se graba ni se guarda nada.",
     "NSSpeechRecognitionUsageDescription": "El reconocimiento de voz convierte en texto las palabras clave que dices para que la app pueda marcarlas como correctas o incorrectas. Cuando es posible, ocurre directamente en el iPhone."
   },
   "android": {
-    "app_name": "Alfabeto OACI"
+    "app_name": "PilotABC"
   }
 }

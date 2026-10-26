@@ -1,4 +1,4 @@
-# Buchstabiertrainer – ICAO-/NATO-Alphabet
+# PilotABC – ICAO-/NATO-Alphabet (Buchstabiertrainer)
 
 Ziel: **50 Buchstaben in unter 30 Sekunden** korrekt buchstabieren. Eine Codebasis (Expo SDK 58, React Native, Expo Router)
 für iPhone, Android und Web. Web-Version: https://rroollii.github.io/flugschein/buchstabiertrainer/

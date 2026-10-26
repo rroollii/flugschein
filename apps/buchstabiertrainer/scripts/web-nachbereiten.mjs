@@ -20,8 +20,8 @@ const lauf = (d) => {
 lauf(dist);
 
 const manifest = {
-  name: 'Buchstabiertrainer – ICAO-Alphabet',
-  short_name: 'Buchstabieren',
+  name: 'PilotABC – Buchstabieren wie ein Pilot',
+  short_name: 'PilotABC',
   description: app.description,
   lang: 'de',
   id: BASE,
@@ -44,7 +44,7 @@ const hash = crypto.createHash('sha1');
 for (const f of dateien) hash.update(f + fs.statSync(path.join(dist, f)).size);
 const version = hash.digest('hex').slice(0, 10);
 
-fs.writeFileSync(path.join(dist, 'sw.js'), `// Service Worker Buchstabiertrainer – Version ${version}
+fs.writeFileSync(path.join(dist, 'sw.js'), `// Service Worker PilotABC – Version ${version}
 const CACHE = 'buchstabiertrainer-${version}';
 const PRECACHE = ${JSON.stringify(precache)};
 self.addEventListener('install', (e) => {

@@ -1,10 +1,10 @@
 {
   "ios": {
-    "CFBundleDisplayName": "ICAO Alphabet",
+    "CFBundleDisplayName": "PilotABC",
     "NSMicrophoneUsageDescription": "The app listens to you during an exercise so it can recognise and score the code words you speak (e.g. “Alfa, Bravo”). Nothing is recorded or stored.",
     "NSSpeechRecognitionUsageDescription": "Speech recognition turns your spoken code words into text so the app can mark them right or wrong. Where possible this happens directly on your iPhone."
   },
   "android": {
-    "app_name": "ICAO Alphabet"
+    "app_name": "PilotABC"
   }
 }

@@ -1,10 +1,10 @@
 import type { Woerterbuch } from './de';
 
 export const es: Woerterbuch = {
-  'app.name': 'Alfabeto OACI',
+  'app.name': 'PilotABC',
   'app.untertitel': 'Alfabeto fonético OACI/OTAN para pilotos',
-  'app.webtitel': 'Alfabeto OACI – entrenador de deletreo',
-  'app.fusszeile': 'Alfabeto OACI {v} · parte de la plataforma Flugschein',
+  'app.webtitel': 'PilotABC – Deletrear como un piloto',
+  'app.fusszeile': 'PilotABC {v} · parte de la plataforma Flugschein',
 
   'allg.zurueck': 'Atrás',
   'allg.start': 'Empezar',
