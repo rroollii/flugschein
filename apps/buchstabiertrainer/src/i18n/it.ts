@@ -1,10 +1,10 @@
 import type { Woerterbuch } from './de';
 
 export const it: Woerterbuch = {
-  'app.name': 'Alfabeto ICAO',
+  'app.name': 'PilotABC',
   'app.untertitel': 'Alfabeto fonetico ICAO/NATO per piloti',
-  'app.webtitel': 'Alfabeto ICAO – allenamento allo spelling',
-  'app.fusszeile': 'Alfabeto ICAO {v} · parte della piattaforma Flugschein',
+  'app.webtitel': 'PilotABC – Compitare come un pilota',
+  'app.fusszeile': 'PilotABC {v} · parte della piattaforma Flugschein',
 
   'allg.zurueck': 'Indietro',
   'allg.start': 'Avvia',

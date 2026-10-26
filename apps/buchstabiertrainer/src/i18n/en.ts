@@ -1,10 +1,10 @@
 import type { Woerterbuch } from './de';
 
 export const en: Woerterbuch = {
-  'app.name': 'Spelling Trainer',
+  'app.name': 'PilotABC',
   'app.untertitel': 'ICAO/NATO phonetic alphabet for pilots',
-  'app.webtitel': 'Spelling Trainer – ICAO alphabet',
-  'app.fusszeile': 'Spelling Trainer {v} · part of the Flugschein learning platform',
+  'app.webtitel': 'PilotABC – Spell like a pilot',
+  'app.fusszeile': 'PilotABC {v} · part of the Flugschein learning platform',
 
   'allg.zurueck': 'Back',
   'allg.start': 'Start',
@@ -239,7 +239,7 @@ export const en: Woerterbuch = {
 
   'ds.titel': 'Privacy',
   'ds.kurz.t': 'Summary',
-  'ds.kurz': 'The Spelling Trainer works without an account, ads, tracking or servers of its own. All exercise results stay on your device.',
+  'ds.kurz': 'PilotABC works without an account, ads, tracking or servers of its own. All exercise results stay on your device.',
   'ds.mikro.t': 'Microphone and speech recognition',
   'ds.mikro': 'The microphone is active only while you do a speaking exercise. Speech is converted to text to evaluate your code words; audio is neither stored nor sent to us. If your device supports it, recognition runs entirely on the device (“on-device”). Otherwise the speech recognition service of your operating system or browser (Apple, Google or Microsoft) processes the recording under its own privacy policy. Without a microphone you can use the app with typing or self-rating.',
   'ds.daten.t': 'Stored data',

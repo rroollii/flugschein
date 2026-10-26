@@ -47,6 +47,12 @@ jobs:
           rm -rf ../../_site/buchstabiertrainer
           cp -a dist ../../_site/buchstabiertrainer
           du -sh ../../_site/buchstabiertrainer
+          mkdir -p ../../_site/pilotabc
+          printf '%s\n' '<!doctype html><meta charset="utf-8"><title>PilotABC</title>' \
+            '<meta http-equiv="refresh" content="0; url=../buchstabiertrainer/">' \
+            '<link rel="canonical" href="../buchstabiertrainer/">' \
+            '<script>location.replace("../buchstabiertrainer/"+location.search+location.hash)</script>' \
+            > ../../_site/pilotabc/index.html
       - name: Audio aus Branch audio übernehmen (falls vorhanden)
         run: |
           if git ls-remote --exit-code --heads origin audio >/dev/null; then

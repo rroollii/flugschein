@@ -32,7 +32,7 @@ const NAV = [
   { id: 'lernkarten', label: 'Lernkarten', icon: 'flip' },
   { id: 'funk', label: 'Funktraining', icon: 'radio' },
   { id: 'lpe', label: 'LPE-Training', icon: 'mic' },
-  { id: 'buchstabiertrainer', label: 'Buchstabiertrainer', icon: 'spell', href: './buchstabiertrainer/' },
+  { id: 'buchstabiertrainer', label: 'PilotABC', icon: 'spell', href: './buchstabiertrainer/' },
   { id: 'checklisten', label: 'Checklisten', icon: 'log' },
   { id: 'zusatz', label: 'Zusatzausbildungen', icon: 'star' },
   { id: 'statistik', label: 'Statistik', icon: 'chart' },

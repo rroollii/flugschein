@@ -1,9 +1,9 @@
 // Basis-Wörterbuch. Platzhalter: {name}. Neue Sprachen: Datei kopieren, übersetzen, in index.ts eintragen.
 export const de = {
-  'app.name': 'Buchstabiertrainer',
+  'app.name': 'PilotABC',
   'app.untertitel': 'ICAO-/NATO-Alphabet für Pilot:innen',
-  'app.webtitel': 'Buchstabiertrainer – ICAO-Alphabet',
-  'app.fusszeile': 'Buchstabiertrainer {v} · Teil der Flugschein-Lernplattform',
+  'app.webtitel': 'PilotABC – Buchstabieren wie ein Pilot',
+  'app.fusszeile': 'PilotABC {v} · Teil der Flugschein-Lernplattform',
 
   'allg.zurueck': 'Zurück',
   'allg.start': 'Start',
@@ -238,7 +238,7 @@ export const de = {
 
   'ds.titel': 'Datenschutz',
   'ds.kurz.t': 'Kurzfassung',
-  'ds.kurz': 'Der Buchstabiertrainer kommt ohne Konto, Werbung, Tracking und eigene Server aus. Alle Übungsergebnisse bleiben auf deinem Gerät.',
+  'ds.kurz': 'PilotABC kommt ohne Konto, Werbung, Tracking und eigene Server aus. Alle Übungsergebnisse bleiben auf deinem Gerät.',
   'ds.mikro.t': 'Mikrofon und Spracherkennung',
   'ds.mikro': 'Das Mikrofon ist nur aktiv, während du eine Sprechübung machst. Die Sprache wird in Text umgewandelt, um deine Codewörter zu bewerten; Audio wird weder gespeichert noch an uns übertragen. Wenn dein Gerät es unterstützt, läuft die Erkennung vollständig auf dem Gerät („on-device“). Andernfalls verarbeitet der Spracherkennungsdienst deines Betriebssystems bzw. Browsers (Apple, Google oder Microsoft) die Aufnahme nach dessen Datenschutzbestimmungen. Ohne Mikrofon kannst du die App mit Tippen oder Selbstbewertung nutzen.',
   'ds.daten.t': 'Gespeicherte Daten',

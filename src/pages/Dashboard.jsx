@@ -86,7 +86,7 @@ export default function Dashboard() {
             <a href="#/bibliothek"><span>🎧</span><strong>Hörbuch mit natürlichen Stimmen</strong><small>Frau oder Mann, Text läuft mit – „Anhören“ in jedem Kapitel, auch offline</small></a>
             <a href="#/lernkarten"><span>🃏</span><strong>Lernkarten</strong><small>{C.karten.length} Karten aus Skripten & Glossar, Anki-Export</small></a>
             {C.lpe?.uebungen?.length > 0 && <a href="#/lpe"><span>🗣️</span><strong>LPE-Training</strong><small>Sprachtest Englisch: {C.lpe.uebungen.length} Übungen + Prüfungssimulation</small></a>}
-            <a href="./buchstabiertrainer/"><span>🔤</span><strong>Buchstabiertrainer</strong><small>ICAO-Alphabet: 50 Buchstaben in unter 30 s – mit Spracherkennung, auch als App</small></a>
+            <a href="./buchstabiertrainer/"><span>🔤</span><strong>PilotABC</strong><small>ICAO-Alphabet: 50 Buchstaben in unter 30 s – mit Spracherkennung, auch als App</small></a>
             <a href="#/funk"><span>📻</span><strong>Funktraining</strong><small>{C.funk?.szenarien?.length || 'Beispiel-'} Szenarien mit echten Stimmen</small></a>
             <a href="#/checklisten"><span>✅</span><strong>Checklisten</strong><small>{C.checklisten?.length || 0} Checklisten zum Abhaken & Drucken</small></a>
             <a href="#/sync"><span>🔄</span><strong>Geräte-Sync</strong><small>Handy ↔ PC abgleichen</small></a>
@@ -138,7 +138,7 @@ export default function Dashboard() {
             )}
             <a className="action" href="./buchstabiertrainer/">
               <span className="action-icon orange"><Icon name="spell" /></span>
-              <span><strong>Buchstabiertrainer</strong><small>Sprint: 50 Buchstaben ICAO-Alphabet in unter 30 s</small></span>
+              <span><strong>PilotABC</strong><small>Sprint: 50 Buchstaben ICAO-Alphabet in unter 30 s</small></span>
             </a>
             {hoerbar && (gehoert || next) && (
               <button className="action" onClick={() => (gehoert ? play(gehoert.type, gehoert.id) : play('skript', next.skript.id, next.skript.kapitel.indexOf(next.kapitel), 0))}>
