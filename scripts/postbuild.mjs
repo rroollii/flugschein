@@ -88,6 +88,8 @@ self.addEventListener('fetch', (e) => {
   const req = e.request;
   if (req.method !== 'GET') return;
   const url = new URL(req.url);
+  // Eigenständige Apps in Unterordnern (z. B. buchstabiertrainer/) haben einen eigenen Service Worker
+  if (url.origin === location.origin && url.pathname.includes('/buchstabiertrainer/')) return;
   const rawAudio = url.hostname === 'raw.githubusercontent.com' && url.pathname.includes('/audio/');
   if (url.origin !== location.origin && !rawAudio) return;
   if (url.pathname.includes('/audio/') || rawAudio) {

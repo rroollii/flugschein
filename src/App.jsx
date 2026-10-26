@@ -32,6 +32,7 @@ const NAV = [
   { id: 'lernkarten', label: 'Lernkarten', icon: 'flip' },
   { id: 'funk', label: 'Funktraining', icon: 'radio' },
   { id: 'lpe', label: 'LPE-Training', icon: 'mic' },
+  { id: 'buchstabiertrainer', label: 'Buchstabiertrainer', icon: 'spell', href: './buchstabiertrainer/' },
   { id: 'checklisten', label: 'Checklisten', icon: 'log' },
   { id: 'zusatz', label: 'Zusatzausbildungen', icon: 'star' },
   { id: 'statistik', label: 'Statistik', icon: 'chart' },
@@ -90,7 +91,7 @@ export default function App() {
   };
 
   const navLink = (n) => (
-    <a key={n.id} href={`#/${n.id}`} className={`nav-link ${page === n.id ? 'active' : ''}`}>
+    <a key={n.id} href={n.href || `#/${n.id}`} className={`nav-link ${page === n.id ? 'active' : ''}`}>
       <Icon name={n.icon} />
       <span>{n.label}</span>
       {n.id === 'karteikasten' && due > 0 && <span className="nav-badge">{due}</span>}

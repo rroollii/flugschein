@@ -63,6 +63,7 @@ const P = {
   chevU: 'M18 15l-6-6-6 6',
   flip: 'M3 7h13v13H3zM8 4h13v13M7 12h5M7 15h3',
   mic: 'M12 3a3 3 0 00-3 3v6a3 3 0 006 0V6a3 3 0 00-3-3zM5 11a7 7 0 0014 0M12 18v3M8 21h8',
+  spell: 'M3 19l4-14 4 14M4.5 14h5M14 5h4a3 3 0 010 6h-4zM14 11h4.5a3 3 0 010 6H14zM14 5v14',
   radio: 'M4 10h16v10H4zM8 10l9-6M8 16a1.5 1.5 0 100-3 1.5 1.5 0 000 3zM13 14h4M13 17h4',
 };
 export function Icon({ name, size = 20, className = '', ...rest }) {

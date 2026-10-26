@@ -27,6 +27,9 @@ jobs:
         with:
           node-version: 20
           cache: npm
+          cache-dependency-path: |
+            package-lock.json
+            apps/buchstabiertrainer/package-lock.json
       - run: npm ci --no-audit --no-fund
       - name: Plattform bauen
         run: npm run build
@@ -34,6 +37,16 @@ jobs:
           CONTENT_DIR: inhalte
           OUT_DIR: _site
           BASE_PATH: /flugschein/
+      # Eigenständige Expo-App (iOS/Android/Web) → https://rroollii.github.io/flugschein/buchstabiertrainer/
+      - name: Buchstabiertrainer (Web) bauen
+        working-directory: apps/buchstabiertrainer
+        run: |
+          npm ci --no-audit --no-fund
+          npm test
+          npm run build:web
+          rm -rf ../../_site/buchstabiertrainer
+          cp -a dist ../../_site/buchstabiertrainer
+          du -sh ../../_site/buchstabiertrainer
       - name: Audio aus Branch audio übernehmen (falls vorhanden)
         run: |
           if git ls-remote --exit-code --heads origin audio >/dev/null; then

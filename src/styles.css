@@ -259,7 +259,9 @@ a.stat-card:hover { transform: translateY(-2px); text-decoration: none; border-c
 .action-icon.blue { background: #e3efff; color: #1e6fe0; }
 .action-icon.red { background: #ffe8e8; color: #e5484d; }
 .action-icon.green { background: #e1f6eb; color: #1fa463; }
+.action-icon.orange { background: #fff1dc; color: #c77700; }
 [data-theme='dark'] .action-icon.blue { background: #17325a; color: #6aaaff; }
+[data-theme='dark'] .action-icon.orange { background: #3a2a0c; color: #ffb020; }
 [data-theme='dark'] .action-icon.red { background: #3d1c22; }
 [data-theme='dark'] .action-icon.green { background: #12382a; }
 .week-today { border-top: 1px solid var(--line); padding-top: 0.75rem; }
@@ -738,3 +740,4 @@ pre.dlg-aktiv { outline: 2px solid color-mix(in srgb, var(--c, var(--accent)) 55
 .lpe-plan { padding-left: 1.2rem; }
 .lpe-plan li { margin: 0.35rem 0; }
 .lpe-sim-kopf { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.5rem; }
+a.action { color: inherit; text-decoration: none; }

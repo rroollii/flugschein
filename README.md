@@ -121,3 +121,10 @@ src/pages/*.jsx             Lernunterlagen, Übersicht, Ausbildung (Phasen, Flug
 ```
 
 Entwicklung: `CONTENT_DIR=/pfad/zu/docs npm run dev`.
+
+## Eigenständige Apps (`apps/`)
+
+`apps/buchstabiertrainer/` – ICAO-Buchstabiertrainer (Expo/React Native, eine Codebasis für iOS, Android und Web).
+Der Pages-Workflow baut die Web-Version mit (`npm run build:web`) und legt sie unter `_site/buchstabiertrainer/` ab →
+https://rroollii.github.io/flugschein/buchstabiertrainer/. Sie hat einen eigenen Service Worker; der Plattform-Service-Worker
+lässt Anfragen unter `/buchstabiertrainer/` deshalb durch. Details, iOS-/Android-Builds: `apps/buchstabiertrainer/README.md`.
