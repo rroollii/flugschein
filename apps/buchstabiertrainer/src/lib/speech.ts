@@ -3,15 +3,16 @@ import { Platform } from 'react-native';
 import { ExpoSpeechRecognitionModule } from 'expo-speech-recognition';
 import type { Erkenner, ErkennerHandler, OnDeviceStatus, Verfuegbarkeit } from './speech-typen';
 import { simAktiv, simErkenner } from './sim';
+import { t } from '../i18n';
 
 export function verfuegbar(): Verfuegbarkeit {
   if (simAktiv()) return { ok: true };
   try {
     return ExpoSpeechRecognitionModule.isRecognitionAvailable()
       ? { ok: true }
-      : { ok: false, grund: 'Auf diesem Gerät ist keine Spracherkennung verfügbar (Siri/Diktieren bzw. Google-Spracherkennung aktivieren).' };
+      : { ok: false, grund: t('erk.keinGeraet') };
   } catch {
-    return { ok: false, grund: 'Spracherkennung ist in dieser App-Version nicht enthalten (Expo Go). Bitte Development-/TestFlight-Build verwenden.' };
+    return { ok: false, grund: t('erk.expoGo') };
   }
 }
 

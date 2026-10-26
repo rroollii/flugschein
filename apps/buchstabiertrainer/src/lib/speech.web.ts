@@ -2,13 +2,14 @@
 // (Sprachpaket wird einmalig installiert); sonst verarbeitet der Browser die Sprache auf seinen Servern.
 import type { Erkenner, ErkennerHandler, OnDeviceStatus, Verfuegbarkeit } from './speech-typen';
 import { simAktiv, simErkenner } from './sim';
+import { t } from '../i18n';
 
 const Klasse = (): any =>
   typeof window === 'undefined' ? null : (window as any).SpeechRecognition || (window as any).webkitSpeechRecognition || null;
 
 export function verfuegbar(): Verfuegbarkeit {
   if (simAktiv()) return { ok: true };
-  if (!Klasse()) return { ok: false, grund: 'Dieser Browser unterstützt keine Spracherkennung (z. B. Firefox). Bitte Chrome, Edge oder Safari verwenden – oder Tippen bzw. Selbstbewertung wählen.' };
+  if (!Klasse()) return { ok: false, grund: t('erk.keinBrowser') };
   return { ok: true };
 }
 
@@ -50,7 +51,7 @@ export function erstelleErkenner(h: ErkennerHandler): Erkenner {
   return {
     async start(o) {
       const K = Klasse();
-      if (!K) { h.fehler('not-supported', 'Keine Spracherkennung'); return; }
+      if (!K) { h.fehler('not-supported', t('erk.nichtVerfuegbar')); return; }
       rec?.abort?.();
       const r = new K();
       rec = r;

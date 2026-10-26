@@ -6,12 +6,14 @@ import { useStore, zaehle } from '../lib/store';
 import { BUCHST, ZIFF, folge, kennzeichen } from '../lib/generator';
 import { NACH_SYM } from '../data/alphabet';
 import { spiele, spieleFolge } from '../lib/audio';
+import { useT } from '../i18n';
 
 type Art = 'zeichen' | 'kennzeichen';
 const RUNDEN = { zeichen: 20, kennzeichen: 6 };
 
 export default function Hoeren() {
   const f = useFarben();
+  const { t } = useT();
   const e = useStore((s) => s.einstellungen);
   const [art, setArt] = useState<Art>('zeichen');
   const [aufgaben, setAufgaben] = useState<string[] | null>(null);
@@ -53,7 +55,7 @@ export default function Hoeren() {
     setAntworten((a) => [...a, { soll: aufgabe, ist: norm, ms }]);
     if (art === 'zeichen') zaehle([{ sym: aufgabe, ok }]);
     else zaehle(soll.split('').map((c, k) => ({ sym: c, ok: norm[k] === c })));
-    setFeedback({ ok, text: ok ? `✓ ${art === 'zeichen' ? NACH_SYM[aufgabe].wort : aufgabe}` : `✗ Richtig: ${art === 'zeichen' ? `${aufgabe} – ${NACH_SYM[aufgabe].wort}` : aufgabe}` });
+    setFeedback({ ok, text: ok ? `✓ ${art === 'zeichen' ? NACH_SYM[aufgabe].wort : aufgabe}` : t('hoeren.loesung', { text: art === 'zeichen' ? `${aufgabe} – ${NACH_SYM[aufgabe].wort}` : aufgabe }) });
     setTimeout(() => { setFeedback(null); setText(''); setI((x) => x + 1); }, ok ? 550 : 1600);
   };
 
@@ -72,37 +74,36 @@ export default function Hoeren() {
     const richtig = antworten.filter((a) => a.ist === a.soll.replace(/-/g, '')).length;
     const zeit = antworten.length ? antworten.reduce((s, a) => s + a.ms, 0) / antworten.length / 1000 : 0;
     return (
-      <Seite titel="Hören">
+      <Seite titel={t('hoeren.titel')}>
         {aufgaben && (
           <Panel style={{ borderColor: f.ok }}>
             <Zeile abstand={16}>
-              <Anzeige label="Richtig" wert={`${richtig}/${antworten.length}`} groesse={28} farbe={richtig === antworten.length ? f.ok : f.text} />
-              <Anzeige label="Ø Reaktion" wert={zeit.toFixed(2)} einheit="s" groesse={28} />
+              <Anzeige label={t('hoeren.richtig')} wert={`${richtig}/${antworten.length}`} groesse={28} farbe={richtig === antworten.length ? f.ok : f.text} />
+              <Anzeige label={t('hoeren.reaktion')} wert={zeit.toFixed(2)} einheit="s" groesse={28} />
             </Zeile>
             {antworten.filter((a) => a.ist !== a.soll.replace(/-/g, '')).map((a, k) => (
-              <T key={k} groesse={14} farbe={f.fehler}>✗ {a.soll} – du: {a.ist || '–'}</T>
+              <T key={k} groesse={14} farbe={f.fehler}>{t('hoeren.du', { soll: a.soll, ist: a.ist || '–' })}</T>
             ))}
           </Panel>
         )}
-        <Panel titel="Übung">
-          <Auswahl label="Übung" werte={[{ wert: 'zeichen', text: 'Einzelne Codewörter' }, { wert: 'kennzeichen', text: 'Kennzeichen (wie im Funk)' }]} wert={art} onWahl={setArt} />
+        <Panel titel={t('hoeren.uebung')}>
+          <Auswahl label={t('hoeren.uebung')} werte={[{ wert: 'zeichen', text: t('hoeren.zeichen') }, { wert: 'kennzeichen', text: t('hoeren.kennzeichen') }]} wert={art} onWahl={setArt} />
           <T leise groesse={13} style={{ marginTop: 8 }}>
-            {art === 'zeichen' ? `${RUNDEN.zeichen} Codewörter mit natürlicher Stimme – tippe den passenden Buchstaben. Leertaste = nochmal hören.`
-              : `${RUNDEN.kennzeichen} Kennzeichen werden buchstabiert – schreib mit wie bei einer Funkfreigabe.`}
+            {art === 'zeichen' ? t('hoeren.infoZeichen', { n: RUNDEN.zeichen }) : t('hoeren.infoKennzeichen', { n: RUNDEN.kennzeichen })}
           </T>
         </Panel>
-        <Knopf titel="Start" symbol="🎧" onPress={starte} />
+        <Knopf titel={t('allg.start')} symbol="🎧" onPress={starte} />
       </Seite>
     );
   }
 
   return (
-    <Seite titel={`Hören ${i + 1} / ${aufgaben.length}`}>
+    <Seite titel={t('hoeren.titelNr', { i: i + 1, n: aufgaben.length })}>
       <Panel style={{ alignItems: 'center', minHeight: 170, justifyContent: 'center' }}>
         {feedback ? (
           <T groesse={26} fett farbe={feedback.ok ? f.ok : f.fehler} style={{ textAlign: 'center' }}>{feedback.text}</T>
         ) : (
-          <Knopf titel="Nochmal hören" symbol="🔊" art="sekundaer" onPress={abspielen} />
+          <Knopf titel={t('hoeren.nochmal')} symbol="🔊" art="sekundaer" onPress={abspielen} />
         )}
       </Panel>
       {art === 'zeichen' ? (
@@ -117,9 +118,9 @@ export default function Hoeren() {
       ) : (
         <View style={{ gap: 10 }}>
           <TextInput value={text} onChangeText={(t) => setText(t.toUpperCase())} onSubmitEditing={() => antworte(text)} autoFocus autoCapitalize="characters" autoCorrect={false}
-            placeholder="z. B. OEKRF" placeholderTextColor={f.leise} accessibilityLabel="Kennzeichen eingeben"
+            placeholder={t('hoeren.platzhalter')} placeholderTextColor={f.leise} accessibilityLabel={t('hoeren.eingabeLabel')}
             style={{ borderWidth: 1, borderRadius: 12, borderColor: f.akzent, color: f.text, backgroundColor: f.panel, fontFamily: MONO, fontSize: 30, padding: 14, letterSpacing: 4, textAlign: 'center' }} />
-          <Knopf titel="Prüfen" onPress={() => antworte(text)} />
+          <Knopf titel={t('hoeren.pruefen')} onPress={() => antworte(text)} />
         </View>
       )}
     </Seite>

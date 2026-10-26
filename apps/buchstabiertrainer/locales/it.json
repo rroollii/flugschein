@@ -1,0 +1,10 @@
+{
+  "ios": {
+    "CFBundleDisplayName": "Alfabeto ICAO",
+    "NSMicrophoneUsageDescription": "L’app ti ascolta durante un esercizio per riconoscere e valutare le parole in codice che pronunci (es. «Alfa, Bravo»). Nulla viene registrato o salvato.",
+    "NSSpeechRecognitionUsageDescription": "Il riconoscimento vocale trasforma in testo le parole in codice pronunciate, così l’app può segnarle giuste o sbagliate. Quando possibile avviene direttamente sull’iPhone."
+  },
+  "android": {
+    "app_name": "Alfabeto ICAO"
+  }
+}

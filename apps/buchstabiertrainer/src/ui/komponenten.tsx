@@ -4,11 +4,13 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { router } from 'expo-router';
 import Svg, { Line, Polyline, Circle, Text as SvgText } from 'react-native-svg';
 import { MONO, useFarben } from '../lib/theme';
+import { useT } from '../i18n';
 
 export function Seite({ titel, children, zurueck = true, scroll = true, rechts }: {
   titel?: string; children: React.ReactNode; zurueck?: boolean; scroll?: boolean; rechts?: React.ReactNode;
 }) {
   const f = useFarben();
+  const { t } = useT();
   const ins = useSafeAreaInsets();
   const inhalt = <View style={[st.inhalt]}>{children}</View>;
   return (
@@ -16,7 +18,7 @@ export function Seite({ titel, children, zurueck = true, scroll = true, rechts }
       {titel != null && (
         <View style={[st.kopf, { borderBottomColor: f.rand }]}>
           {zurueck ? (
-            <Pressable accessibilityRole="button" accessibilityLabel="Zurück" hitSlop={12}
+            <Pressable accessibilityRole="button" accessibilityLabel={t('allg.zurueck')} hitSlop={12}
               onPress={() => (router.canGoBack() ? router.back() : router.replace('/'))} style={st.zurueck}>
               <Text style={{ color: f.akzent, fontSize: 28, lineHeight: 30 }}>‹</Text>
             </Pressable>
@@ -123,7 +125,8 @@ export function Anzeige({ wert, einheit, label, farbe, groesse = 34 }: { wert: s
 /** Verlauf der Zeiten (s) mit Ziellinie. */
 export function Verlauf({ werte, ziel, breite = 320, hoehe = 150 }: { werte: { s: number; ok: boolean }[]; ziel: number; breite?: number; hoehe?: number }) {
   const f = useFarben();
-  if (!werte.length) return <T leise>Noch keine Läufe – starte deinen ersten Sprint.</T>;
+  const { t } = useT();
+  if (!werte.length) return <T leise>{t('verlauf.leer')}</T>;
   const max = Math.max(ziel * 1.4, ...werte.map((w) => w.s)) * 1.05;
   const min = Math.max(0, Math.min(ziel * 0.6, ...werte.map((w) => w.s)) * 0.9);
   const pl = 34, pr = 8, pt = 10, pb = 18;
@@ -131,12 +134,12 @@ export function Verlauf({ werte, ziel, breite = 320, hoehe = 150 }: { werte: { s
   const y = (s: number) => pt + (1 - (s - min) / (max - min)) * (hoehe - pt - pb);
   const ticks = [min, ziel, max].map((v) => Math.round(v));
   return (
-    <Svg width="100%" height={hoehe} viewBox={`0 0 ${breite} ${hoehe}`} accessibilityLabel={`Verlauf der letzten ${werte.length} Zeiten`}>
+    <Svg width="100%" height={hoehe} viewBox={`0 0 ${breite} ${hoehe}`} accessibilityLabel={t('verlauf.label', { n: werte.length })}>
       {ticks.map((t) => (
         <SvgText key={t} x={pl - 6} y={y(t) + 4} fill={f.leise} fontSize="10" textAnchor="end">{t}s</SvgText>
       ))}
       <Line x1={pl} x2={breite - pr} y1={y(ziel)} y2={y(ziel)} stroke={f.ok} strokeDasharray="5 4" strokeWidth={1.5} />
-      <SvgText x={breite - pr} y={y(ziel) - 4} fill={f.ok} fontSize="10" textAnchor="end">Ziel {ziel} s</SvgText>
+      <SvgText x={breite - pr} y={y(ziel) - 4} fill={f.ok} fontSize="10" textAnchor="end">{t('sprint.zielKurz', { s: ziel })}</SvgText>
       <Polyline points={werte.map((w, i) => `${x(i)},${y(w.s)}`).join(' ')} fill="none" stroke={f.akzent} strokeWidth={2} />
       {werte.map((w, i) => (
         <Circle key={i} cx={x(i)} cy={y(w.s)} r={3.5} fill={w.ok ? f.akzent : f.fehler} />

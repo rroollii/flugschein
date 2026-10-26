@@ -1,0 +1,10 @@
+{
+  "ios": {
+    "CFBundleDisplayName": "Buchstabieren",
+    "NSMicrophoneUsageDescription": "Der Buchstabiertrainer hört dir während einer Übung zu, damit er deine gesprochenen Codewörter (z. B. „Alfa, Bravo“) erkennen und bewerten kann. Es wird nichts aufgezeichnet oder gespeichert.",
+    "NSSpeechRecognitionUsageDescription": "Die Spracherkennung wandelt deine gesprochenen Codewörter in Text um, damit die App richtig und falsch markieren kann. Wenn möglich, geschieht das direkt auf dem iPhone."
+  },
+  "android": {
+    "app_name": "Buchstabieren"
+  }
+}

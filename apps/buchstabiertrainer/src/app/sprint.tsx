@@ -11,6 +11,7 @@ import { useErkennung } from '../lib/useErkennung';
 import { NACH_SYM, lautschrift } from '../data/alphabet';
 import { simAktiv, simSprich } from '../lib/sim';
 import { spiele } from '../lib/audio';
+import { useT, type Schluessel } from '../i18n';
 
 type Modus = 'sprint' | 'kennzeichen' | 'woerter' | 'nachtraining';
 type Gruppe = { anzeige: string; von: number; bis: number };
@@ -18,7 +19,7 @@ type Plan = { ziel: string[]; gruppen: Gruppe[] | null; syms: string[] };
 
 const MS_PRO_ZEICHEN = 600; // 50 Zeichen in 30 s
 const sek = (ms: number) => (ms / 1000).toFixed(2);
-const TITEL: Record<Modus, string> = { sprint: 'Sprint', kennzeichen: 'Kennzeichen', woerter: 'Wörter & Orte', nachtraining: 'Gezieltes Nachtraining' };
+const TITEL: Record<Modus, Schluessel> = { sprint: 'modus.sprint', kennzeichen: 'modus.kennzeichen', woerter: 'modus.woerter', nachtraining: 'modus.nachtraining' };
 
 function planErstellen(modus: Modus, o: { n: number; ziffern: boolean; anzahl: number; liste: string; eigenes: string; schwach?: string[] }): Plan {
   const syms = o.ziffern ? [...BUCHST, ...ZIFF] : BUCHST;
@@ -68,54 +69,53 @@ function Vorbereitung({ modus, opts, setOpts, starten, schwach }: {
   modus: Modus; opts: { anzahl: number; liste: string; eigenes: string }; setOpts: (o: any) => void; starten: () => void; schwach?: string;
 }) {
   const f = useFarben();
+  const { t } = useT();
   const e = useStore((s) => s.einstellungen);
   const laeufe = useStore((s) => s.laeufe);
   const klasse = laufKlasse({ modus, n: e.laenge, ziffern: e.ziffern, eingabe: e.eingabe });
   const best = modus === 'sprint' ? bestzeit(laeufe, klasse) : null;
   return (
-    <Seite titel={TITEL[modus]}>
+    <Seite titel={t(TITEL[modus])}>
       {modus === 'nachtraining' && (
-        <Panel><T>Deine schwächsten Zeichen kommen deutlich häufiger vor{schwach ? `: ${schwach.split(',').join(' ')}` : ''}.</T></Panel>
+        <Panel><T>{t('sprint.nachtraining', { liste: schwach ? `: ${schwach.split(',').join(' ')}` : '' })}</T></Panel>
       )}
       {(modus === 'sprint' || modus === 'nachtraining') && (
-        <Panel titel="Länge (Steigerungsstufe)">
-          <Auswahl label="Länge" werte={[{ wert: 10, text: '10' }, { wert: 25, text: '25' }, { wert: 50, text: '50' }]} wert={e.laenge} onWahl={(v) => einstellen('laenge', v as 10 | 25 | 50)} />
-          <T leise groesse={13} style={{ marginTop: 8 }}>Ziel: {(e.laenge * MS_PRO_ZEICHEN / 1000).toFixed(0)} s ({MS_PRO_ZEICHEN / 1000} s je Zeichen){best ? ` · Bestzeit ${sek(best.ms)} s` : ''}</T>
+        <Panel titel={t('sprint.laenge')}>
+          <Auswahl label={t('sprint.laengeLabel')} werte={[{ wert: 10, text: '10' }, { wert: 25, text: '25' }, { wert: 50, text: '50' }]} wert={e.laenge} onWahl={(v) => einstellen('laenge', v as 10 | 25 | 50)} />
+          <T leise groesse={13} style={{ marginTop: 8 }}>{t('sprint.zielZeit', { s: (e.laenge * MS_PRO_ZEICHEN / 1000).toFixed(0), je: MS_PRO_ZEICHEN / 1000 })}{best ? t('sprint.bestzeit', { s: sek(best.ms) }) : ''}</T>
         </Panel>
       )}
       {modus === 'kennzeichen' && (
-        <Panel titel="Anzahl Kennzeichen">
-          <Auswahl label="Anzahl" werte={[3, 6, 10].map((n) => ({ wert: n, text: String(n) }))} wert={opts.anzahl} onWahl={(v) => setOpts({ ...opts, anzahl: v })} />
-          <T leise groesse={13} style={{ marginTop: 8 }}>Österreich (OE-), Deutschland (D-), Ungarn (HA-), Schweiz (HB-), Tschechien, Slowenien, Kroatien, Italien, UK, USA. Der Bindestrich wird nicht gesprochen.</T>
+        <Panel titel={t('sprint.anzahlKennzeichen')}>
+          <Auswahl label={t('sprint.anzahl')} werte={[3, 6, 10].map((n) => ({ wert: n, text: String(n) }))} wert={opts.anzahl} onWahl={(v) => setOpts({ ...opts, anzahl: v })} />
+          <T leise groesse={13} style={{ marginTop: 8 }}>{t('sprint.kennzeichenInfo')}</T>
         </Panel>
       )}
       {modus === 'woerter' && (
-        <Panel titel="Wortliste">
-          <Auswahl label="Liste" werte={WORTLISTEN.map((l) => ({ wert: l.id, text: l.titel }))} wert={opts.liste} onWahl={(v) => setOpts({ ...opts, liste: v })} />
-          <Etikett style={{ marginTop: 14 }}>Eigene Wörter (optional, mit Komma getrennt)</Etikett>
-          <TextInput value={opts.eigenes} onChangeText={(t) => setOpts({ ...opts, eigenes: t })} placeholder="z. B. Mustermann, OE-KRF, LOGF"
+        <Panel titel={t('sprint.wortliste')}>
+          <Auswahl label={t('sprint.liste')} werte={WORTLISTEN.map((l) => ({ wert: l.id, text: t(l.titel) }))} wert={opts.liste} onWahl={(v) => setOpts({ ...opts, liste: v })} />
+          <Etikett style={{ marginTop: 14 }}>{t('sprint.eigene')}</Etikett>
+          <TextInput value={opts.eigenes} onChangeText={(t) => setOpts({ ...opts, eigenes: t })} placeholder={t('sprint.eigenePlatzhalter')}
             placeholderTextColor={f.leise} autoCorrect={false} style={[stl.eingabe, { color: f.text, borderColor: f.rand, backgroundColor: f.panel2 }]} />
-          <T leise groesse={13} style={{ marginTop: 8 }}>Umlaute werden wie im Funk üblich als AE/OE/UE buchstabiert.</T>
+          <T leise groesse={13} style={{ marginTop: 8 }}>{t('sprint.umlaute')}</T>
         </Panel>
       )}
-      <Panel titel="Eingabe">
-        <Auswahl label="Eingabe" werte={[{ wert: 'sprache', text: '🎙 Sprache' }, { wert: 'tippen', text: '⌨︎ Tippen' }, { wert: 'selbst', text: '✓ Selbstbewertung' }]}
+      <Panel titel={t('sprint.eingabe')}>
+        <Auswahl label={t('sprint.eingabe')} werte={(['sprache', 'tippen', 'selbst'] as const).map((w) => ({ wert: w, text: t(`sprint.eingabe.${w}`) }))}
           wert={e.eingabe} onWahl={(v) => einstellen('eingabe', v as Eingabe)} />
         <T leise groesse={13} style={{ marginTop: 8 }}>
-          {e.eingabe === 'sprache' ? 'Sprich die Codewörter fließend hintereinander. Die Uhr startet beim ersten Wort.'
-            : e.eingabe === 'tippen' ? 'Ohne Mikrofon: Codewort tippen – es wird automatisch übernommen, sobald es stimmt.'
-              : 'Ohne Erkennung: laut sprechen und selbst bewerten (Leertaste/✓ = richtig, F/✗ = falsch).'}
+          {t(`sprint.info.${e.eingabe}`)}
         </T>
       </Panel>
-      <Panel titel="Optionen">
+      <Panel titel={t('sprint.optionen')}>
         <Zeile>
-          {modus !== 'kennzeichen' && <Knopf klein art={e.ziffern ? 'primaer' : 'sekundaer'} titel={e.ziffern ? 'Ziffern: an' : 'Ziffern: aus'} onPress={() => einstellen('ziffern', !e.ziffern)} />}
-          <Knopf klein art={e.codewortZeigen ? 'primaer' : 'sekundaer'} titel={e.codewortZeigen ? 'Codewort zeigen: an' : 'Codewort zeigen: aus'} onPress={() => einstellen('codewortZeigen', !e.codewortZeigen)} />
-          <Knopf klein art="sekundaer" titel={e.fehlerModus === 'weiter' ? 'Bei Fehler: weiter' : 'Bei Fehler: wiederholen'} onPress={() => einstellen('fehlerModus', e.fehlerModus === 'weiter' ? 'wiederholen' : 'weiter')} />
+          {modus !== 'kennzeichen' && <Knopf klein art={e.ziffern ? 'primaer' : 'sekundaer'} titel={t('sprint.ziffern', { wert: { k: e.ziffern ? 'allg.an' : 'allg.aus' } })} onPress={() => einstellen('ziffern', !e.ziffern)} />}
+          <Knopf klein art={e.codewortZeigen ? 'primaer' : 'sekundaer'} titel={t('sprint.codewortZeigen', { wert: { k: e.codewortZeigen ? 'allg.an' : 'allg.aus' } })} onPress={() => einstellen('codewortZeigen', !e.codewortZeigen)} />
+          <Knopf klein art="sekundaer" titel={t(e.fehlerModus === 'weiter' ? 'sprint.fehlerWeiter' : 'sprint.fehlerWiederholen')} onPress={() => einstellen('fehlerModus', e.fehlerModus === 'weiter' ? 'wiederholen' : 'weiter')} />
         </Zeile>
       </Panel>
-      <Knopf titel="Start" symbol="▶" onPress={starten} />
-      {simAktiv() && <T leise groesse={12}>Simulationsmodus aktiv (?sim=1): Spracherkennung wird simuliert.</T>}
+      <Knopf titel={t('allg.start')} symbol="▶" onPress={starten} />
+      {simAktiv() && <T leise groesse={12}>{t('sprint.sim')}</T>}
     </Seite>
   );
 }
@@ -126,6 +126,7 @@ function useFolge(fo: Folge) {
 
 function LaufSeite({ modus, plan, nochmal, zurueck }: { modus: Modus; plan: Plan; nochmal: () => void; zurueck: () => void }) {
   const f = useFarben();
+  const { t, th } = useT();
   const e = useStore((s) => s.einstellungen);
   const fo = useMemo(() => new Folge(plan.ziel, plan.syms, e.fehlerModus === 'wiederholen'), [plan]);
   const z = useFolge(fo);
@@ -174,14 +175,14 @@ function LaufSeite({ modus, plan, nochmal, zurueck }: { modus: Modus; plan: Plan
   const gruppe = plan.gruppen?.find((g) => z.pos >= g.von && z.pos < g.bis) ?? null;
 
   return (
-    <Seite titel={TITEL[modus]} scroll={false} rechts={<Knopf klein art="leer" titel="Abbrechen" onPress={() => { erk.stoppe(true); zurueck(); }} />}>
+    <Seite titel={t(TITEL[modus])} scroll={false} rechts={<Knopf klein art="leer" titel={t('allg.abbrechen')} onPress={() => { erk.stoppe(true); zurueck(); }} />}>
       <View style={[stl.instrumente, { backgroundColor: f.panel, borderColor: f.rand }]}>
-        <Anzeige label="Zeit" wert={sek(ms)} einheit="s" groesse={44} farbe={z.start == null ? f.leise : ms <= zielMs ? f.text : f.fehler} />
+        <Anzeige label={t('sprint.zeit')} wert={sek(ms)} einheit="s" groesse={44} farbe={z.start == null ? f.leise : ms <= zielMs ? f.text : f.fehler} />
         <View style={{ alignItems: 'flex-end', gap: 4 }}>
           <T mono groesse={22} fett>{Math.min(z.pos + 1, plan.ziel.length)}<T mono groesse={16} leise>/{plan.ziel.length}</T></T>
           <T mono groesse={14} farbe={fo.fehler ? f.fehler : f.leise}>✗ {fo.fehler}</T>
           <T mono groesse={14} farbe={delta == null ? f.leise : delta <= 0 ? f.ok : f.fehler}>
-            {delta == null ? `Ziel ${sek(zielMs)} s` : `${delta <= 0 ? '−' : '+'}${sek(Math.abs(delta))} s`}
+            {delta == null ? t('sprint.zielKurz', { s: sek(zielMs) }) : `${delta <= 0 ? '−' : '+'}${sek(Math.abs(delta))} s`}
           </T>
         </View>
       </View>
@@ -189,7 +190,7 @@ function LaufSeite({ modus, plan, nochmal, zurueck }: { modus: Modus; plan: Plan
 
       <View style={stl.mitte}>
         {gruppe && (
-          <Text style={[stl.gruppe, { color: f.text }]} accessibilityLabel={`Buchstabiere ${gruppe.anzeige}`}>
+          <Text style={[stl.gruppe, { color: f.text }]} accessibilityLabel={t('sprint.buchstabiere', { text: gruppe.anzeige })}>
             {(() => {
               let i = gruppe.von;
               return gruppe.anzeige.toUpperCase().replace(/Ä/g, 'AE').replace(/Ö/g, 'OE').replace(/Ü/g, 'UE').split('').map((c, k) => {
@@ -214,7 +215,7 @@ function LaufSeite({ modus, plan, nochmal, zurueck }: { modus: Modus; plan: Plan
         <View style={{ minHeight: 48, alignItems: 'center', marginTop: 8 }}>
           {z.letzte && (
             <T groesse={16} farbe={z.letzte.ok ? (z.letzte.hinweis ? f.warn : f.ok) : f.fehler} style={{ textAlign: 'center' }}>
-              {z.letzte.ok ? '✓ ' : '✗ '}{z.letzte.hinweis ?? (z.letzte.ok ? NACH_SYM[z.letzte.sym].wort : `Erwartet: ${NACH_SYM[z.letzte.sym].wort}`)}
+              {z.letzte.ok ? '✓ ' : '✗ '}{z.letzte.hinweis ? th(z.letzte.hinweis) : z.letzte.ok ? NACH_SYM[z.letzte.sym].wort : t('sprint.erwartet', { wort: NACH_SYM[z.letzte.sym].wort })}
             </T>
           )}
         </View>
@@ -225,13 +226,13 @@ function LaufSeite({ modus, plan, nochmal, zurueck }: { modus: Modus; plan: Plan
           <View style={[stl.mic, { borderColor: erk.laeuft ? f.ok : f.rand, backgroundColor: f.panel }]}>
             <View style={[stl.punkt, { backgroundColor: erk.laeuft ? f.ok : f.leise }]} />
             <T groesse={14} leise={!erk.laeuft} zeilen={2} style={{ flex: 1 }}>
-              {erk.fehler ?? (z.live ? `Gehört: ${z.live}` : erk.laeuft ? (z.start == null ? 'Bereit – fang an zu sprechen …' : 'Höre zu …') : 'Mikrofon wird gestartet …')}
+              {erk.fehler ?? (z.live ? t('allg.gehoert', { text: z.live }) : erk.laeuft ? t(z.start == null ? 'sprint.bereit' : 'allg.hoereZu') : t('sprint.micStart'))}
             </T>
-            {!erk.laeuft && <Knopf klein titel="Mikrofon" onPress={() => erk.starte()} />}
+            {!erk.laeuft && <Knopf klein titel={t('sprint.mikrofon')} onPress={() => erk.starte()} />}
           </View>
-          {erk.fehler && <Knopf art="sekundaer" titel="Stattdessen tippen" onPress={() => { einstellen('eingabe', 'tippen'); nochmal(); }} />}
+          {erk.fehler && <Knopf art="sekundaer" titel={t('sprint.stattTippen')} onPress={() => { einstellen('eingabe', 'tippen'); nochmal(); }} />}
           <Zeile style={{ justifyContent: 'center' }}>
-            <Knopf klein art="sekundaer" titel="Überspringen" onPress={() => fo.ueberspringen()} />
+            <Knopf klein art="sekundaer" titel={t('sprint.ueberspringen')} onPress={() => fo.ueberspringen()} />
           </Zeile>
           {simAktiv() && <SimPanel fo={fo} />}
         </View>
@@ -244,8 +245,9 @@ function LaufSeite({ modus, plan, nochmal, zurueck }: { modus: Modus; plan: Plan
 
 function Fortschritt({ plan, z }: { plan: Plan; z: Folge['z'] }) {
   const f = useFarben();
+  const { t } = useT();
   return (
-    <View style={stl.band} accessibilityLabel={`${z.pos} von ${plan.ziel.length} erledigt`}>
+    <View style={stl.band} accessibilityLabel={t('sprint.erledigt', { n: z.pos, gesamt: plan.ziel.length })}>
       {plan.ziel.map((s, i) => {
         const r = z.ergebnisse[i];
         const bg = i < z.pos ? (r?.ok ? f.ok : f.fehler) : i === z.pos ? f.akzent : f.panel2;
@@ -257,6 +259,7 @@ function Fortschritt({ plan, z }: { plan: Plan; z: Folge['z'] }) {
 
 function TippFeld({ fo }: { fo: Folge }) {
   const f = useFarben();
+  const { t } = useT();
   const [text, setText] = useState('');
   const ref = useRef<any>(null);
   useEffect(() => { setTimeout(() => ref.current?.focus(), 150); }, []);
@@ -268,14 +271,15 @@ function TippFeld({ fo }: { fo: Folge }) {
     <View style={{ gap: 8 }}>
       <TextInput ref={ref} value={text} onChangeText={aendern} onSubmitEditing={() => { if (text.trim()) fo.tippen(text, true); setText(''); }}
         blurOnSubmit={false} autoCapitalize="none" autoCorrect={false} spellCheck={false} autoComplete="off" returnKeyType="next"
-        placeholder="Codewort tippen …" placeholderTextColor={f.leise} accessibilityLabel="Codewort eingeben"
+        placeholder={t('sprint.tippPlatzhalter')} placeholderTextColor={f.leise} accessibilityLabel={t('sprint.tippLabel')}
         style={[stl.eingabe, { fontSize: 24, color: f.text, borderColor: f.akzent, backgroundColor: f.panel, fontFamily: MONO }]} />
-      <T leise groesse={12} style={{ textAlign: 'center' }}>Richtig getippt = automatisch weiter · Leertaste/Enter wertet aus</T>
+      <T leise groesse={12} style={{ textAlign: 'center' }}>{t('sprint.tippInfo')}</T>
     </View>
   );
 }
 
 function SelbstTasten({ fo }: { fo: Folge }) {
+  const { t } = useT();
   useEffect(() => {
     if (Platform.OS !== 'web') return;
     const h = (ev: KeyboardEvent) => {
@@ -287,14 +291,15 @@ function SelbstTasten({ fo }: { fo: Folge }) {
   }, [fo]);
   return (
     <View style={{ flexDirection: 'row', gap: 12 }}>
-      <Knopf art="fehler" titel="✗ Falsch" style={{ flex: 1, minHeight: 84 }} onPress={() => fo.selbst(false)} />
-      <Knopf art="ok" titel="✓ Richtig" style={{ flex: 2, minHeight: 84 }} onPress={() => fo.selbst(true)} />
+      <Knopf art="fehler" titel={t('sprint.falsch')} style={{ flex: 1, minHeight: 84 }} onPress={() => fo.selbst(false)} />
+      <Knopf art="ok" titel={t('sprint.richtig')} style={{ flex: 2, minHeight: 84 }} onPress={() => fo.selbst(true)} />
     </View>
   );
 }
 
 function SimPanel({ fo }: { fo: Folge }) {
   const f = useFarben();
+  const { t } = useT();
   const [text, setText] = useState('');
   const [auto, setAuto] = useState<null | number>(null);
   useEffect(() => {
@@ -312,11 +317,11 @@ function SimPanel({ fo }: { fo: Folge }) {
     return () => { stop = true; };
   }, [auto]);
   return (
-    <Panel titel="Simulation (Test)" style={{ borderStyle: 'dashed' }}>
+    <Panel titel={t('sprint.simTitel')} style={{ borderStyle: 'dashed' }}>
       <Zeile>
-        <TextInput value={text} onChangeText={setText} placeholder="z. B. alfa bravo charlie" placeholderTextColor={f.leise} autoCapitalize="none"
+        <TextInput value={text} onChangeText={setText} placeholder={t('sprint.simPlatzhalter')} placeholderTextColor={f.leise} autoCapitalize="none"
           onSubmitEditing={() => { simSprich(text); setText(''); }} style={[stl.eingabe, { flex: 1, minWidth: 160, color: f.text, borderColor: f.rand, backgroundColor: f.panel2, marginTop: 0 }]} />
-        <Knopf klein titel="Sprechen" onPress={() => { simSprich(text); setText(''); }} />
+        <Knopf klein titel={t('sprint.simSprechen')} onPress={() => { simSprich(text); setText(''); }} />
         <Knopf klein art="sekundaer" titel="Auto ✓" onPress={() => setAuto(0)} />
         <Knopf klein art="sekundaer" titel="Auto 10 % ✗" onPress={() => setAuto(0.1)} />
       </Zeile>
@@ -326,6 +331,7 @@ function SimPanel({ fo }: { fo: Folge }) {
 
 function ErgebnisSeite({ lauf, vorBest, fo, plan, nochmal, zurueck }: { lauf: Lauf; vorBest: Lauf | null; fo: Folge; plan: Plan; nochmal: () => void; zurueck: () => void }) {
   const f = useFarben();
+  const { t, th } = useT();
   const e = useStore((s) => s.einstellungen);
   const laeufe = useStore((s) => s.laeufe);
   const klasse = laufKlasse(lauf);
@@ -341,60 +347,61 @@ function ErgebnisSeite({ lauf, vorBest, fo, plan, nochmal, zurueck }: { lauf: La
   const schwach = [...new Set([...falsch.map((r) => r.sym), ...langsam.slice(0, 3).map((r) => r.sym)])];
 
   return (
-    <Seite titel="Ergebnis" rechts={<Knopf klein art="leer" titel="Fertig" onPress={() => router.replace('/')} />}>
+    <Seite titel={t('ergebnis.titel')} rechts={<Knopf klein art="leer" titel={t('allg.fertig')} onPress={() => router.replace('/')} />}>
       <Panel style={{ borderColor: geschafft ? f.ok : f.rand, alignItems: 'center' }}>
-        <Etikett farbe={geschafft ? f.ok : f.leise}>{geschafft ? 'Ziel erreicht' : lauf.fehler ? `${lauf.fehler} ${lauf.fehler === 1 ? 'Fehler' : 'Fehler'}` : `noch ${sek(lauf.ms - zielMs)} s bis zum Ziel`}</Etikett>
+        <Etikett farbe={geschafft ? f.ok : f.leise}>{geschafft ? t('ergebnis.zielErreicht') : lauf.fehler ? t(lauf.fehler === 1 ? 'ergebnis.fehlerEins' : 'ergebnis.fehlerAnzahl', { n: lauf.fehler }) : t('ergebnis.nochBisZiel', { s: sek(lauf.ms - zielMs) })}</Etikett>
         <Text style={[stl.zeit, { color: geschafft ? f.ok : f.text }]}>{sek(lauf.ms)}<Text style={{ fontSize: 28, color: f.leise }}> s</Text></Text>
-        {neueBest && <T fett farbe={f.akzent}>★ Neue Bestzeit{vorBest ? ` (vorher ${sek(vorBest.ms)} s)` : ''}</T>}
-        {!neueBest && vorBest && <T leise>Bestzeit: {sek(vorBest.ms)} s</T>}
+        {neueBest && <T fett farbe={f.akzent}>{t('ergebnis.neueBest')}{vorBest ? t('ergebnis.vorher', { s: sek(vorBest.ms) }) : ''}</T>}
+        {!neueBest && vorBest && <T leise>{t('ergebnis.bestzeit', { s: sek(vorBest.ms) })}</T>}
       </Panel>
       <Panel>
         <Zeile abstand={16}>
-          <Anzeige label="Zeichen" wert={String(lauf.n)} groesse={26} />
-          <Anzeige label="Fehler" wert={String(lauf.fehler)} groesse={26} farbe={lauf.fehler ? f.fehler : f.ok} />
-          <Anzeige label="Wörter/Min" wert={zpm.toFixed(0)} groesse={26} />
-          <Anzeige label="Ø je Zeichen" wert={(lauf.ms / lauf.n / 1000).toFixed(2)} einheit="s" groesse={26} />
+          <Anzeige label={t('ergebnis.zeichen')} wert={String(lauf.n)} groesse={26} />
+          <Anzeige label={t('ergebnis.fehler')} wert={String(lauf.fehler)} groesse={26} farbe={lauf.fehler ? f.fehler : f.ok} />
+          <Anzeige label={t('ergebnis.proMin')} wert={zpm.toFixed(0)} groesse={26} />
+          <Anzeige label={t('ergebnis.jeZeichen')} wert={(lauf.ms / lauf.n / 1000).toFixed(2)} einheit="s" groesse={26} />
         </Zeile>
       </Panel>
-      <Panel titel={`Verlauf (${lauf.n} Zeichen, ${lauf.eingabe === 'sprache' ? 'Sprache' : lauf.eingabe === 'tippen' ? 'Tippen' : 'Selbstbewertung'})`}>
+      <Panel titel={t('ergebnis.verlauf', { n: lauf.n, eingabe: { k: `ergebnis.eingabe.${lauf.eingabe}` } })}>
         <Verlauf werte={verlauf.map((l) => ({ s: l.ms / 1000, ok: l.fehler === 0 }))} ziel={zielMs / 1000} />
       </Panel>
       {falsch.length > 0 && (
-        <Panel titel="Fehler">
+        <Panel titel={t('ergebnis.fehler')}>
           {falsch.map((r, i) => <FehlerZeile key={i} r={r} stimme={e.stimme} />)}
         </Panel>
       )}
       {hinweise.length > 0 && (
-        <Panel titel="Aussprache-Hinweise (ICAO)">
-          {hinweise.map((r, i) => <T key={i} groesse={14} farbe={f.warn}>• {r.sym}: {r.hinweis}</T>)}
+        <Panel titel={t('ergebnis.hinweise')}>
+          {hinweise.map((r, i) => <T key={i} groesse={14} farbe={f.warn}>• {r.sym}: {th(r.hinweis!)}</T>)}
         </Panel>
       )}
       {langsam.length > 0 && (
-        <Panel titel="Langsamste Zeichen">
+        <Panel titel={t('ergebnis.langsamste')}>
           <Zeile>{langsam.map((r, i) => <T key={i} mono groesse={15}>{r.sym} {(r.ms / 1000).toFixed(2)} s</T>)}</Zeile>
         </Panel>
       )}
       <Zeile>
-        <Knopf titel="Nochmal" symbol="↻" style={{ flex: 1 }} onPress={nochmal} />
+        <Knopf titel={t('ergebnis.nochmal')} symbol="↻" style={{ flex: 1 }} onPress={nochmal} />
         {schwach.length > 0 && plan.gruppen == null && (
-          <Knopf art="sekundaer" titel="Schwächen trainieren" style={{ flex: 1 }} onPress={() => router.replace({ pathname: '/sprint', params: { modus: 'nachtraining', schwach: schwach.join(',') } })} />
+          <Knopf art="sekundaer" titel={t('ergebnis.schwaechen')} style={{ flex: 1 }} onPress={() => router.replace({ pathname: '/sprint', params: { modus: 'nachtraining', schwach: schwach.join(',') } })} />
         )}
       </Zeile>
-      <Knopf art="sekundaer" titel="Einstellungen ändern" onPress={zurueck} />
+      <Knopf art="sekundaer" titel={t('ergebnis.einstellungen')} onPress={zurueck} />
     </Seite>
   );
 }
 
 function FehlerZeile({ r, stimme }: { r: Ergebnis; stimme: 'frau' | 'mann' }) {
   const f = useFarben();
+  const { t, th } = useT();
   const s = NACH_SYM[r.sym];
   return (
-    <Pressable onPress={() => spiele(r.sym, stimme)} accessibilityRole="button" accessibilityLabel={`${s.wort} anhören`}
+    <Pressable onPress={() => spiele(r.sym, stimme)} accessibilityRole="button" accessibilityLabel={t('allg.anhoeren', { wort: s.wort })}
       style={{ flexDirection: 'row', alignItems: 'center', gap: 10, paddingVertical: 6 }}>
       <Text style={{ color: f.fehler, fontFamily: MONO, fontSize: 22, fontWeight: '800', width: 28 }}>{r.sym}</Text>
       <View style={{ flex: 1 }}>
         <T fett>{s.wort} <T leise groesse={13}>{lautschrift(s)}</T></T>
-        <T leise groesse={13}>{r.hinweis ?? `Gehört: „${r.gehoert}“`}</T>
+        <T leise groesse={13}>{r.hinweis ? th(r.hinweis) : t('allg.gehoertZitat', { text: r.gehoert })}</T>
       </View>
       <T farbe={f.info} groesse={20}>🔊</T>
     </Pressable>

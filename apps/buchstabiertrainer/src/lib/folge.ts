@@ -1,7 +1,8 @@
 import { finde, tokenize, type Treffer } from './matcher';
 import { NACH_SYM } from '../data/alphabet';
+import type { Hinweis } from '../i18n';
 
-export type Ergebnis = { sym: string; ok: boolean; gehoert: string; ms: number; hinweis?: string; art?: Treffer['art'] };
+export type Ergebnis = { sym: string; ok: boolean; gehoert: string; ms: number; hinweis?: Hinweis; art?: Treffer['art'] };
 
 export type FolgeZustand = {
   pos: number;
@@ -46,7 +47,7 @@ export class Folge {
     const soll = this.erwartet!;
     const ok = t.sym === soll && t.art !== 'fremd';
     const e: Ergebnis = { sym: soll, ok, gehoert: t.gehoert, ms: jetzt - this.letzteZeit, hinweis: t.hinweis, art: t.art };
-    if (!ok && t.sym && t.art !== 'fremd') e.hinweis = `Gehört: ${NACH_SYM[t.sym]?.wort ?? t.gehoert} – erwartet: ${NACH_SYM[soll].wort}`;
+    if (!ok && t.sym && t.art !== 'fremd') e.hinweis = { k: 'hinweis.falschesWort', p: { gehoert: NACH_SYM[t.sym]?.wort ?? t.gehoert, erwartet: NACH_SYM[soll].wort } };
     this.z.versuche.push(e);
     this.z.letzte = e;
     if (ok || !this.wiederholen) {
@@ -112,7 +113,7 @@ export class Folge {
 
   ueberspringen() {
     if (this.fertig) return;
-    this.werte({ sym: null, laenge: 1, gehoert: 'übersprungen', art: 'unbekannt' });
+    this.werte({ sym: null, laenge: 1, gehoert: '–', art: 'unbekannt', hinweis: { k: 'sprint.uebersprungen' } });
     if (this.wiederholen && !this.fertig) { this.z.pos++; if (this.z.pos >= this.ziel.length) this.z.ende = Date.now(); }
     this.melde();
   }

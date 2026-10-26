@@ -8,6 +8,7 @@ import { spiele } from '../lib/audio';
 import { useErkennung } from '../lib/useErkennung';
 import { pruefeWort } from '../lib/matcher';
 import { simAktiv, simSprich } from '../lib/sim';
+import { useT } from '../i18n';
 
 const ALLE_SYMS = [...BUCHSTABEN, ...ZIFFERN, ...ZUSATZ].map((s) => s.sym);
 
@@ -26,6 +27,7 @@ function Laut({ s, groesse = 15 }: { s: Sym; groesse?: number }) {
 
 export default function Aussprache() {
   const f = useFarben();
+  const { t, th } = useT();
   const stimme = useStore((s) => s.einstellungen.stimme);
   const [gewaehlt, setGewaehlt] = useState<string>('A');
   const [ergebnis, setErgebnis] = useState<{ ok: boolean; titel: string; text: string; warn?: boolean } | null>(null);
@@ -35,15 +37,16 @@ export default function Aussprache() {
   const erk = useErkennung({
     syms: ALLE_SYMS, einzelwort: true,
     onSegment: (text, final, alt) => {
-      if (!final) { setErgebnis({ ok: false, titel: 'Höre …', text }); return; }
+      if (!final) { setErgebnis({ ok: false, titel: t('aussprache.hoere'), text }); return; }
       const r = pruefeWort(alt.length ? alt : [text], gewaehlt, ALLE_SYMS);
-      const gehoert = r.alle.slice(0, 3).map((a) => `„${a}“`).join(', ');
+      const gehoert = r.alle.slice(0, 3).join(' · ');
+      const hinweis = r.hinweis ? th(r.hinweis) : null;
       if (r.sym === gewaehlt && r.art !== 'fremd') {
-        setErgebnis({ ok: true, warn: !!r.hinweis, titel: r.hinweis ? 'Erkannt – aber nicht ICAO-Aussprache' : r.art === 'unscharf' ? 'Erkannt (knapp)' : 'Sauber erkannt', text: `${r.hinweis ? r.hinweis + ' · ' : ''}Gehört: ${gehoert}` });
+        setErgebnis({ ok: true, warn: !!hinweis, titel: t(hinweis ? 'aussprache.nichtIcao' : r.art === 'unscharf' ? 'aussprache.knapp' : 'aussprache.sauber'), text: `${hinweis ? hinweis + ' · ' : ''}${t('allg.gehoert', { text: gehoert })}` });
         zaehle([{ sym: gewaehlt, ok: true }]);
       } else {
-        const anders = r.sym && r.art !== 'fremd' ? `Klingt nach ${NACH_SYM[r.sym].wort} (${r.sym}). ` : '';
-        setErgebnis({ ok: false, titel: 'Nicht erkannt', text: `${r.hinweis ?? anders}Gehört: ${gehoert || '–'}. Hör dir das Beispiel an und betone ${s.laut[s.betont].toUpperCase()}.` });
+        const anders = r.sym && r.art !== 'fremd' ? t('aussprache.klingtNach', { wort: NACH_SYM[r.sym].wort, sym: r.sym }) : '';
+        setErgebnis({ ok: false, warn: r.art === 'fremd', titel: t('aussprache.nichtErkannt'), text: `${hinweis ? hinweis + ' · ' : anders}${t('allg.gehoert', { text: gehoert || '–' })}. ${t('aussprache.tippBetonung', { silbe: s.laut[s.betont].toUpperCase() })}` });
         zaehle([{ sym: gewaehlt, ok: false }]);
       }
       erk.stoppe();
@@ -54,7 +57,7 @@ export default function Aussprache() {
   const liste = gruppe === 'buchstaben' ? BUCHSTABEN : [...ZIFFERN, ...ZUSATZ];
 
   return (
-    <Seite titel="Aussprache · Lautschrift">
+    <Seite titel={t('aussprache.titel')}>
       <Panel style={{ borderColor: f.akzent }}>
         <Zeile abstand={14} style={{ flexWrap: 'nowrap' }}>
           <Text style={[stl.gross, { color: f.akzent }]}>{s.sym === '000' ? '1000' : s.sym === '00' ? '100' : s.sym}</Text>
@@ -63,13 +66,13 @@ export default function Aussprache() {
             <Laut s={s} groesse={20} />
           </View>
         </Zeile>
-        {s.tipp && <T leise groesse={14} style={{ marginTop: 8 }}>{s.tipp}</T>}
-        {s.standard?.length ? <T groesse={14} farbe={f.warn} style={{ marginTop: 4 }}>{s.standard[0].hinweis}</T> : null}
+        {s.tipp && <T leise groesse={14} style={{ marginTop: 8 }}>{t(s.tipp)}</T>}
+        {s.standard?.length ? <T groesse={14} farbe={f.warn} style={{ marginTop: 4 }}>{t(s.standard[0].hinweis)}</T> : null}
         <Zeile style={{ marginTop: 12 }}>
-          <Knopf klein art="sekundaer" titel="Frau" symbol="🔊" onPress={() => spiele(gewaehlt, 'frau')} />
-          <Knopf klein art="sekundaer" titel="Mann" symbol="🔊" onPress={() => spiele(gewaehlt, 'mann')} />
-          <Knopf klein art="sekundaer" titel="Langsam" symbol="🐢" onPress={() => spiele(gewaehlt, stimme, 0.7)} />
-          <Knopf klein art={erk.laeuft ? 'ok' : 'primaer'} titel={erk.laeuft ? 'Höre zu …' : 'Nachsprechen'} symbol="🎙" onPress={() => (erk.laeuft ? erk.stoppe() : (setErgebnis(null), erk.starte()))} />
+          <Knopf klein art="sekundaer" titel={t('allg.frau')} symbol="🔊" onPress={() => spiele(gewaehlt, 'frau')} />
+          <Knopf klein art="sekundaer" titel={t('allg.mann')} symbol="🔊" onPress={() => spiele(gewaehlt, 'mann')} />
+          <Knopf klein art="sekundaer" titel={t('allg.langsam')} symbol="🐢" onPress={() => spiele(gewaehlt, stimme, 0.7)} />
+          <Knopf klein art={erk.laeuft ? 'ok' : 'primaer'} titel={erk.laeuft ? t('allg.hoereZu') : t('aussprache.nachsprechen')} symbol="🎙" onPress={() => (erk.laeuft ? erk.stoppe() : (setErgebnis(null), erk.starte()))} />
           {simAktiv() && erk.laeuft && <Knopf klein art="sekundaer" titel="Sim" onPress={() => simSprich(s.varianten[0])} />}
         </Zeile>
         {erk.fehler && <T farbe={f.fehler} groesse={14} style={{ marginTop: 8 }}>{erk.fehler}</T>}
@@ -81,10 +84,10 @@ export default function Aussprache() {
         )}
       </Panel>
 
-      <Auswahl label="Gruppe" werte={[{ wert: 'buchstaben', text: 'Buchstaben' }, { wert: 'ziffern', text: 'Ziffern & Zahlen' }]} wert={gruppe} onWahl={setGruppe} />
+      <Auswahl label={t('aussprache.gruppe')} werte={[{ wert: 'buchstaben', text: t('aussprache.buchstaben') }, { wert: 'ziffern', text: t('aussprache.ziffern') }]} wert={gruppe} onWahl={setGruppe} />
       <View style={stl.raster}>
         {liste.map((x) => (
-          <Pressable key={x.sym} onPress={() => waehle(x.sym)} accessibilityRole="button" accessibilityLabel={`${x.wort} anhören`}
+          <Pressable key={x.sym} onPress={() => waehle(x.sym)} accessibilityRole="button" accessibilityLabel={t('allg.anhoeren', { wort: x.wort })}
             style={({ pressed }) => [stl.karte, { backgroundColor: x.sym === gewaehlt ? f.panel2 : f.panel, borderColor: x.sym === gewaehlt ? f.akzent : f.rand, opacity: pressed ? 0.7 : 1 }]}>
             <Text style={{ color: f.akzent, fontFamily: MONO, fontSize: 22, fontWeight: '800', width: 46 }}>{x.sym === '000' ? '1000' : x.sym === '00' ? '100' : x.sym}</Text>
             <View style={{ flex: 1 }}>
@@ -95,13 +98,13 @@ export default function Aussprache() {
         ))}
       </View>
 
-      <Panel titel="Merkhilfe ICAO">
-        <T groesse={14}>• Betonte Silbe in <T groesse={14} fett farbe={f.akzent}>Farbe</T> – so steht es in ICAO Annex 10.</T>
-        <T groesse={14}>• Ziffern einzeln: 3 = TREE, 4 = FOW-er, 5 = FIFE, 9 = NIN-er, 1000 = TOU-SAND.</T>
-        <T groesse={14}>• Schreibweise „Alfa“ und „Juliett“ ist Absicht: sie verhindert falsche Aussprache in anderen Sprachen.</T>
-        <T groesse={14}>• Kein „Anton, Berta, Cäsar“ im Funk – die deutschen und österreichischen Buchstabiertafeln erkennt die App und weist darauf hin.</T>
-        <Etikett style={{ marginTop: 10 }}>Erkennung</Etikett>
-        <T leise groesse={13}>Die Spracherkennung wertet aus, was sie versteht. Feine Unterschiede (z. B. TREE statt THREE) erkennt sie nur, wenn sie das Wort auch anders schreibt – nutze daher zusätzlich die Hörbeispiele.</T>
+      <Panel titel={t('aussprache.merkhilfe')}>
+        <T groesse={14}>{t('aussprache.m1a')}<T groesse={14} fett farbe={f.akzent}>{t('aussprache.m1b')}</T>{t('aussprache.m1c')}</T>
+        <T groesse={14}>{t('aussprache.m2')}</T>
+        <T groesse={14}>{t('aussprache.m3')}</T>
+        <T groesse={14}>{t('aussprache.m4')}</T>
+        <Etikett style={{ marginTop: 10 }}>{t('aussprache.erkennung')}</Etikett>
+        <T leise groesse={13}>{t('aussprache.erkennungInfo')}</T>
       </Panel>
     </Seite>
   );

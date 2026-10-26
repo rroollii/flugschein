@@ -1,5 +1,6 @@
 import { BUCHSTABEN, ZIFFERN } from '../data/alphabet';
 import type { SymStat } from './store';
+import type { Schluessel } from '../i18n/de';
 
 export const BUCHST = BUCHSTABEN.map((s) => s.sym);
 export const ZIFF = ZIFFERN.map((s) => s.sym);
@@ -67,11 +68,11 @@ export function kennzeichen(anzahl: number, mitZiffern: boolean) {
   return out;
 }
 
-export const WORTLISTEN: { id: string; titel: string; woerter: string[] }[] = [
-  { id: 'flugplaetze', titel: 'ICAO-Codes Österreich', woerter: ['LOGF', 'LOWG', 'LOWW', 'LOWS', 'LOWI', 'LOWL', 'LOWK', 'LOAN', 'LOAV', 'LOGO', 'LOLW', 'LOGK', 'LOAG', 'LOWZ', 'LOKN', 'LOGP'] },
-  { id: 'orte', titel: 'Orte & Flugplätze', woerter: ['Fuerstenfeld', 'Graz', 'Wien', 'Salzburg', 'Innsbruck', 'Klagenfurt', 'Linz', 'Hartberg', 'Feldbach', 'Gleisdorf', 'Kapfenberg', 'Voeslau', 'Zell am See', 'Punitz', 'Niederoeblarn', 'Wels', 'Spitzerberg', 'Trieben', 'Leoben', 'Riegersburg'] },
-  { id: 'funk', titel: 'Funk & Wetter', woerter: ['METAR', 'TAF', 'QNH', 'QFE', 'CAVOK', 'NOTAM', 'ATIS', 'SQUAWK', 'MAYDAY', 'PAN PAN', 'WILCO', 'ROGER', 'VFR', 'IFR', 'SIGMET', 'TRANSPONDER', 'FLIGHT PLAN', 'GAFOR'] },
-  { id: 'namen', titel: 'Namen buchstabieren', woerter: ['Huber', 'Gruber', 'Wagner', 'Pichler', 'Steiner', 'Moser', 'Mayer', 'Hofer', 'Leitner', 'Berger', 'Schwarz', 'Fuchs', 'Eder', 'Fischer', 'Weber', 'Schmid'] },
+export const WORTLISTEN: { id: string; titel: Schluessel; woerter: string[] }[] = [
+  { id: 'flugplaetze', titel: 'liste.flugplaetze', woerter: ['LOGF', 'LOWG', 'LOWW', 'LOWS', 'LOWI', 'LOWL', 'LOWK', 'LOAN', 'LOAV', 'LOGO', 'LOLW', 'LOGK', 'LOAG', 'LOWZ', 'LOKN', 'LOGP'] },
+  { id: 'orte', titel: 'liste.orte', woerter: ['Fuerstenfeld', 'Graz', 'Wien', 'Salzburg', 'Innsbruck', 'Klagenfurt', 'Linz', 'Hartberg', 'Feldbach', 'Gleisdorf', 'Kapfenberg', 'Voeslau', 'Zell am See', 'Punitz', 'Niederoeblarn', 'Wels', 'Spitzerberg', 'Trieben', 'Leoben', 'Riegersburg'] },
+  { id: 'funk', titel: 'liste.funk', woerter: ['METAR', 'TAF', 'QNH', 'QFE', 'CAVOK', 'NOTAM', 'ATIS', 'SQUAWK', 'MAYDAY', 'PAN PAN', 'WILCO', 'ROGER', 'VFR', 'IFR', 'SIGMET', 'TRANSPONDER', 'FLIGHT PLAN', 'GAFOR'] },
+  { id: 'namen', titel: 'liste.namen', woerter: ['Huber', 'Gruber', 'Wagner', 'Pichler', 'Steiner', 'Moser', 'Mayer', 'Hofer', 'Leitner', 'Berger', 'Schwarz', 'Fuchs', 'Eder', 'Fischer', 'Weber', 'Schmid'] },
 ];
 
 /** Wörter auf buchstabierbare Zeichen reduzieren (Umlaute als ae/oe/ue, Leerzeichen entfallen). */

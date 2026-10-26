@@ -1,0 +1,10 @@
+{
+  "ios": {
+    "CFBundleDisplayName": "Alphabet OACI",
+    "NSMicrophoneUsageDescription": "L’application t’écoute pendant un exercice afin de reconnaître et d’évaluer les mots de code que tu prononces (p. ex. « Alfa, Bravo »). Rien n’est enregistré ni conservé.",
+    "NSSpeechRecognitionUsageDescription": "La reconnaissance vocale transforme tes mots de code en texte pour que l’application puisse les marquer justes ou faux. Si possible, cela se fait directement sur l’iPhone."
+  },
+  "android": {
+    "app_name": "Alphabet OACI"
+  }
+}

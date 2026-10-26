@@ -1,5 +1,6 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useSyncExternalStore } from 'react';
+import type { UiSprache } from '../i18n';
 
 export type Eingabe = 'sprache' | 'tippen' | 'selbst';
 export type Lauf = {
@@ -19,6 +20,9 @@ export type Karte = { fach: number; faellig: string };
 export type Zustand = {
   geladen: boolean;
   einstellungen: {
+    /** Sprache der Oberfläche */
+    uiSprache: 'auto' | UiSprache;
+    /** Sprache der Spracherkennung (Codewörter sind immer englisch) */
     sprache: 'en-US' | 'en-GB';
     onDevice: boolean;
     stimme: 'frau' | 'mann';
@@ -41,7 +45,7 @@ const KEY = 'buchstabiertrainer-v1';
 const START: Zustand = {
   geladen: false,
   einstellungen: {
-    sprache: 'en-US', onDevice: true, stimme: 'frau', ziffern: false, laenge: 50, fehlerModus: 'weiter',
+    uiSprache: 'auto', sprache: 'en-US', onDevice: true, stimme: 'frau', ziffern: false, laenge: 50, fehlerModus: 'weiter',
     eingabe: 'sprache', tagesziel: 150, thema: 'dunkel', codewortZeigen: false, haptik: true,
   },
   laeufe: [],

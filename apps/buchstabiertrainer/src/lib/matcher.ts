@@ -1,11 +1,12 @@
-import { NACH_SYM, FREMDE_ALPHABETE, type Sym } from '../data/alphabet';
+import { NACH_SYM, FREMDE_ALPHABETE, TAFEL_SPRACHE, ohneAkzent, type Sym } from '../data/alphabet';
+import type { Hinweis } from '../i18n';
 
 export type Treffer = {
   sym: string | null;
   laenge: number;
   gehoert: string;
   art: 'exakt' | 'unscharf' | 'fremd' | 'unbekannt';
-  hinweis?: string;
+  hinweis?: Hinweis;
 };
 
 const DIGIT_WORT: Record<string, string> = { '0': 'zero', '1': 'one', '2': 'two', '3': 'three', '4': 'four', '5': 'five', '6': 'six', '7': 'seven', '8': 'eight', '9': 'nine' };
@@ -71,8 +72,19 @@ function indexFuer(syms: string[]): Index {
 
 const toleranz = (n: number, streng: boolean) => (streng ? (n <= 5 ? 0 : n <= 8 ? 1 : 2) : n <= 3 ? 0 : n <= 5 ? 1 : n <= 8 ? 2 : 3);
 
-function standardHinweis(s: Sym | undefined, gehoert: string) {
-  return s?.standard?.find((x) => x.wort === gehoert)?.hinweis;
+function standardHinweis(s: Sym | undefined, gehoert: string): Hinweis | undefined {
+  const k = s?.standard?.find((x) => x.wort === gehoert)?.hinweis;
+  return k ? { k } : undefined;
+}
+
+function fremdTreffer(einzel: string, syms: string[]): Treffer | null {
+  const fremd = FREMDE_ALPHABETE[ohneAkzent(einzel)];
+  if (!fremd || !syms.includes(fremd.sym)) return null;
+  const je = Object.fromEntries([...fremd.tafeln].reverse().map((t) => [TAFEL_SPRACHE[t], `tafel.${t}` as const]));
+  return {
+    sym: fremd.sym, laenge: 1, gehoert: einzel, art: 'fremd',
+    hinweis: { k: 'hinweis.fremd', p: { wort: einzel[0].toUpperCase() + einzel.slice(1), tafel: { k: `tafel.${fremd.tafeln[0]}`, je }, icao: NACH_SYM[fremd.sym].wort } },
+  };
 }
 
 function abstand(key: string, sym: string, idx: Index) {
@@ -96,6 +108,10 @@ export function finde(tokens: string[], i: number, syms: string[], erwartet: str
     const sym = idx.exakt.get(w);
     if (sym) return { sym, laenge: n, gehoert: roh(n), art: 'exakt', hinweis: standardHinweis(NACH_SYM[sym], w) };
   }
+  const einzel = tokens[i];
+  // Vor dem unscharfen Abgleich, sonst würde z. B. „Roma“ als „Romeo“ durchgehen
+  const fremd = fremdTreffer(einzel, syms);
+  if (fremd) return fremd;
   if (erwartet && NACH_SYM[erwartet]) {
     for (const n of fenster) {
       const w = wort(n);
@@ -104,11 +120,6 @@ export function finde(tokens: string[], i: number, syms: string[], erwartet: str
         return { sym: erwartet, laenge: n, gehoert: roh(n), art: 'unscharf' };
       }
     }
-  }
-  const einzel = tokens[i];
-  const fremd = FREMDE_ALPHABETE[einzel];
-  if (fremd && syms.includes(fremd.sym)) {
-    return { sym: fremd.sym, laenge: 1, gehoert: einzel, art: 'fremd', hinweis: `„${einzel[0].toUpperCase() + einzel.slice(1)}“ ist aus der ${fremd.quelle} – ICAO: ${NACH_SYM[fremd.sym].wort}` };
   }
   const key = lautKey(einzel);
   if (key.length >= 4) {

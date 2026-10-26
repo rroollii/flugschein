@@ -10,9 +10,11 @@ import { spiele } from '../lib/audio';
 import { useErkennung } from '../lib/useErkennung';
 import { pruefeWort } from '../lib/matcher';
 import { simAktiv, simSprich } from '../lib/sim';
+import { useT } from '../i18n';
 
 export default function Lernen() {
   const f = useFarben();
+  const { t, th } = useT();
   const s = useStore((x) => x) as Zustand;
   const [richtung, setRichtung] = useState<'zeichen' | 'wort'>('zeichen');
   const [antwort, setAntwort] = useState<'aufdecken' | 'sprechen'>('aufdecken');
@@ -30,10 +32,10 @@ export default function Lernen() {
   const erk = useErkennung({
     syms, einzelwort: true,
     onSegment: (text, final, alt) => {
-      if (!aktuell || !final) { setBewertung({ ok: false, text: `Gehört: ${text} …` }); return; }
+      if (!aktuell || !final) { setBewertung({ ok: false, text: `${t('allg.gehoert', { text })} …` }); return; }
       const r = pruefeWort(alt.length ? alt : [text], aktuell, syms);
       const ok = r.sym === aktuell && r.art !== 'fremd';
-      setBewertung({ ok, text: ok ? `✓ ${r.hinweis ?? 'Richtig'} – gehört: „${r.gehoert}“` : `✗ ${r.hinweis ?? `Gehört: „${r.gehoert || text}“`}` });
+      setBewertung({ ok, text: ok ? t('lernen.richtigGehoert', { hinweis: r.hinweis ? th(r.hinweis) : t('lernen.richtig'), text: r.gehoert }) : `✗ ${r.hinweis ? th(r.hinweis) : t('allg.gehoertZitat', { text: r.gehoert || text })}` });
       setOffen(true);
       erk.stoppe();
     },
@@ -56,35 +58,35 @@ export default function Lernen() {
 
   if (!stapel || i >= stapel.length) {
     return (
-      <Seite titel="Lernen · Karteikasten">
-        {stapel && <Panel style={{ borderColor: f.ok }}><T fett groesse={18}>Runde geschafft: {geschafft} Karten gelernt.</T></Panel>}
-        <Panel titel="Fächer">
+      <Seite titel={t('lernen.titel')}>
+        {stapel && <Panel style={{ borderColor: f.ok }}><T fett groesse={18}>{t('lernen.geschafft', { n: geschafft })}</T></Panel>}
+        <Panel titel={t('lernen.faecher')}>
           <View style={{ flexDirection: 'row', gap: 8 }}>
             {verteilung.map((n, fach) => (
               <View key={fach} style={[stl.fach, { borderColor: f.rand, backgroundColor: f.panel2 }]}>
-                <Etikett>{fach === 0 ? 'neu' : `Fach ${fach}`}</Etikett>
+                <Etikett>{fach === 0 ? t('lernen.neu') : t('lernen.fach', { n: fach })}</Etikett>
                 <T mono fett groesse={22}>{n}</T>
               </View>
             ))}
           </View>
-          <T leise groesse={13} style={{ marginTop: 10 }}>Gewusste Karten wandern ein Fach weiter (Wiederholung nach 1, 3, 7, 14 Tagen), vergessene zurück in Fach 1.</T>
+          <T leise groesse={13} style={{ marginTop: 10 }}>{t('lernen.faecherInfo')}</T>
         </Panel>
-        <Panel titel="Abfrage">
-          <Auswahl label="Richtung" werte={[{ wert: 'zeichen', text: 'Buchstabe → Codewort' }, { wert: 'wort', text: 'Codewort → Buchstabe' }]} wert={richtung} onWahl={setRichtung} />
+        <Panel titel={t('lernen.abfrage')}>
+          <Auswahl label={t('lernen.richtung')} werte={[{ wert: 'zeichen', text: t('lernen.zeichenWort') }, { wert: 'wort', text: t('lernen.wortZeichen') }]} wert={richtung} onWahl={setRichtung} />
           <View style={{ height: 10 }} />
-          <Auswahl label="Antwort" werte={[{ wert: 'aufdecken', text: 'Aufdecken' }, { wert: 'sprechen', text: '🎙 Sprechen' }]} wert={antwort} onWahl={setAntwort} />
+          <Auswahl label={t('lernen.antwort')} werte={[{ wert: 'aufdecken', text: t('allg.aufdecken') }, { wert: 'sprechen', text: t('lernen.sprechen') }]} wert={antwort} onWahl={setAntwort} />
         </Panel>
-        <Knopf titel={faellig.length ? `${faellig.length} fällige Karten lernen` : 'Alles wiederholt – frei üben'} symbol="▶" onPress={() => starte(faellig.length ? faellig : syms)} />
+        <Knopf titel={faellig.length ? t('lernen.faelligLernen', { n: faellig.length }) : t('lernen.freiUeben')} symbol="▶" onPress={() => starte(faellig.length ? faellig : syms)} />
       </Seite>
     );
   }
 
   return (
-    <Seite titel={`Karte ${i + 1} / ${stapel.length}`} scroll>
+    <Seite titel={t('lernen.karte', { i: i + 1, n: stapel.length })} scroll>
       <Panel style={{ alignItems: 'center', paddingVertical: 28, minHeight: 300, justifyContent: 'center' }}>
         {richtung === 'zeichen' || offen ? <Text style={[stl.gross, { color: f.akzent }]}>{sym!.sym}</Text> : null}
         {richtung === 'wort' && (
-          <Knopf klein art="sekundaer" titel="Anhören" symbol="🔊" onPress={() => spiele(sym!.sym, s.einstellungen.stimme)} style={{ marginBottom: 8 }} />
+          <Knopf klein art="sekundaer" titel={t('lernen.anhoeren')} symbol="🔊" onPress={() => spiele(sym!.sym, s.einstellungen.stimme)} style={{ marginBottom: 8 }} />
         )}
         {(richtung === 'wort' || offen) && (
           <>
@@ -92,11 +94,11 @@ export default function Lernen() {
             <T mono groesse={20} farbe={f.info}>{lautschrift(sym!)}</T>
           </>
         )}
-        {offen && sym!.tipp && <T leise groesse={14} style={{ marginTop: 10, textAlign: 'center' }}>{sym!.tipp}</T>}
+        {offen && sym!.tipp && <T leise groesse={14} style={{ marginTop: 10, textAlign: 'center' }}>{t(sym!.tipp)}</T>}
         {offen && (
           <Zeile style={{ marginTop: 14, justifyContent: 'center' }}>
-            <Knopf klein art="sekundaer" titel="Frau" symbol="🔊" onPress={() => spiele(sym!.sym, 'frau')} />
-            <Knopf klein art="sekundaer" titel="Mann" symbol="🔊" onPress={() => spiele(sym!.sym, 'mann')} />
+            <Knopf klein art="sekundaer" titel={t('allg.frau')} symbol="🔊" onPress={() => spiele(sym!.sym, 'frau')} />
+            <Knopf klein art="sekundaer" titel={t('allg.mann')} symbol="🔊" onPress={() => spiele(sym!.sym, 'mann')} />
           </Zeile>
         )}
         {bewertung && <T groesse={16} farbe={bewertung.ok ? f.ok : f.fehler} style={{ marginTop: 14, textAlign: 'center' }}>{bewertung.text}</T>}
@@ -104,18 +106,18 @@ export default function Lernen() {
       {!offen ? (
         antwort === 'sprechen' && richtung === 'zeichen' ? (
           <View style={{ gap: 10 }}>
-            <Knopf titel={erk.laeuft ? 'Höre zu …' : 'Codewort sprechen'} symbol="🎙" art={erk.laeuft ? 'ok' : 'primaer'} onPress={() => (erk.laeuft ? erk.stoppe() : erk.starte())} />
+            <Knopf titel={erk.laeuft ? t('allg.hoereZu') : t('lernen.codewortSprechen')} symbol="🎙" art={erk.laeuft ? 'ok' : 'primaer'} onPress={() => (erk.laeuft ? erk.stoppe() : erk.starte())} />
             {erk.fehler && <T farbe={f.fehler} groesse={14}>{erk.fehler}</T>}
-            {simAktiv() && erk.laeuft && <Knopf klein art="sekundaer" titel={`Sim: „${sym!.wort}“ sprechen`} onPress={() => simSprich(sym!.wort)} />}
-            <Knopf art="sekundaer" titel="Aufdecken" onPress={() => setOffen(true)} />
+            {simAktiv() && erk.laeuft && <Knopf klein art="sekundaer" titel={t('lernen.simSprechen', { wort: sym!.wort })} onPress={() => simSprich(sym!.wort)} />}
+            <Knopf art="sekundaer" titel={t('allg.aufdecken')} onPress={() => setOffen(true)} />
           </View>
         ) : (
-          <Knopf titel="Aufdecken" onPress={() => setOffen(true)} />
+          <Knopf titel={t('allg.aufdecken')} onPress={() => setOffen(true)} />
         )
       ) : (
         <View style={{ flexDirection: 'row', gap: 12 }}>
-          <Knopf art="fehler" titel="✗ Vergessen" style={{ flex: 1 }} onPress={() => weiter(false)} />
-          <Knopf art="ok" titel="✓ Gewusst" style={{ flex: 1 }} onPress={() => weiter(true)} />
+          <Knopf art="fehler" titel={t('lernen.vergessen')} style={{ flex: 1 }} onPress={() => weiter(false)} />
+          <Knopf art="ok" titel={t('lernen.gewusst')} style={{ flex: 1 }} onPress={() => weiter(true)} />
         </View>
       )}
     </Seite>

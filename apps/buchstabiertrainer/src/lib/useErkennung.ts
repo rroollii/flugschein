@@ -3,13 +3,14 @@ import { berechtigung, erstelleErkenner, verfuegbar } from './speech';
 import type { Erkenner } from './speech-typen';
 import { hole } from './store';
 import { NACH_SYM } from '../data/alphabet';
+import { t, type Schluessel } from '../i18n';
 
-const FEHLER: Record<string, string> = {
-  'not-allowed': 'Kein Zugriff auf Mikrofon oder Spracherkennung. Bitte in den Einstellungen erlauben.',
-  'service-not-allowed': 'Spracherkennung ist nicht erlaubt oder nicht verfügbar.',
-  'language-not-supported': 'Diese Sprache wird von der Spracherkennung nicht unterstützt.',
-  network: 'Keine Verbindung zum Erkennungsdienst. Aktiviere on-device-Erkennung oder nutze Tippen.',
-  'audio-capture': 'Kein Mikrofon gefunden.',
+const FEHLER: Record<string, Schluessel> = {
+  'not-allowed': 'erk.notAllowed',
+  'service-not-allowed': 'erk.serviceNotAllowed',
+  'language-not-supported': 'erk.sprache',
+  network: 'erk.netz',
+  'audio-capture': 'erk.mikrofon',
 };
 
 /**
@@ -41,8 +42,8 @@ export function useErkennung(opts: {
 
   const starte = useCallback(async () => {
     const v = verfuegbar();
-    if (!v.ok) { setFehler(v.grund ?? 'Spracherkennung nicht verfügbar'); return false; }
-    if (!(await berechtigung())) { setFehler(FEHLER['not-allowed']); return false; }
+    if (!v.ok) { setFehler(v.grund ?? t('erk.nichtVerfuegbar')); return false; }
+    if (!(await berechtigung())) { setFehler(t(FEHLER['not-allowed'])); return false; }
     setFehler(null);
     soll.current = true;
     neustarts.current = 0;
@@ -59,7 +60,7 @@ export function useErkennung(opts: {
         fehler: (code, msg) => {
           if (code === 'no-speech' || code === 'aborted' || code === 'speech-timeout') return;
           if (code === 'not-allowed' || code === 'audio-capture' || code === 'service-not-allowed' || code === 'language-not-supported') soll.current = false;
-          setFehler(FEHLER[code] ?? `Spracherkennung: ${msg || code}`);
+          setFehler(FEHLER[code] ? t(FEHLER[code]) : t('erk.sonst', { meldung: msg || code }));
         },
       });
     }

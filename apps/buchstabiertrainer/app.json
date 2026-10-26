@@ -2,7 +2,7 @@
   "expo": {
     "name": "Buchstabiertrainer",
     "slug": "buchstabiertrainer",
-    "description": "ICAO-/NATO-Buchstabieralphabet trainieren: Sprint auf Zeit mit Spracherkennung, Aussprache, Hörübungen und Kennzeichen.",
+    "description": "Train the ICAO/NATO phonetic alphabet: timed sprints with speech recognition, pronunciation, listening drills and aircraft registrations. Available in German, English, French, Italian and Spanish.",
     "version": "1.0.0",
     "scheme": "buchstabiertrainer",
     "orientation": "portrait",
@@ -18,12 +18,10 @@
         "usesNonExemptEncryption": false
       },
       "infoPlist": {
-        "NSMicrophoneUsageDescription": "Der Buchstabiertrainer hört dir während einer Übung zu, damit er deine gesprochenen Codewörter (z. B. „Alfa, Bravo“) erkennen und bewerten kann. Es wird nichts aufgezeichnet oder gespeichert.",
-        "NSSpeechRecognitionUsageDescription": "Die Spracherkennung wandelt deine gesprochenen Codewörter in Text um, damit die App richtig und falsch markieren kann. Wenn möglich, geschieht das direkt auf dem iPhone.",
-        "CFBundleDevelopmentRegion": "de",
-        "CFBundleLocalizations": [
-          "de"
-        ]
+        "NSMicrophoneUsageDescription": "The app listens to you during an exercise so it can recognise and score the code words you speak (e.g. “Alfa, Bravo”). Nothing is recorded or stored.",
+        "NSSpeechRecognitionUsageDescription": "Speech recognition turns your spoken code words into text so the app can mark them right or wrong. Where possible this happens directly on your iPhone.",
+        "CFBundleDevelopmentRegion": "en",
+        "CFBundleAllowMixedLocalizations": true
       },
       "privacyManifests": {
         "NSPrivacyTracking": false,
@@ -63,7 +61,7 @@
       "favicon": "./assets/favicon.png",
       "name": "Buchstabiertrainer",
       "shortName": "Buchstabieren",
-      "lang": "de",
+      "lang": "en",
       "themeColor": "#070b10",
       "backgroundColor": "#070b10"
     },
@@ -76,8 +74,8 @@
       [
         "expo-speech-recognition",
         {
-          "microphonePermission": "Der Buchstabiertrainer hört dir während einer Übung zu, damit er deine gesprochenen Codewörter (z. B. „Alfa, Bravo“) erkennen und bewerten kann. Es wird nichts aufgezeichnet oder gespeichert.",
-          "speechRecognitionPermission": "Die Spracherkennung wandelt deine gesprochenen Codewörter in Text um, damit die App richtig und falsch markieren kann. Wenn möglich, geschieht das direkt auf dem iPhone.",
+          "microphonePermission": "The app listens to you during an exercise so it can recognise and score the code words you speak (e.g. “Alfa, Bravo”). Nothing is recorded or stored.",
+          "speechRecognitionPermission": "Speech recognition turns your spoken code words into text so the app can mark them right or wrong. Where possible this happens directly on your iPhone.",
           "androidSpeechServicePackages": [
             "com.google.android.googlequicksearchbox",
             "com.google.android.as",
@@ -88,7 +86,7 @@
       [
         "expo-audio",
         {
-          "microphonePermission": "Der Buchstabiertrainer hört dir während einer Übung zu, damit er deine gesprochenen Codewörter (z. B. „Alfa, Bravo“) erkennen und bewerten kann. Es wird nichts aufgezeichnet oder gespeichert.",
+          "microphonePermission": "The app listens to you during an exercise so it can recognise and score the code words you speak (e.g. “Alfa, Bravo”). Nothing is recorded or stored.",
           "recordAudioAndroid": true,
           "enableBackgroundPlayback": false,
           "enableBackgroundRecording": false
@@ -104,7 +102,35 @@
         }
       ],
       "expo-font",
-      "expo-asset"
-    ]
+      "expo-asset",
+      [
+        "expo-localization",
+        {
+          "supportedLocales": {
+            "ios": [
+              "de",
+              "en",
+              "fr",
+              "it",
+              "es"
+            ],
+            "android": [
+              "de",
+              "en",
+              "fr",
+              "it",
+              "es"
+            ]
+          }
+        }
+      ]
+    ],
+    "locales": {
+      "de": "./locales/de.json",
+      "en": "./locales/en.json",
+      "fr": "./locales/fr.json",
+      "it": "./locales/it.json",
+      "es": "./locales/es.json"
+    }
   }
 }

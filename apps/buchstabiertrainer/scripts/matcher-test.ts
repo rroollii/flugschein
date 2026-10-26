@@ -2,7 +2,13 @@
 import assert from 'node:assert/strict';
 import { finde, tokenize, pruefeWort } from '../src/lib/matcher';
 import { Folge } from '../src/lib/folge';
+import { NACH_SYM } from '../src/data/alphabet';
 import { BUCHST, ZIFF } from '../src/lib/generator';
+import { de } from '../src/i18n/de';
+import { en } from '../src/i18n/en';
+import { fr } from '../src/i18n/fr';
+import { it } from '../src/i18n/it';
+import { es } from '../src/i18n/es';
 
 const ALLE = [...BUCHST, ...ZIFF];
 const eins = (text: string, erwartet: string | null, syms = BUCHST) => finde(tokenize(text), 0, syms, erwartet);
@@ -18,22 +24,52 @@ test('exakte Codewörter und Varianten', () => {
 test('unscharfer Abgleich bevorzugt das erwartete Codewort', () => {
   assert.equal(eins('novembar', 'N').sym, 'N');
   assert.equal(eins('sierraa', 'S').sym, 'S');
-  assert.equal(eins('zebra', 'Z').sym, null);
+  assert.equal(eins('zebra', 'Z').art, 'fremd', 'alte englische Tafel');
+  assert.equal(eins('zebra', 'S').sym, 'Z', 'nicht unscharf als Sierra');
 });
 
 test('Ziffern inkl. ICAO-Hinweisen', () => {
   assert.equal(eins('niner', '9', ALLE).sym, '9');
   const t = eins('three', '3', ALLE);
   assert.equal(t.sym, '3');
-  assert.match(t.hinweis ?? '', /TREE/);
+  assert.equal(t.hinweis?.k, 'hinweis.three');
+  assert.match(de[t.hinweis!.k], /TREE/);
   assert.equal(eins('45', '4', ALLE).sym, '4');
   assert.equal(eins('for', null, BUCHST).sym, null, '„for“ ohne Ziffern ist kein Codewort');
 });
 
-test('deutsche Buchstabiertafel wird erkannt', () => {
-  const t = eins('Anton', 'A');
-  assert.equal(t.art, 'fremd');
-  assert.match(t.hinweis ?? '', /Alfa/);
+test('nationale Buchstabiertafeln werden erkannt und als Nicht-ICAO markiert', () => {
+  for (const [wort, sym, tafel] of [['Anton', 'A', 'tafel.at'], ['Anatole', 'A', 'tafel.fr'], ['Ancona', 'A', 'tafel.it'], ['Antonio', 'A', 'tafel.es'],
+    ['Baker', 'B', 'tafel.en_alt'], ['Thérèse', 'T', 'tafel.fr'], ['therese', 'T', 'tafel.fr'], ['Domodossola', 'D', 'tafel.it'], ['Zaragoza', 'Z', 'tafel.es']] as const) {
+    const t = eins(wort, sym);
+    assert.equal(t.art, 'fremd', wort);
+    assert.equal(t.sym, sym, wort);
+    const p = t.hinweis?.p as any;
+    assert.equal(t.hinweis?.k, 'hinweis.fremd');
+    assert.equal(p.tafel.k, tafel, wort);
+    assert.equal(p.icao, NACH_SYM[sym].wort);
+  }
+});
+
+test('fremde Tafeln: Vorrang vor unscharfem Abgleich, keine Kollision mit ICAO', () => {
+  assert.equal(eins('Roma', 'R').art, 'fremd', '„Roma“ darf nicht als Romeo durchgehen');
+  assert.equal(eins('Oscar', 'O').art, 'exakt');
+  assert.equal(eins('Victor', 'V').art, 'exakt');
+  assert.equal(eins('Hotel', 'H').art, 'exakt');
+  assert.equal(eins('Kilo', 'K').art, 'exakt');
+  assert.equal(eins('Charlie', 'C').art, 'exakt');
+  assert.notEqual(eins('how', 'H').art, 'fremd', 'Füllwort');
+  assert.notEqual(eins('love', 'L').art, 'fremd', 'Füllwort');
+  const w = eins('Washington', 'W');
+  assert.deepEqual([(w.hinweis?.p as any).tafel.je.it, (w.hinweis?.p as any).tafel.je.es], ['tafel.it', 'tafel.es']);
+});
+
+test('Wörterbücher: gleiche Schlüssel und Platzhalter in allen Sprachen', () => {
+  const ph = (s: string) => (s.match(/\{\w+\}/g) ?? []).sort().join(',');
+  for (const [name, wb] of Object.entries({ en, fr, it, es })) {
+    assert.deepEqual(Object.keys(wb).sort(), Object.keys(de).sort(), name);
+    for (const k of Object.keys(de) as (keyof typeof de)[]) assert.equal(ph(wb[k]), ph(de[k]), `${name}: ${k}`);
+  }
 });
 
 test('Folge: Zwischenergebnisse werden nicht doppelt gezählt', () => {
