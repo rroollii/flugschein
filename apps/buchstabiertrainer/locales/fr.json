@@ -2,7 +2,10 @@
   "ios": {
     "CFBundleDisplayName": "PilotABC",
     "NSMicrophoneUsageDescription": "L’application t’écoute pendant un exercice afin de reconnaître et d’évaluer les mots de code que tu prononces (p. ex. « Alfa, Bravo »). Rien n’est enregistré ni conservé.",
-    "NSSpeechRecognitionUsageDescription": "La reconnaissance vocale transforme tes mots de code en texte pour que l’application puisse les marquer justes ou faux. Si possible, cela se fait directement sur l’iPhone."
+    "NSSpeechRecognitionUsageDescription": "La reconnaissance vocale transforme tes mots de code en texte pour que l’application puisse les marquer justes ou faux. Si possible, cela se fait directement sur l’iPhone.",
+    "NSPhotoLibraryUsageDescription": "PilotABC n’accède pas à tes photos. Cette autorisation est seulement déclarée parce qu’un composant de fichiers intégré la prend en charge ; l’application ne la demande jamais.",
+    "NSPhotoLibraryAddUsageDescription": "PilotABC n’enregistre rien dans ta photothèque. Cette autorisation est seulement déclarée parce qu’un composant de fichiers intégré la prend en charge ; l’application ne la demande jamais.",
+    "NSCameraUsageDescription": "PilotABC n’utilise pas l’appareil photo. Cette autorisation est seulement déclarée parce qu’un composant système intégré la prend en charge ; l’application ne la demande jamais."
   },
   "android": {
     "app_name": "PilotABC"

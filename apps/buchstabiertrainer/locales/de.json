@@ -2,7 +2,10 @@
   "ios": {
     "CFBundleDisplayName": "PilotABC",
     "NSMicrophoneUsageDescription": "PilotABC hört dir während einer Übung zu, damit die App deine gesprochenen Codewörter (z. B. „Alfa, Bravo“) erkennen und bewerten kann. Es wird nichts aufgezeichnet oder gespeichert.",
-    "NSSpeechRecognitionUsageDescription": "Die Spracherkennung wandelt deine gesprochenen Codewörter in Text um, damit die App richtig und falsch markieren kann. Wenn möglich, geschieht das direkt auf dem iPhone."
+    "NSSpeechRecognitionUsageDescription": "Die Spracherkennung wandelt deine gesprochenen Codewörter in Text um, damit die App richtig und falsch markieren kann. Wenn möglich, geschieht das direkt auf dem iPhone.",
+    "NSPhotoLibraryUsageDescription": "PilotABC greift nicht auf deine Fotos zu. Die Berechtigung ist nur angegeben, weil eine eingebaute Dateikomponente sie unterstützt – die App fragt nie danach.",
+    "NSPhotoLibraryAddUsageDescription": "PilotABC speichert nichts in deiner Fotomediathek. Die Berechtigung ist nur angegeben, weil eine eingebaute Dateikomponente sie unterstützt – die App fragt nie danach.",
+    "NSCameraUsageDescription": "PilotABC nutzt die Kamera nicht. Die Berechtigung ist nur angegeben, weil eine eingebaute Systemkomponente sie unterstützt – die App fragt nie danach."
   },
   "android": {
     "app_name": "PilotABC"
