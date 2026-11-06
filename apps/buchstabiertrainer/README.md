@@ -7,7 +7,7 @@ für iPhone, Android und Web. Web-Version: https://rroollii.github.io/flugschein
 
 | Modus | Inhalt |
 |---|---|
-| Sprint | 10 / 25 / 50 zufällige Zeichen (optional Ziffern), Uhr startet beim ersten Wort, Live-Erkennung, sofort richtig/falsch, Soll-Ist-Abstand zum Ziel (0,6 s je Zeichen), Ergebnis mit Zeit, Fehlern, Wörtern/Minute, Bestzeit, Verlauf |
+| Sprint | 10 / 25 / 50 zufällige Zeichen (optional Ziffern), Uhr startet beim ersten Wort, Live-Erkennung, sofort richtig/falsch, Soll-Ist-Abstand zum Ziel (0,6 s je Zeichen), Ergebnis mit Zeit, Fehlern, Wörtern/Minute, Bestzeit, Verlauf. Fünf wählbare Anzeigen (Klassisch, Laufband, Raster, Fokus, Karten; Auswahl mit animierten Vorschaukacheln, gespeichert, ohne Animation bei „Bewegung reduzieren“) |
 | Gezieltes Nachtraining | Sprint, in dem schwache/langsame Zeichen gehäuft vorkommen (aus Ergebnis oder Statistik) |
 | Kennzeichen | OE-KRF, D-EABC, HA-…, HB-…, OK-…, S5-…, 9A-…, I-…, G-…, N… |
 | Wörter & Orte | ICAO-Codes (LOGF, LOWG …), Orte, Funk-/Wetterbegriffe, Namen, eigene Wörter |

@@ -3,6 +3,8 @@ import { useSyncExternalStore } from 'react';
 import type { UiSprache } from '../i18n';
 
 export type Eingabe = 'sprache' | 'tippen' | 'selbst';
+export const SPRINT_ANZEIGEN = ['klassisch', 'laufband', 'raster', 'fokus', 'karten'] as const;
+export type SprintAnzeige = (typeof SPRINT_ANZEIGEN)[number];
 export type Lauf = {
   id: string;
   ts: number;
@@ -34,6 +36,8 @@ export type Zustand = {
     thema: 'auto' | 'dunkel' | 'hell';
     codewortZeigen: boolean;
     haptik: boolean;
+    /** Darstellung der Zeichenfolge im Sprint/Nachtraining */
+    sprintAnzeige: SprintAnzeige;
   };
   laeufe: Lauf[];
   stats: Record<string, SymStat>;
@@ -47,6 +51,7 @@ const START: Zustand = {
   einstellungen: {
     uiSprache: 'auto', sprache: 'en-US', onDevice: true, stimme: 'frau', ziffern: false, laenge: 50, fehlerModus: 'weiter',
     eingabe: 'sprache', tagesziel: 150, thema: 'dunkel', codewortZeigen: false, haptik: true,
+    sprintAnzeige: 'klassisch',
   },
   laeufe: [],
   stats: {},
@@ -82,6 +87,7 @@ export async function laden() {
     const roh = await AsyncStorage.getItem(KEY);
     const d = roh ? JSON.parse(roh) : {};
     zustand = { ...START, ...d, einstellungen: { ...START.einstellungen, ...(d.einstellungen || {}) }, geladen: true };
+    if (!SPRINT_ANZEIGEN.includes(zustand.einstellungen.sprintAnzeige)) zustand.einstellungen.sprintAnzeige = START.einstellungen.sprintAnzeige;
   } catch {
     zustand = { ...START, geladen: true };
   }
