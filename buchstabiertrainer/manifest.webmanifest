@@ -1,0 +1,29 @@
+{
+  "name": "PilotABC – Buchstabieren wie ein Pilot",
+  "short_name": "PilotABC",
+  "description": "Train the ICAO/NATO phonetic alphabet: timed sprints with speech recognition, pronunciation, listening drills and aircraft registrations. Available in German, English, French, Italian and Spanish.",
+  "lang": "de",
+  "id": "/flugschein/buchstabiertrainer/",
+  "start_url": "/flugschein/buchstabiertrainer/",
+  "scope": "/flugschein/buchstabiertrainer/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#070b10",
+  "theme_color": "#070b10",
+  "categories": [
+    "education"
+  ],
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
