@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useRef, useState, useSyncExternalStore } from 'react';
+import React, { memo, useEffect, useMemo, useRef, useState, useSyncExternalStore } from 'react';
 import { Platform, Pressable, StyleSheet, Text, TextInput, View } from 'react-native';
 import { router, useLocalSearchParams } from 'expo-router';
 import * as Haptics from 'expo-haptics';
@@ -12,6 +12,8 @@ import { NACH_SYM, lautschrift } from '../data/alphabet';
 import { simAktiv, simSprich } from '../lib/sim';
 import { spiele } from '../lib/audio';
 import { useT, type Schluessel } from '../i18n';
+import { AnzeigeWahl, SprintAnzeigeAnsicht } from '../ui/sprint-anzeige';
+import { useRuhig } from '../lib/bewegung';
 
 type Modus = 'sprint' | 'kennzeichen' | 'woerter' | 'nachtraining';
 type Gruppe = { anzeige: string; von: number; bis: number };
@@ -85,6 +87,12 @@ function Vorbereitung({ modus, opts, setOpts, starten, schwach }: {
           <T leise groesse={13} style={{ marginTop: 8 }}>{t('sprint.zielZeit', { s: (e.laenge * MS_PRO_ZEICHEN / 1000).toFixed(0), je: MS_PRO_ZEICHEN / 1000 })}{best ? t('sprint.bestzeit', { s: sek(best.ms) }) : ''}</T>
         </Panel>
       )}
+      {(modus === 'sprint' || modus === 'nachtraining') && (
+        <Panel titel={t('sprint.anzeige')}>
+          <AnzeigeWahl wert={e.sprintAnzeige} />
+          <T leise groesse={13} style={{ marginTop: 8 }}>{t('sprint.anzeigeInfo')}</T>
+        </Panel>
+      )}
       {modus === 'kennzeichen' && (
         <Panel titel={t('sprint.anzahlKennzeichen')}>
           <Auswahl label={t('sprint.anzahl')} werte={[3, 6, 10].map((n) => ({ wert: n, text: String(n) }))} wert={opts.anzahl} onWahl={(v) => setOpts({ ...opts, anzahl: v })} />
@@ -133,6 +141,8 @@ function LaufSeite({ modus, plan, nochmal, zurueck }: { modus: Modus; plan: Plan
   const [, tick] = useState(0);
   const [lauf, setLauf] = useState<Lauf | null>(null);
   const [vorBest, setVorBest] = useState<Lauf | null>(null);
+  const [breite, setBreite] = useState(0);
+  const ruhig = useRuhig();
   const eingabe = e.eingabe;
   const erk = useErkennung({ syms: plan.syms, onSegment: (t, fin) => fo.segment(t, fin) });
 
@@ -171,7 +181,9 @@ function LaufSeite({ modus, plan, nochmal, zurueck }: { modus: Modus; plan: Plan
   const aktuell = plan.ziel[z.pos];
   const sym = aktuell ? NACH_SYM[aktuell] : null;
   const letzteFalsch = z.letzte && !z.letzte.ok;
-  const zeigeWort = e.codewortZeigen || (e.fehlerModus === 'wiederholen' && letzteFalsch && z.ergebnisse[z.pos] && !z.ergebnisse[z.pos]!.ok);
+  const aktuellFalsch = !!z.ergebnisse[z.pos] && !z.ergebnisse[z.pos]!.ok;
+  const zeigeWort = e.codewortZeigen || (e.fehlerModus === 'wiederholen' && letzteFalsch && aktuellFalsch);
+  const wort = sym && zeigeWort ? `${sym.wort}  ·  ${lautschrift(sym)}` : '';
   const gruppe = plan.gruppen?.find((g) => z.pos >= g.von && z.pos < g.bis) ?? null;
 
   return (
@@ -188,7 +200,10 @@ function LaufSeite({ modus, plan, nochmal, zurueck }: { modus: Modus; plan: Plan
       </View>
       <Fortschritt plan={plan} z={z} />
 
-      <View style={stl.mitte}>
+      <View style={stl.mitte} onLayout={(ev) => setBreite(Math.round(ev.nativeEvent.layout.width))}>
+        {!gruppe && (
+          <SprintAnzeigeAnsicht art={e.sprintAnzeige} ziel={plan.ziel} stand={z} falsch={aktuellFalsch} breite={breite} ruhig={ruhig} wort={wort} />
+        )}
         {gruppe && (
           <Text style={[stl.gruppe, { color: f.text }]} accessibilityLabel={t('sprint.buchstabiere', { text: gruppe.anzeige })}>
             {(() => {
@@ -203,14 +218,13 @@ function LaufSeite({ modus, plan, nochmal, zurueck }: { modus: Modus; plan: Plan
             })()}
           </Text>
         )}
-        <Text style={[stl.zeichen, { color: letzteFalsch && z.letzte?.sym === aktuell ? f.fehler : f.akzent }]} accessibilityLiveRegion="polite">
-          {aktuell ?? '✓'}
-        </Text>
-        <T groesse={22} fett farbe={f.leise} style={{ minHeight: 30, textAlign: 'center' }}>
-          {sym && zeigeWort ? `${sym.wort}  ·  ${lautschrift(sym)}` : ' '}
-        </T>
-        {!gruppe && (
-          <Text style={[stl.vorschau, { color: f.leise }]}>{plan.ziel.slice(z.pos + 1, z.pos + 7).join('  ')}</Text>
+        {gruppe && (
+          <>
+            <Text style={[stl.zeichen, { color: letzteFalsch && z.letzte?.sym === aktuell ? f.fehler : f.akzent }]} accessibilityLiveRegion="polite">
+              {aktuell ?? '✓'}
+            </Text>
+            <T groesse={22} fett farbe={f.leise} style={{ minHeight: 30, textAlign: 'center' }}>{wort || ' '}</T>
+          </>
         )}
         <View style={{ minHeight: 48, alignItems: 'center', marginTop: 8 }}>
           {z.letzte && (
@@ -243,7 +257,7 @@ function LaufSeite({ modus, plan, nochmal, zurueck }: { modus: Modus; plan: Plan
   );
 }
 
-function Fortschritt({ plan, z }: { plan: Plan; z: Folge['z'] }) {
+const Fortschritt = memo(function Fortschritt({ plan, z }: { plan: Plan; z: Folge['z'] }) {
   const f = useFarben();
   const { t } = useT();
   return (
@@ -255,7 +269,7 @@ function Fortschritt({ plan, z }: { plan: Plan; z: Folge['z'] }) {
       })}
     </View>
   );
-}
+});
 
 function TippFeld({ fo }: { fo: Folge }) {
   const f = useFarben();
