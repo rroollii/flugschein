@@ -57,9 +57,26 @@ function routeFor(href, baseDir) {
   if (/^funkuebungen\//.test(norm)) return '#/funk';
   if (/^ausbildungsplan\.md$/.test(norm)) return '#/ausbildung';
   if (/^lernplan\.md$/.test(norm)) return '#/lernplan';
+  m = norm.match(/^flugzeuge\/(.+)\.md$/);
+  if (m) return `#/dokumente/${m[1]}${a}`;
   m = norm.match(/^([^/]+)\.md$/);
   if (m) return `#/dokumente/${m[1]}${a}`;
   return '#/';
+}
+
+// ---------- Bilder (media/) ----------
+// Lokal verlinkte Bilder werden gesammelt und von postbuild.mjs nach OUT_DIR/media/ kopiert.
+const media = new Map();
+function mediaHref(href, baseDir) {
+  if (!href || /^(https?:|data:|mailto:|tel:|#)/i.test(href)) return null;
+  const file = decodeURIComponent(href.split(/[?#]/)[0]);
+  if (!/\.(png|jpe?g|webp|gif|svg)$/i.test(file)) return null;
+  const abs = path.resolve(CONTENT_DIR, baseDir, file);
+  if (!fs.existsSync(abs)) { warn('Bild nicht gefunden:', path.join(baseDir, file)); return null; }
+  const name = path.basename(abs);
+  if (media.has(name) && media.get(name) !== abs) warn('Bildname doppelt:', name);
+  media.set(name, abs);
+  return `media/${encodeURIComponent(name)}`;
 }
 
 function makeMarked(baseDir) {
@@ -70,8 +87,14 @@ function makeMarked(baseDir) {
         const inner = this.parser.parseInline(tokens);
         return `<h${depth} id="${slug(text)}">${inner}</h${depth}>\n`;
       },
+      image({ href, title, text }) {
+        const src = mediaHref(href, baseDir) || href;
+        return `<a href="${src}" target="_blank" rel="noopener"><img src="${src}" alt="${text}"${title ? ` title="${title}"` : ''} loading="lazy"></a>`;
+      },
       link({ href, title, tokens }) {
         const inner = this.parser.parseInline(tokens);
+        const img = mediaHref(href, baseDir);
+        if (img) return `<a href="${img}" target="_blank" rel="noopener"${title ? ` title="${title}"` : ''}>${inner}</a>`;
         const r = routeFor(href || '', baseDir);
         if (r === null) return `<a href="${href}" target="_blank" rel="noopener"${title ? ` title="${title}"` : ''}>${inner}</a>`;
         return `<a href="${r}">${inner}</a>`;
@@ -386,8 +409,13 @@ const docFromMd = (id, rel, baseDir = '', titelFallback = id) => {
   const toc = [...md.matchAll(/^## (.*)$/gm)].map((m) => ({ id: slug(m[1]), titel: stripTags(mdInline(m[1])) }));
   return { id, titel, html, toc };
 };
+// Flugzeug-Unterlagen (optional: docs/flugzeuge/*.md, z. B. Cockpit-Erklärungen)
+const flugzeugDocs = fs.existsSync(path.join(CONTENT_DIR, 'flugzeuge'))
+  ? fs.readdirSync(path.join(CONTENT_DIR, 'flugzeuge')).filter((f) => f.endsWith('.md') && !/^(readme|index)\.md$/i.test(f)).sort()
+  : [];
 const dokumente = [
   ...[...new Set([...DOCS, ...extra])].map((id) => docFromMd(id, `${id}.md`)),
+  ...flugzeugDocs.map((f) => docFromMd(f.replace(/\.md$/, ''), `flugzeuge/${f}`, 'flugzeuge')),
   docFromMd('fragen-ueberblick', 'fragen/README.md', 'fragen'),
   docFromMd('skripte-ueberblick', 'skripte/index.md', 'skripte'),
 ].filter(Boolean);
@@ -641,10 +669,12 @@ const content = {
 };
 fs.mkdirSync(path.dirname(OUT), { recursive: true });
 fs.writeFileSync(OUT, JSON.stringify(content));
+fs.writeFileSync(path.join(path.dirname(OUT), 'media.json'), JSON.stringify([...media].map(([name, src]) => ({ name, src })), null, 2));
 console.log(`✔ Inhalte aus ${CONTENT_DIR}`);
 console.log(`  ${faecher.length} Fächer · ${fragen.length} Fragen · ${skripte.length} Skripte (${skripte.reduce((n, s) => n + s.kapitel.length, 0)} Kapitel)`);
 console.log(`  ${phasen.length} Ausbildungsphasen (${phasen.reduce((n, p) => n + p.items.length, 0)} Punkte) · ${wochen.length} Lernwochen · ${fristen.length} Fristen · ${glossar.length} Glossarbegriffe · ${dokumente.length} Dokumente`);
 console.log(`  Mindestwerte: ${JSON.stringify({ ...minima, text: undefined })}${land ? ' · Land: ' + land : ''}`);
 console.log(`  Zusatzausbildungen: ${zusatz.module.map((m) => `${m.id} (${m.kapitel} Kap., ${m.fragen} Fragen, ${m.checklisten.reduce((n, c) => n + c.anzahl, 0)} Checkpunkte)`).join(' · ') || 'keine'}`);
 console.log(`  ${karten.length} Lernkarten · ${funk.szenarien.length} Funk-Szenarien · ${lpe.uebungen.length} LPE-Übungen · ${checklisten.length} Checklisten (${checklisten.reduce((n, c) => n + c.anzahl, 0)} Punkte)`);
+console.log(`  ${media.size} Bilder → media/`);
 console.log(`  ${(fs.statSync(OUT).size / 1024).toFixed(0)} KB → ${path.relative(root, OUT)}`);

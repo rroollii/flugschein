@@ -24,6 +24,12 @@ fs.writeFileSync(path.join(OUT, 'flugschein-plattform.html'), html);
 fs.writeFileSync(path.join(OUT, '404.html'), html);
 fs.writeFileSync(path.join(OUT, '.nojekyll'), '');
 
+// Bilder aus den Inhalten (gesammelt von build-content.mjs)
+const mediaList = JSON.parse(fs.readFileSync(path.join(root, 'src/generated/media.json'), 'utf8'));
+fs.rmSync(path.join(OUT, 'media'), { recursive: true, force: true });
+if (mediaList.length) fs.mkdirSync(path.join(OUT, 'media'), { recursive: true });
+for (const { name, src } of mediaList) fs.copyFileSync(src, path.join(OUT, 'media', name));
+
 const icons = [];
 for (const f of ['icon.svg', 'icon-192.png', 'icon-512.png']) {
   const src = path.join(root, 'public', f);

@@ -6,7 +6,7 @@ import { ListenButton, useTtsHighlight, StimmWahl } from '../Player.jsx';
 import { useAudio, audioPakete, offlineStand, machOffline, entferneOffline, offlineMoeglich } from '../audio.js';
 import { startSession } from './Fragen.jsx';
 
-const DOC_ICON = { 'ppl-ueberblick': '🧭', ausbildungsplan: '🗺️', lernplan: '📅', 'flugschule-fuerstenfeld': '🛫', 'fragen-ueberblick': '❓', 'skripte-ueberblick': '📚', 'zusatzausbildungen-ueberblick': '🌟' };
+const DOC_ICON = { 'ppl-ueberblick': '🧭', ausbildungsplan: '🗺️', lernplan: '📅', 'flugschule-fuerstenfeld': '🛫', 'fragen-ueberblick': '❓', 'skripte-ueberblick': '📚', 'zusatzausbildungen-ueberblick': '🌟', 'da20-katana-cockpit': '🛩️' };
 const lesezeit = (zeichen) => Math.max(1, Math.round(zeichen / 6 / 200));
 
 export default function Bibliothek({ route }) {
