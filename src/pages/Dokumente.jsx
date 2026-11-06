@@ -10,6 +10,7 @@ const DESC = {
   'fragen-ueberblick': 'Prüfungsumfang bei der Austro Control und Aufbau der Übungsfragen',
   'skripte-ueberblick': 'Prüfungsfächer, Lernreihenfolge und Lerntipps',
   'zusatzausbildungen-ueberblick': 'Nachtflug, MEP und Flugfunk international im Überblick',
+  'da20-katana-cockpit': 'Jeder Schalter, jede Anzeige und Leuchte der DA20 (OE-CBF) – beschriftet und erklärt',
 };
 
 export default function Dokumente({ route }) {
